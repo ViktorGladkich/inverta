@@ -82,14 +82,14 @@ export function Navbar() {
   return (
     <header className="w-full z-40 fixed top-0 left-0 bg-white/80 backdrop-blur-md border-b border-neutral-200/50">
       <div className="container relative mx-auto min-h-20 flex gap-4 flex-row lg:grid lg:grid-cols-3 items-center px-4 md:px-6">
-        <div className="flex lg:justify-start">
+        <div className="flex lg:justify-start shrink-0">
           <Link href="/" className="flex items-center">
             <Image
               src="/logo-inverta.png"
               alt="INVERTA"
               width={140}
               height={40}
-              className="h-20 w-auto object-contain"
+              className="h-24 md:h-20 w-auto object-contain"
               priority
             />
           </Link>
@@ -118,7 +118,7 @@ export function Navbar() {
                       <NavigationMenuTrigger className="font-medium text-base text-neutral-600 hover:text-neutral-900 bg-transparent hover:bg-transparent px-2">
                         {item.title}
                       </NavigationMenuTrigger>
-                      <NavigationMenuContent className="!w-[450px] p-4 bg-white border border-neutral-200 shadow-xl rounded-2xl">
+                      <NavigationMenuContent className="w-[450px]! p-4 bg-white border border-neutral-200 shadow-xl rounded-2xl">
                         <div className="flex flex-col gap-4">
                           <div className="flex flex-col h-full justify-between">
                             <div className="flex flex-col mb-4">

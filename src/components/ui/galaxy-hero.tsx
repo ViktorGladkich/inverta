@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { BlurTextEffect } from "@/components/ui/blur-text-effect";
 
 export function GalaxyHero() {
@@ -46,28 +47,29 @@ export function GalaxyHero() {
             className="flex flex-col items-center gap-6 animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
-            <div className="flex items-center gap-10">
+            <div className="flex items-center gap-4 md:gap-10">
               {/* Styled Logo Container */}
               <div
-                className="p-[10px] rounded-[100px] shadow-[0px_0.706592px_0.989229px_-0.541667px_rgba(122,122,122,0.58),0px_1.80656px_2.52919px_-1.08333px_rgba(122,122,122,0.57),0px_3.62176px_5.07046px_-1.625px_rgba(122,122,122,0.55),0px_6.8656px_9.61184px_-2.16667px_rgba(122,122,122,0.52),0px_13.6468px_19.1055px_-2.70833px_rgba(122,122,122,0.46),0px_30px_42px_-3.25px_rgba(122,122,122,0.32)]"
+                className="p-[6px] md:p-[10px] rounded-[100px] shadow-[0px_0.706592px_0.989229px_-0.541667px_rgba(122,122,122,0.58),0px_1.80656px_2.52919px_-1.08333px_rgba(122,122,122,0.57),0px_3.62176px_5.07046px_-1.625px_rgba(122,122,122,0.55),0px_6.8656px_9.61184px_-2.16667px_rgba(122,122,122,0.52),0px_13.6468px_19.1055px_-2.70833px_rgba(122,122,122,0.46),0px_30px_42px_-3.25px_rgba(122,122,122,0.32)]"
                 style={{
                   background:
                     "linear-gradient(180deg, rgb(0, 0, 0) -278%, rgb(255, 255, 255) 136%)",
                 }}
               >
                 <div
-                  className="w-[100px] h-[100px] p-[16px] rounded-full flex items-center justify-center shadow-[0px_0.706592px_0.706592px_-0.666667px_rgba(16,49,77,0.24),0px_1.80656px_1.80656px_-1.33333px_rgba(16,49,77,0.23),0px_3.62176px_3.62176px_-2px_rgba(16,49,77,0.22),0px_6.8656px_6.8656px_-2.66667px_rgba(16,49,77,0.2),0px_13.6468px_13.6468px_-3.33333px_rgba(16,49,77,0.16),0px_30px_30px_-4px_rgba(16,49,77,0.06)]"
+                  className="w-[60px] h-[60px] md:w-[100px] md:h-[100px] p-[10px] md:p-[16px] rounded-full flex items-center justify-center shadow-[0px_0.706592px_0.706592px_-0.666667px_rgba(16,49,77,0.24),0px_1.80656px_1.80656px_-1.33333px_rgba(16,49,77,0.23),0px_3.62176px_3.62176px_-2px_rgba(16,49,77,0.22),0px_6.8656px_6.8656px_-2.66667px_rgba(16,49,77,0.2),0px_13.6468px_13.6468px_-3.33333px_rgba(16,49,77,0.16),0px_30px_30px_-4px_rgba(16,49,77,0.06)]"
                   style={{
                     background:
                       "linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(40, 40, 40) 213%)",
                   }}
                 >
                   {/* Logo Icon */}
-                  <div className="w-full h-full flex items-center justify-center">
-                    <img
+                  <div className="relative w-full h-full">
+                    <Image
                       src="/cube.png"
                       alt="INVERTA Logo - Digitalagentur"
-                      className="w-full h-full object-contain"
+                      fill
+                      className="object-contain"
                     />
                   </div>
                 </div>
@@ -78,7 +80,7 @@ export function GalaxyHero() {
                 {/* Circle Background */}
                 <div className="absolute left-[-5px] md:left-[-20px] top-1/2 -translate-y-1/2 w-[70px] h-[70px] md:w-[110px] md:h-[110px] bg-[#daff02] rounded-full z-0" />
                 {/* Text */}
-                <h1 className="relative font-sans font-bold text-[60px] md:text-[100px] leading-none tracking-tighter text-black z-10">
+                <h1 className="relative font-sans font-bold text-[40px] sm:text-[60px] md:text-[100px] leading-none tracking-tighter text-black z-10">
                   INVERTA
                   <span className="text-[#daff02]">.</span>
                 </h1>
@@ -89,7 +91,7 @@ export function GalaxyHero() {
           {/* Subtitle */}
           <h2 className="sr-only">Marketing & Webentwicklung in Perfektion</h2>
           <p
-            className="text-lg md:text-xl text-neutral-700 max-w-2xl leading-relaxed font-medium animate-fade-in-up"
+            className="text-base md:text-xl text-neutral-700 max-w-2xl leading-relaxed font-medium animate-fade-in-up"
             style={{ animationDelay: "0.3s" }}
           >
             Wir transformieren Marken durch präzise Entwicklung und ästhetische
@@ -153,11 +155,12 @@ export function GalaxyHero() {
         </div>
 
         <div className="flex flex-col items-center gap-4">
-          <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg">
-            <img
+          <div className="relative w-20 h-20 rounded-full overflow-hidden shadow-lg">
+            <Image
               src="/viktor.jpg"
               alt="Founder"
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
             />
           </div>
           <div className="text-center">

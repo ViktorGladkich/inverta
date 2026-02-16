@@ -75,7 +75,7 @@ export default function MarketingPage() {
                   className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
                 >
                   <h3 className="text-2xl font-bold mb-4">{s.title}</h3>
-                  <p className="text-neutral-500 mb-6 flex-grow">{s.desc}</p>
+                  <p className="text-neutral-500 mb-6 grow">{s.desc}</p>
                   <Button
                     size="sm"
                     variant="outline"

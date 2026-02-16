@@ -2,6 +2,7 @@
 
 import React from "react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 /**
  * Props for the FeatureCard component.
@@ -47,10 +48,12 @@ export const FeatureCard = ({
             data-framer-background-image-wrapper="true"
             className="absolute inset-0 rounded-[inherit]"
           >
-            <img
+            <Image
               src={imageSrc}
               alt={title}
-              className="block w-full h-full rounded-[inherit] object-center object-cover"
+              fill
+              className="object-cover object-center rounded-[inherit]"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
           {/* Light Overlay for visual depth */}

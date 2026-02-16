@@ -70,7 +70,7 @@ export function SelectedWork() {
             <FadeIn key={index} delay={index * 0.1}>
               <Link
                 href={project.link}
-                className="group block relative aspect-[4/3] overflow-hidden rounded-3xl mb-4"
+                className="group block relative aspect-4/3 overflow-hidden rounded-3xl mb-4"
               >
                 <div
                   className={`absolute inset-0 transition-transform duration-700 group-hover:scale-105 ${project.thumbnail}`}
