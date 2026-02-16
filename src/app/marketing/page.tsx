@@ -1,4 +1,4 @@
-import { Navbar } from "@/components/layout/Navbar";
+
 import { Footer } from "@/components/layout/Footer";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Button } from "@/components/ui/Button";
@@ -39,7 +39,7 @@ const services = [
 export default function MarketingPage() {
   return (
     <>
-      <Navbar />
+      
       <main className="min-h-screen pt-32 pb-20 bg-white">
         {/* Intro */}
         <section className="container mx-auto px-4 md:px-6 mb-24">

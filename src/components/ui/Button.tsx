@@ -14,6 +14,8 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
     asChild?: boolean; // Ignored for now without Radix
   };
 
+const MotionLink = motion.create(Link);
+
 export const Button = React.forwardRef<
   HTMLButtonElement | HTMLAnchorElement,
   ButtonProps
@@ -26,6 +28,7 @@ export const Button = React.forwardRef<
       fullWidth,
       href,
       children,
+      asChild, // Destructure asChild so it's not passed to DOM
       ...props
     },
     ref,
@@ -63,17 +66,16 @@ export const Button = React.forwardRef<
 
     if (href) {
       return (
-        <Link href={href} legacyBehavior passHref>
-          <motion.a
-            ref={ref as React.Ref<HTMLAnchorElement>}
-            className={classes}
-            whileTap={{ scale: 0.98 }}
-            whileHover={variant === "primary" ? { scale: 1.02 } : {}}
-            {...(props as HTMLMotionProps<"a">)}
-          >
-            {content}
-          </motion.a>
-        </Link>
+        <MotionLink
+          href={href}
+          ref={ref as React.Ref<HTMLAnchorElement>}
+          className={classes}
+          whileTap={{ scale: 0.98 }}
+          whileHover={variant === "primary" ? { scale: 1.02 } : {}}
+          {...(props as HTMLMotionProps<"a">)}
+        >
+          {content}
+        </MotionLink>
       );
     }
 

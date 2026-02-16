@@ -42,6 +42,7 @@ export const metadata: Metadata = {
 };
 
 import { CookieConsent } from "@/components/ui/CookieConsent";
+import { Navbar } from "@/components/layout/Navbar";
 
 export default function RootLayout({
   children,
@@ -53,6 +54,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-neutral-900 selection:bg-black selection:text-white`}
       >
+        <Navbar />
         {children}
         <CookieConsent />
       </body>
