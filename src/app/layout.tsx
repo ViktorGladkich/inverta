@@ -43,6 +43,7 @@ export const metadata: Metadata = {
 
 import { CookieConsent } from "@/components/ui/CookieConsent";
 import { Navbar } from "@/components/layout/Navbar";
+import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 
 export default function RootLayout({
   children,
@@ -56,6 +57,14 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        {/* Steamy Glass Bottom Effect */}
+        <ProgressiveBlur
+          className="fixed bottom-0 left-0 z-40 pointer-events-none"
+          position="bottom"
+          backgroundColor="rgba(255, 255, 255, 0.4)"
+          blurAmount="4px"
+          height="60px"
+        />
         <CookieConsent />
       </body>
     </html>

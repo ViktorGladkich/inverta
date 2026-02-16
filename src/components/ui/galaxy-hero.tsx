@@ -2,13 +2,14 @@
 
 import React from "react";
 import Link from "next/link";
+import { BlurTextEffect } from "@/components/ui/blur-text-effect";
 
 export function GalaxyHero() {
   return (
     <>
       <section className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-gray-50/10">
         {/* Background Video */}
-        <div className="absolute inset-0 z-0 select-none">
+        <div className="fixed inset-0 z-0 select-none">
           <video
             src="/hero-loop.mp4"
             autoPlay
@@ -134,35 +135,44 @@ export function GalaxyHero() {
       {/* Founder Note Section */}
       <section
         id="founder-note"
-        className="relative flex flex-col items-center justify-center gap-11 py-[100px] px-10 bg-white/30 shadow-[inset_0_3px_1px_rgba(255,255,255,0.4),inset_0_-3px_1px_rgba(255,255,255,0.4)] backdrop-blur-sm"
+        className="relative z-10 flex flex-col items-center justify-center gap-11 py-[100px] px-10 bg-[#ffffff4d] shadow-[inset_0_3px_1px_rgba(255,255,255,0.4),inset_0_-3px_1px_rgba(255,255,255,0.4)] backdrop-blur-sm"
       >
         <div className="max-w-4xl text-center">
-          <h3 className="text-2xl md:text-4xl font-medium leading-snug text-neutral-800">
-            <span className="text-black/60">&quot;Wir nutzen</span>{" "}
-            <span>Ihre Daten</span>
-            <span className="text-black/60">, verstehen</span>{" "}
-            <span>Ihre Zielgruppe</span>
-            <span className="text-black/60">, und verwenden</span>{" "}
-            <span>KI</span>
-            <span className="text-black/60">
-              , um Ihrer Marke Gehör zu verschaffen. Und das Beste?
-            </span>{" "}
-            <span>Wir setzen es auch um.&quot;</span>
+          <h3 className="text-2xl md:text-3xl font-medium leading-snug text-neutral-800">
+            <BlurTextEffect className="inline-block" delay={0.1}>
+              <span className="text-black/60">
+                &quot;Wir erschaffen nicht nur Präsenzen, wir{" "}
+              </span>
+              <span className="text-black">definieren Standards. </span>
+              <span className="text-black/60">Mit purer Ästhetik und </span>
+              <span className="text-black">kompromissloser Performance </span>
+              <span className="text-black/60">führen wir Ihre Marke in </span>
+              <span className="text-black">eine neue Ära.&quot;</span>
+            </BlurTextEffect>
           </h3>
         </div>
 
         <div className="flex flex-col items-center gap-4">
           <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg">
             <img
-              src="https://framerusercontent.com/images/W7xYkGKzPzvnPv58ZBNzxS3JZI.jpg"
+              src="/viktor.jpg"
               alt="Founder"
               className="w-full h-full object-cover"
             />
           </div>
           <div className="text-center">
-            <p className="font-semibold text-neutral-900">
-              Gründer von INVERTA
-            </p>
+            <div className="flex items-center justify-center gap-1.5 text-neutral-900 font-semibold text-lg">
+              <span>Gründer von</span>
+              <span className="relative inline-flex items-center">
+                <span className="absolute left-[-4px] top-1/2 -translate-y-1/2 w-7 h-7 bg-[#daff02] rounded-full" />
+                <span className="relative z-10 font-bold text-black tracking-tight leading-none">
+                  INVERTA
+                </span>
+                <span className="relative z-10 text-[#daff02] font-bold leading-none">
+                  .
+                </span>
+              </span>
+            </div>
           </div>
         </div>
       </section>
