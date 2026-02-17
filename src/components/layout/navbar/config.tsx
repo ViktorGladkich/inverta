@@ -71,4 +71,8 @@ export const navigationItems = [
     title: "Über uns",
     href: "/agentur",
   },
+  {
+    title: "Kontakt",
+    href: "/kontakt",
+  },
 ];
