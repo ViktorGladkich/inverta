@@ -1,241 +1,133 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/shadcn-button";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
-import { Menu, MoveRight, X } from "lucide-react";
-import { useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useMotionValueEvent,
+} from "framer-motion";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+import { navigationItems } from "./navbar/config";
+import { MegaMenu } from "./navbar/mega-menu";
+import { MobileMenu } from "./navbar/mobile-menu";
+import { ButtonArrow } from "./navbar/icons";
 
 export function Navbar() {
-  const navigationItems = [
-    {
-      title: "Home",
-      href: "/",
-      description: "",
-    },
-    {
-      title: "Marketing",
-      description: "Maximale Sichtbarkeit und Umsatzwachstum.",
-      items: [
-        {
-          title: "Neukundengewinnung",
-          href: "/marketing/neukundengewinnung",
-        },
-        {
-          title: "SEO",
-          href: "/marketing/seo",
-        },
-        {
-          title: "Social Media",
-          href: "/marketing/social-media",
-        },
-        {
-          title: "Ladezeitoptimierung",
-          href: "/marketing/ladezeitoptimierung",
-        },
-      ],
-    },
-    {
-      title: "Webentwicklung",
-      description: "Hochperformante Websites und Systeme.",
-      items: [
-        {
-          title: "Website | Onlineshop",
-          href: "/webentwicklung/website",
-        },
-        {
-          title: "Relaunch",
-          href: "/webentwicklung/relaunch",
-        },
-        {
-          title: "Funnelsysteme",
-          href: "/webentwicklung/funnels",
-        },
-        {
-          title: "Individuelle Programmierung",
-          href: "/webentwicklung/programmierung",
-        },
-      ],
-    },
-    {
-      title: "Agentur",
-      href: "/agentur",
-      description: "",
-    },
-    {
-      title: "Kontakt",
-      href: "/kontakt",
-      description: "",
-    },
-  ];
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const { scrollY } = useScroll();
+  const pathname = usePathname();
 
-  const [isOpen, setOpen] = useState(false);
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest > 50 && !scrolled) setScrolled(true);
+    else if (latest <= 50 && scrolled) setScrolled(false);
+  });
+
   return (
-    <motion.header
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="w-full z-40 fixed top-0 left-0 bg-white/80 backdrop-blur-md border-b border-neutral-200/50"
-    >
-      <div className="container relative mx-auto min-h-20 flex gap-4 flex-row lg:grid lg:grid-cols-3 items-center px-4 md:px-6">
-        <div className="flex lg:justify-start shrink-0">
-          <Link href="/" className="flex items-center">
+    <>
+      <motion.header
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className={cn(
+          "fixed top-0 left-0 right-0 z-100 transition-all duration-500 ease-in-out border-b font-satoshi",
+          scrolled
+            ? "bg-white/60 backdrop-blur-sm border-white/40 shadow-lg supports-backdrop-filter:bg-white/5"
+            : "bg-transparent border-transparent",
+        )}
+      >
+        <nav className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+          <Link href="/" className="relative z-50 flex items-center gap-2">
             <Image
               src="/logo-inverta.png"
               alt="INVERTA"
               width={140}
               height={40}
-              className="h-24 md:h-20 w-auto object-contain"
+              className="h-22 w-auto object-contain transition-transform duration-300 hover:scale-105"
               priority
             />
           </Link>
-        </div>
 
-        <div className="justify-center items-center gap-4 lg:flex hidden flex-row">
-          <NavigationMenu className="flex justify-start items-start">
-            <NavigationMenuList className="flex justify-start gap-4 flex-row">
-              {navigationItems.map((item) => (
-                <NavigationMenuItem key={item.title}>
-                  {item.href ? (
-                    <>
-                      <NavigationMenuLink asChild>
-                        <Link
-                          href={item.href}
-                          className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-2 text-base font-medium text-neutral-600 transition-colors hover:bg-transparent hover:text-neutral-900 focus:bg-transparent focus:text-neutral-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-transparent/50 data-[state=open]:bg-transparent/50"
-                        >
-                          {item.title}
-                        </Link>
-                      </NavigationMenuLink>
-                    </>
-                  ) : (
-                    <>
-                      <NavigationMenuTrigger className="font-medium text-base text-neutral-600 hover:text-neutral-900 bg-transparent hover:bg-transparent px-2">
-                        {item.title}
-                      </NavigationMenuTrigger>
-                      <NavigationMenuContent className="w-[450px]! p-4 bg-white border border-neutral-200 shadow-xl rounded-2xl">
-                        <div className="flex flex-col gap-4">
-                          <div className="flex flex-col h-full justify-between">
-                            <div className="flex flex-col mb-4">
-                              <p className="text-lg font-bold text-neutral-900">
-                                {item.title}
-                              </p>
-                              <p className="text-neutral-500 text-sm">
-                                {item.description}
-                              </p>
-                            </div>
-                          </div>
-                          <div className="flex flex-col text-sm h-full justify-end space-y-1">
-                            {item.items?.map((subItem) => (
-                              <Link
-                                href={subItem.href}
-                                key={subItem.title}
-                                className="flex flex-row justify-between items-center hover:bg-neutral-50 py-3 px-4 rounded-lg transition-colors group"
-                              >
-                                <span className="text-neutral-600 font-medium group-hover:text-neutral-900">
-                                  {subItem.title}
-                                </span>
-                                <MoveRight className="w-4 h-4 text-neutral-400 group-hover:text-neutral-900 transition-colors" />
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      </NavigationMenuContent>
-                    </>
-                  )}
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
-
-        <div className="flex justify-end w-full gap-4">
-          <Link
-            href="/kontakt"
-            className="hidden md:inline-flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-[10px] shadow-[0_30px_30px_-3.5px_rgba(0,0,0,0.15),0_13px_13px_-2.9px_rgba(0,0,0,0.26),0_6px_6px_-2.3px_rgba(0,0,0,0.3)] hover:shadow-[0_40px_40px_-5px_rgba(0,0,0,0.4)] hover:scale-[1.02] transition-all duration-300"
+          {/* Desktop Navigation */}
+          <div
+            className="hidden lg:flex items-center gap-8"
+            onMouseLeave={() => setHoveredIndex(null)}
           >
-            <span className="font-semibold text-base">Projekt starten</span>
-            <NavbarArrow className="w-4 h-4 ml-1" />
-          </Link>
-        </div>
-
-        <div className="flex w-12 shrink lg:hidden items-end justify-end">
-          <Button variant="ghost" onClick={() => setOpen(!isOpen)}>
-            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </Button>
-          {isOpen && (
-            <div className="absolute top-20 border-t flex flex-col w-full left-0 bg-white shadow-lg py-4 px-4 gap-8 h-[calc(100vh-5rem)] overflow-y-auto z-50">
-              {navigationItems.map((item) => (
-                <div key={item.title}>
-                  <div className="flex flex-col gap-2">
-                    {item.href ? (
-                      <Link
-                        href={item.href}
-                        className="flex justify-between items-center py-2"
-                        onClick={() => setOpen(false)}
-                      >
-                        <span className="text-lg font-medium">
-                          {item.title}
-                        </span>
-                        <MoveRight className="w-4 h-4 stroke-1 text-neutral-400" />
-                      </Link>
-                    ) : (
-                      <>
-                        <p className="text-lg font-bold text-neutral-900 mt-2 mb-2">
-                          {item.title}
-                        </p>
-                        {item.items &&
-                          item.items.map((subItem) => (
-                            <Link
-                              key={subItem.title}
-                              href={subItem.href}
-                              className="flex justify-between items-center py-2 pl-4 border-l-2 border-neutral-100"
-                              onClick={() => setOpen(false)}
-                            >
-                              <span className="text-neutral-600 font-medium">
-                                {subItem.title}
-                              </span>
-                              <MoveRight className="w-4 h-4 stroke-1 text-neutral-400" />
-                            </Link>
-                          ))}
-                      </>
+            {navigationItems.map((item, index) => (
+              <div
+                key={item.title}
+                className="relative h-full flex items-center justify-center p-2"
+                onMouseEnter={() => setHoveredIndex(index)}
+              >
+                <Link
+                  href={item.items ? "#" : item.href}
+                  className="relative z-10 text-base font-medium text-black transition-colors duration-200 flex items-center gap-1 group"
+                >
+                  {item.title}
+                  {/* Hover Underline */}
+                  <span
+                    className={cn(
+                      "absolute -bottom-1 left-0 w-full h-[1.5px] bg-black origin-left transition-transform duration-300 ease-out",
+                      hoveredIndex === index || item.href === pathname
+                        ? "scale-x-100"
+                        : "scale-x-0 group-hover:scale-x-100",
                     )}
-                  </div>
-                </div>
-              ))}
-              <div className="mt-4">
-                <Button asChild className="w-full rounded-full" size="lg">
-                  <Link href="/kontakt" onClick={() => setOpen(false)}>
-                    Projekt starten
-                  </Link>
-                </Button>
+                  />
+                  {item.items && (
+                    <ChevronDown
+                      className={cn(
+                        "w-4 h-4 transition-transform duration-300",
+                        hoveredIndex === index ? "rotate-180" : "",
+                      )}
+                    />
+                  )}
+                </Link>
+
+                <AnimatePresence>
+                  {item.items && hoveredIndex === index && (
+                    <MegaMenu item={item} />
+                  )}
+                </AnimatePresence>
               </div>
-            </div>
-          )}
-        </div>
-      </div>
-    </motion.header>
+            ))}
+          </div>
+
+          {/* Call to Action */}
+          <div className="hidden lg:flex items-center gap-6">
+            <Link
+              href="/kontakt"
+              className="group relative inline-flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-[10px] shadow-[0_30px_30px_-3.5px_rgba(0,0,0,0.15),0_13px_13px_-2.9px_rgba(0,0,0,0.26),0_6px_6px_-2.3px_rgba(0,0,0,0.3)] hover:shadow-[0_40px_40px_-5px_rgba(0,0,0,0.4)] hover:scale-[1.02] transition-all duration-300"
+            >
+              <span className="font-semibold text-sm">Projekt starten</span>
+              <ButtonArrow className="w-3 h-3" />
+            </Link>
+          </div>
+
+          {/* Mobile Toggle */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden p-2 rounded-full bg-neutral-100 text-black hover:bg-neutral-200 transition-colors z-110"
+          >
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
+          </button>
+        </nav>
+      </motion.header>
+
+      <MobileMenu
+        open={mobileMenuOpen}
+        onClose={() => setMobileMenuOpen(false)}
+      />
+    </>
   );
 }
-
-const NavbarArrow = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 256 256"
-    focusable="false"
-    {...props}
-  >
-    <g fill="currentColor">
-      <path d="M200,64V168a8,8,0,0,1-13.66,5.66L140,127.31,69.66,197.66a8,8,0,0,1-11.32-11.32L128.69,116,82.34,69.66A8,8,0,0,1,88,56H192A8,8,0,0,1,200,64Z"></path>
-    </g>
-  </svg>
-);
