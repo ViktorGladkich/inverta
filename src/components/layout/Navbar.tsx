@@ -108,16 +108,14 @@ export function Navbar() {
                 <NavigationMenuItem key={item.title}>
                   {item.href ? (
                     <>
-                      <Link href={item.href} legacyBehavior passHref>
-                        <NavigationMenuLink>
-                          <Button
-                            variant="ghost"
-                            className="text-base font-medium text-neutral-600 hover:text-neutral-900 bg-transparent hover:bg-transparent px-2"
-                          >
-                            {item.title}
-                          </Button>
-                        </NavigationMenuLink>
-                      </Link>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          href={item.href}
+                          className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-2 text-base font-medium text-neutral-600 transition-colors hover:bg-transparent hover:text-neutral-900 focus:bg-transparent focus:text-neutral-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-transparent/50 data-[state=open]:bg-transparent/50"
+                        >
+                          {item.title}
+                        </Link>
+                      </NavigationMenuLink>
                     </>
                   ) : (
                     <>

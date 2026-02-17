@@ -55,6 +55,7 @@ export function ServicesOverview() {
     >
       {/* Section Header */}
       <motion.div
+        key={isMobile ? "mobile-header" : "desktop-header"}
         variants={isMobile ? slideUp : slideRight}
         initial="hidden"
         whileInView="visible"
@@ -86,6 +87,7 @@ export function ServicesOverview() {
       {/* Services Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
         <motion.div
+          key={isMobile ? "mobile-1" : "desktop-1"}
           variants={isMobile ? slideUp : slideLeft}
           initial="hidden"
           whileInView="visible"
@@ -96,6 +98,7 @@ export function ServicesOverview() {
         </motion.div>
 
         <motion.div
+          key={isMobile ? "mobile-2" : "desktop-2"}
           variants={isMobile ? slideUp : slideRight}
           initial="hidden"
           whileInView="visible"
@@ -106,6 +109,7 @@ export function ServicesOverview() {
         </motion.div>
 
         <motion.div
+          key={isMobile ? "mobile-3" : "desktop-3"}
           variants={isMobile ? slideUp : slideLeft}
           initial="hidden"
           whileInView="visible"
@@ -116,6 +120,7 @@ export function ServicesOverview() {
         </motion.div>
 
         <motion.div
+          key={isMobile ? "mobile-4" : "desktop-4"}
           variants={isMobile ? slideUp : slideRight}
           initial="hidden"
           whileInView="visible"

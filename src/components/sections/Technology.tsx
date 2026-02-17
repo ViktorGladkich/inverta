@@ -59,6 +59,7 @@ export function Technology() {
     >
       {/* Heading Block */}
       <motion.div
+        key={isMobile ? "mobile-header" : "desktop-header"}
         variants={isMobile ? slideUp : slideLeft}
         initial="hidden"
         whileInView="visible"
@@ -92,6 +93,7 @@ export function Technology() {
           {/* Card 1: Web Development (Image) - Slide Left */}
           <motion.div
             className="flex-1 md:flex-[1.5]"
+            key={isMobile ? "mobile-1" : "desktop-1"}
             variants={isMobile ? slideUp : slideLeft}
             initial="hidden"
             whileInView="visible"
@@ -110,6 +112,7 @@ export function Technology() {
           {/* Card 2: SEO (Text) - Slide Right */}
           <motion.div
             className="flex-1"
+            key={isMobile ? "mobile-2" : "desktop-2"}
             variants={isMobile ? slideUp : slideRight}
             initial="hidden"
             whileInView="visible"
@@ -130,6 +133,7 @@ export function Technology() {
           {/* Card 3: Social Media (Text) - Slide Left */}
           <motion.div
             className="flex-1"
+            key={isMobile ? "mobile-3" : "desktop-3"}
             variants={isMobile ? slideUp : slideLeft}
             initial="hidden"
             whileInView="visible"
@@ -147,6 +151,7 @@ export function Technology() {
           {/* Card 4: Lead Gen / Funnels (Image) - Slide Right */}
           <motion.div
             className="flex-1 md:flex-[1.5]"
+            key={isMobile ? "mobile-4" : "desktop-4"}
             variants={isMobile ? slideUp : slideRight}
             initial="hidden"
             whileInView="visible"
