@@ -33,7 +33,7 @@ export function Benefits() {
             <span className="absolute left-[-10px] top-1/2 -translate-y-1/2 w-[40px] h-[40px] md:w-[60px] md:h-[60px] bg-[#daff02] rounded-full z-0" />
 
             {/* Text Overlay */}
-            <span className="relative z-10">Inverta</span>
+            <span className="relative z-10">INVERTA</span>
             <span className="relative z-10 text-[#daff02]">?</span>
           </span>
         </h2>

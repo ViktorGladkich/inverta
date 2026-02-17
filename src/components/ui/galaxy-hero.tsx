@@ -10,7 +10,7 @@ export function GalaxyHero() {
     <>
       <section className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-gray-50/10">
         {/* Background Video */}
-        <div className="fixed inset-0 z-0 select-none">
+        <div className="absolute inset-0 z-0 select-none">
           <video
             src="/hero-loop.mp4"
             autoPlay

@@ -26,17 +26,17 @@ export function Features() {
             <FeaturesIcon className="w-full h-full" />
           </div>
           <span className="text-[12px] font-medium text-black tracking-wider uppercase">
-            Leistungen
+            Technologie
           </span>
         </div>
 
         {/* Title & Subtitle */}
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight pb-1 text-black">
-          Digitale Exzellenz für Ihr Wachstum
+          Technologischer Vorsprung
         </h2>
         <p className="text-lg text-black/80">
-          Wir bieten ganzheitliche Lösungen, die Design, Technologie und
-          Marketing nahtlos verbinden.
+          Wir setzen auf modernste Tech-Stacks und datengetriebene Methoden. Für
+          Ergebnisse, die nicht nur gut aussehen, sondern performen.
         </p>
       </div>
 
@@ -47,8 +47,8 @@ export function Features() {
           {/* Card 1: Web Development (Image) */}
           <FeatureCard
             className="flex-1 md:flex-[1.5]"
-            title="Webentwicklung & Performance"
-            description="Hochperformante Websites und skalierbare Systeme, die begeistern und konvertieren. Technologisch führend."
+            title="High-Performance Frontend"
+            description="Blitzschnelle Ladezeiten und erstklassige User Experience durch Next.js und modernste Web-Standards."
             icon={CuttingEdgeIcon}
             imageSrc="/images/features/web-performance.jpg"
             hasImage={true}
@@ -57,8 +57,8 @@ export function Features() {
           {/* Card 2: SEO (Text) */}
           <FeatureCard
             className="flex-1"
-            title="SEO & Sichtbarkeit"
-            description="Maximale Sichtbarkeit und messbares Umsatzwachstum durch datengetriebene SEO-Strategien."
+            title="Data Intelligence"
+            description="Keine Vermutungen. Wir treffen Entscheidungen basierend auf Echtzeit-Daten und tiefgehenden Analysen."
             icon={AnalyticsIcon}
             hasImage={false}
           />
@@ -69,8 +69,8 @@ export function Features() {
           {/* Card 3: Social Media (Text) */}
           <FeatureCard
             className="flex-1"
-            title="Social Media Marketing"
-            description="Bauen Sie eine starke Markenpräsenz auf und erreichen Sie Ihre Zielgruppe dort, wo sie ist."
+            title="Skalierbare Systeme"
+            description="Robuste Architektur und vernetzte Systeme, die sicher und stabil mit Ihrem Unternehmen wachsen."
             icon={AutomatedIcon}
             hasImage={false}
           />
@@ -78,8 +78,8 @@ export function Features() {
           {/* Card 4: Lead Gen / Funnels (Image) */}
           <FeatureCard
             className="flex-1 md:flex-[1.5]"
-            title="Neukundengewinnung"
-            description="Systematische Lead-Generierung und Funnelsysteme für nachhaltiges und planbares Wachstum."
+            title="Growth Engine"
+            description="Automatisierte Prozesse und smarte Funnels für eine kontinuierliche und planbare Lead-Generierung."
             icon={SupportIcon}
             imageSrc="/images/features/funnel-growth.jpg"
             hasImage={true}
