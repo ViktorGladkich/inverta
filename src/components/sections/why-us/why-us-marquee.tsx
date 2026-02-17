@@ -10,7 +10,7 @@ import {
   InsightsIcon,
   AutomationIcon,
   DataIcon,
-} from "./benefit-icons";
+} from "./why-us-icons";
 
 // Marquee items data
 const marqueeItems = [
@@ -23,7 +23,7 @@ const marqueeItems = [
   { icon: DataIcon, label: "Datengetriebene Entscheidungen" },
 ];
 
-export function BenefitsMarquee() {
+export function WhyUsMarquee() {
   return (
     <div
       className="w-full mt-10 overflow-hidden pb-4"

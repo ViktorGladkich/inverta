@@ -1,19 +1,57 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-import { FeatureCard } from "./features/feature-card";
+import { motion, Variants } from "framer-motion";
+import { TechnologyCard } from "./technology/technology-card";
 import {
-  FeaturesIcon,
+  TechnologyIcon,
   CuttingEdgeIcon,
   AutomatedIcon,
   AnalyticsIcon,
   SupportIcon,
   ButtonArrow,
-} from "./features/feature-icons";
+} from "./technology/technology-icons";
 import Link from "next/link";
 
-export function Features() {
+export function Technology() {
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const slideLeft: Variants = {
+    hidden: { opacity: 0, x: -100, y: 0 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const slideRight: Variants = {
+    hidden: { opacity: 0, x: 100, y: 0 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const slideUp: Variants = {
+    hidden: { opacity: 0, x: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
   return (
     <section
       id="features"
@@ -21,16 +59,16 @@ export function Features() {
     >
       {/* Heading Block */}
       <motion.div
-        initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        variants={isMobile ? slideUp : slideLeft}
+        initial="hidden"
+        whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
         className="flex flex-col items-center gap-6 text-center max-w-2xl"
       >
         {/* Features Pill */}
         <div className="flex items-center justify-center px-[12px] py-[6px] gap-2 rounded-[60px] bg-[#f5f5f5] shadow-[0px_0.706592px_0.706592px_-0.541667px_rgba(0,0,0,0.1),0px_1.80656px_1.80656px_-1.08333px_rgba(0,0,0,0.09),0px_3.62176px_3.62176px_-1.625px_rgba(0,0,0,0.09),0px_6.8656px_6.8656px_-2.16667px_rgba(0,0,0,0.09),0px_13.6468px_13.6468px_-2.70833px_rgba(0,0,0,0.08),0px_30px_30px_-3.25px_rgba(0,0,0,0.05),inset_0px_3px_1px_0px_white]">
           <div className="w-[14px] h-[14px] text-black/40">
-            <FeaturesIcon className="w-full h-full" />
+            <TechnologyIcon className="w-full h-full" />
           </div>
           <span className="text-[12px] font-medium text-black tracking-wider uppercase">
             Technologie
@@ -54,12 +92,12 @@ export function Features() {
           {/* Card 1: Web Development (Image) - Slide Left */}
           <motion.div
             className="flex-1 md:flex-[1.5]"
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            variants={isMobile ? slideUp : slideLeft}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
           >
-            <FeatureCard
+            <TechnologyCard
               className="h-full"
               title="High-Performance Frontend"
               description="Blitzschnelle Ladezeiten und erstklassige User Experience durch Next.js und modernste Web-Standards."
@@ -72,12 +110,12 @@ export function Features() {
           {/* Card 2: SEO (Text) - Slide Right */}
           <motion.div
             className="flex-1"
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            variants={isMobile ? slideUp : slideRight}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
           >
-            <FeatureCard
+            <TechnologyCard
               className="h-full"
               title="Data Intelligence"
               description="Keine Vermutungen. Wir treffen Entscheidungen basierend auf Echtzeit-Daten und tiefgehenden Analysen."
@@ -92,12 +130,12 @@ export function Features() {
           {/* Card 3: Social Media (Text) - Slide Left */}
           <motion.div
             className="flex-1"
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            variants={isMobile ? slideUp : slideLeft}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
           >
-            <FeatureCard
+            <TechnologyCard
               className="h-full"
               title="Skalierbare Systeme"
               description="Robuste Architektur und vernetzte Systeme, die sicher und stabil mit Ihrem Unternehmen wachsen."
@@ -109,12 +147,12 @@ export function Features() {
           {/* Card 4: Lead Gen / Funnels (Image) - Slide Right */}
           <motion.div
             className="flex-1 md:flex-[1.5]"
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            variants={isMobile ? slideUp : slideRight}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
           >
-            <FeatureCard
+            <TechnologyCard
               className="h-full"
               title="Growth Engine"
               description="Automatisierte Prozesse und smarte Funnels für eine kontinuierliche und planbare Lead-Generierung."

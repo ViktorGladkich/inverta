@@ -2,13 +2,13 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { CrownIcon } from "./benefits/benefit-icons";
-import { AnalyticsCard } from "./benefits/card-analytics";
-import { EfficiencyCard } from "./benefits/card-efficiency";
-import { IntegrationCard } from "./benefits/card-integration";
-import { BenefitsMarquee } from "./benefits/benefits-marquee";
+import { CrownIcon } from "./why-us/why-us-icons";
+import { AnalyticsCard } from "./why-us/card-analytics";
+import { EfficiencyCard } from "./why-us/card-efficiency";
+import { IntegrationCard } from "./why-us/card-integration";
+import { WhyUsMarquee } from "./why-us/why-us-marquee";
 
-export function Benefits() {
+export function WhyUs() {
   return (
     <section
       id="benefits"
@@ -87,7 +87,7 @@ export function Benefits() {
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.5, ease: "easeOut", delay: 0.8 }}
       >
-        <BenefitsMarquee />
+        <WhyUsMarquee />
       </motion.div>
     </section>
   );

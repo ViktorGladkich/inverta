@@ -2,17 +2,12 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import { BenefitCard } from "./benefit-ui";
-import {
-  SyncIcon,
-  ChartBarIcon,
-  DataIcon,
-  InsightsIcon,
-} from "./benefit-icons";
+import { WhyUsCard } from "./why-us-ui";
+import { SyncIcon, ChartBarIcon, DataIcon, InsightsIcon } from "./why-us-icons";
 
 export function IntegrationCard() {
   return (
-    <BenefitCard className="flex flex-col p-8 h-[360px]">
+    <WhyUsCard className="flex flex-col p-8 h-[360px]">
       {/* Visual Container */}
       <div className="relative flex-1 w-full flex items-center justify-center mb-6 min-h-[180px]">
         {/* Pulse Ring (Scanner Effect) */}
@@ -112,6 +107,6 @@ export function IntegrationCard() {
         Integrieren Sie leistungsstarke Tools direkt in Ihr bestehendes
         Ökosystem.
       </p>
-    </BenefitCard>
+    </WhyUsCard>
   );
 }

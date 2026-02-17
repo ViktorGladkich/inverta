@@ -5,9 +5,9 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 /**
- * Props for the FeatureCard component.
+ * Props for the TechnologyCard component.
  */
-interface FeatureCardProps {
+interface TechnologyCardProps {
   className?: string;
   title: string;
   description: string;
@@ -21,7 +21,7 @@ interface FeatureCardProps {
  * A feature card component that supports both vertical and horizontal layouts,
  * with or without an image. Designed with neumorphic styling.
  */
-export const FeatureCard = ({
+export const TechnologyCard = ({
   className,
   title,
   description,
@@ -29,7 +29,7 @@ export const FeatureCard = ({
   imageSrc,
   hasImage = false,
   orientation = "vertical",
-}: FeatureCardProps) => {
+}: TechnologyCardProps) => {
   return (
     <div
       className={cn(

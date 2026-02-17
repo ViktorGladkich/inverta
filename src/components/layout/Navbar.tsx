@@ -161,9 +161,13 @@ export function Navbar() {
         </div>
 
         <div className="flex justify-end w-full gap-4">
-          <Button asChild className="hidden md:inline-flex rounded-full px-6">
-            <Link href="/kontakt">Projekt starten</Link>
-          </Button>
+          <Link
+            href="/kontakt"
+            className="hidden md:inline-flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-[10px] shadow-[0_30px_30px_-3.5px_rgba(0,0,0,0.15),0_13px_13px_-2.9px_rgba(0,0,0,0.26),0_6px_6px_-2.3px_rgba(0,0,0,0.3)] hover:shadow-[0_40px_40px_-5px_rgba(0,0,0,0.4)] hover:scale-[1.02] transition-all duration-300"
+          >
+            <span className="font-semibold text-base">Projekt starten</span>
+            <NavbarArrow className="w-4 h-4 ml-1" />
+          </Link>
         </div>
 
         <div className="flex w-12 shrink lg:hidden items-end justify-end">
@@ -224,3 +228,16 @@ export function Navbar() {
     </motion.header>
   );
 }
+
+const NavbarArrow = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 256 256"
+    focusable="false"
+    {...props}
+  >
+    <g fill="currentColor">
+      <path d="M200,64V168a8,8,0,0,1-13.66,5.66L140,127.31,69.66,197.66a8,8,0,0,1-11.32-11.32L128.69,116,82.34,69.66A8,8,0,0,1,88,56H192A8,8,0,0,1,200,64Z"></path>
+    </g>
+  </svg>
+);

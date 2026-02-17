@@ -8,7 +8,7 @@ import { useMotionValue, animate } from "motion/react";
  * A wrapper card component with complex neumorphic shadow styling.
  * Used across multiple cards in the Benefits section.
  */
-export const BenefitCard = ({
+export const WhyUsCard = ({
   className,
   children,
   onClick,

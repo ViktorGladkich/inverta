@@ -2,11 +2,11 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import { BenefitCard } from "./benefit-ui";
+import { WhyUsCard } from "./why-us-ui";
 
 export function AnalyticsCard() {
   return (
-    <BenefitCard className="flex flex-col p-8 h-[360px]">
+    <WhyUsCard className="flex flex-col p-8 h-[360px]">
       {/* Visual Container */}
       <div className="relative flex-1 w-full flex items-center justify-center mb-6 overflow-hidden min-h-[180px]">
         {/* Clock Face Container - Centered */}
@@ -107,6 +107,6 @@ export function AnalyticsCard() {
         Verwandeln Sie Rohdaten in umsetzbare Erkenntnisse für intelligenteres
         Tracking.
       </p>
-    </BenefitCard>
+    </WhyUsCard>
   );
 }
