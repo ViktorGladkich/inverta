@@ -82,7 +82,7 @@ export function ServicesOverview() {
               {/* Connecting Line */}
               {/* Connecting Line with Animated Bubbles */}
               <div
-                className="absolute h-[6px] w-[52%] left-[21.5%] top-[122px] bg-[#f5f5f5] rotate-[30deg]"
+                className="absolute h-[6px] w-[52%] left-[21.5%] top-[122px] bg-[#f5f5f5] rotate-30deg"
                 style={{
                   boxShadow:
                     "rgba(0, 0, 0, 0.08) 0px 0.706592px 0.706592px -0.666667px, rgba(0, 0, 0, 0.08) 0px 1.80656px 1.80656px -1.33333px, rgba(0, 0, 0, 0.07) 0px 3.62176px 3.62176px -2px, rgba(0, 0, 0, 0.07) 0px 6.8656px 6.8656px -2.66667px, rgba(0, 0, 0, 0.05) 0px 13.6468px 13.6468px -3.33333px, rgba(0, 0, 0, 0.02) 0px 30px 30px -4px, rgb(255, 255, 255) 0px 3px 1px 0px inset",

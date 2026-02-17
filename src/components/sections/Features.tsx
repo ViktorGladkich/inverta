@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import { FeatureCard } from "./features/feature-card";
 import {
   FeaturesIcon,
@@ -19,7 +20,13 @@ export function Features() {
       className="relative z-20 flex flex-col items-center justify-center w-full py-[100px] px-5 md:px-10 gap-10 bg-[#f5f5f5] overflow-hidden"
     >
       {/* Heading Block */}
-      <div className="flex flex-col items-center gap-6 text-center max-w-2xl">
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="flex flex-col items-center gap-6 text-center max-w-2xl"
+      >
         {/* Features Pill */}
         <div className="flex items-center justify-center px-[12px] py-[6px] gap-2 rounded-[60px] bg-[#f5f5f5] shadow-[0px_0.706592px_0.706592px_-0.541667px_rgba(0,0,0,0.1),0px_1.80656px_1.80656px_-1.08333px_rgba(0,0,0,0.09),0px_3.62176px_3.62176px_-1.625px_rgba(0,0,0,0.09),0px_6.8656px_6.8656px_-2.16667px_rgba(0,0,0,0.09),0px_13.6468px_13.6468px_-2.70833px_rgba(0,0,0,0.08),0px_30px_30px_-3.25px_rgba(0,0,0,0.05),inset_0px_3px_1px_0px_white]">
           <div className="w-[14px] h-[14px] text-black/40">
@@ -38,52 +45,84 @@ export function Features() {
           Wir setzen auf modernste Tech-Stacks und datengetriebene Methoden. Für
           Ergebnisse, die nicht nur gut aussehen, sondern performen.
         </p>
-      </div>
+      </motion.div>
 
       {/* Feature Grid Container */}
       <div className="flex flex-col gap-5 md:gap-[25px] w-full max-w-[1200px]">
         {/* Top Row */}
         <div className="flex flex-col md:flex-row gap-5 md:gap-[25px] w-full">
-          {/* Card 1: Web Development (Image) */}
-          <FeatureCard
+          {/* Card 1: Web Development (Image) - Slide Left */}
+          <motion.div
             className="flex-1 md:flex-[1.5]"
-            title="High-Performance Frontend"
-            description="Blitzschnelle Ladezeiten und erstklassige User Experience durch Next.js und modernste Web-Standards."
-            icon={CuttingEdgeIcon}
-            imageSrc="/images/features/web-performance.jpg"
-            hasImage={true}
-          />
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          >
+            <FeatureCard
+              className="h-full"
+              title="High-Performance Frontend"
+              description="Blitzschnelle Ladezeiten und erstklassige User Experience durch Next.js und modernste Web-Standards."
+              icon={CuttingEdgeIcon}
+              imageSrc="/images/features/web-performance.jpg"
+              hasImage={true}
+            />
+          </motion.div>
 
-          {/* Card 2: SEO (Text) */}
-          <FeatureCard
+          {/* Card 2: SEO (Text) - Slide Right */}
+          <motion.div
             className="flex-1"
-            title="Data Intelligence"
-            description="Keine Vermutungen. Wir treffen Entscheidungen basierend auf Echtzeit-Daten und tiefgehenden Analysen."
-            icon={AnalyticsIcon}
-            hasImage={false}
-          />
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          >
+            <FeatureCard
+              className="h-full"
+              title="Data Intelligence"
+              description="Keine Vermutungen. Wir treffen Entscheidungen basierend auf Echtzeit-Daten und tiefgehenden Analysen."
+              icon={AnalyticsIcon}
+              hasImage={false}
+            />
+          </motion.div>
         </div>
 
         {/* Bottom Row */}
         <div className="flex flex-col md:flex-row gap-5 md:gap-[25px] w-full">
-          {/* Card 3: Social Media (Text) */}
-          <FeatureCard
+          {/* Card 3: Social Media (Text) - Slide Left */}
+          <motion.div
             className="flex-1"
-            title="Skalierbare Systeme"
-            description="Robuste Architektur und vernetzte Systeme, die sicher und stabil mit Ihrem Unternehmen wachsen."
-            icon={AutomatedIcon}
-            hasImage={false}
-          />
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+          >
+            <FeatureCard
+              className="h-full"
+              title="Skalierbare Systeme"
+              description="Robuste Architektur und vernetzte Systeme, die sicher und stabil mit Ihrem Unternehmen wachsen."
+              icon={AutomatedIcon}
+              hasImage={false}
+            />
+          </motion.div>
 
-          {/* Card 4: Lead Gen / Funnels (Image) */}
-          <FeatureCard
+          {/* Card 4: Lead Gen / Funnels (Image) - Slide Right */}
+          <motion.div
             className="flex-1 md:flex-[1.5]"
-            title="Growth Engine"
-            description="Automatisierte Prozesse und smarte Funnels für eine kontinuierliche und planbare Lead-Generierung."
-            icon={SupportIcon}
-            imageSrc="/images/features/funnel-growth.jpg"
-            hasImage={true}
-          />
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+          >
+            <FeatureCard
+              className="h-full"
+              title="Growth Engine"
+              description="Automatisierte Prozesse und smarte Funnels für eine kontinuierliche und planbare Lead-Generierung."
+              icon={SupportIcon}
+              imageSrc="/images/features/funnel-growth.jpg"
+              hasImage={true}
+            />
+          </motion.div>
         </div>
       </div>
 

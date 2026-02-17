@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/shadcn-button";
 import {
   NavigationMenu,
@@ -80,7 +81,12 @@ export function Navbar() {
 
   const [isOpen, setOpen] = useState(false);
   return (
-    <header className="w-full z-40 fixed top-0 left-0 bg-white/80 backdrop-blur-md border-b border-neutral-200/50">
+    <motion.header
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="w-full z-40 fixed top-0 left-0 bg-white/80 backdrop-blur-md border-b border-neutral-200/50"
+    >
       <div className="container relative mx-auto min-h-20 flex gap-4 flex-row lg:grid lg:grid-cols-3 items-center px-4 md:px-6">
         <div className="flex lg:justify-start shrink-0">
           <Link href="/" className="flex items-center">
@@ -215,6 +221,6 @@ export function Navbar() {
           )}
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 }

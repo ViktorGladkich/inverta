@@ -1,11 +1,63 @@
 "use client";
 
 import React from "react";
+import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { BlurTextEffect } from "@/components/ui/blur-text-effect";
 
 export function GalaxyHero() {
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const badgeVariants: Variants = {
+    hidden: { opacity: 0, scale: 0.8, y: 20 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const titleVariants: Variants = {
+    hidden: { opacity: 0, scale: 0.9, y: 30 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: { duration: 1.0, ease: "easeOut" },
+    },
+  };
+
+  const buttonVariants: Variants = {
+    hidden: { opacity: 0, scale: 0.9, y: 20 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "circOut" },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, scale: 0.9, y: 20 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" }, // Fallback
+    },
+  };
+
   return (
     <>
       <section className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-gray-50/10">
@@ -24,12 +76,14 @@ export function GalaxyHero() {
         </div>
 
         {/* Content Container */}
-        <div className="relative z-10 flex flex-col items-center gap-4 px-4 text-center max-w-5xl mx-auto">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="relative z-10 flex flex-col items-center gap-4 px-4 text-center max-w-5xl mx-auto"
+        >
           {/* Top Badge */}
-          <div
-            className="animate-fade-in-up"
-            style={{ animationDelay: "0.1s" }}
-          >
+          <motion.div variants={badgeVariants}>
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#F5F5F5] border border-white shadow-[0_30px_30px_-3.25px_rgba(0,0,0,0.05),0_13px_13px_-2.7px_rgba(0,0,0,0.08),0_6px_6px_-2.1px_rgba(0,0,0,0.09)] backdrop-blur-sm">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#daff02] opacity-75"></span>
@@ -39,13 +93,12 @@ export function GalaxyHero() {
                 Digitalagentur der nächsten Generation
               </span>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Main Title */}
-          {/* Header Block */}
-          <div
-            className="flex flex-col items-center gap-6 animate-fade-in-up"
-            style={{ animationDelay: "0.2s" }}
+          {/* Main Title / Header Block */}
+          <motion.div
+            className="flex flex-col items-center gap-6"
+            variants={titleVariants}
           >
             <div className="flex items-center gap-4 md:gap-10">
               {/* Styled Logo Container */}
@@ -86,25 +139,24 @@ export function GalaxyHero() {
                 </h1>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Subtitle */}
           <h2 className="sr-only">Marketing & Webentwicklung in Perfektion</h2>
-          <p
-            className="text-base md:text-xl text-neutral-700 max-w-2xl leading-relaxed font-medium animate-fade-in-up"
-            style={{ animationDelay: "0.3s" }}
+          <motion.p
+            variants={itemVariants}
+            className="text-base md:text-xl text-neutral-700 max-w-2xl leading-relaxed font-medium"
           >
             Wir transformieren Marken durch präzise Entwicklung und ästhetische
             Exzellenz. Marketing, Webentwicklung und Wachstumsstrategien, die
             die Zukunft definieren.
-          </p>
+          </motion.p>
 
           {/* Buttons */}
-          <div
-            className="flex flex-col sm:flex-row items-center gap-4 mt-4 animate-fade-in-up"
-            style={{ animationDelay: "0.4s" }}
+          <motion.div
+            variants={buttonVariants}
+            className="flex flex-col sm:flex-row items-center gap-4 mt-4"
           >
-            {/* Primary CTA */}
             {/* Primary CTA */}
             <Link
               href="/kontakt"
@@ -130,8 +182,8 @@ export function GalaxyHero() {
             >
               <span className="font-semibold text-lg">Unsere Leistungen</span>
             </Link>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Founder Note Section */}
