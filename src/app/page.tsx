@@ -1,5 +1,6 @@
 import { Footer } from "@/components/layout/Footer";
 import { ServicesOverview } from "@/components/sections/ServicesOverview";
+import { Process } from "@/components/sections/Process";
 import { SelectedWork } from "@/components/sections/SelectedWork";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Hero } from "@/components/sections/Hero";
@@ -15,6 +16,7 @@ export default function Home() {
         <Technology />
 
         <ServicesOverview />
+        <Process />
         <SelectedWork />
         <Testimonials />
       </main>
