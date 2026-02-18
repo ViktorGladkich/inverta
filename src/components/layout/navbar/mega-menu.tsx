@@ -14,7 +14,7 @@ export function MegaMenu({ item }: { item: (typeof navigationItems)[0] }) {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: 10, scale: 0.98 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
-      className="absolute top-full left-1/2 -translate-x-1/2 pt-6 w-[900px]"
+      className="absolute top-full left-1/2 -translate-x-1/2  w-[900px]"
       style={{ perspective: "1000px" }}
     >
       <div className="bg-white rounded-2xl shadow-2xl border border-neutral-100 p-1 flex overflow-hidden ring-1 ring-black/5">

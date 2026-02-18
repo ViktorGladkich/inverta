@@ -5,8 +5,6 @@ import { Workflow, Rocket, Search, Map as MapIcon, Code } from "lucide-react";
 import { CardsParallax } from "@/components/ui/CardsParallax";
 
 // Shadow styles matching Framer
-const shadowPill =
-  "0px 0.706592px 0.706592px -0.541667px rgba(0, 0, 0, 0.1), 0px 1.80656px 1.80656px -1.08333px rgba(0, 0, 0, 0.09), 0px 3.62176px 3.62176px -1.625px rgba(0, 0, 0, 0.09), 0px 6.8656px 6.8656px -2.16667px rgba(0, 0, 0, 0.09), 0px 13.6468px 13.6468px -2.70833px rgba(0, 0, 0, 0.08), 0px 30px 30px -3.25px rgba(0, 0, 0, 0.05), inset 0px 3px 1px 0px rgba(255, 255, 255, 1)";
 
 const processSteps = [
   {
@@ -55,50 +53,45 @@ export function Process() {
   return (
     <section id="process" className="py-24 bg-[#f5f5f5]">
       <div className="w-full px-[40px]">
-        {/* Header - Sticky? Or just normal flow */}
-        <div className="flex flex-col items-center gap-4 max-w-[700px] mx-auto mb-16">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="flex items-center justify-center gap-2 px-4 py-3 bg-[#f5f5f5] rounded-[60px] border border-white/50"
-            style={{ boxShadow: shadowPill }}
-          >
-            <div className="w-4 h-4 text-black/40">
+        {/* Header - Standardized Style */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-col items-center text-center gap-6 mb-16 md:mb-24"
+        >
+          {/* Badge */}
+          <div className="flex items-center justify-center px-[12px] py-[6px] gap-2 rounded-[60px] bg-[#f5f5f5] shadow-[0px_0.706592px_0.706592px_-0.541667px_rgba(0,0,0,0.1),0px_1.80656px_1.80656px_-1.08333px_rgba(0,0,0,0.09),0px_3.62176px_3.62176px_-1.625px_rgba(0,0,0,0.09),0px_6.8656px_6.8656px_-2.16667px_rgba(0,0,0,0.09),0px_13.6468px_13.6468px_-2.70833px_rgba(0,0,0,0.08),0px_30px_30px_-3.25px_rgba(0,0,0,0.05),inset_0px_3px_1px_0px_white]">
+            <div className="w-[14px] h-[14px] text-black/40">
               <Workflow className="w-full h-full" />
             </div>
-            <span className="text-xs font-bold tracking-widest text-black/60 uppercase font-sans">
+            <span className="text-[12px] font-medium text-black tracking-wider uppercase">
               PROZESS
             </span>
-          </motion.div>
+          </div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-center"
-          >
-            <span className="text-4xl md:text-5xl font-bold tracking-tight text-neutral-900">
+          {/* Title & Description */}
+          <div className="max-w-4xl">
+            <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black mb-6">
               Einfach & Skalierbar
-            </span>
-          </motion.h2>
+            </h2>
+            <p className="text-lg md:text-xl text-[#16101e]/80 font-normal leading-relaxed max-w-3xl mx-auto">
+              Wir begleiten Sie von der ersten Vision bis zur Skalierung – mit
+              klaren Prozessen und modernster Technologie.
+            </p>
+          </div>
+        </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-center text-neutral-500 max-w-lg"
-          >
-            Wir begleiten Sie von der ersten Vision bis zur Skalierung – mit
-            klaren Prozessen und modernster Technologie.
-          </motion.p>
-        </div>
-
-        {/* Parallax Cards */}
-        <CardsParallax items={processSteps} />
+        {/* Parallax Cards Animated Wrapper */}
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        >
+          <CardsParallax items={processSteps} />
+        </motion.div>
       </div>
     </section>
   );

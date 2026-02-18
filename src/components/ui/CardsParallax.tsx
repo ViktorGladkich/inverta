@@ -4,7 +4,6 @@ import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
-
 export interface CardItem {
   title: string;
   description: string;
@@ -80,16 +79,16 @@ const Card = ({
           top: `calc(-5vh + ${i * 25}px)`,
           boxShadow: neumorphicShadow,
         }}
-        className="relative flex flex-col md:flex-row gap-8 origin-top w-full max-w-5xl rounded-[20px] p-8 md:p-10"
+        className="relative flex flex-col md:flex-row gap-6 md:gap-8 origin-top w-full max-w-5xl rounded-[20px] p-6 md:p-10"
       >
         {/* Content Side */}
-        <div className="flex flex-col justify-between w-full md:w-[45%] h-full gap-8">
-          <div className="flex flex-col gap-6">
+        <div className="flex flex-col justify-between w-full md:w-[45%] h-full gap-6 md:gap-8">
+          <div className="flex flex-col gap-4 md:gap-6">
             {/* Tag / Icon (Styled like Strategy Card bubbles) */}
             <div className="flex items-center gap-3">
               {item.icon && (
                 <div
-                  className="w-12 h-12 rounded-full bg-[#f5f5f5] flex items-center justify-center text-black"
+                  className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#f5f5f5] flex items-center justify-center text-black"
                   style={{ boxShadow: neumorphicShadow }}
                 >
                   {item.icon}
@@ -97,7 +96,7 @@ const Card = ({
               )}
               {item.tag && (
                 <span
-                  className="px-3 py-1 rounded-full bg-[#f5f5f5] text-xs font-bold uppercase tracking-wider text-black/60"
+                  className="px-3 py-1 rounded-full bg-[#f5f5f5] text-[10px] md:text-xs font-bold uppercase tracking-wider text-black/60"
                   style={{ boxShadow: neumorphicShadow }}
                 >
                   {item.tag}
@@ -105,17 +104,17 @@ const Card = ({
               )}
             </div>
 
-            <h2 className="text-3xl md:text-5xl font-bold leading-tight text-black">
+            <h2 className="text-2xl md:text-5xl font-bold leading-tight text-black">
               {item.title}
             </h2>
 
-            <p className="text-base md:text-lg text-[#16101e]/80 leading-relaxed font-medium">
+            <p className="text-sm md:text-lg text-[#16101e]/80 leading-relaxed font-medium">
               {item.description}
             </p>
           </div>
 
           {item.link && (
-            <div className="mt-4">
+            <div className="mt-2 md:mt-4">
               <span className="text-sm font-bold underline opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
                 Mehr erfahren
               </span>
@@ -125,7 +124,7 @@ const Card = ({
 
         {/* Image Side */}
         <div
-          className="relative w-full md:w-[55%] h-[300px] md:h-auto rounded-[16px] overflow-hidden bg-neutral-200"
+          className="relative w-full md:w-[55%] h-[200px] md:h-auto rounded-[16px] overflow-hidden bg-neutral-200"
           style={{ boxShadow: "rgba(0,0,0,0.05) 0px 10px 20px -5px" }}
         >
           <motion.div className="w-full h-full" style={{ scale: imageScale }}>

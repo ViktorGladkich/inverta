@@ -1,7 +1,7 @@
 import { Footer } from "@/components/layout/Footer";
 import { ServicesOverview } from "@/components/sections/ServicesOverview";
 import { Process } from "@/components/sections/Process";
-import { SelectedWork } from "@/components/sections/SelectedWork";
+import { Projects } from "@/components/sections/Projects";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Hero } from "@/components/sections/Hero";
 import { WhyUs } from "@/components/sections/WhyUs";
@@ -17,7 +17,7 @@ export default function Home() {
 
         <ServicesOverview />
         <Process />
-        <SelectedWork />
+        <Projects />
         <Testimonials />
       </main>
       <Footer />
