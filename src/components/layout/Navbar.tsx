@@ -10,7 +10,7 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "framer-motion";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 import { navigationItems } from "./navbar/config";
@@ -39,13 +39,15 @@ export function Navbar() {
         className={cn(
           "fixed z-100 transition-all duration-500 ease-in-out font-satoshi",
           // Mobile: Floating Island (Solid #f5f5f5, no glass)
-          "top-3 left-3 right-3 rounded-[10px] bg-[#f5f5f5] border-b-2 border-white/30",
-          "shadow-[rgba(0,0,0,0.07)_0px_0.706592px_0.706592px_-0.583333px,rgba(0,0,0,0.07)_0px_1.80656px_1.80656px_-1.16667px,rgba(0,0,0,0.07)_0px_3.62176px_3.62176px_-1.75px,rgba(0,0,0,0.06)_0px_6.8656px_6.8656px_-2.33333px,rgba(0,0,0,0.05)_0px_13.6468px_13.6468px_-2.91667px,rgba(0,0,0,0.03)_0px_30px_30px_-3.5px,rgb(255,255,255)_0px_3px_1px_0px_inset]",
+          // Mobile: Floating Island
+          mobileMenuOpen
+            ? "top-3 left-3 right-3 bg-[#f8f8f8] rounded-t-2xl rounded-b-none border-b-transparent shadow-none"
+            : "top-3 left-3 right-3 rounded-2xl bg-[#f8f8f8] border-b border-white/50 shadow-[inset_0px_2px_4px_rgba(0,0,0,0.02),0px_10px_30px_rgba(0,0,0,0.08)]",
           // Desktop: Reset to Full Width
           "lg:top-0 lg:left-0 lg:right-0 lg:rounded-none lg:shadow-none lg:border-none lg:max-w-none lg:mx-0",
           // Desktop Scroll States
           scrolled
-            ? "lg:py-2 lg:bg-white/95 lg:backdrop-blur-md lg:border-b lg:border-neutral-200/60 lg:shadow-sm"
+            ? "lg:py-2 lg:bg-white/20 lg:backdrop-blur-sm lg:border-b lg:border-neutral-200/60 lg:shadow-sm"
             : "lg:py-2 lg:bg-transparent lg:border-transparent",
         )}
       >
@@ -69,7 +71,7 @@ export function Navbar() {
             {navigationItems.map((item, index) => (
               <div
                 key={item.title}
-                className="relative h-full flex items-center justify-center p-2"
+                className="h-full flex items-center justify-center p-2"
                 onMouseEnter={() => setHoveredIndex(index)}
               >
                 <Link
@@ -119,33 +121,35 @@ export function Navbar() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-full bg-neutral-100 text-black hover:bg-neutral-200 transition-colors z-110 relative w-10 h-10 flex items-center justify-center overflow-hidden"
+            className="lg:hidden p-2 rounded-full bg-transparent text-black hover:bg-neutral-100/50 transition-colors z-110 relative w-10 h-10 flex flex-col items-center justify-center gap-[5px]"
           >
-            <AnimatePresence mode="wait" initial={false}>
-              {mobileMenuOpen ? (
-                <motion.div
-                  key="close"
-                  initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
-                  animate={{ opacity: 1, rotate: 0, scale: 1 }}
-                  exit={{ opacity: 0, rotate: 90, scale: 0.5 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute"
-                >
-                  <X className="w-6 h-6" />
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="menu"
-                  initial={{ opacity: 0, rotate: 90, scale: 0.5 }}
-                  animate={{ opacity: 1, rotate: 0, scale: 1 }}
-                  exit={{ opacity: 0, rotate: -90, scale: 0.5 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute"
-                >
-                  <Menu className="w-6 h-6" />
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <motion.span
+              animate={mobileMenuOpen ? "open" : "closed"}
+              variants={{
+                closed: { rotate: 0, y: 0 },
+                open: { rotate: 45, y: 7 },
+              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="w-5 h-[2px] bg-black block origin-center rounded-full"
+            />
+            <motion.span
+              animate={mobileMenuOpen ? "open" : "closed"}
+              variants={{
+                closed: { opacity: 1 },
+                open: { opacity: 0 },
+              }}
+              transition={{ duration: 0.2 }}
+              className="w-5 h-[2px] bg-black block rounded-full"
+            />
+            <motion.span
+              animate={mobileMenuOpen ? "open" : "closed"}
+              variants={{
+                closed: { rotate: 0, y: 0 },
+                open: { rotate: -45, y: -7 },
+              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="w-5 h-[2px] bg-black block origin-center rounded-full"
+            />
           </button>
         </nav>
       </motion.header>

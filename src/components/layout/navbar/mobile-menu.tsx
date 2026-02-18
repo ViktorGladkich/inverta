@@ -2,40 +2,40 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { MoveRight, X, ChevronDown } from "lucide-react";
-import Image from "next/image";
+import { MoveRight, ChevronDown } from "lucide-react";
 import { navigationItems } from "./config";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { ButtonArrow } from "./icons";
 
 const menuVars = {
   initial: {
-    opacity: 1,
-    height: 68, // Match Navbar height (48 logo + 16 py + 2 border + 2 margin approx)
-    y: 0,
-    scale: 1,
+    opacity: 0,
+    y: -20,
+    scale: 0.95,
   },
   animate: {
     opacity: 1,
-    height: "auto",
+    y: 0,
+    scale: 1,
     transition: {
-      duration: 0.5,
+      duration: 0.3,
       ease: [0.32, 0.72, 0, 1] as const,
     },
   },
   exit: {
     opacity: 0,
-    height: 68,
+    y: -20,
+    scale: 0.95,
     transition: {
-      duration: 0.3,
+      duration: 0.2,
       ease: [0.32, 0.72, 0, 1] as const,
     },
   },
 };
 
 const shadowStyle =
-  "rgba(0, 0, 0, 0.07) 0px 0.706592px 0.706592px -0.583333px, rgba(0, 0, 0, 0.07) 0px 1.80656px 1.80656px -1.16667px, rgba(0, 0, 0, 0.07) 0px 3.62176px 3.62176px -1.75px, rgba(0, 0, 0, 0.06) 0px 6.8656px 6.8656px -2.33333px, rgba(0, 0, 0, 0.05) 0px 13.6468px 13.6468px -2.91667px, rgba(0, 0, 0, 0.03) 0px 30px 30px -3.5px, rgb(255, 255, 255) 0px 3px 1px 0px inset";
+  "inset 0px 2px 4px rgba(0,0,0,0.02), 0px 10px 30px rgba(0,0,0,0.08)";
 
 export function MobileMenu({
   open,
@@ -50,6 +50,18 @@ export function MobileMenu({
     setOpenAccordion(openAccordion === title ? null : title);
   };
 
+  // Lock body scroll
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [open]);
+
   return (
     <AnimatePresence>
       {open && (
@@ -59,43 +71,25 @@ export function MobileMenu({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 z-140 bg-black/20 backdrop-blur-[2px]"
+            className="fixed inset-0 z-80 bg-black/20 backdrop-blur-[2px]"
           />
           <motion.div
             variants={menuVars}
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed top-3 left-3 right-3 z-150 bg-[#f5f5f5] rounded-[10px] overflow-hidden flex flex-col max-h-[90vh]"
-            style={{ boxShadow: shadowStyle }}
+            className="fixed top-3 left-3 right-3 z-90 bg-[#f8f8f8] rounded-2xl overflow-y-auto pt-[68px] max-h-[90vh]"
+            style={{ boxShadow: shadowStyle, scrollbarGutter: "stable" }}
           >
-            {/* Header: Logo & Close Button */}
-            <div className="flex items-center justify-between px-4 py-4 border-b border-black/5 shrink-0">
-              <Link href="/" onClick={onClose} className="relative block">
-                <Image
-                  src="/logo-inverta.png"
-                  alt="INVERTA"
-                  width={140}
-                  height={40}
-                  className="h-12 w-auto object-contain scale-[2.5] origin-left"
-                  priority
-                />
-              </Link>
-
-              <button
-                onClick={onClose}
-                className="relative w-10 h-10 flex items-center justify-center rounded-full bg-neutral-100 text-black hover:bg-neutral-200 transition-colors"
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-
             {/* Content */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.1, duration: 0.3 }}
-              className="flex-1 overflow-y-auto p-5 flex flex-col gap-2"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{ delay: 0.2, duration: 0.4 }}
+              className="p-5 flex flex-col gap-2"
             >
               {navigationItems.map((item) => (
                 <div
