@@ -60,7 +60,7 @@ export function GalaxyHero() {
 
   return (
     <>
-      <section className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-gray-50/10">
+      <section className="relative w-full h-svh flex flex-col items-center justify-center overflow-hidden bg-gray-50/10">
         {/* Background Video */}
         <div className="absolute inset-0 z-0 select-none">
           <video

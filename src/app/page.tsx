@@ -11,7 +11,7 @@ import { FAQ } from "@/components/sections/FAQ";
 export default function Home() {
   return (
     <>
-      <main className="min-h-screen">
+      <main className="min-h-svh">
         <Hero />
         <WhyUs />
         <Technology />
