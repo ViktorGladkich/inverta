@@ -30,6 +30,20 @@ export function Navbar() {
     else if (latest <= 50 && scrolled) setScrolled(false);
   });
 
+  /* Hover Logic with Timeout to prevent flickering */
+  const hoverTimeout = React.useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = (index: number) => {
+    if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
+    setHoveredIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    hoverTimeout.current = setTimeout(() => {
+      setHoveredIndex(null);
+    }, 200);
+  };
+
   return (
     <>
       <motion.header
@@ -64,15 +78,13 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div
-            className="hidden lg:flex items-center gap-8"
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
+          <div className="hidden lg:flex items-center gap-8">
             {navigationItems.map((item, index) => (
               <div
                 key={item.title}
                 className="h-full flex items-center justify-center p-2"
-                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={handleMouseLeave}
               >
                 <Link
                   href={item.items ? "#" : item.href}

@@ -20,7 +20,7 @@ export const BlurTextEffect = ({
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.015,
+        staggerChildren: 0.01,
         delayChildren: delay,
       },
     },
@@ -37,7 +37,7 @@ export const BlurTextEffect = ({
       y: 0,
       filter: "blur(0px)",
       transition: {
-        duration: 0.4,
+        duration: 0.2,
         ease: "easeOut" as const,
       },
     },
