@@ -4,6 +4,7 @@ import {
   Head,
   Heading,
   Html,
+  Img,
   Link,
   Preview,
   Section,
@@ -29,7 +30,13 @@ export const AutoReplyEmail = ({
       <Body style={main}>
         <Container style={container}>
           <Section style={logoBox}>
-            <Text style={logoText}>INVERTA DIGITAL</Text>
+            <Img
+              src="https://invertadigital.de/logo-inverta.png"
+              width="140"
+              height="40"
+              alt="INVERTA DIGITAL Logo"
+              style={logoImage}
+            />
           </Section>
 
           <Heading style={heading}>Guten Tag {name},</Heading>
@@ -101,7 +108,7 @@ export default AutoReplyEmail;
 
 // --- CSS im JS Format --- //
 const main = {
-  backgroundColor: "#f5f5f5",
+  backgroundColor: "#000000",
   fontFamily:
     '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
   padding: "40px 0",
@@ -110,23 +117,20 @@ const main = {
 const container = {
   margin: "0 auto",
   padding: "40px",
-  backgroundColor: "#ffffff",
+  backgroundColor: "#0a0a0a",
   borderRadius: "16px",
   maxWidth: "600px",
-  border: "1px solid #eaeaea",
-  boxShadow: "0 10px 30px -10px rgba(0,0,0,0.05)",
+  border: "1px solid #222222",
+  boxShadow: "0 10px 30px -10px rgba(0,0,0,0.5)",
 };
 
 const logoBox = {
   marginBottom: "32px",
 };
 
-const logoText = {
-  fontSize: "24px",
-  fontWeight: "800",
-  letterSpacing: "4px",
-  margin: "0",
-  color: "#000000",
+const logoImage = {
+  display: "block",
+  height: "auto",
 };
 
 const heading = {
@@ -134,14 +138,14 @@ const heading = {
   letterSpacing: "-0.5px",
   lineHeight: "1.3",
   fontWeight: "600",
-  color: "#000000",
+  color: "#ffffff",
   marginBottom: "24px",
 };
 
 const paragraph = {
   fontSize: "16px",
   lineHeight: "26px",
-  color: "#333333",
+  color: "#a3a3a3",
   marginBottom: "24px",
 };
 
@@ -152,9 +156,9 @@ const buttonContainer = {
 };
 
 const button = {
-  backgroundColor: "#000000",
+  backgroundColor: "#ffffff",
   borderRadius: "8px",
-  color: "#ffffff",
+  color: "#000000",
   fontSize: "14px",
   fontWeight: "600",
   textDecoration: "none",
@@ -168,13 +172,13 @@ const button = {
 const signoff = {
   fontSize: "16px",
   lineHeight: "26px",
-  color: "#333333",
+  color: "#a3a3a3",
   marginTop: "40px",
   marginBottom: "40px",
 };
 
 const footer = {
-  borderTop: "1px solid #eaeaea",
+  borderTop: "1px solid #222222",
   paddingTop: "32px",
 };
 
