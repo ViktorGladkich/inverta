@@ -25,7 +25,7 @@ export default function Impressum() {
             <p className="mb-4">
               Telefon: [Ihre Telefonnummer]
               <br />
-              E-Mail: info@inverta.de
+              E-Mail: info@invertadigital.de
             </p>
 
             <h2 className="text-2xl font-bold mt-8 mb-4">Umsatzsteuer-ID</h2>

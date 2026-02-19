@@ -6,6 +6,7 @@ import { Hero } from "@/components/sections/Hero";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { Technology } from "@/components/sections/Technology";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { FAQ } from "@/components/sections/FAQ";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Process />
         <Projects />
         <Testimonials />
+        <FAQ />
       </main>
       <Footer />
     </>

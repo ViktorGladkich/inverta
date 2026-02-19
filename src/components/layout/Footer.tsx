@@ -108,7 +108,7 @@ export function Footer() {
                   href="mailto:info@inverta.de"
                   className="hover:text-black transition-colors"
                 >
-                  info@inverta.de
+                  info@invertadigital.de
                 </a>
               </li>
               {/* Add Address if known, else placeholder */}

@@ -117,7 +117,7 @@ export default function Datenschutz() {
               <br />
               [12345 Musterstadt]
             </p>
-            <p>E-Mail: info@inverta.de</p>
+            <p>E-Mail: info@invertadigital.de</p>
 
             {/* More sections can be added as needed */}
           </div>
