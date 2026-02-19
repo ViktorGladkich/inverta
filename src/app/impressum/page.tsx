@@ -12,20 +12,14 @@ export default function Impressum() {
               Angaben gemäß § 5 TMG
             </h2>
             <p className="mb-4">
-              INVERTA
+              INVERTA DIGITAL
               <br />
-              [Ihre Straße & Hausnummer]
+              Rubensweg 1
               <br />
-              [PLZ & Ort]
+              01217 Dresden
             </p>
-
             <h2 className="text-2xl font-bold mt-8 mb-4">Kontakt</h2>
-            <p className="mb-4">
-              Telefon: [Ihre Telefonnummer]
-              <br />
-              E-Mail: info@invertadigital.de
-            </p>
-
+            <p className="mb-4">E-Mail: info@invertadigital.de</p>
             <h2 className="text-2xl font-bold mt-8 mb-4">Umsatzsteuer-ID</h2>
             <p className="mb-4">
               Umsatzsteuer-Identifikationsnummer gemäß § 27 a
@@ -33,16 +27,14 @@ export default function Impressum() {
               <br />
               [Ihre USt-IdNr.]
             </p>
-
             <h2 className="text-2xl font-bold mt-8 mb-4">
               Redaktionell verantwortlich
             </h2>
             <p className="mb-4">
-              [Name des Verantwortlichen]
+              INVERTA DIGITAL
               <br />
-              [Anschrift des Verantwortlichen]
+              Rubensweg 1, 01217 Dresden
             </p>
-
             <h2 className="text-2xl font-bold mt-8 mb-4">
               EU-Streitschlichtung
             </h2>
@@ -53,7 +45,6 @@ export default function Impressum() {
               <br />
               Unsere E-Mail-Adresse finden Sie oben im Impressum.
             </p>
-
             <h2 className="text-2xl font-bold mt-8 mb-4">
               Verbraucherstreitbeilegung/Universalschlichtungsstelle
             </h2>

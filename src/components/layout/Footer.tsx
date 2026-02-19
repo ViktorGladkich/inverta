@@ -14,7 +14,7 @@ export function Footer() {
           </p>
 
           <nav>
-            <ul className="flex flex-wrap gap-6 md:gap-10 text-sm tracking-[0.1em] md:text-base font-semibold uppercase">
+            <ul className="flex flex-wrap gap-6 md:gap-10 text-sm tracking-widest md:text-base font-semibold uppercase">
               <li>
                 <Link
                   href="/"

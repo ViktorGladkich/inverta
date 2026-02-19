@@ -1,123 +1,261 @@
 import { Footer } from "@/components/layout/Footer";
 
-export default function Datenschutz() {
+export const metadata = {
+  title: "Datenschutz | INVERTA",
+  description: "Datenschutzerklärung von INVERTA DIGITAL.",
+};
+
+export default function DatenschutzPage() {
   return (
     <>
-      <main className="min-h-screen pt-32 pb-20 bg-white">
-        <div className="container mx-auto px-4 md:px-6 max-w-3xl">
-          <h1 className="text-4xl font-bold mb-8">
-            Datenschutz&shy;erkl&auml;rung
-          </h1>
-
-          <div className="prose prose-neutral max-w-none space-y-8">
-            <h2 className="text-2xl font-bold">
-              1. Datenschutz auf einen Blick
-            </h2>
-            <h3 className="text-xl font-semibold">Allgemeine Hinweise</h3>
-            <p>
-              Die folgenden Hinweise geben einen einfachen &Uuml;berblick
-              dar&uuml;ber, was mit Ihren personenbezogenen Daten passiert, wenn
-              Sie diese Website besuchen. Personenbezogene Daten sind alle
-              Daten, mit denen Sie pers&ouml;nlich identifiziert werden
-              k&ouml;nnen.
+      <main className="min-h-screen pt-32 pb-24 bg-[#fafafa] text-black">
+        <div className="container mx-auto px-6 md:px-10 max-w-4xl">
+          <div className="mb-16">
+            <h1 className="text-[clamp(3rem,5vw,5rem)] tracking-tighter leading-none font-medium uppercase mb-6">
+              Datenschutz&shy;erklärung
+            </h1>
+            <p className="text-lg text-black/60 font-medium">
+              Stand: Februar 2026
             </p>
+          </div>
 
-            <h3 className="text-xl font-semibold">
-              Datenerfassung auf dieser Website
-            </h3>
-            <p>
-              <strong>
-                Wer ist verantwortlich f&uuml;r die Datenerfassung auf dieser
+          <div className="prose prose-neutral max-w-none space-y-12">
+            {/* Section 1 */}
+            <section className="space-y-4">
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight uppercase">
+                1. Datenschutz auf einen Blick
+              </h2>
+
+              <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
+                Allgemeine Hinweise
+              </h3>
+              <p className="text-black/80 leading-relaxed">
+                Die folgenden Hinweise geben einen einfachen Überblick darüber,
+                was mit Ihren personenbezogenen Daten passiert, wenn Sie diese
+                Website besuchen. Personenbezogene Daten sind alle Daten, mit
+                denen Sie persönlich identifiziert werden können. Ausführliche
+                Informationen zum Thema Datenschutz entnehmen Sie unserer unter
+                diesem Text aufgeführten Datenschutzerklärung.
+              </p>
+
+              <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
+                Datenerfassung auf dieser Website
+              </h3>
+              <p className="text-black/80 leading-relaxed font-semibold">
+                Wer ist verantwortlich für die Datenerfassung auf dieser
                 Website?
-              </strong>
-            </p>
-            <p>
-              Die Datenverarbeitung auf dieser Website erfolgt durch den
-              Websitebetreiber. Dessen Kontaktdaten k&ouml;nnen Sie dem
-              Impressum dieser Website entnehmen.
-            </p>
+              </p>
+              <p className="text-black/80 leading-relaxed">
+                Die Datenverarbeitung auf dieser Website erfolgt durch den
+                Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt
+                „Hinweis zur verantwortlichen Stelle“ in dieser
+                Datenschutzerklärung entnehmen.
+              </p>
 
-            <p>
-              <strong>Wie erfassen wir Ihre Daten?</strong>
-            </p>
-            <p>
-              Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese
-              mitteilen. Hierbei kann es sich z.&nbsp;B. um Daten handeln, die
-              Sie in ein Kontaktformular eingeben.
-            </p>
-            <p>
-              Andere Daten werden automatisch oder nach Ihrer Einwilligung beim
-              Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor
-              allem technische Daten (z.&nbsp;B. Internetbrowser, Betriebssystem
-              oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten
-              erfolgt automatisch, sobald Sie diese Website betreten.
-            </p>
+              <p className="text-black/80 leading-relaxed font-semibold">
+                Wie erfassen wir Ihre Daten?
+              </p>
+              <p className="text-black/80 leading-relaxed">
+                Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese
+                mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie
+                in ein Kontaktformular eingeben. Andere Daten werden automatisch
+                oder nach Ihrer Einwilligung beim Besuch der Website durch
+                unsere IT-Systeme erfasst. Das sind vor allem technische Daten
+                (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des
+                Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch,
+                sobald Sie diese Website betreten.
+              </p>
 
-            <h2 className="text-2xl font-bold">
-              2. Hosting und Content Delivery Networks (CDN)
-            </h2>
-            <p>
-              Wir hosten die Inhalte unserer Website bei folgenden Anbietern:
-            </p>
-            <h3 className="text-xl font-semibold">Vercel</h3>
-            <p>
-              Anbieter ist die Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA
-              91789, USA (nachfolgend &bdquo;Vercel&ldquo;). Wenn Sie unsere
-              Website besuchen, erfasst Vercel verschiedene Logfiles inklusive
-              Ihrer IP-Adressen.
-            </p>
-            <p>
-              Die Verwendung von Vercel erfolgt auf Grundlage von Art. 6 Abs. 1
-              lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer
-              m&ouml;glichst zuverl&auml;ssigen Darstellung unserer Website.
-              Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt
-              die Verarbeitung ausschlie&szlig;lich auf Grundlage von Art. 6
-              Abs. 1 lit. a DSGVO; die Einwilligung ist jederzeit widerrufbar.
-            </p>
+              <p className="text-black/80 leading-relaxed font-semibold">
+                Wofür nutzen wir Ihre Daten?
+              </p>
+              <p className="text-black/80 leading-relaxed">
+                Ein Teil der Daten wird erhoben, um eine fehlerfreie
+                Bereitstellung der Website zu gewährleisten. Andere Daten können
+                zur Analyse Ihres Nutzerverhaltens verwendet werden.
+              </p>
 
-            <h2 className="text-2xl font-bold">
-              3. Allgemeine Hinweise und Pflicht&shy;informationen
-            </h2>
-            <h3 className="text-xl font-semibold">Datenschutz</h3>
-            <p>
-              Die Betreiber dieser Seiten nehmen den Schutz Ihrer
-              pers&ouml;nlichen Daten sehr ernst. Wir behandeln Ihre
-              personenbezogenen Daten vertraulich und entsprechend der
-              gesetzlichen Datenschutzvorschriften sowie dieser
-              Datenschutzerkl&auml;rung.
-            </p>
-            <p>
-              Wenn Sie diese Website benutzen, werden verschiedene
-              personenbezogene Daten erhoben. Personenbezogene Daten sind Daten,
-              mit denen Sie pers&ouml;nlich identifiziert werden k&ouml;nnen.
-              Die vorliegende Datenschutzerkl&auml;rung erl&auml;utert, welche
-              Daten wir erheben und wof&uuml;r wir sie nutzen. Sie
-              erl&auml;utert auch, wie und zu welchem Zweck das geschieht.
-            </p>
-            <p>
-              Wir weisen darauf hin, dass die Daten&uuml;bertragung im Internet
-              (z.&nbsp;B. bei der Kommunikation per E-Mail)
-              Sicherheitsl&uuml;cken aufweisen kann. Ein l&uuml;ckenloser Schutz
-              der Daten vor dem Zugriff durch Dritte ist nicht m&ouml;glich.
-            </p>
+              <p className="text-black/80 leading-relaxed font-semibold">
+                Welche Rechte haben Sie bezüglich Ihrer Daten?
+              </p>
+              <p className="text-black/80 leading-relaxed">
+                Sie haben jederzeit das Recht, unentgeltlich Auskunft über
+                Herkunft, Empfänger und Zweck Ihrer gespeicherten
+                personenbezogenen Daten zu erhalten. Sie haben außerdem ein
+                Recht, die Berichtigung oder Löschung dieser Daten zu verlangen.
+                Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben,
+                können Sie diese Einwilligung jederzeit für die Zukunft
+                widerrufen. Außerdem haben Sie das Recht, unter bestimmten
+                Umständen die Einschränkung der Verarbeitung Ihrer
+                personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen
+                ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.
+              </p>
+            </section>
 
-            <h3 className="text-xl font-semibold">
-              Hinweis zur verantwortlichen Stelle
-            </h3>
-            <p>
-              Die verantwortliche Stelle f&uuml;r die Datenverarbeitung auf
-              dieser Website ist:
-            </p>
-            <p>
-              INVERTA
-              <br />
-              [Musterstraße 1]
-              <br />
-              [12345 Musterstadt]
-            </p>
-            <p>E-Mail: info@invertadigital.de</p>
+            {/* Section 2 */}
+            <section className="space-y-4">
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight uppercase border-t border-black/10 pt-10">
+                2. Hosting
+              </h2>
 
-            {/* More sections can be added as needed */}
+              <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
+                Externes Hosting
+              </h3>
+              <p className="text-black/80 leading-relaxed">
+                Diese Website wird extern gehostet (Vercel). Die
+                personenbezogenen Daten, die auf dieser Website erfasst werden,
+                werden auf den Servern des Hosters gespeichert. Hierbei kann es
+                sich v. a. um IP-Adressen, Kontaktanfragen, Meta- und
+                Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen,
+                Websitezugriffe und sonstige Daten, die über eine Website
+                generiert werden, handeln.
+              </p>
+              <p className="text-black/80 leading-relaxed">
+                Der Einsatz des Hosters erfolgt zum Zwecke der Vertragserfüllung
+                gegenüber unseren potenziellen und bestehenden Kunden (Art. 6
+                Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen
+                und effizienten Bereitstellung unseres Online-Angebots durch
+                einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO).
+              </p>
+              <p className="text-black/80 leading-relaxed">
+                Unser Hoster wird Ihre Daten nur insoweit verarbeiten, wie dies
+                zur Erfüllung seiner Leistungspflichten erforderlich ist und
+                unsere Weisungen in Bezug auf diese Daten befolgen. Wir nutzen
+                folgenden Hoster: <br />
+                <strong>Vercel Inc.</strong>
+                <br />
+                440 N Barranca Ave #4133
+                <br />
+                Covina, CA 91731
+                <br />
+                USA
+              </p>
+            </section>
+
+            {/* Section 3 */}
+            <section className="space-y-4">
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight uppercase border-t border-black/10 pt-10">
+                3. Allgemeine Hinweise und Pflicht&shy;informationen
+              </h2>
+
+              <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
+                Datenschutz
+              </h3>
+              <p className="text-black/80 leading-relaxed">
+                Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen
+                Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten
+                vertraulich und entsprechend den gesetzlichen
+                Datenschutzvorschriften sowie dieser Datenschutzerklärung.
+              </p>
+
+              <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
+                Hinweis zur verantwortlichen Stelle
+              </h3>
+              <p className="text-black/80 leading-relaxed">
+                Die verantwortliche Stelle für die Datenverarbeitung auf dieser
+                Website ist:
+              </p>
+              <div className="bg-black/5 p-6 rounded-2xl text-black/90 font-medium">
+                INVERTA DIGITAL
+                <br />
+                Rubensweg 1<br />
+                01217 Dresden
+                <br />
+                Deutschland
+                <br />
+                <br />
+                E-Mail: info@invertadigital.de
+              </div>
+              <p className="text-black/80 leading-relaxed mt-4">
+                Verantwortliche Stelle ist die natürliche oder juristische
+                Person, die allein oder gemeinsam mit anderen über die Zwecke
+                und Mittel der Verarbeitung von personenbezogenen Daten (z. B.
+                Namen, E-Mail-Adressen o. Ä.) entscheidet.
+              </p>
+
+              <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
+                Speicherdauer
+              </h3>
+              <p className="text-black/80 leading-relaxed">
+                Soweit innerhalb dieser Datenschutzerklärung keine speziellere
+                Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen
+                Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt.
+                Wenn Sie ein berechtigtes Löschersuchen geltend machen oder eine
+                Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten
+                gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe
+                für die Speicherung Ihrer personenbezogenen Daten haben (z. B.
+                steuer- oder handelsrechtliche Aufbewahrungsfristen); im
+                letztgenannten Fall erfolgt die Löschung nach Fortfall dieser
+                Gründe.
+              </p>
+
+              <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
+                Widerruf Ihrer Einwilligung zur Datenverarbeitung
+              </h3>
+              <p className="text-black/80 leading-relaxed">
+                Viele Datenverarbeitungsvorgänge sind nur mit Ihrer
+                ausdrücklichen Einwilligung möglich. Sie können eine bereits
+                erteilte Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit
+                der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom
+                Widerruf unberührt.
+              </p>
+
+              <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
+                SSL- bzw. TLS-Verschlüsselung
+              </h3>
+              <p className="text-black/80 leading-relaxed">
+                Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der
+                Übertragung vertraulicher Inhalte, wie zum Beispiel Bestellungen
+                oder Anfragen, die Sie an uns als Seitenbetreiber senden, eine
+                SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung
+                erkennen Sie daran, dass die Adresszeile des Browsers von
+                „http://“ auf „https://“ wechselt und an dem Schloss-Symbol in
+                Ihrer Browserzeile. Wenn die SSL- bzw. TLS-Verschlüsselung
+                aktiviert ist, können die Daten, die Sie an uns übermitteln,
+                nicht von Dritten mitgelesen werden.
+              </p>
+            </section>
+
+            {/* Section 4 */}
+            <section className="space-y-4">
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight uppercase border-t border-black/10 pt-10">
+                4. Datenerfassung auf dieser Website
+              </h2>
+
+              <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
+                Kontaktformular
+              </h3>
+              <p className="text-black/80 leading-relaxed">
+                Wenn Sie uns per Kontaktformular Anfragen zukommen lassen,
+                werden Ihre Angaben aus dem Anfrageformular inklusive der von
+                Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der
+                Anfrage und für den Fall von Anschlussfragen bei uns
+                gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung
+                weiter.
+              </p>
+              <p className="text-black/80 leading-relaxed">
+                Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6
+                Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines
+                Vertrags zusammenhängt oder zur Durchführung vorvertraglicher
+                Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die
+                Verarbeitung auf unserem berechtigten Interesse an der
+                effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6
+                Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1
+                lit. a DSGVO) sofern diese abgefragt wurde; die Einwilligung ist
+                jederzeit widerrufbar.
+              </p>
+
+              <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
+                Anfrage per E-Mail, Telefon oder Telefax
+              </h3>
+              <p className="text-black/80 leading-relaxed">
+                Wenn Sie uns per E-Mail, Telefon oder Telefax kontaktieren, wird
+                Ihre Anfrage inklusive aller daraus hervorgehenden
+                personenbezogenen Daten (Name, Anfrage) zum Zwecke der
+                Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet.
+                Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+              </p>
+            </section>
           </div>
         </div>
       </main>

@@ -39,7 +39,7 @@ export function FAQ() {
   return (
     <section
       id="faq"
-      className="relative z-10 w-full bg-[#f5f5f5] py-24 rounded-b-[50px] shadow-[0px_20px_30px_-10px_rgba(0,0,0,0.1)] mb-20 md:mb-0"
+      className="relative z-10 w-full bg-[#f5f5f5] py-24 mb-20 md:mb-0"
     >
       <div className="w-full max-w-[1000px] mx-auto px-6 md:px-12 flex flex-col items-center">
         {/* Header */}
