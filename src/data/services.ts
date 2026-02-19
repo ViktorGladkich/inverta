@@ -1,6 +1,6 @@
 export type ServiceContent = {
   slug: string;
-  category: "marketing" | "webentwicklung";
+  category: "marketing" | "webentwicklung" | "automatisierung";
   title: string;
   description: string;
   seoTitle: string;
@@ -325,6 +325,42 @@ export const SERVICES: ServiceContent[] = [
         title: "Datenbank Design",
         description:
           "Performante und sichere Datenstrukturen für Ihr Business.",
+      },
+    ],
+  },
+  // AUTOMATISIERUNG
+  {
+    slug: "ki-automatisierung",
+    category: "automatisierung",
+    title: "KI Automatisierung",
+    description:
+      "Sparen Sie Zeit und Kosten durch intelligente Automatisierung von Geschäftsprozessen.",
+    seoTitle: "KI Automatisierung & Prozessoptimierung | Agentur | INVERTA",
+    seoDescription:
+      "Automatisieren Sie mit uns Ihre Aufgaben. KI-Integration, Chatbots und intelligente Workflows für effizientere Unternehmensprozesse.",
+    heroText:
+      "Entlasten Sie Ihr Team von Routineaufgaben. Wir integrieren Künstliche Intelligenz in Ihren Alltag, damit Sie sich auf das Wesentliche konzentrieren können.",
+    benefits: [
+      "Höhere Effizienz",
+      "Kostenreduktion",
+      "24/7 Verfügbarkeit",
+      "Fehlerminimierung",
+    ],
+    features: [
+      {
+        title: "Intelligente Chatbots",
+        description:
+          "Wir entwickeln KI-gestützte Assistenten für Ihren Kundensupport und Vertrieb.",
+      },
+      {
+        title: "Workflow-Automatisierung",
+        description:
+          "Verbinden Sie Ihre Software-Tools und lassen Sie Daten automatisch übertragen (z.B. mit Make oder Zapier).",
+      },
+      {
+        title: "Mitarbeiter-Training",
+        description:
+          "Wir schulen Ihr Team im effizienten Umgang mit ChatGPT und anderen KI-Tools zur Produktivitätssteigerung.",
       },
     ],
   },

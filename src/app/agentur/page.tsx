@@ -1,12 +1,18 @@
-import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Button } from "@/components/ui/Button";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Über uns | Ihre Digitalagentur INVERTA",
+  description:
+    "Lernen Sie INVERTA kennen. Wir sind Architekten des digitalen Raums - Strategie, Design und Entwicklung aus einer Hand.",
+};
+
 export default function AgenturPage() {
   return (
     <>
-      <Navbar />
       <main className="min-h-screen pt-32 pb-20 bg-white">
         {/* Intro */}
         <section className="container mx-auto px-4 md:px-6 mb-24">

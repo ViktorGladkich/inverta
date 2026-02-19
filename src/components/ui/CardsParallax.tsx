@@ -105,11 +105,11 @@ const Card = ({
               )}
             </div>
 
-            <h2 className="text-2xl md:text-5xl font-bold leading-tight text-black">
+            <h2 className="text-2xl md:text-5xl font-medium tracking-tight text-black mb-2">
               {item.title}
             </h2>
 
-            <p className="text-sm md:text-lg text-[#16101e]/80 leading-relaxed font-medium">
+            <p className="text-base md:text-xl text-[#16101e]/80 font-normal leading-relaxed">
               {item.description}
             </p>
           </div>

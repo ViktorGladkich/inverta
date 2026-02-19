@@ -2,14 +2,16 @@ import { MetadataRoute } from "next";
 import { SERVICES } from "@/data/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://inverta.de"; // Replace with actual domain
+  const baseUrl = "https://invertadigital.de";
 
   // Static routes
   const routes = [
     "",
     "/agentur",
+    "/projekte",
     "/marketing",
     "/webentwicklung",
+    "/automatisierung",
     "/kontakt",
     "/impressum",
     "/datenschutz",

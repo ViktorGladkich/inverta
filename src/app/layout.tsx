@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://invertadigital.de"),
   title: "INVERTA | Marketing & Webentwicklung für Ihren Erfolg",
   description:
     "INVERTA - Ihre Agentur für effektives Marketing, professionelle Webentwicklung, SEO und Social Media. Wir steigern Ihre Sichtbarkeit und Ihren Umsatz.",
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
       "Professionelle Lösungen für Ihr digitales Wachstum. Marketing, SEO & Webdesign aus einer Hand.",
     type: "website",
     locale: "de_DE",
-    // url: "https://inverta.de", // Placeholder
+    url: "https://invertadigital.de",
     siteName: "INVERTA",
   },
   robots: {

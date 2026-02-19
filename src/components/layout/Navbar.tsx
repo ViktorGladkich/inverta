@@ -55,7 +55,7 @@ export function Navbar() {
           // Mobile: Floating Island
           mobileMenuOpen
             ? "top-3 left-3 right-3 bg-[#f8f8f8] rounded-t-2xl rounded-b-none border-b-transparent shadow-none"
-            : "top-3 left-3 right-3 rounded-2xl bg-[#f8f8f8] border-b border-white/50 shadow-[0px_2px_4px_rgba(0,0,0,0.4),0px_7px_13px_-3px_rgba(0,0,0,0.3),inset_0px_-3px_0px_rgba(0,0,0,0.2)]",
+            : "top-3 left-3 right-3 rounded-2xl bg-[#f8f8f8] border-b border-white/50 shadow-[0px_13px_27px_-5px_rgba(50,50,93,0.25),0px_8px_16px_-8px_rgba(0,0,0,0.3)]",
           // Desktop: Reset to Full Width
           "lg:top-0 lg:left-0 lg:right-0 lg:rounded-none lg:shadow-none lg:border-none lg:max-w-none lg:mx-0",
           // Desktop Scroll States

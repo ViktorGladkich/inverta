@@ -1,11 +1,9 @@
-import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
 
 export default function KontaktPage() {
   return (
     <>
-      <Navbar />
       <main className="min-h-screen pt-32 pb-20 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-2xl mx-auto text-center mb-16">

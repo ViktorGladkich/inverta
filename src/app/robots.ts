@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: "https://inverta.de/sitemap.xml",
+    sitemap: "https://invertadigital.de/sitemap.xml",
   };
 }

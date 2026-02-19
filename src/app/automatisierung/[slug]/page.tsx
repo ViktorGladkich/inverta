@@ -13,9 +13,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const service = getServiceBySlug(slug);
 
-  if (!service || service.category !== "webentwicklung") {
+  if (!service || service.category !== "automatisierung") {
     return {
-      title: "Webentwicklung | INVERTA",
+      title: "Automatisierung | INVERTA",
     };
   }
 
@@ -26,18 +26,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  return SERVICES.filter((s) => s.category === "webentwicklung").map(
+  return SERVICES.filter((s) => s.category === "automatisierung").map(
     (service) => ({
       slug: service.slug,
     }),
   );
 }
 
-export default async function WebentwicklungServicePage({ params }: Props) {
+export default async function AutomatisierungServicePage({ params }: Props) {
   const { slug } = await params;
   const service = getServiceBySlug(slug);
 
-  if (!service || service.category !== "webentwicklung") {
+  if (!service || service.category !== "automatisierung") {
     notFound();
   }
 
@@ -48,7 +48,7 @@ export default async function WebentwicklungServicePage({ params }: Props) {
         <section className="container mx-auto px-4 md:px-6 mb-24">
           <FadeIn>
             <div className="inline-block rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-sm text-neutral-500 mb-6">
-              Webentwicklung
+              Automatisierung
             </div>
             <h1 className="text-4xl md:text-6xl font-black tracking-tighter mb-8 leading-[1.1]">
               {service.title}
@@ -59,7 +59,7 @@ export default async function WebentwicklungServicePage({ params }: Props) {
             <FadeIn delay={0.1}>
               <p className="mb-8">{service.heroText}</p>
               <Button href="/kontakt" variant="primary">
-                Gespräch vereinbaren
+                Jetzt anfragen
               </Button>
             </FadeIn>
           </div>
@@ -89,7 +89,7 @@ export default async function WebentwicklungServicePage({ params }: Props) {
             <div className="md:col-span-1">
               <FadeIn>
                 <h2 className="text-3xl font-bold sticky top-32">
-                  Unsere Technologien
+                  Unser Ansatz
                 </h2>
               </FadeIn>
             </div>
@@ -110,14 +110,14 @@ export default async function WebentwicklungServicePage({ params }: Props) {
         <section className="container mx-auto px-4 md:px-6 text-center">
           <FadeIn>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Wir bauen Ihre Vision.
+              Starten Sie jetzt durch.
             </h2>
             <p className="text-lg text-neutral-500 mb-8 max-w-xl mx-auto">
-              Skalierbare Software und Websites, die funktionieren. Sprechen Sie
-              mit unseren Entwicklern.
+              Nutzen Sie das volle Potenzial intelligenter Automatisierung für
+              Ihr Unternehmen mit INVERTA.
             </p>
             <Button size="lg" variant="primary" asChild href="/kontakt">
-              Jetzt starten
+              Kostenloses Erstgespräch
             </Button>
           </FadeIn>
         </section>

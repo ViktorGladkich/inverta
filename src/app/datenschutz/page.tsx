@@ -1,10 +1,8 @@
-import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
 export default function Datenschutz() {
   return (
     <>
-      <Navbar />
       <main className="min-h-screen pt-32 pb-20 bg-white">
         <div className="container mx-auto px-4 md:px-6 max-w-3xl">
           <h1 className="text-4xl font-bold mb-8">

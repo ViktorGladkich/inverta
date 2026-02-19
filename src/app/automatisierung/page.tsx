@@ -1,4 +1,3 @@
-import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Button } from "@/components/ui/Button";
@@ -23,17 +22,16 @@ const automationServices = [
     href: "/kontakt",
   },
   {
-    title: "Business Process Automation",
-    desc: "Automatisierung manueller Aufgaben und interner Abläufe zur Fehlerreduktion und Effizienzsteigerung.",
-    action: "Kosten senken",
-    href: "/automatisierung/workflows",
+    title: "KI Automatisierung",
+    desc: "Sparen Sie Zeit und Kosten durch intelligente Automatisierung von manuellen Aufgaben.",
+    action: "Mehr erfahren",
+    href: "/automatisierung/ki-automatisierung",
   },
 ];
 
 export default function AutomationPage() {
   return (
     <>
-      <Navbar />
       <main className="min-h-screen pt-32 pb-20 bg-white">
         {/* Intro */}
         <section className="container mx-auto px-4 md:px-6 mb-24">
