@@ -54,12 +54,12 @@ export function FAQ() {
           </div>
 
           <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-black leading-tight">
-            <span className="bg-gradient-to-t from-black/80 to-black bg-clip-text text-transparent">
+            <span className="bg-linear-to-t from-black/80 to-black bg-clip-text text-transparent">
               Fragen? Antworten!
             </span>
           </h2>
 
-          <p className="text-lg text-black/60 font-normal leading-relaxed max-w-xl">
+          <p className="text-lg text-black font-normal leading-relaxed max-w-xl">
             Hier finden Sie schnelle Antworten auf die häufigsten Fragen zu
             unserer Zusammenarbeit.
           </p>
@@ -134,16 +134,16 @@ function FAQItem({
         </h3>
         <div
           className={cn(
-            "w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300",
+            "flex items-center justify-center transition-all duration-300",
             isOpen
-              ? "bg-black text-white rotate-180"
-              : "bg-neutral-200 text-black group-hover:bg-neutral-300",
+              ? "rotate-180 text-black"
+              : "text-black/40 group-hover:text-black",
           )}
         >
           {isOpen ? (
-            <Minus className="w-4 h-4" />
+            <Minus className="w-5 h-5" />
           ) : (
-            <Plus className="w-4 h-4" />
+            <Plus className="w-5 h-5" />
           )}
         </div>
       </div>

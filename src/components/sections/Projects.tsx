@@ -180,8 +180,8 @@ export function Projects() {
                     : "opacity-50 hover:opacity-75"
                 }`}
               >
-                <span className="text-xs md:text-sm font-bold tracking-wider uppercase z-10 text-black">
-                  <span className="md:hidden">Project {project.number}</span>
+                <span className="text-sm md:text-base font-bold tracking-wider uppercase z-10 text-black">
+                  <span className="md:hidden">{project.number}</span>
                   <span className="hidden md:inline">{project.label}</span>
                 </span>
                 {/* Progress Bar for Auto-play (Optional) */}
