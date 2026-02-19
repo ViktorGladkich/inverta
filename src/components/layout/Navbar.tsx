@@ -26,8 +26,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > 50 && !scrolled) setScrolled(true);
-    else if (latest <= 50 && scrolled) setScrolled(false);
+    setScrolled(latest > 50);
   });
 
   /* Hover Logic with Timeout to prevent flickering */
