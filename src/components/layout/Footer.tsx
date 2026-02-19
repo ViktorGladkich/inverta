@@ -120,9 +120,12 @@ export function Footer() {
         <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-linear-to-t from-black/5 to-transparent blur-[80px] z-0 pointer-events-none" />
 
         {/* Giant Text */}
-        <h1 className="relative z-10 font-bold tracking-[-0.03em] text-black text-center w-full uppercase m-0 leading-[0.75] select-none text-[clamp(6rem,24vw,30rem)] pl-2">
+        <div
+          aria-hidden="true"
+          className="relative z-10 font-bold tracking-[-0.03em] text-black text-center w-full uppercase m-0 leading-[0.75] select-none text-[clamp(6rem,24vw,30rem)] pl-2"
+        >
           INVERTA
-        </h1>
+        </div>
 
         {/* Bottom edge sharp glow */}
         <div className="absolute bottom-0 left-0 right-0 h-4 bg-black/10 blur-xl z-20 pointer-events-none" />

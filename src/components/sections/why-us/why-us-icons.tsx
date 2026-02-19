@@ -29,7 +29,12 @@ export const ChartBarIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 export const SyncIcon = () => (
   <div className="relative w-full h-full">
-    <Image src="/cube-black.png" alt="logo" fill className="object-contain" />
+    <Image
+      src="/cube-black.png"
+      alt="INVERTA DIGITAL - Performance Agentur"
+      fill
+      className="object-contain"
+    />
   </div>
 );
 

@@ -68,7 +68,7 @@ export function Navbar() {
           <Link href="/" className="relative z-50 flex items-center gap-2">
             <Image
               src="/logo-inverta.png"
-              alt="INVERTA"
+              alt="INVERTA DIGITAL Logo - Marketing & Webentwicklung Agentur aus Dresden"
               width={140}
               height={40}
               className="h-12 w-auto object-contain scale-[2.5] origin-left transition-transform duration-300 hover:scale-[2.6]"

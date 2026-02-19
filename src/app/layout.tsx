@@ -41,6 +41,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: "https://invertadigital.de",
+  },
 };
 
 export const viewport: Viewport = {
