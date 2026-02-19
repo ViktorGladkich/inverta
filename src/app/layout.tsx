@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { ViewportFix } from "@/components/Viewport/ViewportFix";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -61,6 +62,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-neutral-900 selection:bg-black selection:text-white`}
       >
+        <ViewportFix />
         <Navbar />
         {children}
         {/* Steamy Glass Bottom Effect */}

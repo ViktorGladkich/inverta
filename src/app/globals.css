@@ -125,7 +125,6 @@
 
 html {
   scroll-behavior: smooth;
-  height: -webkit-fill-available;
 }
 
 body {
@@ -134,8 +133,6 @@ body {
   font-family: "Satoshi", var(--font-sans), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
 }
 
 /* Grain texture overlay */
@@ -152,7 +149,9 @@ body::before {
   opacity: 0.4;
   mix-blend-mode: overlay;
 }
-
+.hero {
+  min-height: calc(var(--vh, 1vh) * 100);
+}
 ::selection {
   background: #000;
   color: #fff;
