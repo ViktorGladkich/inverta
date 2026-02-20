@@ -117,7 +117,7 @@ const main = {
 const container = {
   margin: "0 auto",
   padding: "40px",
-  backgroundColor: "#0a0a0a",
+  backgroundColor: "#000000",
   borderRadius: "16px",
   maxWidth: "600px",
   border: "1px solid #222222",
@@ -145,7 +145,7 @@ const heading = {
 const paragraph = {
   fontSize: "16px",
   lineHeight: "26px",
-  color: "#a3a3a3",
+  color: "#ffffff",
   marginBottom: "24px",
 };
 
@@ -172,7 +172,7 @@ const button = {
 const signoff = {
   fontSize: "16px",
   lineHeight: "26px",
-  color: "#a3a3a3",
+  color: "#ffffff",
   marginTop: "40px",
   marginBottom: "40px",
 };

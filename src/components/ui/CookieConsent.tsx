@@ -92,7 +92,7 @@ export function CookieConsent() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-[9998] bg-black/10 backdrop-blur-[2px]"
+            className="fixed inset-0 z-9998 bg-black/10 backdrop-blur-[2px]"
           />
 
           <motion.div
@@ -179,9 +179,9 @@ export function CookieConsent() {
                       {cookieCategories.map((cat) => (
                         <div
                           key={cat.id}
-                          className="flex items-start gap-3 p-3 rounded-xl bg-black/[0.02] border border-black/[0.04]"
+                          className="flex items-start gap-3 p-3 rounded-xl bg-black/2 border border-black/4"
                         >
-                          <div className="w-8 h-8 rounded-lg bg-black/[0.05] flex items-center justify-center shrink-0 mt-0.5 text-black/50">
+                          <div className="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center shrink-0 mt-0.5 text-black/50">
                             {cat.icon}
                           </div>
                           <div className="flex-1 min-w-0">
@@ -248,14 +248,14 @@ export function CookieConsent() {
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       onClick={handleSavePreferences}
-                      className="flex-1 py-3 rounded-xl text-[12px] font-semibold text-black/70 bg-black/[0.04] hover:bg-black/[0.08] transition-all duration-200 tracking-tight"
+                      className="flex-1 py-3 rounded-xl text-[12px] font-semibold text-black/70 bg-black/4 hover:bg-black/8 transition-all duration-200 tracking-tight"
                     >
                       Auswahl speichern
                     </motion.button>
                   )}
                   <button
                     onClick={handleDecline}
-                    className={`${showDetails ? "flex-1" : "w-full"} py-3 rounded-xl text-[12px] font-semibold text-black/50 bg-black/[0.04] hover:bg-black/[0.08] transition-all duration-200 tracking-tight`}
+                    className={`${showDetails ? "flex-1" : "w-full"} py-3 rounded-xl text-[12px] font-semibold text-black/50 bg-black/4 hover:bg-black/8 transition-all duration-200 tracking-tight`}
                   >
                     Nur Essentielle
                   </button>

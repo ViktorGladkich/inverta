@@ -29,7 +29,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
           duration: 0.7,
           ease: [0.65, 0, 0.35, 1],
         }}
-        className="fixed inset-0 z-[9990] bg-[#f5f5f5] origin-top pointer-events-none"
+        className="fixed inset-0 z-9990 bg-[#f5f5f5] origin-top pointer-events-none"
       />
 
       {/* Secondary curtain for depth */}
@@ -41,7 +41,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
           ease: [0.65, 0, 0.35, 1],
           delay: 0.05,
         }}
-        className="fixed inset-0 z-[9989] bg-white origin-top pointer-events-none"
+        className="fixed inset-0 z-9989 bg-white origin-top pointer-events-none"
       />
     </div>
   );
