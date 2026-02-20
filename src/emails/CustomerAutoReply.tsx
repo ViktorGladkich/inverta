@@ -31,8 +31,8 @@ export const AutoReplyEmail = ({
         <Container style={container}>
           <Section style={logoBox}>
             <Img
-              src="https://invertadigital.de/logo-inverta.png"
-              width="140"
+              src="https://invertadigital.de/logo-inverta-white.png"
+              width="120"
               height="40"
               alt="INVERTA DIGITAL Logo"
               style={logoImage}
