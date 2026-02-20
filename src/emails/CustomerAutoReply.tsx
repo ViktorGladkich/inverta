@@ -106,7 +106,7 @@ export const AutoReplyEmail = ({
 
 export default AutoReplyEmail;
 
-// --- CSS im JS Format --- //
+// Styles
 const main = {
   backgroundColor: "#000000",
   fontFamily:

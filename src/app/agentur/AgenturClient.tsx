@@ -103,9 +103,6 @@ export function AgenturClient() {
 
   return (
     <main className="min-h-screen bg-white">
-      {/* ═══════════════════════════════════════════ */}
-      {/* HERO SECTION */}
-      {/* ═══════════════════════════════════════════ */}
       <section
         ref={heroRef}
         className="relative min-h-[90vh] flex items-end pb-20 md:pb-28 overflow-hidden bg-[#f5f5f5]"
@@ -114,7 +111,6 @@ export function AgenturClient() {
           style={{ y: heroY, opacity: heroOpacity }}
           className="container mx-auto px-6 md:px-10 max-w-[1400px] relative z-10"
         >
-          {/* Small Tag */}
           <FadeIn>
             <div className="w-fit flex items-center px-3 py-1.5 gap-2 rounded-full bg-white/80 shadow-sm mb-8">
               <div className="w-2 h-2 rounded-full bg-black animate-pulse" />
@@ -150,7 +146,6 @@ export function AgenturClient() {
           </FadeIn>
         </motion.div>
 
-        {/* Decorative Grid */}
         <div className="absolute inset-0 pointer-events-none z-0">
           <div className="absolute top-[20%] right-[5%] w-[300px] h-[300px] border border-black/3 rounded-full" />
           <div className="absolute top-[30%] right-[10%] w-[200px] h-[200px] border border-black/5 rounded-full" />
@@ -158,9 +153,6 @@ export function AgenturClient() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════ */}
-      {/* STATS BAR */}
-      {/* ═══════════════════════════════════════════ */}
       <section
         className="bg-black text-white py-12 md:py-16"
         aria-label="Kennzahlen"
@@ -183,9 +175,6 @@ export function AgenturClient() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════ */}
-      {/* VISION / MISSION */}
-      {/* ═══════════════════════════════════════════ */}
       <section
         className="py-24 md:py-36 bg-white"
         aria-labelledby="mission-heading"
@@ -236,9 +225,6 @@ export function AgenturClient() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════ */}
-      {/* VALUES */}
-      {/* ═══════════════════════════════════════════ */}
       <section
         className="py-24 md:py-32 bg-[#f5f5f5]"
         aria-labelledby="values-heading"
@@ -297,9 +283,6 @@ export function AgenturClient() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════ */}
-      {/* CAPABILITIES */}
-      {/* ═══════════════════════════════════════════ */}
       <section
         className="py-24 md:py-32 bg-white"
         aria-labelledby="capabilities-heading"
@@ -347,9 +330,6 @@ export function AgenturClient() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════ */}
-      {/* APPROACH / PROCESS */}
-      {/* ═══════════════════════════════════════════ */}
       <section
         className="py-24 md:py-32 bg-[#f5f5f5]"
         aria-labelledby="process-heading"
@@ -410,9 +390,6 @@ export function AgenturClient() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════ */}
-      {/* CTA */}
-      {/* ═══════════════════════════════════════════ */}
       <section className="py-28 md:py-40 bg-black text-white relative overflow-hidden">
         <div className="container mx-auto px-6 md:px-10 max-w-[1400px] relative z-10">
           <FadeIn>
@@ -440,7 +417,6 @@ export function AgenturClient() {
           </FadeIn>
         </div>
 
-        {/* Background Glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-white/2 rounded-full blur-[120px] pointer-events-none" />
       </section>
     </main>

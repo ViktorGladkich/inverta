@@ -98,9 +98,6 @@ export function MobileMenu({
           exit="exit"
           className="fixed left-3 right-3 top-[55px] pb-[12px] h-[calc(100dvh-88px)] origin-top bg-[#050505] text-white z-90 flex flex-col justify-between overflow-y-auto overflow-x-hidden rounded-2xl shadow-[0px_20px_40px_rgba(0,0,0,0.4)] border border-white/10"
         >
-          {/* The top bar is handled by the main Navbar.tsx -> which is z-100 and stays visible */}
-
-          {/* Menu Link Container */}
           <motion.div
             variants={linkContainerVars}
             initial="initial"
@@ -158,7 +155,7 @@ export function MobileMenu({
                                   {subItem.title}
                                 </Link>
                               ))}
-                              {/* Direct Link to Main Page */}
+
                               <Link
                                 href={item.href}
                                 onClick={onClose}
@@ -189,7 +186,6 @@ export function MobileMenu({
             ))}
           </motion.div>
 
-          {/* Footer of Mobile Menu */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -238,7 +234,6 @@ export function MobileMenu({
             </div>
           </motion.div>
 
-          {/* Ambient Glow / Background Magic */}
           <div className="absolute top-[10%] right-[-30%] w-[300px] h-[300px] bg-[#daff02] rounded-full blur-[160px] opacity-10 pointer-events-none z-0" />
           <div className="absolute bottom-[20%] left-[-20%] w-[250px] h-[250px] bg-[#daff02] rounded-full blur-[140px] opacity-10 pointer-events-none z-0" />
         </motion.div>

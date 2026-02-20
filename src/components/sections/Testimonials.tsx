@@ -13,7 +13,7 @@ const testimonials = [
     name: "Reza Pahlavan",
     quote:
       "Durch die individuelle Multi-Page-Website heben wir uns endlich deutlich von der Konkurrenz ab. Die Qualität unserer Handwerksleistungen wird digital perfekt transportiert, was zu spürbar mehr qualifizierten Anfragen geführt hat.",
-    image: "/images/projects/ma-bau-gmbh.jpeg", // Using project image as visual anchor
+    image: "/images/projects/ma-bau-gmbh.jpeg",
   },
   {
     id: 2,
@@ -39,7 +39,6 @@ export function Testimonials() {
   return (
     <section id="testimonials" className="py-16 md:py-24 bg-[#f5f5f5]">
       <div className="w-full px-6 md:px-[40px] max-w-[1400px] mx-auto">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -64,9 +63,8 @@ export function Testimonials() {
           </p>
         </motion.div>
 
-        {/* Top Row: AI Review Card + Image Card */}
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 mb-8">
-          {/* Left: AI Review Card */}
+          {/* Featured quote */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -96,7 +94,6 @@ export function Testimonials() {
               </BlurTextEffect>
             </h4>
 
-            {/* Quote Icon */}
             <div className="w-8 h-8 md:w-10 md:h-10 text-black">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +107,7 @@ export function Testimonials() {
             </div>
           </motion.div>
 
-          {/* Right: Image Card */}
+          {/* Featured image */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -133,7 +130,6 @@ export function Testimonials() {
           </motion.div>
         </div>
 
-        {/* Bottom Row: 3 Testimonial Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((t, i) => (
             <motion.div
@@ -148,7 +144,6 @@ export function Testimonials() {
                   "rgba(0, 0, 0, 0.08) 0px 0.706592px 0.706592px -0.666667px, rgba(0, 0, 0, 0.08) 0px 1.80656px 1.80656px -1.33333px, rgba(0, 0, 0, 0.07) 0px 3.62176px 3.62176px -2px, rgba(0, 0, 0, 0.07) 0px 6.8656px 6.8656px -2.66667px, rgba(0, 0, 0, 0.05) 0px 13.6468px 13.6468px -3.33333px, rgba(0, 0, 0, 0.02) 0px 30px 30px -4px, rgb(255, 255, 255) 0px 3px 1px 0px inset",
               }}
             >
-              {/* Stars */}
               <div className="flex gap-1">
                 {[1, 2, 3, 4, 5].map((s) => (
                   <Star
@@ -163,9 +158,8 @@ export function Testimonials() {
                 &quot;{t.quote}&quot;
               </h4>
 
-              {/* Profile - Variant 1 Style */}
               <div className="flex items-center gap-4 pt-6 mt-auto">
-                {/* Neumorphic Avatar Frame */}
+                {/* Avatar */}
                 <div
                   className="p-1 bg-[#f5f5f5] rounded-[5px]"
                   style={{
@@ -178,7 +172,6 @@ export function Testimonials() {
                     <span className="text-black/60 font-bold text-sm z-10">
                       {t.name.charAt(0)}
                     </span>
-                    {/* If we had user images, they would go here. Using placeholder for now. */}
                   </div>
                 </div>
 
@@ -195,9 +188,8 @@ export function Testimonials() {
           ))}
         </div>
 
-        {/* Stats Row (Hidden on Mobile) */}
+        {/* Stats (desktop only) */}
         <div className="hidden md:flex mt-10 flex-col md:flex-row justify-between items-center gap-10 md:gap-0 px-4 md:px-12 max-w-5xl mx-auto">
-          {/* Stat 1 */}
           <div className="flex flex-col items-center text-center w-full md:w-1/3 md:border-r border-neutral-200 last:border-r-0">
             <CountUp to={97} suffix="+" />
             <span className="text-black font-medium mt-2">
@@ -205,7 +197,6 @@ export function Testimonials() {
             </span>
           </div>
 
-          {/* Stat 2 */}
           <div className="flex flex-col items-center text-center w-full md:w-1/3 md:border-r border-neutral-200 last:border-r-0">
             <CountUp to={95} suffix="%" />
             <span className="text-black font-medium mt-2">
@@ -213,7 +204,6 @@ export function Testimonials() {
             </span>
           </div>
 
-          {/* Stat 3 */}
           <div className="flex flex-col items-center text-center w-full md:w-1/3">
             <CountUp to={5} suffix="+" />
             <span className="text-black font-medium mt-2">Jahre Erfahrung</span>

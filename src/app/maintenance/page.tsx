@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 export default function MaintenancePage() {
   return (
-    <div className="fixed inset-0 z-[99999] bg-black flex flex-col items-center justify-center px-6 text-center overflow-hidden">
+    <div className="fixed inset-0 z-99999 bg-black flex flex-col items-center justify-center px-6 text-center overflow-hidden">
       {/* Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-white/[0.02] rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-white/2 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 max-w-lg">

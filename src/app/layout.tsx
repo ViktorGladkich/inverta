@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { ViewportFix } from "@/components/Viewport/ViewportFix";
 import { Geist, Geist_Mono } from "next/font/google";
+import { CookieConsent } from "@/components/ui/CookieConsent";
+import { Navbar } from "@/components/layout/Navbar";
+import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -52,10 +55,6 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-import { CookieConsent } from "@/components/ui/CookieConsent";
-import { Navbar } from "@/components/layout/Navbar";
-import { ProgressiveBlur } from "@/components/ui/progressive-blur";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -69,7 +68,7 @@ export default function RootLayout({
         <ViewportFix />
         <Navbar />
         {children}
-        {/* Steamy Glass Bottom Effect */}
+        {/* Soft blur at the bottom edge of the viewport */}
         <ProgressiveBlur
           className="fixed bottom-0 left-0 z-40 pointer-events-none"
           position="bottom"

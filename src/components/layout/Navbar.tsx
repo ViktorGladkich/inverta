@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -28,6 +28,12 @@ export function Navbar() {
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrolled(latest > 50);
   });
+
+  // Close dropdowns when navigating to a new page
+  useEffect(() => {
+    setHoveredIndex(null); // eslint-disable-line
+    setMobileMenuOpen(false);
+  }, [pathname]);
 
   /* Hover Logic with Timeout to prevent flickering */
   const hoverTimeout = React.useRef<NodeJS.Timeout | null>(null);
