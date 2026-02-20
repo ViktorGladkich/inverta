@@ -64,11 +64,15 @@ export const navigationItems = [
     ],
   },
   {
+    title: "Automatisierung",
+    href: "/automatisierung",
+  },
+  {
     title: "Projekte",
     href: "/projekte",
   },
   {
-    title: "Über uns",
+    title: "Agentur",
     href: "/agentur",
   },
   {

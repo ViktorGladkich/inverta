@@ -15,6 +15,7 @@ import {
   Rocket,
 } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { MissionSection } from "./MissionSection";
 
 const values = [
   {
@@ -85,11 +86,15 @@ const capabilities = [
   },
 ];
 
-const stats = [
-  { value: "97+", label: "Projekte" },
-  { value: "5+", label: "Jahre Erfahrung" },
-  { value: "95%", label: "Kundenzufriedenheit" },
-  { value: "24h", label: "Response-Zeit" },
+const marqueeItems = [
+  "STRATEGIE",
+  "WEBENTWICKLUNG",
+  "PERFORMANCE MARKETING",
+  "SEO",
+  "UI/UX DESIGN",
+  "BRANDING",
+  "E-COMMERCE",
+  "KI & AUTOMATISIERUNG",
 ];
 
 export function AgenturClient() {
@@ -105,128 +110,104 @@ export function AgenturClient() {
     <main className="min-h-screen bg-white">
       <section
         ref={heroRef}
-        className="relative min-h-[90vh] flex items-end pb-20 md:pb-28 overflow-hidden bg-[#f5f5f5]"
+        className="sticky top-0 flex flex-col items-center justify-center overflow-hidden bg-gray-50/10 text-black"
+        style={{ minHeight: "calc(var(--vh, 1vh) * 100)" }}
       >
+        {/* Background video */}
+        <div className="absolute inset-0 z-0 select-none">
+          <video
+            src="/hero-loop.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover invert grayscale brightness-[0.69]"
+          />
+          <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px]" />
+        </div>
+
+        {/* Scroll-driven content */}
         <motion.div
           style={{ y: heroY, opacity: heroOpacity }}
-          className="container mx-auto px-6 md:px-10 max-w-[1400px] relative z-10"
+          className="container mx-auto px-6 md:px-10 max-w-[1400px] relative z-10 text-center flex flex-col items-center"
         >
-          <FadeIn>
-            <div className="w-fit flex items-center px-3 py-1.5 gap-2 rounded-full bg-white/80 shadow-sm mb-8">
-              <div className="w-2 h-2 rounded-full bg-black animate-pulse" />
-              <span className="text-[11px] font-semibold text-black/60 tracking-widest uppercase">
-                Über INVERTA DIGITAL
-              </span>
-            </div>
-          </FadeIn>
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-10 md:mb-14"
+          />
 
-          <FadeIn delay={0.1}>
-            <h1 className="text-[clamp(2.5rem,7vw,6rem)] font-black tracking-tighter leading-[0.9] mb-8 max-w-5xl">
-              Wir gestalten digitale
-              <br />
-              <span className="text-black/25">Erlebnisse, die wirken.</span>
-            </h1>
-          </FadeIn>
-
-          <FadeIn delay={0.2}>
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-              <p className="text-lg md:text-xl text-black/50 font-medium leading-relaxed max-w-xl">
-                INVERTA DIGITAL ist Ihre Performance-Agentur aus Dresden. Wir
-                verbinden Strategie, Design und Technologie zu digitalen
-                Lösungen, die messbare Ergebnisse liefern.
-              </p>
-              <Link
-                href="/kontakt"
-                className="group inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-full font-semibold text-sm hover:bg-black/85 shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.3)] transition-all duration-300 shrink-0"
-              >
-                Projekt starten
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </FadeIn>
+          {/* Giant Typography */}
+          <div className="mb-12 md:mb-40">
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.9,
+                ease: [0.16, 1, 0.3, 1],
+                delay: 0.3,
+              }}
+            >
+              <h1 className="text-[clamp(5rem,10vw,11rem)] font-black tracking-tighter leading-[0.85]">
+                <span className="block text-black/20 mb-4 md:mb-4">
+                  WIR SIND
+                </span>
+                <span className="relative inline-flex items-center">
+                  <span className="absolute left-[-15px] md:left-[-20px] top-[-10%] md:top-[-8%] w-[90px] h-[90px] sm:w-[100px] sm:h-[100px] md:w-[150px] md:h-[150px] bg-[#daff02] rounded-full z-0" />
+                  <span className="relative z-10 text-black">INVERTA</span>
+                  <span className="relative z-10 text-[#daff02]">.</span>
+                </span>
+              </h1>
+            </motion.div>
+          </div>
         </motion.div>
 
-        <div className="absolute inset-0 pointer-events-none z-0">
-          <div className="absolute top-[20%] right-[5%] w-[300px] h-[300px] border border-black/3 rounded-full" />
-          <div className="absolute top-[30%] right-[10%] w-[200px] h-[200px] border border-black/5 rounded-full" />
-          <div className="absolute bottom-[10%] left-[5%] w-[100px] h-[100px] border border-black/4 rounded-full" />
-        </div>
-      </section>
-
-      <section
-        className="bg-black text-white py-12 md:py-16"
-        aria-label="Kennzahlen"
-      >
-        <div className="container mx-auto px-6 md:px-10 max-w-[1400px]">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
-            {stats.map((stat, i) => (
-              <FadeIn key={stat.label} delay={i * 0.1}>
-                <div className="text-center md:text-left">
-                  <div className="text-3xl md:text-5xl font-black tracking-tighter mb-2">
-                    {stat.value}
-                  </div>
-                  <div className="text-xs md:text-sm font-medium text-white/40 tracking-widest uppercase">
-                    {stat.label}
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section
-        className="py-24 md:py-36 bg-white"
-        aria-labelledby="mission-heading"
-      >
-        <div className="container mx-auto px-6 md:px-10 max-w-[1400px]">
-          <div className="grid grid-cols-1 lg:grid-cols-[0.4fr_0.6fr] gap-12 lg:gap-20 items-start">
-            <FadeIn>
-              <div className="sticky top-32">
-                <span className="text-[11px] font-semibold text-black/30 tracking-widest uppercase block mb-4">
-                  Unsere Mission
-                </span>
-                <h2
-                  id="mission-heading"
-                  className="text-3xl md:text-5xl font-black tracking-tighter leading-tight"
+        {/* Marquee ticker */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.2 }}
+          className="absolute bottom-[40px] left-0 right-0 z-50 border-t border-black/5 overflow-hidden bg-white/40 backdrop-blur-sm"
+        >
+          <div className="flex py-4">
+            {/* Первая копия */}
+            <div className="flex shrink-0 items-center gap-8 px-4 animate-marquee">
+              {marqueeItems.map((item) => (
+                <span
+                  key={item}
+                  className="flex shrink-0 items-center gap-8 text-xs font-semibold tracking-[0.2em] text-black uppercase"
                 >
-                  In einer Welt voller Lärm setzen wir auf Klarheit.
-                </h2>
-              </div>
-            </FadeIn>
-
-            <div className="flex flex-col gap-8">
-              <FadeIn delay={0.1}>
-                <p className="text-lg md:text-xl text-black/50 font-medium leading-[1.8]">
-                  INVERTA DIGITAL wurde mit einer einfachen Überzeugung
-                  gegründet: Digitale Lösungen müssen nicht nur gut aussehen –
-                  sie müssen funktionieren. Wir glauben an die Kraft von
-                  datengetriebenem Design und strategischem Marketing.
-                </p>
-              </FadeIn>
-              <FadeIn delay={0.2}>
-                <p className="text-lg md:text-xl text-black/50 font-medium leading-[1.8]">
-                  Unser Fokus liegt auf dem, was wirklich zählt: Ihre Ziele. Ob
-                  Umsatzsteigerung durch Performance Marketing, eine Website,
-                  die Ihre Konkurrenz in den Schatten stellt, oder eine digitale
-                  Strategie, die nachhaltiges Wachstum sichert – wir liefern
-                  Ergebnisse, keine leeren Versprechen.
-                </p>
-              </FadeIn>
-              <FadeIn delay={0.3}>
-                <p className="text-lg md:text-xl text-black/50 font-medium leading-[1.8]">
-                  Als Partner auf Augenhöhe begleiten wir Unternehmen von der
-                  ersten Idee bis zum messbaren Erfolg. Jedes Projekt ist für
-                  uns einzigartig – und genau so behandeln wir es.
-                </p>
-              </FadeIn>
+                  {item}
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#daff02]" />
+                </span>
+              ))}
+            </div>
+            {/* Вторая копия — для бесшовного эффекта */}
+            <div
+              aria-hidden="true"
+              className="flex shrink-0 items-center gap-8 px-4 animate-marquee"
+            >
+              {marqueeItems.map((item) => (
+                <span
+                  key={item}
+                  className="flex shrink-0 items-center gap-8 text-xs font-semibold tracking-[0.2em] text-black uppercase"
+                >
+                  {item}
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#daff02]" />
+                </span>
+              ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
+<MissionSection />
+     
+
       <section
-        className="py-24 md:py-32 bg-[#f5f5f5]"
+        className="relative z-10 py-24 md:py-32 bg-[#f5f5f5]"
         aria-labelledby="values-heading"
       >
         <div className="container mx-auto px-6 md:px-10 max-w-[1400px]">
@@ -284,7 +265,7 @@ export function AgenturClient() {
       </section>
 
       <section
-        className="py-24 md:py-32 bg-white"
+        className="relative z-10 py-24 md:py-32 bg-white"
         aria-labelledby="capabilities-heading"
       >
         <div className="container mx-auto px-6 md:px-10 max-w-[1400px]">
@@ -331,7 +312,7 @@ export function AgenturClient() {
       </section>
 
       <section
-        className="py-24 md:py-32 bg-[#f5f5f5]"
+        className="relative z-10 py-24 md:py-32 bg-[#f5f5f5]"
         aria-labelledby="process-heading"
       >
         <div className="container mx-auto px-6 md:px-10 max-w-[1400px]">
@@ -390,7 +371,7 @@ export function AgenturClient() {
         </div>
       </section>
 
-      <section className="py-28 md:py-40 bg-black text-white relative overflow-hidden">
+      <section className="relative z-10 py-28 md:py-40 bg-black text-white overflow-hidden">
         <div className="container mx-auto px-6 md:px-10 max-w-[1400px] relative z-10">
           <FadeIn>
             <div className="text-center max-w-3xl mx-auto">
