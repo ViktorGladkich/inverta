@@ -18,7 +18,7 @@ export default function MaintenancePage() {
         {/* Logo Heading with Green Circle */}
         <div className="relative flex items-center justify-center h-[80px] md:h-[120px] mb-6">
           {/* Circle Background */}
-          <div className="absolute left-1/2 -translate-x-1/2 ml-[-80px] md:ml-[-130px] top-1/2 -translate-y-1/2 w-[60px] h-[60px] md:w-[100px] md:h-[100px] bg-[#daff02] rounded-full z-0" />
+          <div className="absolute left-1/2 -translate-x-1/2 ml-[-65px] md:ml-[-105px] top-1/2 -translate-y-1/2 w-[60px] h-[60px] md:w-[100px] md:h-[100px] bg-[#daff02] rounded-full z-0" />
           {/* Text */}
           <h1 className="relative font-sans font-bold text-[36px] sm:text-[56px] md:text-[90px] leading-none tracking-tighter z-10">
             <span className="text-black">IN</span>
