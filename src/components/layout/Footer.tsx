@@ -8,9 +8,9 @@ export function Footer() {
       <div className="container relative z-10 mx-auto px-6 md:px-10 flex flex-col">
         {/* Top Row */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12 pb-10">
-          <p className="text-sm md:text-base tracking-[0.2em] font-medium leading-loose uppercase max-w-sm text-black/80">
-            JEDES PROJEKT IST EINE GESCHICHTE, DIE DARAUF WARTET, ERZÄHLT ZU
-            WERDEN
+          <p className="text-xl md:text-3xl font-medium tracking-tight leading-tight max-w-sm text-black/80">
+            Jedes Projekt ist eine Geschichte, die darauf wartet, erzählt zu
+            werden.
           </p>
 
           <nav>
@@ -45,6 +45,14 @@ export function Footer() {
                   className="hover:text-black/60 transition-colors"
                 >
                   WEB
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/projekte"
+                  className="hover:text-black/60 transition-colors"
+                >
+                  PROJEKTE
                 </Link>
               </li>
               <li>

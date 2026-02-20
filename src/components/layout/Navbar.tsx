@@ -52,10 +52,10 @@ export function Navbar() {
         className={cn(
           "fixed z-100 transition-all duration-500 ease-in-out font-satoshi",
           // Mobile: Floating Island (Solid #f5f5f5, no glass)
-          // Mobile: Floating Island
+          // Mobile: Floating Island (Always White)
           mobileMenuOpen
-            ? "top-3 left-3 right-3 bg-[#f8f8f8] rounded-t-2xl rounded-b-none border-b-transparent shadow-none"
-            : "top-3 left-3 right-3 rounded-2xl bg-[#f8f8f8] border-b border-white/50 shadow-[0px_13px_27px_-5px_rgba(50,50,93,0.25),0px_8px_16px_-8px_rgba(0,0,0,0.3)]",
+            ? "top-3 left-3 right-3 bg-[#f8f8f8] rounded-2xl border border-black/5 shadow-md text-black"
+            : "top-3 left-3 right-3 rounded-2xl bg-[#f8f8f8] border border-black/5 shadow-[0px_13px_27px_-5px_rgba(50,50,93,0.25),0px_8px_16px_-8px_rgba(0,0,0,0.3)] text-black",
           // Desktop: Reset to Full Width
           "lg:top-0 lg:left-0 lg:right-0 lg:rounded-none lg:shadow-none lg:border-none lg:max-w-none lg:mx-0",
           // Desktop Scroll States
@@ -132,7 +132,7 @@ export function Navbar() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-full bg-transparent text-black hover:bg-neutral-100/50 transition-colors z-110 relative w-10 h-10 flex flex-col items-center justify-center gap-[5px]"
+            className="lg:hidden p-2 rounded-full bg-transparent hover:bg-white/10 transition-colors z-110 relative w-10 h-10 flex flex-col items-center justify-center gap-[5px]"
           >
             <motion.span
               animate={mobileMenuOpen ? "open" : "closed"}
@@ -141,7 +141,7 @@ export function Navbar() {
                 open: { rotate: 45, y: 7 },
               }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="w-5 h-[2px] bg-black block origin-center rounded-full"
+              className="w-5 h-[2px] block origin-center rounded-full transition-colors bg-black"
             />
             <motion.span
               animate={mobileMenuOpen ? "open" : "closed"}
@@ -150,7 +150,7 @@ export function Navbar() {
                 open: { opacity: 0 },
               }}
               transition={{ duration: 0.2 }}
-              className="w-5 h-[2px] bg-black block rounded-full"
+              className="w-5 h-[2px] block rounded-full transition-colors bg-black"
             />
             <motion.span
               animate={mobileMenuOpen ? "open" : "closed"}
@@ -159,7 +159,7 @@ export function Navbar() {
                 open: { rotate: -45, y: -7 },
               }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="w-5 h-[2px] bg-black block origin-center rounded-full"
+              className="w-5 h-[2px] block origin-center rounded-full transition-colors bg-black"
             />
           </button>
         </nav>

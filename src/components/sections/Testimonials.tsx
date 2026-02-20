@@ -10,7 +10,7 @@ const testimonials = [
     id: 1,
     company: "SaxoHandwerk",
     role: "Geschäftsführung",
-    name: "Thomas Weber",
+    name: "Reza Pahlavan",
     quote:
       "Durch die individuelle Multi-Page-Website heben wir uns endlich deutlich von der Konkurrenz ab. Die Qualität unserer Handwerksleistungen wird digital perfekt transportiert, was zu spürbar mehr qualifizierten Anfragen geführt hat.",
     image: "/images/projects/ma-bau-gmbh.jpeg", // Using project image as visual anchor
@@ -28,7 +28,7 @@ const testimonials = [
     id: 3,
     company: "A.S.S. Security",
     role: "Inhaber",
-    name: "Michael Bauer",
+    name: "Semion Raskin",
     quote:
       "Ein fokussierter One-Pager, der genau unseren Bedarf trifft. Das Design schafft sofortiges Vertrauen bei unseren Kunden im Objekt- und Personenschutz. Professionell, schnell und auf den Punkt.",
     image: "/images/projects/ass-security.jpeg",
@@ -195,8 +195,8 @@ export function Testimonials() {
           ))}
         </div>
 
-        {/* Stats Row */}
-        <div className="mt-10 flex flex-col md:flex-row justify-between items-center gap-10 md:gap-0 px-4 md:px-12 max-w-5xl mx-auto">
+        {/* Stats Row (Hidden on Mobile) */}
+        <div className="hidden md:flex mt-10 flex-col md:flex-row justify-between items-center gap-10 md:gap-0 px-4 md:px-12 max-w-5xl mx-auto">
           {/* Stat 1 */}
           <div className="flex flex-col items-center text-center w-full md:w-1/3 md:border-r border-neutral-200 last:border-r-0">
             <CountUp to={97} suffix="+" />
@@ -216,9 +216,7 @@ export function Testimonials() {
           {/* Stat 3 */}
           <div className="flex flex-col items-center text-center w-full md:w-1/3">
             <CountUp to={5} suffix="+" />
-            <span className="text-black font-medium mt-2">
-              Jahre Erfahrung
-            </span>
+            <span className="text-black font-medium mt-2">Jahre Erfahrung</span>
           </div>
         </div>
       </div>

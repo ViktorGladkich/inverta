@@ -36,6 +36,7 @@
   --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
   --animate-shine: shine var(--duration) infinite linear;
   --animate-border-beam: border-beam calc(var(--duration) * 1s) infinite linear;
+  --animate-load-bar: load-bar 1.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
 }
 
 :root {
@@ -348,6 +349,25 @@ body::before {
   }
   to {
     background-position: 0% 0%;
+  }
+}
+
+@keyframes load-bar {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  50.1% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
   }
 }
 
