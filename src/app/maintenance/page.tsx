@@ -9,17 +9,23 @@ export const metadata: Metadata = {
 
 export default function MaintenancePage() {
   return (
-    <div className="fixed inset-0 bg-black flex flex-col items-center justify-center px-6 text-center overflow-hidden">
+    <div className="fixed inset-0 z-[99999] bg-black flex flex-col items-center justify-center px-6 text-center overflow-hidden">
       {/* Ambient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-white/[0.02] rounded-full blur-[120px] pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 max-w-lg">
-        {/* Logo or Brand */}
-        <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-white mb-4">
-          INVERTA
-          <span className="text-white/20">.</span>
-        </h1>
+        {/* Logo Heading with Green Circle */}
+        <div className="relative flex items-center justify-center h-[80px] md:h-[120px] mb-6">
+          {/* Circle Background */}
+          <div className="absolute left-1/2 -translate-x-1/2 ml-[-80px] md:ml-[-130px] top-1/2 -translate-y-1/2 w-[60px] h-[60px] md:w-[100px] md:h-[100px] bg-[#daff02] rounded-full z-0" />
+          {/* Text */}
+          <h1 className="relative font-sans font-bold text-[36px] sm:text-[56px] md:text-[90px] leading-none tracking-tighter z-10">
+            <span className="text-black">IN</span>
+            <span className="text-white">VERTA</span>
+            <span className="text-[#daff02]">.</span>
+          </h1>
+        </div>
 
         <div className="w-16 h-[2px] bg-white/20 mx-auto mb-8" />
 

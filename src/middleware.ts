@@ -3,9 +3,10 @@ import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
   const isMaintenanceMode = process.env.MAINTENANCE_MODE === "true";
+  const isDev = process.env.NODE_ENV === "development";
 
-  // Only activate on production (Vercel), not locally
-  if (!isMaintenanceMode) {
+  // NEVER block in development (localhost)
+  if (isDev || !isMaintenanceMode) {
     return NextResponse.next();
   }
 
