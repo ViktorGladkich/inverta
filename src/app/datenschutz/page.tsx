@@ -256,6 +256,102 @@ export default function DatenschutzPage() {
                 Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
               </p>
             </section>
+
+            {/* Section 5 */}
+            <section className="space-y-4">
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight uppercase border-t border-black/10 pt-10">
+                5. Analyse-Tools
+              </h2>
+
+              <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
+                Google Analytics
+              </h3>
+              <p className="text-black/80 leading-relaxed">
+                Diese Website nutzt Funktionen des Webanalysedienstes Google
+                Analytics. Anbieter ist die Google Ireland Limited
+                (&bdquo;Google&ldquo;), Gordon House, Barrow Street, Dublin 4,
+                Irland.
+              </p>
+              <p className="text-black/80 leading-relaxed">
+                Google Analytics ermöglicht es dem Websitebetreiber, das
+                Verhalten der Websitebesucher zu analysieren. Hierbei erhält der
+                Websitebetreiber verschiedene Nutzungsdaten, wie z. B.
+                Seitenaufrufe, Verweildauer, verwendete Betriebssysteme und
+                Herkunft des Nutzers. Diese Daten werden dem jeweiligen Endgerät
+                des Nutzers zugeordnet. Eine Zuordnung zu einer User-ID erfolgt
+                nicht.
+              </p>
+              <p className="text-black/80 leading-relaxed">
+                Des Weiteren können wir mit Google Analytics u. a. Ihre Maus-
+                und Scrollbewegungen und Klicks aufzeichnen. Ferner verwendet
+                Google Analytics verschiedene Modellierungsansätze, um die
+                erfassten Datensätze zu ergänzen und setzt
+                Machine-Learning-Technologien bei der Datenanalyse ein.
+              </p>
+              <p className="text-black/80 leading-relaxed">
+                Google Analytics verwendet Technologien, die die Wiedererkennung
+                des Nutzers zum Zwecke der Analyse des Nutzerverhaltens
+                ermöglichen (z. B. Cookies oder Device-Fingerprinting). Die von
+                Google erfassten Informationen über die Benutzung dieser Website
+                werden in der Regel an einen Server von Google in den USA
+                übertragen und dort gespeichert.
+              </p>
+              <p className="text-black/80 leading-relaxed">
+                Die Nutzung dieses Dienstes erfolgt auf Grundlage Ihrer
+                Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1
+                TDDDG. Die Einwilligung ist jederzeit widerrufbar.
+              </p>
+              <p className="text-black/80 leading-relaxed">
+                <strong>
+                  Google Analytics wird auf dieser Website erst nach Ihrer
+                  ausdrücklichen Einwilligung über unseren Cookie-Banner
+                  aktiviert.
+                </strong>{" "}
+                Ohne Ihre Zustimmung werden keine Analyse-Cookies gesetzt und
+                keine Daten an Google übermittelt.
+              </p>
+
+              <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
+                Browser-Plugin
+              </h3>
+              <p className="text-black/80 leading-relaxed">
+                Sie können die Erfassung und Verarbeitung Ihrer Daten durch
+                Google verhindern, indem Sie das unter dem folgenden Link
+                verfügbare Browser-Plugin herunterladen und installieren:{" "}
+                <a
+                  href="https://tools.google.com/dlpage/gaoptout?hl=de"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-4 hover:text-[#daff02] transition-colors"
+                >
+                  https://tools.google.com/dlpage/gaoptout
+                </a>
+                .
+              </p>
+              <p className="text-black/80 leading-relaxed">
+                Mehr Informationen zum Umgang mit Nutzerdaten bei Google
+                Analytics finden Sie in der Datenschutzerklärung von Google:{" "}
+                <a
+                  href="https://support.google.com/analytics/answer/6004245?hl=de"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-4 hover:text-[#daff02] transition-colors"
+                >
+                  https://support.google.com/analytics/answer/6004245
+                </a>
+                .
+              </p>
+
+              <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
+                Auftragsverarbeitung
+              </h3>
+              <p className="text-black/80 leading-relaxed">
+                Wir haben mit Google einen Vertrag zur Auftragsverarbeitung
+                abgeschlossen und setzen die strengen Vorgaben der deutschen
+                Datenschutzbehörden bei der Nutzung von Google Analytics
+                vollständig um.
+              </p>
+            </section>
           </div>
         </div>
       </main>

@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { CookieConsent } from "@/components/ui/CookieConsent";
 import { Navbar } from "@/components/layout/Navbar";
 import { ProgressiveBlur } from "@/components/ui/progressive-blur";
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -76,6 +77,7 @@ export default function RootLayout({
           blurAmount="4px"
           height="60px"
         />
+        <GoogleAnalytics />
         <CookieConsent />
       </body>
     </html>
