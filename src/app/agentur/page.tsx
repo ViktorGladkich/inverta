@@ -1,6 +1,12 @@
 import { Footer } from "@/components/layout/Footer";
 import { AgenturClient } from "./AgenturClient";
 import { Metadata } from "next";
+import { ServicesOverview } from "@/components/sections/ServicesOverview";
+import { TeamSection } from "./TeamSection";
+import { MissionSection } from "./MissionSection";
+import { PrinzipienSection } from "./PrinzipienSection";
+import { CTASection } from "./CTASection";
+import { Testimonials } from "@/components/sections/Testimonials";
 
 export const metadata: Metadata = {
   title: "Über uns | INVERTA DIGITAL – Ihre Digitalagentur aus Dresden",
@@ -30,6 +36,12 @@ export default function AgenturPage() {
   return (
     <>
       <AgenturClient />
+      <MissionSection />
+      <PrinzipienSection />
+      <ServicesOverview />
+      <TeamSection />
+      <Testimonials/>
+      <CTASection />
       <Footer />
     </>
   );

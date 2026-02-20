@@ -37,8 +37,11 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="py-16 md:py-24 bg-[#f5f5f5]">
-      <div className="w-full px-6 md:px-[40px] max-w-[1400px] mx-auto">
+    <section
+      id="testimonials"
+      className="relative z-10 py-16 md:py-24 bg-[#f5f5f5]"
+    >
+      <div className="w-full  px-6 md:px-[40px] max-w-[1400px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -187,55 +190,7 @@ export function Testimonials() {
             </motion.div>
           ))}
         </div>
-
-        {/* Stats (desktop only) */}
-        <div className="hidden md:flex mt-10 flex-col md:flex-row justify-between items-center gap-10 md:gap-0 px-4 md:px-12 max-w-5xl mx-auto">
-          <div className="flex flex-col items-center text-center w-full md:w-1/3 md:border-r border-neutral-200 last:border-r-0">
-            <CountUp to={97} suffix="+" />
-            <span className="text-black font-medium mt-2">
-              Projekte erfolgreich umgesetzt
-            </span>
-          </div>
-
-          <div className="flex flex-col items-center text-center w-full md:w-1/3 md:border-r border-neutral-200 last:border-r-0">
-            <CountUp to={95} suffix="%" />
-            <span className="text-black font-medium mt-2">
-              Kundenzufriedenheit
-            </span>
-          </div>
-
-          <div className="flex flex-col items-center text-center w-full md:w-1/3">
-            <CountUp to={5} suffix="+" />
-            <span className="text-black font-medium mt-2">Jahre Erfahrung</span>
-          </div>
-        </div>
       </div>
     </section>
   );
 }
-
-const CountUp = ({ to, suffix }: { to: number; suffix: string }) => {
-  const nodeRef = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    const node = nodeRef.current;
-    if (!node) return;
-
-    const controls = animate(0, to, {
-      duration: 2.5,
-      ease: "easeOut",
-      onUpdate(value) {
-        node.textContent = value.toFixed(0) + suffix;
-      },
-    });
-
-    return () => controls.stop();
-  }, [to, suffix]);
-
-  return (
-    <span
-      ref={nodeRef}
-      className="text-3xl md:text-5xl font-medium text-black tracking-tight leading-tight"
-    />
-  );
-};
