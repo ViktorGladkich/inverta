@@ -28,77 +28,85 @@ export const AutoReplyEmail = ({
       <Head />
       <Preview>{previewText}</Preview>
       <Body style={main}>
-        <Container style={container}>
-          <Section style={logoBox}>
-            <Img
-              src="https://invertadigital.de/logo-inverta-white.png"
-              width="120"
-              height="40"
-              alt="INVERTA DIGITAL Logo"
-              style={logoImage}
-            />
-          </Section>
+        <div
+          style={{
+            backgroundColor: "#000000",
+            width: "100%",
+            padding: "40px 0",
+          }}
+        >
+          <Container style={container}>
+            <Section style={logoBox}>
+              <Img
+                src="https://invertadigital.de/logo-inverta-white.png"
+                width="120"
+                height="40"
+                alt="INVERTA DIGITAL Logo"
+                style={logoImage}
+              />
+            </Section>
 
-          <Heading style={heading}>Guten Tag {name},</Heading>
+            <Heading style={heading}>Guten Tag {name},</Heading>
 
-          <Text style={paragraph}>
-            vielen Dank für Ihre Nachricht und Ihr Interesse an einer
-            Zusammenarbeit mit INVERTA DIGITAL im Bereich{" "}
-            <strong>{service}</strong>.
-          </Text>
-
-          <Text style={paragraph}>
-            Wir haben Ihre Projektanfrage erfolgreich erhalten. Unser Team wird
-            Ihre Angaben intern prüfen. Wir werden uns innerhalb der nächsten 24
-            Stunden bei Ihnen melden, um die weiteren Schritte für Ihr Projekt
-            zu besprechen.
-          </Text>
-
-          <Text style={paragraph}>
-            In der Zwischenzeit laden wir Sie ein, sich unsere aktuellen
-            Arbeiten auf unserer Website anzusehen:
-          </Text>
-
-          <Section style={buttonContainer}>
-            <Link href="https://invertadigital.de/projekte" style={button}>
-              Unsere Projekte entdecken
-            </Link>
-          </Section>
-
-          <Text style={paragraph}>
-            Wir freuen uns darauf, mit Ihnen gemeinsam etwas Außergewöhnliches
-            zu erschaffen!
-          </Text>
-
-          <Text style={signoff}>
-            Beste Grüße,
-            <br />
-            Das Team von INVERTA DIGITAL
-          </Text>
-
-          <Section style={footer}>
-            <Text style={footerText}>
-              INVERTA DIGITAL
-              <br />
-              Rubensweg 1, 01217 Dresden, Deutschland
+            <Text style={paragraph}>
+              vielen Dank für Ihre Nachricht und Ihr Interesse an einer
+              Zusammenarbeit mit INVERTA DIGITAL im Bereich{" "}
+              <strong>{service}</strong>.
             </Text>
-            <Text style={footerLinks}>
-              <Link
-                href="https://invertadigital.de/impressum"
-                style={footerLink}
-              >
-                Impressum
-              </Link>{" "}
-              •{" "}
-              <Link
-                href="https://invertadigital.de/datenschutz"
-                style={footerLink}
-              >
-                Datenschutz
+
+            <Text style={paragraph}>
+              Wir haben Ihre Projektanfrage erfolgreich erhalten. Unser Team
+              wird Ihre Angaben intern prüfen. Wir werden uns innerhalb der
+              nächsten 24 Stunden bei Ihnen melden, um die weiteren Schritte für
+              Ihr Projekt zu besprechen.
+            </Text>
+
+            <Text style={paragraph}>
+              In der Zwischenzeit laden wir Sie ein, sich unsere aktuellen
+              Arbeiten auf unserer Website anzusehen:
+            </Text>
+
+            <Section style={buttonContainer}>
+              <Link href="https://invertadigital.de/projekte" style={button}>
+                Unsere Projekte entdecken
               </Link>
+            </Section>
+
+            <Text style={paragraph}>
+              Wir freuen uns darauf, mit Ihnen gemeinsam etwas Außergewöhnliches
+              zu erschaffen!
             </Text>
-          </Section>
-        </Container>
+
+            <Text style={signoff}>
+              Beste Grüße,
+              <br />
+              Das Team von INVERTA DIGITAL
+            </Text>
+
+            <Section style={footer}>
+              <Text style={footerText}>
+                INVERTA DIGITAL
+                <br />
+                Rubensweg 1, 01217 Dresden, Deutschland
+              </Text>
+              <Text style={footerLinks}>
+                <Link
+                  href="https://invertadigital.de/impressum"
+                  style={footerLink}
+                >
+                  Impressum
+                </Link>{" "}
+                •{" "}
+                <Link
+                  href="https://invertadigital.de/datenschutz"
+                  style={footerLink}
+                >
+                  Datenschutz
+                </Link>
+              </Text>
+            </Section>
+          </Container>
+        </div>
       </Body>
     </Html>
   );
@@ -120,8 +128,6 @@ const container = {
   backgroundColor: "#000000",
   borderRadius: "16px",
   maxWidth: "600px",
-  border: "1px solid #222222",
-  boxShadow: "0 10px 30px -10px rgba(0,0,0,0.5)",
 };
 
 const logoBox = {
@@ -178,7 +184,7 @@ const signoff = {
 };
 
 const footer = {
-  borderTop: "1px solid #222222",
+  borderTop: "1px solid rgba(255,255,255,0.1)",
   paddingTop: "32px",
 };
 

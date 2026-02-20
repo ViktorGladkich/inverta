@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { ButtonArrow } from "@/components/layout/navbar/icons";
@@ -10,6 +10,7 @@ export default function ContactClient() {
     "idle" | "loading" | "success" | "error"
   >("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const formRef = useRef<HTMLDivElement>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -36,6 +37,13 @@ export default function ContactClient() {
       }
 
       setStatus("success");
+      // Scroll to the confirmation so the user sees it
+      setTimeout(() => {
+        formRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }, 100);
     } catch {
       setErrorMessage(
         "Etwas ist schief gelaufen. Bitte versuchen Sie es später noch einmal.",
@@ -140,7 +148,10 @@ export default function ContactClient() {
           </div>
 
           {/* Right Column: Form */}
-          <div className="w-full lg:w-[45%] flex items-center min-h-[600px] relative">
+          <div
+            ref={formRef}
+            className="w-full lg:w-[45%] flex items-center min-h-[600px] relative"
+          >
             <AnimatePresence mode="wait">
               {status === "success" ? (
                 <motion.div
