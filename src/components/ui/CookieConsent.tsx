@@ -129,7 +129,7 @@ export function CookieConsent() {
                     <h3 className="text-base font-bold text-black tracking-tight leading-tight mb-1">
                       Ihre Privatsphäre ist uns wichtig
                     </h3>
-                    <p className="text-[12px] text-black/40 font-medium leading-relaxed">
+                    <p className="text-[12px] text-black font-medium leading-relaxed">
                       Wir verwenden Cookies und ähnliche Technologien, um Ihnen
                       ein optimales Online-Erlebnis zu bieten.
                     </p>
@@ -137,14 +137,14 @@ export function CookieConsent() {
                 </div>
 
                 {/* Description */}
-                <p className="text-[13px] leading-[1.7] text-black/50 font-medium">
+                <p className="text-[13px] leading-[1.7] text-black font-medium">
                   Wir nutzen Cookies, um unsere Website zu verbessern, den
                   Traffic zu analysieren und personalisierte Inhalte anzubieten.
                   Sie können Ihre Einstellungen jederzeit anpassen. Weitere
                   Informationen finden Sie in unserer{" "}
                   <Link
                     href="/datenschutz"
-                    className="text-black font-semibold underline underline-offset-2 decoration-black/15 hover:decoration-black/50 transition-all"
+                    className="text-black/50 font-semibold underline underline-offset-2 decoration-black/15 hover:decoration-black/50 transition-all"
                   >
                     Datenschutzerklärung
                   </Link>
@@ -156,7 +156,7 @@ export function CookieConsent() {
               <div className="px-6 sm:px-7 mt-4">
                 <button
                   onClick={() => setShowDetails(!showDetails)}
-                  className="flex items-center gap-2 text-[12px] font-semibold text-black/50 hover:text-black/80 transition-colors uppercase tracking-wider group"
+                  className="flex items-center gap-2 text-[12px] font-semibold text-black/50 hover:text-black/80 transition-colors uppercase tracking-wider group cursor-pointer"
                 >
                   <ChevronDown
                     className={`w-3.5 h-3.5 transition-transform duration-300 ${showDetails ? "rotate-180" : ""}`}
@@ -179,13 +179,23 @@ export function CookieConsent() {
                       {cookieCategories.map((cat) => (
                         <div
                           key={cat.id}
-                          className="flex items-start gap-3 p-3 rounded-xl bg-black/2 border border-black/4"
+                          className="flex items-start gap-4 p-4 rounded-[16px] bg-[#f5f5f5]"
+                          style={{
+                            boxShadow:
+                              "rgba(0, 0, 0, 0.08) 0px 0.7px 0.7px -0.67px, rgba(0, 0, 0, 0.08) 0px 1.8px 1.8px -1.33px, rgba(0, 0, 0, 0.07) 0px 3.6px 3.6px -2px, rgb(255, 255, 255) 0px 3px 1px 0px inset",
+                          }}
                         >
-                          <div className="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center shrink-0 mt-0.5 text-black/50">
+                          <div
+                            className="w-10 h-10 rounded-[12px] bg-[#f5f5f5] flex items-center justify-center shrink-0 mt-0.5 text-black/60"
+                            style={{
+                              boxShadow:
+                                "rgba(0, 0, 0, 0.08) 0px 0.7px 0.7px -0.67px, rgba(0, 0, 0, 0.08) 0px 1.8px 1.8px -1.33px, rgba(0, 0, 0, 0.07) 0px 3.6px 3.6px -2px, rgb(255, 255, 255) 0px 3px 1px 0px inset",
+                            }}
+                          >
                             {cat.icon}
                           </div>
                           <div className="flex-1 min-w-0">
-                            <div className="flex items-center justify-between mb-1">
+                            <div className="flex items-center justify-between mb-1.5">
                               <span className="text-[13px] font-bold text-black tracking-tight">
                                 {cat.title}
                               </span>
@@ -201,7 +211,7 @@ export function CookieConsent() {
                                       [cat.id]: !prev[cat.id],
                                     }))
                                   }
-                                  className={`relative w-10 h-[22px] rounded-full transition-colors duration-300 ${
+                                  className={`relative w-11 h-[24px] rounded-full transition-colors duration-300 cursor-pointer ${
                                     preferences[cat.id]
                                       ? "bg-black"
                                       : "bg-black/10"
@@ -214,9 +224,9 @@ export function CookieConsent() {
                                       stiffness: 500,
                                       damping: 30,
                                     }}
-                                    className={`absolute top-[3px] w-4 h-4 rounded-full bg-white shadow-sm ${
+                                    className={`absolute top-[3px] w-[18px] h-[18px] rounded-full bg-white shadow-sm ${
                                       preferences[cat.id]
-                                        ? "left-[22px]"
+                                        ? "left-[23px]"
                                         : "left-[3px]"
                                     }`}
                                   />
@@ -238,7 +248,7 @@ export function CookieConsent() {
               <div className="p-6 sm:p-7 pt-5 flex flex-col gap-2.5">
                 <button
                   onClick={handleAcceptAll}
-                  className="w-full py-3.5 rounded-xl text-[13px] font-bold text-white bg-black hover:bg-black/85 shadow-[0_2px_10px_rgba(0,0,0,0.2)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] transition-all duration-300 tracking-tight active:scale-[0.98]"
+                  className="w-full py-3.5 rounded-xl text-[13px] font-bold text-white bg-black hover:bg-black/85 shadow-[0_2px_10px_rgba(0,0,0,0.2)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] transition-all duration-300 tracking-tight active:scale-[0.98] cursor-pointer"
                 >
                   Alle Cookies akzeptieren
                 </button>
@@ -248,14 +258,14 @@ export function CookieConsent() {
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       onClick={handleSavePreferences}
-                      className="flex-1 py-3 rounded-xl text-[12px] font-semibold text-black/70 bg-black/4 hover:bg-black/8 transition-all duration-200 tracking-tight"
+                      className="flex-1 py-3 rounded-xl text-[12px] font-semibold text-black/70 bg-black/4 hover:bg-black/8 transition-all duration-200 tracking-tight cursor-pointer"
                     >
                       Auswahl speichern
                     </motion.button>
                   )}
                   <button
                     onClick={handleDecline}
-                    className={`${showDetails ? "flex-1" : "w-full"} py-3 rounded-xl text-[12px] font-semibold text-black/50 bg-black/4 hover:bg-black/8 transition-all duration-200 tracking-tight`}
+                    className={`${showDetails ? "flex-1" : "w-full"} py-3 rounded-xl text-[12px] font-semibold text-black/50 bg-black/4 hover:bg-black/8 transition-all duration-200 tracking-tight cursor-pointer`}
                   >
                     Nur Essentielle
                   </button>

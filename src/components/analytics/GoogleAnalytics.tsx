@@ -1,7 +1,7 @@
 "use client";
 
 import Script from "next/script";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 const GA_ID = "G-NT29FD0TKE";
 

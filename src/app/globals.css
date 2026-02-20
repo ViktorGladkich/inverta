@@ -379,7 +379,7 @@ body::before {
   background: #050505;
 }
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: #daff02;
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
