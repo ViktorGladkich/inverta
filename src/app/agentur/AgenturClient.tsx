@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+
 import { useRef } from "react";
 
 const marqueeItems = [
@@ -20,9 +21,15 @@ export function AgenturClient() {
     target: heroRef,
     offset: ["start start", "end start"],
   });
-  const heroY = useTransform(scrollYProgress, [0, 1], [0, 150]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
+  const heroYRaw = useTransform(scrollYProgress, [0, 1], [0, 150]);
+  const heroOpacityRaw = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
+  const heroY = useSpring(heroYRaw, { stiffness: 100, damping: 30 });
+  const heroOpacity = useSpring(heroOpacityRaw, {
+    stiffness: 100,
+    damping: 30,
+  });
   return (
     <>
       <section className="fixed inset-0 z-0 flex flex-col items-center justify-center overflow-hidden bg-white text-black">
