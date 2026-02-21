@@ -5,6 +5,7 @@ import { useRef } from "react";
 import Link from "next/link";
 import { Rocket } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { CountUp } from "./mission/CountUp";
 
 const neumorphicShadow =
   "0px 0.706592px 0.706592px -0.666667px rgba(0,0,0,0.08),0px 1.80656px 1.80656px -1.33333px rgba(0,0,0,0.08),0px 3.62176px 3.62176px -2px rgba(0,0,0,0.07),0px 6.8656px 6.8656px -2.66667px rgba(0,0,0,0.07),0px 13.6468px 13.6468px -3.33333px rgba(0,0,0,0.05),0px 30px 30px -3.25px rgba(0,0,0,0.05),inset 0px 3px 1px 0px white]";
@@ -49,7 +50,7 @@ export function CTASection() {
                 </span>
               </h2>
 
-              <p className="text-base md:text-lg text-black/40 font-normal leading-relaxed max-w-lg">
+              <p className="text-base md:text-lg text-black font-normal leading-relaxed max-w-lg">
                 Jedes erfolgreiche Projekt beginnt mit einem Gespräch. Erzählen
                 Sie uns von Ihrer Vision – wir machen den Rest.
               </p>
@@ -82,19 +83,24 @@ export function CTASection() {
           {/* Right — stats card */}
           <FadeIn delay={0.2}>
             <div
-              className="rounded-[24px] bg-[#f5f5f5] p-8 md:p-10 flex flex-col gap-8 min-w-[280px]"
+              className="rounded-[32px] bg-white p-8 md:p-12 flex flex-col gap-8 min-w-[280px] md:min-w-[380px]"
               style={{ boxShadow: neumorphicShadow }}
             >
               {/* Stats */}
               {[
-                { value: "97+", label: "Projekte erfolgreich" },
-                { value: "95%", label: "Kundenzufriedenheit" },
-                { value: "5+", label: "Jahre Erfahrung" },
+                { to: 97, suffix: "+", label: "Projekte erfolgreich" },
+                { to: 95, suffix: "%", label: "Kundenzufriedenheit" },
+                { to: 5, suffix: "+", label: "Jahre Erfahrung" },
               ].map((stat, i) => (
-                <div key={i} className="flex flex-col gap-1">
-                  {i > 0 && <div className="h-[1px] bg-black/6 -mt-4 mb-3" />}
+                <div
+                  key={i}
+                  className="flex flex-col gap-1 items-center md:items-start text-center md:text-left"
+                >
+                  {i > 0 && (
+                    <div className="h-px w-full bg-black/5 -mt-4 mb-3" />
+                  )}
                   <span className="text-4xl md:text-5xl font-medium tracking-tight text-black leading-none">
-                    {stat.value}
+                    <CountUp to={stat.to} suffix={stat.suffix} />
                   </span>
                   <span className="text-[11px] font-bold tracking-widest uppercase text-black/30">
                     {stat.label}
@@ -103,7 +109,7 @@ export function CTASection() {
               ))}
 
               {/* Yellow accent bar */}
-              <div className="h-1.5 w-full bg-black/5 rounded-full overflow-hidden">
+              <div className="h-1.5 w-full bg-black/5 rounded-full overflow-hidden mt-4">
                 <motion.div
                   initial={{ width: "0%" }}
                   whileInView={{ width: "95%" }}
@@ -115,25 +121,6 @@ export function CTASection() {
             </div>
           </FadeIn>
         </div>
-
-        {/* Bottom divider row */}
-        <FadeIn delay={0.3}>
-          <div className="mt-20 md:mt-28 pt-8 border-t border-black/6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <span className="text-[10px] font-bold tracking-widest uppercase text-black/20">
-              Inverta Digital — Agentur für Marketing & Webentwicklung
-            </span>
-            <div className="flex items-center gap-6">
-              {["Dresden", "Remote", "International"].map((loc) => (
-                <span
-                  key={loc}
-                  className="text-[10px] font-bold tracking-widest uppercase text-black/20"
-                >
-                  {loc}
-                </span>
-              ))}
-            </div>
-          </div>
-        </FadeIn>
       </div>
     </section>
   );

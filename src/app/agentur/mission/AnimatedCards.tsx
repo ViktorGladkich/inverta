@@ -74,7 +74,7 @@ export function DesignCard() {
       <motion.div
         animate={{ y: [0, 60, 0] }}
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute left-0 right-0 h-[1px] bg-linear-to-r from-transparent via-[#daff02]/60 to-transparent"
+        className="absolute left-0 right-0 h-px bg-linear-to-r from-transparent via-[#daff02]/60 to-transparent"
         style={{ top: "20px" }}
       />
 

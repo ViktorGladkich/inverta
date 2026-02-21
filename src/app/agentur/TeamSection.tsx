@@ -72,14 +72,14 @@ function TeamCard({ member }: { member: (typeof team)[0] }) {
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
       ) : (
-        <div className="absolute inset-0 bg-gradient-to-br from-[#e8e8e8] to-[#d0d0d0] flex items-center justify-center">
+        <div className="absolute inset-0 bg-linear-to-br from-[#e8e8e8] to-[#d0d0d0] flex items-center justify-center">
           <span className="text-[100px] font-black text-black/8 select-none">
             {member.name.charAt(0)}
           </span>
         </div>
       )}
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent" />
 
       <div className="absolute top-5 right-5 z-20">
         <span className="text-[11px] font-black tracking-widest text-white/40">
