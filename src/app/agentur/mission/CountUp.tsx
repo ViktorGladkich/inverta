@@ -3,7 +3,15 @@
 import { useRef, useEffect, useState } from "react";
 import { animate } from "framer-motion";
 
-export function CountUp({ to, suffix }: { to: number; suffix: string }) {
+export function CountUp({
+  to,
+  suffix,
+  className = "text-black",
+}: {
+  to: number;
+  suffix: string;
+  className?: string;
+}) {
   const nodeRef = useRef<HTMLSpanElement>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -34,7 +42,7 @@ export function CountUp({ to, suffix }: { to: number; suffix: string }) {
   return (
     <span
       ref={nodeRef}
-      className="text-2xl md:text-3xl font-black tracking-tight text-black leading-none"
+      className={`text-2xl md:text-3xl font-black tracking-tight leading-none ${className}`}
     >
       0{suffix}
     </span>
