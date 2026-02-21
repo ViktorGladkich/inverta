@@ -192,12 +192,18 @@ export function PrinzipienSection() {
     <section
       ref={sectionRef}
       className="relative z-10 bg-[#f5f5f5]"
-      aria-labelledby="values-heading"
-      style={{ minHeight: "400vh" }}
+      style={{
+        minHeight: "400vh",
+        transform: "translateZ(0)",
+        willChange: "transform",
+      }}
     >
       <div
         className="sticky top-0 flex flex-col overflow-hidden pt-24 pb-12"
-        style={{ height: "calc(var(--vh, 1vh) * 100)" }}
+        style={{
+          height: "calc(var(--vh, 1vh) * 100)",
+          willChange: "transform",
+        }}
       >
         <motion.div
           style={{ y: contentY }}
