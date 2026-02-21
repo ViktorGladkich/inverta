@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import { ServicesOverview } from "@/components/sections/ServicesOverview";
 import { TeamSection } from "./TeamSection";
 import { MissionSection } from "./MissionSection";
-import { PrinzipienSection } from "./PrinzipienSection";
+
 import { CTASection } from "./CTASection";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { WhyUs } from "@/components/sections/WhyUs";
@@ -39,7 +39,7 @@ export default function AgenturPage() {
       <AgenturClient />
       <MissionSection />
       <WhyUs />
-      <PrinzipienSection />
+      
       <ServicesOverview />
       <TeamSection />
       <Testimonials/>
