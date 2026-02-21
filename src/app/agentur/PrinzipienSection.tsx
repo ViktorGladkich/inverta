@@ -1,8 +1,9 @@
 "use client";
 
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { Target, Zap, Eye, Users, Shield } from "lucide-react";
+import { FadeIn } from "@/components/ui/FadeIn";
 
 const principles = [
   {
@@ -46,61 +47,37 @@ const principles = [
 const neumorphicShadow =
   "0px 0.706592px 0.706592px -0.666667px rgba(0,0,0,0.08),0px 1.80656px 1.80656px -1.33333px rgba(0,0,0,0.08),0px 3.62176px 3.62176px -2px rgba(0,0,0,0.07),inset 0px 3px 1px 0px rgba(255,255,255,1)";
 
-function ProgressDot({
-  index,
-  progress,
-}: {
-  index: number;
-  progress: ReturnType<typeof useSpring>;
-}) {
-  const scaleX = useTransform(
-    progress,
-    [index / 4, (index + 0.5) / 4],
-    [1, 1.5],
-  );
-  const backgroundColor = useTransform(
-    progress,
-    [index / 4, (index + 1) / 4],
-    ["rgba(0,0,0,0.12)", "#000000"],
-  );
-
-  return (
-    <motion.div
-      style={{ scaleX, backgroundColor }}
-      className="h-1 w-6 rounded-full origin-left"
-    />
-  );
-}
-
 function PrincipleLine({
   principle,
   index,
-  progress,
 }: {
   principle: (typeof principles)[0];
   index: number;
-  progress: ReturnType<typeof useSpring>;
 }) {
-  const start = index / principles.length;
-  const end = (index + 1) / principles.length;
-
-  const lineScale = useTransform(progress, [start, end], [0, 1]);
-  const rowOpacity = useTransform(
-    progress,
-    [Math.max(0, start - 0.06), start],
-    [0.25, 1],
-  );
-  const titleX = useTransform(progress, [start, start + 0.1], [-24, 0]);
-  const contentOpacity = useTransform(progress, [start, start + 0.1], [0, 1]);
-  const dotLeft = useTransform(lineScale, [0, 1], ["0%", "100%"]);
-  const dotOpacity = useTransform(lineScale, [0, 0.04, 0.96, 1], [0, 1, 1, 0]);
+  const lineRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: lineRef,
+    offset: ["start 90%", "start 30%"],
+  });
+  const lineScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <motion.div style={{ opacity: rowOpacity }} className="flex flex-col">
-      <div className="flex items-center gap-4 md:gap-8 py-2 md:py-3">
+    <motion.div
+      ref={lineRef}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-5%" }}
+      transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
+      className="flex flex-col"
+    >
+      {/* Row */}
+      <div className="flex items-center gap-4 md:gap-8 py-4 md:py-5">
+        {/* Number */}
         <span className="text-[10px] font-black tracking-widest text-black/20 shrink-0 w-5">
           {principle.number}
         </span>
+
+        {/* Icon */}
         <div
           className={`w-9 h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center shrink-0 ${
             principle.isEven ? "bg-black text-white" : "bg-[#daff02] text-black"
@@ -108,18 +85,14 @@ function PrincipleLine({
         >
           {principle.icon}
         </div>
-        <motion.h3
-          style={{ x: titleX, opacity: contentOpacity }}
-          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight text-black leading-none flex-1 min-w-0"
-        >
+
+        {/* Title */}
+        <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight text-black leading-none flex-1 min-w-0">
           {principle.title}
-        </motion.h3>
+        </h3>
 
         {/* Desktop tags */}
-        <motion.div
-          style={{ opacity: contentOpacity }}
-          className="hidden md:flex items-center gap-2 shrink-0"
-        >
+        <div className="hidden md:flex items-center gap-2 shrink-0">
           {principle.tags.map((tag) => (
             <span
               key={tag}
@@ -129,18 +102,15 @@ function PrincipleLine({
               {tag}
             </span>
           ))}
-        </motion.div>
+        </div>
       </div>
 
       {/* Description + mobile tags */}
-      <motion.div
-        style={{ opacity: contentOpacity }}
-        className="flex flex-col sm:flex-row gap-2 sm:gap-6 pb-1 pl-[52px] md:pl-[74px]"
-      >
-        <p className="text-xs text-black font-normal leading-relaxed max-w-md flex-1">
+      <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 pb-2 pl-[52px] md:pl-[74px]">
+        <p className="text-xs md:text-sm text-black/50 font-normal leading-relaxed max-w-md flex-1">
           {principle.description}
         </p>
-        <div className="flex md:hidden flex-nowrap gap-1">
+        <div className="flex md:hidden flex-wrap gap-1.5">
           {principle.tags.map((tag) => (
             <span
               key={tag}
@@ -151,24 +121,13 @@ function PrincipleLine({
             </span>
           ))}
         </div>
-      </motion.div>
+      </div>
 
-      {/* Progress bar */}
-      <div className="relative h-[1.5px] w-full bg-black/6 mt-2 overflow-visible">
+      {/* Progress line — всегда чёрная */}
+      <div className="relative h-[1.5px] w-full bg-black/8 mt-2 overflow-hidden">
         <motion.div
           style={{ scaleX: lineScale, originX: 0 }}
-          className={`absolute inset-0 ${principle.isEven ? "bg-black" : "bg-[#daff02]"}`}
-        />
-        <motion.div
-          className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full pointer-events-none"
-          style={{
-            left: dotLeft,
-            opacity: dotOpacity,
-            backgroundColor: principle.isEven ? "#000000" : "#daff02",
-            boxShadow: principle.isEven
-              ? "0 0 10px rgba(0,0,0,0.5)"
-              : "0 0 10px rgba(218,255,2,0.9)",
-          }}
+          className="absolute inset-0 bg-black"
         />
       </div>
     </motion.div>
@@ -177,82 +136,64 @@ function PrincipleLine({
 
 export function PrinzipienSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const stickyRef = useRef<HTMLDivElement>(null);
-
-  // Фиксируем высоту sticky контейнера один раз при mount
-  // Игнорируем последующие изменения от адресной строки браузера
-  useEffect(() => {
-    if (stickyRef.current) {
-      const h = window.innerHeight;
-      stickyRef.current.style.height = `${h}px`;
-    }
-  }, []);
-
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start start", "end end"],
+    offset: ["start end", "end start"],
   });
-
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 80,
-    damping: 25,
-    restDelta: 0.001,
-  });
-
-  const contentY = useTransform(smoothProgress, [0.4, 0.85], [0, -105]);
+  const bgY = useTransform(scrollYProgress, [0, 1], [30, -30]);
 
   return (
     <section
       ref={sectionRef}
-      className="relative z-10 bg-[#f5f5f5]"
+      className="relative z-10 py-24 md:py-32 bg-[#f5f5f5] overflow-hidden"
       aria-labelledby="values-heading"
-      style={{ minHeight: "400vh", position: "relative" }}
     >
-      <div
-        ref={stickyRef}
-        className="sticky top-0 flex flex-col overflow-hidden pt-24 pb-24 md:pb-12"
-        /* height задаётся через useEffect выше */
+      {/* Parallax background number */}
+      <motion.div
+        style={{ y: bgY }}
+        className="absolute right-[-40px] top-1/2 -translate-y-1/2 text-[clamp(160px,22vw,300px)] font-black text-black/[0.03] leading-none select-none pointer-events-none tracking-tighter"
+        aria-hidden="true"
       >
-        <motion.div
-          style={{ y: contentY }}
-          className="flex-1 flex flex-col px-6 md:px-16 max-w-[1400px] mx-auto w-full"
-        >
-          {/* Header */}
-          <div className="flex flex-col items-center text-center gap-4 mb-6 md:mb-8 shrink-0">
-            <div className="flex items-center justify-center px-[12px] py-[6px] gap-2 rounded-[60px] bg-[#f5f5f5] shadow-[0px_0.706592px_0.706592px_-0.541667px_rgba(0,0,0,0.1),0px_1.80656px_1.80656px_-1.08333px_rgba(0,0,0,0.09),0px_3.62176px_3.62176px_-1.625px_rgba(0,0,0,0.09),0px_6.8656px_6.8656px_-2.16667px_rgba(0,0,0,0.09),0px_13.6468px_13.6468px_-2.70833px_rgba(0,0,0,0.08),0px_30px_30px_-3.25px_rgba(0,0,0,0.05),inset_0px_3px_1px_0px_white]">
-              <div className="w-[14px] h-[14px] text-black/40">
-                <Shield className="w-full h-full" />
+        02
+      </motion.div>
+
+      <div className="container mx-auto px-6 md:px-10 max-w-[1400px] relative z-10">
+        {/* Header */}
+        <FadeIn>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-14 md:mb-16">
+            <div className="flex flex-col gap-4">
+              {/* Badge */}
+              <div className="w-fit flex items-center justify-center px-[12px] py-[6px] gap-2 rounded-[60px] bg-[#f5f5f5] shadow-[0px_0.706592px_0.706592px_-0.541667px_rgba(0,0,0,0.1),0px_1.80656px_1.80656px_-1.08333px_rgba(0,0,0,0.09),0px_3.62176px_3.62176px_-1.625px_rgba(0,0,0,0.09),0px_6.8656px_6.8656px_-2.16667px_rgba(0,0,0,0.09),0px_13.6468px_13.6468px_-2.70833px_rgba(0,0,0,0.08),0px_30px_30px_-3.25px_rgba(0,0,0,0.05),inset_0px_3px_1px_0px_white]">
+                <div className="w-[14px] h-[14px] text-black/40">
+                  <Shield className="w-full h-full" />
+                </div>
+                <span className="text-[12px] font-medium text-black tracking-wider uppercase">
+                  Unsere Prinzipien
+                </span>
               </div>
-              <span className="text-[12px] font-medium text-black tracking-wider uppercase">
-                Unsere Prinzipien
-              </span>
+              <h2
+                id="values-heading"
+                className="text-4xl md:text-6xl font-medium tracking-tight text-black"
+              >
+                Woran wir glauben.
+              </h2>
             </div>
-            <h2
-              id="values-heading"
-              className="text-2xl md:text-4xl font-medium tracking-tight text-black"
-            >
-              Woran wir glauben.
-            </h2>
-
-            <div className="hidden md:flex items-center gap-2 mt-2">
-              {principles.map((_, i) => (
-                <ProgressDot key={i} index={i} progress={smoothProgress} />
-              ))}
-            </div>
+            <p className="text-base md:text-lg text-black/40 font-medium max-w-sm leading-relaxed">
+              Vier Grundsätze, die jede Entscheidung und jedes Pixel bestimmen.
+            </p>
           </div>
+        </FadeIn>
 
-          {/* Principles list */}
-          <div className="flex flex-col flex-1 justify-between">
-            {principles.map((principle, index) => (
-              <PrincipleLine
-                key={principle.number}
-                principle={principle}
-                index={index}
-                progress={smoothProgress}
-              />
-            ))}
-          </div>
-        </motion.div>
+        {/* Principles */}
+        <div className="flex flex-col">
+          {principles.map((principle, index) => (
+            <PrincipleLine
+              key={principle.number}
+              principle={principle}
+              index={index}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

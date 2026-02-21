@@ -17,11 +17,9 @@ export default function Home() {
         <Hero />
         <WhyUs />
         <Technology />
-
         <ServicesOverview />
         <Process />
         <Projects />
-        <TeamSection />
         <Testimonials />
         <FAQ />
         <CTASection />

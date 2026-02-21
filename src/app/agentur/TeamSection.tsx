@@ -9,15 +9,15 @@ const neumorphicShadow =
 
 const team = [
   {
-    name: "Viktor Gladkich",
-    role: "Gründer & CEO",
-    image: "/viktor.jpg",
-    number: "01",
-  },
-  {
     name: "Mansur Alisultanow",
     role: "Gründer & CMO",
     image: "/team/member_2.jpeg",
+    number: "01",
+  },
+   {
+    name: "Viktor Gladkich",
+    role: "Gründer & CEO",
+    image: "/viktor.jpg",
     number: "02",
   },
   {

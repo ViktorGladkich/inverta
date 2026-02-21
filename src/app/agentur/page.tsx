@@ -8,6 +8,7 @@ import { MissionSection } from "./MissionSection";
 import { CTASection } from "./CTASection";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { WhyUs } from "@/components/sections/WhyUs";
+import { PrinzipienSection } from "./PrinzipienSection";
 
 export const metadata: Metadata = {
   title: "Über uns | INVERTA DIGITAL – Ihre Digitalagentur aus Dresden",
@@ -39,7 +40,7 @@ export default function AgenturPage() {
       <AgenturClient />
       <MissionSection />
       <WhyUs />
-      
+      <PrinzipienSection />
       <ServicesOverview />
       <TeamSection />
       <Testimonials/>
