@@ -69,15 +69,15 @@ const Card = ({
   return (
     <div
       ref={containerRef}
-      className="flex items-center justify-center sticky top-0"
-      style={{ height: "calc(var(--vh, 1vh) * 100)" }}
+      className="flex items-center justify-center sticky top-[80px] md:top-0"
+      style={{ height: "calc(var(--vh, 1vh) * 85)" }}
     >
       <motion.div
         style={{
           scale,
           backgroundColor: "#f5f5f5", // Force standard BG
           color: "black", // Force standard text
-          top: `calc(-5vh + ${i * 25}px)`,
+          top: `${i * 25}px`,
           boxShadow: neumorphicShadow,
         }}
         className="relative flex flex-col md:flex-row gap-6 md:gap-8 origin-top w-full max-w-5xl rounded-[20px] p-6 md:p-10"
