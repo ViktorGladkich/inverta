@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
-  const isMaintenanceMode = false; // process.env.MAINTENANCE_MODE === "true";
+  const isMaintenanceMode = true; // process.env.MAINTENANCE_MODE === "true";
   const isDev = process.env.NODE_ENV === "development";
 
   // NEVER block in development (localhost)
