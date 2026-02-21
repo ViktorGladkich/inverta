@@ -186,7 +186,7 @@ export function PrinzipienSection() {
     restDelta: 0.001,
   });
 
-  const contentY = useTransform(smoothProgress, [0.4, 0.85], [0, -140]);
+  const contentY = useTransform(smoothProgress, [0.4, 0.85], [0, -105]);
 
   return (
     <section

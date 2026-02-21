@@ -108,8 +108,8 @@ export function AgenturClient() {
       {/* Scroll Spacer to trigger animations and push down content */}
       <div
         ref={heroRef}
-        className="h-screen relative z-0 pointer-events-none"
-        style={{ minHeight: "calc(var(--vh, 1vh) * 100)" }}
+        className="relative z-0 pointer-events-none"
+        style={{ height: "calc(var(--vh, 1vh) * 100)" }}
       />
     </>
   );
