@@ -27,7 +27,7 @@ export function AgenturClient() {
     <>
       <section
         className="fixed inset-0 z-0 flex flex-col items-center justify-center overflow-hidden bg-white text-black"
-        style={{ minHeight: "calc(var(--vh, 1vh) * 100)" }}
+        style={{ height: "calc(var(--vh, 1vh) * 100)" }}
       >
         <div className="absolute inset-0 z-0 select-none">
           <video
@@ -112,6 +112,7 @@ export function AgenturClient() {
       <div
         ref={heroRef}
         className="h-screen relative z-0 pointer-events-none"
+        style={{ height: "calc(var(--vh, 1vh) * 100)" }}
       />
     </>
   );
