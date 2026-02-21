@@ -37,10 +37,7 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section
-      id="faq"
-      className="relative z-10 w-full bg-[#f5f5f5] py-24 mb-20 md:mb-0"
-    >
+    <section id="faq" className="relative z-10 w-full bg-[#f5f5f5] py-24">
       <div className="w-full max-w-[1000px] mx-auto px-6 md:px-12 flex flex-col items-center">
         {/* Header */}
         <div className="flex flex-col items-center text-center gap-6 mb-16">

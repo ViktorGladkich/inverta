@@ -88,11 +88,7 @@ export function GalaxyHero() {
           {/* Top Badge */}
           <motion.div variants={badgeVariants}>
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#F5F5F5] border border-white shadow-[0_30px_30px_-3.25px_rgba(0,0,0,0.05),0_13px_13px_-2.7px_rgba(0,0,0,0.08),0_6px_6px_-2.1px_rgba(0,0,0,0.09)] backdrop-blur-sm">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#daff02] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#daff02]"></span>
-              </span>
-              <span className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">
+              <span className="text-xs font-semibold tracking-wide text-black uppercase">
                 Digitalagentur der nächsten Generation
               </span>
             </div>
@@ -113,7 +109,7 @@ export function GalaxyHero() {
                 }}
               >
                 <div
-                  className="w-[60px] h-[60px] md:w-[100px] md:h-[100px] p-[10px] md:p-[16px] rounded-full flex items-center justify-center shadow-[0px_0.706592px_0.706592px_-0.666667px_rgba(16,49,77,0.24),0px_1.80656px_1.80656px_-1.33333px_rgba(16,49,77,0.23),0px_3.62176px_3.62176px_-2px_rgba(16,49,77,0.22),0px_6.8656px_6.8656px_-2.66667px_rgba(16,49,77,0.2),0px_13.6468px_13.6468px_-3.33333px_rgba(16,49,77,0.16),0px_30px_30px_-4px_rgba(16,49,77,0.06)]"
+                  className="w-[60px] h-[60px] md:w-[100px] md:h-[100px] p-[5px] md:p-[5px] rounded-full flex items-center justify-center shadow-[0px_0.706592px_0.706592px_-0.666667px_rgba(16,49,77,0.24),0px_1.80656px_1.80656px_-1.33333px_rgba(16,49,77,0.23),0px_3.62176px_3.62176px_-2px_rgba(16,49,77,0.22),0px_6.8656px_6.8656px_-2.66667px_rgba(16,49,77,0.2),0px_13.6468px_13.6468px_-3.33333px_rgba(16,49,77,0.16),0px_30px_30px_-4px_rgba(16,49,77,0.06)]"
                   style={{
                     background:
                       "linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(40, 40, 40) 213%)",
