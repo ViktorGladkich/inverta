@@ -15,7 +15,7 @@ export function FeaturesSection() {
   }));
 
   return (
-    <section className="bg-[#f5f5f5] pt-32 pb-0 px-6">
+    <section className="bg-[#f5f5f5] pt-32 pb-20 px-6">
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col items-center text-center gap-6 mb-16 md:mb-24">
           {/* Badge */}
