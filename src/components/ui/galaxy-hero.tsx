@@ -125,7 +125,7 @@ export function GalaxyHero() {
                       src="/cube.png"
                       alt="INVERTA Logo - Digitalagentur"
                       fill
-                      className="object-contain"
+                      className="object-contain "
                     />
                   </div>
                 </div>
@@ -134,7 +134,7 @@ export function GalaxyHero() {
               {/* Logo Text H1 */}
               <div className="relative flex items-center h-[100px] md:h-[120px]">
                 {/* Circle Background */}
-                <div className="absolute left-[-5px] md:left-[-20px] top-1/2 -translate-y-1/2 w-[70px] h-[70px] md:w-[110px] md:h-[110px] bg-[#daff02] rounded-full z-0" />
+                <div className="absolute left-[-11px] md:left-[-20px] top-1/2 -translate-y-1/2 w-[50px] h-[50px] md:w-[110px] md:h-[110px] bg-[#daff02] rounded-full z-0" />
                 {/* Text */}
                 <h1 className="relative font-sans font-bold text-[40px] sm:text-[60px] md:text-[100px] leading-none tracking-tighter text-black z-10">
                   INVERTA
@@ -222,7 +222,7 @@ export function GalaxyHero() {
             <div className="flex items-center justify-center gap-1.5 text-neutral-900 font-semibold text-lg">
               <span>Gründer von</span>
               <span className="relative inline-flex items-center">
-                <span className="absolute left-[-4px] top-1/2 -translate-y-1/2 w-7 h-7 bg-[#daff02] rounded-full" />
+                <span className="absolute left-[-5px] top-1/2 -translate-y-1/2 w-6 h-6 bg-[#daff02] rounded-full" />
                 <span className="relative z-10 font-bold text-black tracking-tight leading-none">
                   INVERTA
                 </span>
