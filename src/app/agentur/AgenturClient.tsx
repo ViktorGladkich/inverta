@@ -25,12 +25,10 @@ export function AgenturClient() {
 
   return (
     <>
-      {/* Fixed Hero background */}
       <section
         className="fixed inset-0 z-0 flex flex-col items-center justify-center overflow-hidden bg-white text-black"
-        style={{ height: "100vh" }}
+        style={{ minHeight: "calc(var(--vh, 1vh) * 100)" }}
       >
-        {/* Background video */}
         <div className="absolute inset-0 z-0 select-none">
           <video
             src="/hero-loop.mp4"
