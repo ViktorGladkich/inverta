@@ -7,6 +7,7 @@ import { WhyUs } from "@/components/sections/WhyUs";
 import { Technology } from "@/components/sections/Technology";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
+import { CTASection } from "./agentur/CTASection";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <Projects />
         <Testimonials />
         <FAQ />
+        <CTASection />
       </main>
       <Footer />
     </>
