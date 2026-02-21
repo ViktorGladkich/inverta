@@ -5,27 +5,37 @@ export function middleware(request: NextRequest) {
   const isMaintenanceMode = true;
   const isDev = process.env.NODE_ENV === "development";
 
-  // если dev — не блокируем
   if (isDev || !isMaintenanceMode) {
     return NextResponse.next();
   }
 
-  // если есть секретный параметр — пускаем
-  if (request.nextUrl.searchParams.get("preview") === "inverta2026") {
+  const previewKey = "inverta2026";
+
+  // Если пользователь пришёл с секретным параметром — ставим cookie
+  if (request.nextUrl.searchParams.get("preview") === previewKey) {
+    const response = NextResponse.next();
+    response.cookies.set("preview_access", "granted", {
+      path: "/",
+      httpOnly: false,
+    });
+    return response;
+  }
+
+  // Если cookie уже есть — пускаем
+  if (request.cookies.get("preview_access")?.value === "granted") {
     return NextResponse.next();
   }
 
-  // не зацикливаемся
+  // Не блокируем maintenance страницу
   if (request.nextUrl.pathname === "/maintenance") {
     return NextResponse.next();
   }
 
-  // разрешаем статику
+  // Разрешаем статику и API
   if (
     request.nextUrl.pathname.startsWith("/_next") ||
     request.nextUrl.pathname.startsWith("/api") ||
-    request.nextUrl.pathname.startsWith("/favicon") ||
-    request.nextUrl.pathname.match(/\.(ico|png|jpg|jpeg|svg|webp|css|js)$/)
+    request.nextUrl.pathname.startsWith("/favicon")
   ) {
     return NextResponse.next();
   }
