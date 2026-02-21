@@ -148,15 +148,6 @@ export function PrinzipienSection() {
       className="relative z-10 py-24 md:py-32 bg-[#f5f5f5] overflow-hidden"
       aria-labelledby="values-heading"
     >
-      {/* Parallax background number */}
-      <motion.div
-        style={{ y: bgY }}
-        className="absolute right-[-40px] top-1/2 -translate-y-1/2 text-[clamp(160px,22vw,300px)] font-black text-black/[0.03] leading-none select-none pointer-events-none tracking-tighter"
-        aria-hidden="true"
-      >
-        02
-      </motion.div>
-
       <div className="container mx-auto px-6 md:px-10 max-w-[1400px] relative z-10">
         {/* Header */}
         <FadeIn>
