@@ -2,20 +2,25 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
-  const isMaintenanceMode = true; // process.env.MAINTENANCE_MODE === "true";
+  const isMaintenanceMode = true;
   const isDev = process.env.NODE_ENV === "development";
 
-  // NEVER block in development (localhost)
+  // если dev — не блокируем
   if (isDev || !isMaintenanceMode) {
     return NextResponse.next();
   }
 
-  // Don't redirect if already on maintenance page (avoid infinite loop)
+  // если есть секретный параметр — пускаем
+  if (request.nextUrl.searchParams.get("preview") === "inverta2026") {
+    return NextResponse.next();
+  }
+
+  // не зацикливаемся
   if (request.nextUrl.pathname === "/maintenance") {
     return NextResponse.next();
   }
 
-  // Allow static assets, API routes, and Next.js internals
+  // разрешаем статику
   if (
     request.nextUrl.pathname.startsWith("/_next") ||
     request.nextUrl.pathname.startsWith("/api") ||
@@ -25,7 +30,6 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Redirect everything else to maintenance page
   return NextResponse.rewrite(new URL("/maintenance", request.url));
 }
 
