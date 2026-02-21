@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { Target, Zap, Eye, Users, Shield } from "lucide-react";
 
 const principles = [
@@ -135,7 +135,7 @@ function PrincipleLine({
       {/* Description + mobile tags */}
       <motion.div
         style={{ opacity: contentOpacity }}
-        className="flex flex-col sm:flex-row gap-2 sm:gap-6 pb-1 pl-[88px] md:pl-[124px]"
+        className="flex flex-col sm:flex-row gap-2 sm:gap-6 pb-1 pl-[52px] md:pl-[74px]"
       >
         <p className="text-xs text-black font-normal leading-relaxed max-w-md flex-1">
           {principle.description}
@@ -154,17 +154,20 @@ function PrincipleLine({
       </motion.div>
 
       {/* Progress bar */}
-      <div className="relative h-[1.5px] w-full bg-black/6 mt-3 md:mt-2 overflow-visible">
+      <div className="relative h-[1.5px] w-full bg-black/6 mt-2 overflow-visible">
         <motion.div
           style={{ scaleX: lineScale, originX: 0 }}
-          className="absolute inset-0 bg-black"
+          className={`absolute inset-0 ${principle.isEven ? "bg-black" : "bg-[#daff02]"}`}
         />
         <motion.div
-          className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full pointer-events-none bg-black"
+          className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full pointer-events-none"
           style={{
             left: dotLeft,
             opacity: dotOpacity,
-            boxShadow: "0 0 10px rgba(0,0,0,0.5)",
+            backgroundColor: principle.isEven ? "#000000" : "#daff02",
+            boxShadow: principle.isEven
+              ? "0 0 10px rgba(0,0,0,0.5)"
+              : "0 0 10px rgba(218,255,2,0.9)",
           }}
         />
       </div>
@@ -174,6 +177,16 @@ function PrincipleLine({
 
 export function PrinzipienSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const stickyRef = useRef<HTMLDivElement>(null);
+
+  // Фиксируем высоту sticky контейнера один раз при mount
+  // Игнорируем последующие изменения от адресной строки браузера
+  useEffect(() => {
+    if (stickyRef.current) {
+      const h = window.innerHeight;
+      stickyRef.current.style.height = `${h}px`;
+    }
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -192,22 +205,19 @@ export function PrinzipienSection() {
     <section
       ref={sectionRef}
       className="relative z-10 bg-[#f5f5f5]"
-      style={{
-        minHeight: "400vh",
-        transform: "translateZ(0)",
-      }}
+      aria-labelledby="values-heading"
+      style={{ minHeight: "400vh", position: "relative" }}
     >
       <div
+        ref={stickyRef}
         className="sticky top-0 flex flex-col overflow-hidden pt-24 pb-24 md:pb-12"
-        style={{
-          height: "calc(var(--vh, 1vh) * 100)",
-          willChange: "transform",
-        }}
+        /* height задаётся через useEffect выше */
       >
         <motion.div
           style={{ y: contentY }}
           className="flex-1 flex flex-col px-6 md:px-16 max-w-[1400px] mx-auto w-full"
         >
+          {/* Header */}
           <div className="flex flex-col items-center text-center gap-4 mb-6 md:mb-8 shrink-0">
             <div className="flex items-center justify-center px-[12px] py-[6px] gap-2 rounded-[60px] bg-[#f5f5f5] shadow-[0px_0.706592px_0.706592px_-0.541667px_rgba(0,0,0,0.1),0px_1.80656px_1.80656px_-1.08333px_rgba(0,0,0,0.09),0px_3.62176px_3.62176px_-1.625px_rgba(0,0,0,0.09),0px_6.8656px_6.8656px_-2.16667px_rgba(0,0,0,0.09),0px_13.6468px_13.6468px_-2.70833px_rgba(0,0,0,0.08),0px_30px_30px_-3.25px_rgba(0,0,0,0.05),inset_0px_3px_1px_0px_white]">
               <div className="w-[14px] h-[14px] text-black/40">
@@ -221,9 +231,7 @@ export function PrinzipienSection() {
               id="values-heading"
               className="text-2xl md:text-4xl font-medium tracking-tight text-black"
             >
-              <span className="bg-linear-to-t from-black/80 to-black bg-clip-text text-transparent">
-                Woran wir glauben.
-              </span>
+              Woran wir glauben.
             </h2>
 
             <div className="hidden md:flex items-center gap-2 mt-2">
@@ -233,6 +241,7 @@ export function PrinzipienSection() {
             </div>
           </div>
 
+          {/* Principles list */}
           <div className="flex flex-col flex-1 justify-between">
             {principles.map((principle, index) => (
               <PrincipleLine
