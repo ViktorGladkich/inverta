@@ -196,7 +196,7 @@ export function PrinzipienSection() {
       style={{ minHeight: "400vh" }}
     >
       <div
-        className="sticky top-0 flex flex-col overflow-hidden pt-24 pb-32 md:pb-12"
+        className="sticky top-0 flex flex-col overflow-hidden pt-24 pb-12"
         style={{ height: "calc(var(--vh, 1vh) * 100)" }}
       >
         <motion.div
