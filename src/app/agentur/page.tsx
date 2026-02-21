@@ -40,7 +40,7 @@ export default function AgenturPage() {
       <AgenturClient />
       <MissionSection />
       <WhyUs />
-      <PrinzipienSection />
+      <PrinzipienSection/>
       <ServicesOverview />
       <TeamSection />
       <Testimonials/>

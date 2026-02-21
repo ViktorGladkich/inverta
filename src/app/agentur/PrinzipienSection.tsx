@@ -1,7 +1,13 @@
 "use client";
 
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { useRef } from "react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring,
+  MotionValue,
+} from "framer-motion";
+import { useRef, useState, useEffect } from "react";
 import { Target, Zap, Eye, Users, Shield } from "lucide-react";
 
 const principles = [
@@ -51,7 +57,7 @@ function ProgressDot({
   progress,
 }: {
   index: number;
-  progress: ReturnType<typeof useSpring>;
+  progress: MotionValue<number>;
 }) {
   const scaleX = useTransform(
     progress,
@@ -72,14 +78,14 @@ function ProgressDot({
   );
 }
 
-function PrincipleLine({
+function DesktopPrincipleLine({
   principle,
   index,
   progress,
 }: {
   principle: (typeof principles)[0];
   index: number;
-  progress: ReturnType<typeof useSpring>;
+  progress: MotionValue<number>;
 }) {
   const start = index / principles.length;
   const end = (index + 1) / principles.length;
@@ -115,7 +121,6 @@ function PrincipleLine({
           {principle.title}
         </motion.h3>
 
-        {/* Desktop tags */}
         <motion.div
           style={{ opacity: contentOpacity }}
           className="hidden md:flex items-center gap-2 shrink-0"
@@ -132,7 +137,6 @@ function PrincipleLine({
         </motion.div>
       </div>
 
-      {/* Description + mobile tags */}
       <motion.div
         style={{ opacity: contentOpacity }}
         className="flex flex-col sm:flex-row gap-2 sm:gap-6 pb-1 pl-[88px] md:pl-[124px]"
@@ -140,20 +144,8 @@ function PrincipleLine({
         <p className="text-xs text-black font-normal leading-relaxed max-w-md flex-1">
           {principle.description}
         </p>
-        <div className="flex md:hidden flex-nowrap gap-1">
-          {principle.tags.map((tag) => (
-            <span
-              key={tag}
-              className="inline-flex items-center justify-center px-2 py-0.5 rounded-full text-[8px] font-bold tracking-wider uppercase bg-[#f5f5f5] text-black whitespace-nowrap"
-              style={{ boxShadow: neumorphicShadow }}
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
       </motion.div>
 
-      {/* Progress bar */}
       <div className="relative h-[1.5px] w-full bg-black/6 mt-3 md:mt-2 overflow-visible">
         <motion.div
           style={{ scaleX: lineScale, originX: 0 }}
@@ -172,9 +164,131 @@ function PrincipleLine({
   );
 }
 
-export function PrinzipienSection() {
-  const sectionRef = useRef<HTMLDivElement>(null);
+function MobilePrincipleLine({
+  principle,
+  index,
+}: {
+  principle: (typeof principles)[0];
+  index: number;
+}) {
+  const lineRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: lineRef,
+    offset: ["start 90%", "end 60%"],
+  });
+  const lineScale = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
+  const dotLeft = useTransform(lineScale, [0, 1], ["0%", "100%"]);
+  const dotOpacity = useTransform(lineScale, [0, 0.05, 0.95, 1], [0, 1, 1, 0]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{
+        duration: 0.6,
+        delay: index * 0.1,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+      className="flex flex-col gap-4"
+    >
+      <div className="flex items-center gap-4">
+        <span className="text-[10px] font-black tracking-widest text-black/20 shrink-0 w-5">
+          {principle.number}
+        </span>
+        <div
+          className={`w-9 h-9 rounded-full flex items-center justify-center shrink-0 ${
+            principle.isEven ? "bg-black text-white" : "bg-[#daff02] text-black"
+          }`}
+        >
+          {principle.icon}
+        </div>
+        <h3 className="text-2xl font-medium tracking-tight text-black leading-none">
+          {principle.title}
+        </h3>
+      </div>
+
+      <div className="pl-[92px] flex flex-col gap-4">
+        <p className="text-xs text-black font-normal leading-relaxed max-w-md">
+          {principle.description}
+        </p>
+        <div className="flex flex-wrap gap-1.5">
+          {principle.tags.map((tag) => (
+            <span
+              key={tag}
+              className="inline-flex items-center justify-center px-3 py-1.5 rounded-full text-[8px] font-bold tracking-widest uppercase bg-[#f5f5f5] text-black whitespace-nowrap"
+              style={{ boxShadow: neumorphicShadow }}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div
+        ref={lineRef}
+        className="relative h-[1.5px] w-full bg-black/6 mt-4 overflow-visible"
+      >
+        <motion.div
+          style={{ scaleX: lineScale, originX: 0 }}
+          className="absolute inset-0 bg-black"
+        />
+        <motion.div
+          className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full pointer-events-none bg-black"
+          style={{
+            left: dotLeft,
+            opacity: dotOpacity,
+            boxShadow: "0 0 10px rgba(0,0,0,0.5)",
+          }}
+        />
+      </div>
+    </motion.div>
+  );
+}
+
+function MobilePrinzipien() {
+  return (
+    <section
+      className="relative z-10 bg-[#f5f5f5] py-24 px-6 md:px-16"
+      aria-labelledby="values-heading"
+    >
+      <div className="max-w-[1400px] mx-auto w-full flex flex-col gap-16">
+        <div className="flex flex-col items-center text-center gap-4">
+          <div className="flex items-center justify-center px-[12px] py-[6px] gap-2 rounded-[60px] bg-white shadow-sm border border-black/5">
+            <Shield className="w-3.5 h-3.5 text-black/40" />
+            <span className="text-[10px] font-medium text-black tracking-wider uppercase">
+              Unsere Prinzipien
+            </span>
+          </div>
+          <h2
+            id="values-heading"
+            className="text-3xl font-medium tracking-tight text-black"
+          >
+            Woran wir glauben.
+          </h2>
+        </div>
+
+        <div className="flex flex-col gap-16">
+          {principles.map((principle, index) => (
+            <MobilePrincipleLine
+              key={principle.number}
+              principle={principle}
+              index={index}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function DesktopPrinzipien() {
+  const sectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end end"],
@@ -192,18 +306,12 @@ export function PrinzipienSection() {
     <section
       ref={sectionRef}
       className="relative z-10 bg-[#f5f5f5]"
-      style={{
-        minHeight: "400vh",
-        transform: "translateZ(0)",
-        willChange: "transform",
-      }}
+      aria-labelledby="values-heading"
+      style={{ minHeight: "500vh" }}
     >
       <div
-        className="sticky top-0 flex flex-col overflow-hidden pt-24 pb-12"
-        style={{
-          height: "calc(var(--vh, 1vh) * 100)",
-          willChange: "transform",
-        }}
+        className="sticky top-0 flex flex-col overflow-hidden pt-24 pb-32 md:pb-12"
+        style={{ height: "calc(var(--vh, 1vh) * 100)" }}
       >
         <motion.div
           style={{ y: contentY }}
@@ -236,7 +344,7 @@ export function PrinzipienSection() {
 
           <div className="flex flex-col flex-1 justify-between">
             {principles.map((principle, index) => (
-              <PrincipleLine
+              <DesktopPrincipleLine
                 key={principle.number}
                 principle={principle}
                 index={index}
@@ -248,4 +356,21 @@ export function PrinzipienSection() {
       </div>
     </section>
   );
+}
+
+export function PrinzipienSection() {
+  const [isDesktop, setIsDesktop] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const checkIsDesktop = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+    checkIsDesktop();
+    window.addEventListener("resize", checkIsDesktop);
+    return () => window.removeEventListener("resize", checkIsDesktop);
+  }, []);
+
+  if (isDesktop === null) return null; // Prevent SSR/Hydration mismatch
+
+  return isDesktop ? <DesktopPrinzipien /> : <MobilePrinzipien />;
 }
