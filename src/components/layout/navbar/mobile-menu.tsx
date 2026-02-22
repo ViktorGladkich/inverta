@@ -242,10 +242,6 @@ export function MobileMenu({
               </div>
             </div>
           </motion.div>
-
-          {/* Hintergrund-Effekte */}
-          <div className="absolute top-[10%] right-[-30%] w-[300px] h-[300px] bg-[#daff02] rounded-full blur-[160px] opacity-10 pointer-events-none z-0" />
-          <div className="absolute bottom-[20%] left-[-20%] w-[250px] h-[250px] bg-[#daff02] rounded-full blur-[140px] opacity-10 pointer-events-none z-0" />
         </motion.div>
       )}
     </AnimatePresence>
