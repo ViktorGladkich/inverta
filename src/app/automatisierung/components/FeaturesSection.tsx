@@ -24,7 +24,7 @@ export function FeaturesSection() {
               <Zap className="w-full h-full" />
             </div>
             <span className="text-[12px] font-medium text-black tracking-wider uppercase">
-              Core Capabilities
+              Kernkompetenzen
             </span>
           </div>
 

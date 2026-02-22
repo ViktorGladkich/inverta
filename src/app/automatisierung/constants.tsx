@@ -47,21 +47,21 @@ export const PROCESS_STEPS: ProcessStep[] = [
   {
     step: "01",
     title: "Audit & Analyse",
-    desc: "Wir identifizieren Flaschenhälse und manuelle Aufgaben, die Ihr Team ausbremsen.",
+    desc: "Wir tauchen tief in Ihre bestehenden Arbeitsabläufe ein. Durch datengestützte Analysen identifizieren wir präzise Engpässe und Ineffizienzen in Ihrer aktuellen Infrastruktur, um das volle Potenzial für automatisierte Optimierungen aufzudecken.",
   },
   {
     step: "02",
     title: "Logic Design",
-    desc: "Wir entwerfen die Architektur Ihrer neuen Workflows — logisch, skalierbar und robust.",
+    desc: "Auf Basis der Analyse entwerfen wir eine maßgeschneiderte Automatisierungs-Architektur. Wir definieren klare Logiken, Datenflüsse und Schnittstellen, die exakt auf Ihre Geschäftsziele zugeschnitten sind und eine nahtlose Integration garantieren.",
   },
   {
     step: "03",
     title: "Implementation",
-    desc: "Verbindung Ihrer Systeme (API, No-Code, KI) zu einem harmonischen Ganzen.",
+    desc: "Unsere Experten setzen die geplante Lösung mit modernsten Technologien um. Von der Cloud-Infrastruktur bis hin zu KI-gestützten Agenten — wir bauen robuste Systeme, die sofortigen Mehrwert liefern und Ihre operativen Kosten signifikant senken.",
   },
   {
     step: "04",
     title: "Scalability",
-    desc: "Kontinuierliche Optimierung und Skalierung Ihrer Prozesse für dauerhaften Erfolg.",
+    desc: "Automatisierung ist ein fortlaufender Prozess. Wir überwachen die Performance Ihrer neuen Systeme in Echtzeit und optimieren sie kontinuierlich. So stellen wir sicher, dass Ihre digitale Infrastruktur mit Ihrem Unternehmen gesund mitwächst.",
   },
 ];

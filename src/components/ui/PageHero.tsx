@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 interface PageHeroProps {
   titleTop: string;
@@ -11,6 +11,17 @@ interface PageHeroProps {
 
 export function PageHero({ titleTop, titleMain, marqueeItems }: PageHeroProps) {
   const heroRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"],
@@ -21,8 +32,12 @@ export function PageHero({ titleTop, titleMain, marqueeItems }: PageHeroProps) {
 
   return (
     <>
-      <section className="fixed inset-0 z-0 flex flex-col items-center justify-center overflow-hidden bg-white text-black">
-        <div className="absolute inset-0 z-0 select-none">
+      <section
+        className={`${
+          isMobile ? "relative h-screen" : "fixed inset-0"
+        } z-0 flex flex-col items-center justify-center overflow-hidden bg-white text-black`}
+      >
+        <div className="absolute inset-0 z-0 select-none border-b border-black/5">
           <video
             src="/hero-loop.mp4"
             autoPlay
@@ -36,8 +51,11 @@ export function PageHero({ titleTop, titleMain, marqueeItems }: PageHeroProps) {
 
         {/* Scroll-driven content */}
         <motion.div
-          style={{ y: heroY, opacity: heroOpacity }}
-          className="container mx-auto px-6 md:px-10 max-w-[1400px] relative z-10 text-center flex flex-col items-center"
+          style={{
+            y: isMobile ? 0 : heroY,
+            opacity: isMobile ? 1 : heroOpacity,
+          }}
+          className="container mx-auto px-6 md:px-10 max-w-[1400px] relative z-10 text-center flex flex-col items-center pt-24 md:pt-0"
         >
           {/* Giant Typography */}
           <div className="mb-12 md:mb-40">
@@ -112,11 +130,13 @@ export function PageHero({ titleTop, titleMain, marqueeItems }: PageHeroProps) {
       </section>
 
       {/* Scroll Spacer */}
-      <div
-        ref={heroRef}
-        className="relative z-0 pointer-events-none"
-        style={{ height: "calc(var(--vh, 1vh) * 100)" }}
-      />
+      {!isMobile && (
+        <div
+          ref={heroRef}
+          className="relative z-0 pointer-events-none"
+          style={{ height: "calc(var(--vh, 1vh) * 100)" }}
+        />
+      )}
     </>
   );
 }
