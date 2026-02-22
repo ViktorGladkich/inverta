@@ -27,9 +27,9 @@ export const quoteWords = [
   { text: "funktionieren.", muted: false },
 ];
 
-/* Body paragraphs */
+/* Ausführliche Mission Paragraphs mit SEO Fokus */
 export const bodyParagraphs = [
-  "INVERTA DIGITAL wurde mit einer einfachen Überzeugung gegründet: Digitale Lösungen müssen nicht nur gut aussehen – sie müssen funktionieren. Wir glauben an die Kraft von datengetriebenem Design und strategischem Marketing.",
-  "Unser Fokus liegt auf dem, was wirklich zählt: Ihre Ziele. Ob Umsatzsteigerung durch Performance Marketing, eine Website, die Ihre Konkurrenz in den Schatten stellt, oder eine digitale Strategie, die nachhaltiges Wachstum sichert – wir liefern Ergebnisse, keine leeren Versprechen.",
-  "Als Partner auf Augenhöhe begleiten wir Unternehmen von der ersten Idee bis zum messbaren Erfolg. Jedes Projekt ist für uns einzigartig – und genau so behandeln wir es.",
+  "INVERTA DIGITAL wurde mit einer klaren Überzeugung gegründet: Eine digitale Präsenz muss mehr können als nur gut aussehen – sie muss als starker Vertriebskanal funktionieren. Mit unserer Expertise in Premium Webdesign und maßgeschneiderter Webentwicklung schaffen wir genau dieses Fundament.",
+  "Unser Fokus liegt auf messbarem Wachstum. Durch datengetriebenes Performance Marketing und gezielte SEO-Strategien bringen wir Sie exakt dorthin, wo Ihre Zielgruppe sucht. Und mit smarter KI-Automatisierung optimieren wir Ihre internen Prozesse spürbar.",
+  "Als strategischer Partner auf Augenhöhe begleiten wir Ihr Unternehmen von der ersten digitalen Vision bis zum skalierbaren Erfolg. Schluss mit kompliziertem Fachjargon – wir liefern transparente Ergebnisse und digitale Meisterwerke, die sich auszahlen.",
 ];

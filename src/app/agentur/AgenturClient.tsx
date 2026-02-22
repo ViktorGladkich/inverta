@@ -15,10 +15,17 @@ const marqueeItems = [
 
 export function AgenturClient() {
   return (
-    <PageHero
-      titleTop="WIR SIND"
-      titleMain="INVERTA"
-      marqueeItems={marqueeItems}
-    />
+    <>
+      <h1 className="sr-only">
+        Ihre Premium Digitalagentur für Webentwicklung, Webdesign, SEO &
+        KI-Automatisierung | INVERTA
+      </h1>
+      <PageHero
+        titleTop="WIR SIND"
+        titleMain="INVERTA"
+        marqueeItems={marqueeItems}
+        as="h2"
+      />
+    </>
   );
 }

@@ -7,9 +7,15 @@ interface PageHeroProps {
   titleTop: string;
   titleMain: string;
   marqueeItems: string[];
+  as?: "h1" | "h2" | "div";
 }
 
-export function PageHero({ titleTop, titleMain, marqueeItems }: PageHeroProps) {
+export function PageHero({
+  titleTop,
+  titleMain,
+  marqueeItems,
+  as: Tag = "h1",
+}: PageHeroProps) {
   const heroRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -71,7 +77,7 @@ export function PageHero({ titleTop, titleMain, marqueeItems }: PageHeroProps) {
                 delay: 0.3,
               }}
             >
-              <h1 className="text-[clamp(2.2rem,9vw,11rem)] font-black tracking-tighter leading-[0.85] px-4">
+              <Tag className="text-[clamp(2.2rem,9vw,11rem)] font-black tracking-tighter leading-[0.85] px-4">
                 <span className="block text-black/20 mb-2 md:mb-4 uppercase">
                   {titleTop}
                 </span>
@@ -90,7 +96,7 @@ export function PageHero({ titleTop, titleMain, marqueeItems }: PageHeroProps) {
                   </span>
                   <span className="relative z-10 text-[#daff02]">.</span>
                 </span>
-              </h1>
+              </Tag>
             </motion.div>
           </div>
         </motion.div>

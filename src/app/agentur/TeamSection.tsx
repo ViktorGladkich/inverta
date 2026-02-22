@@ -14,7 +14,7 @@ const team = [
     image: "/team/member_2.jpeg",
     number: "01",
   },
-   {
+  {
     name: "Viktor Gladkich",
     role: "Gründer & CEO",
     image: "/viktor.jpg",
@@ -79,6 +79,7 @@ function TeamCard({ member }: { member: (typeof team)[0] }) {
         </div>
       )}
 
+      {/* Sanfter Farbverlauf von unten nach oben */}
       <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent" />
 
       <div className="absolute top-5 right-5 z-20">
@@ -180,6 +181,7 @@ export function TeamSection() {
           </div>
         </FadeIn>
 
+        {/* Raster für die Team-Karten */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
           {team.map((member) => (
             <TeamCard key={member.number} member={member} />

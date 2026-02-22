@@ -36,9 +36,9 @@ export function MissionSection() {
           </div>{" "}
         </FadeIn>
 
-        {/* Restore Original Grid Layout */}
+        {/* Zwei-Spalten-Layout: Links Sticky Content, Rechts Scrolling Text */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-16 lg:gap-24 items-start">
-          {/* Left column — sticky */}
+          {/* Linke Sticky-Spalte: Überschrift und Statistiken */}
           <div className="lg:sticky lg:top-32 flex flex-col gap-10">
             <FadeIn>
               <h2
@@ -53,7 +53,7 @@ export function MissionSection() {
               </h2>
             </FadeIn>
 
-            {/* Stats */}
+            {/* Unternehmensstatistiken (Zähler) */}
             <FadeIn delay={0.2}>
               <div
                 className="grid grid-cols-3 rounded-[20px] p-2 gap-2 bg-[#f5f5f5]"
@@ -74,7 +74,7 @@ export function MissionSection() {
               </div>
             </FadeIn>
 
-            {/* Animated tools card */}
+            {/* Animierte Methodik-Karten */}
             <FadeIn delay={0.3}>
               <div
                 className="grid grid-cols-3 rounded-[20px] p-2 gap-2 bg-[#f5f5f5]"
@@ -87,9 +87,9 @@ export function MissionSection() {
             </FadeIn>
           </div>
 
-          {/* Right column — content */}
+          {/* Rechte Scroll-Spalte: Lauftext und Leitbild */}
           <div className="flex flex-col gap-0">
-            {/* Animated quote */}
+            {/* Animiertes Zitat mit Unschärfe-Effekt */}
             <div className="mb-14 md:mb-16">
               <p className="text-2xl md:text-3xl font-medium leading-[1.4] tracking-tight text-black">
                 <BlurTextEffect delay={0.2}>
@@ -108,7 +108,7 @@ export function MissionSection() {
 
             <div className="w-full h-px bg-black mb-14 md:mb-16" />
 
-            {/* Body paragraphs */}
+            {/* Ausführliches Mission-Statement */}
             <div className="flex flex-col gap-10">
               {bodyParagraphs.map((text, i) => (
                 <FadeIn key={i} delay={0.15 + i * 0.05}>
@@ -127,7 +127,7 @@ export function MissionSection() {
         </div>
       </div>
 
-      {/* Bottom bar */}
+      {/* Abschlussleiste mit Geo-Referenz (Gut für lokales SEO) */}
       <div className=" border-t border-black px-8 md:px-16 py-5 flex items-center justify-between">
         <span className="text-[10px] font-bold tracking-[0.25em] text-black uppercase">
           Inverta Digital — Agentur

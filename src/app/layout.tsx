@@ -19,27 +19,30 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://invertadigital.de"),
-  title: "INVERTA | Marketing & Webentwicklung für Ihren Erfolg",
+  title: "Webentwicklung, SEO & KI-Automatisierung Agentur | INVERTA",
   description:
-    "INVERTA - Ihre Agentur für effektives Marketing, professionelle Webentwicklung, SEO und Social Media. Wir steigern Ihre Sichtbarkeit und Ihren Umsatz.",
+    "Ihre Full-Service Agentur für messbaren Erfolg. Wir kombinieren professionelle Webentwicklung, erstklassiges Webdesign, datengetriebenes Performance Marketing, SEO und KI-Automatisierung für maximales Wachstum.",
   keywords: [
-    "Marketing",
-    "Webentwicklung",
-    "SEO",
-    "Social Media",
-    "Neukundengewinnung",
-    "Webdesign",
-    "Onlineshop",
-    "Ladezeitoptimierung",
+    "Webentwicklung Agentur",
+    "Webdesign Agentur",
+    "Performance Marketing Agentur",
+    "Professionelles Webdesign",
+    "SEO Optimierung",
+    "Suchmaschinenoptimierung",
+    "KI-Automatisierung",
+    "Website Relaunch",
+    "Conversion Rate Optimierung",
+    "Online Marketing für Unternehmen",
+    "INVERTA",
   ],
   openGraph: {
-    title: "INVERTA | Marketing & Webentwicklung",
+    title: "Webentwicklung & Performance Marketing Agentur | INVERTA",
     description:
-      "Professionelle Lösungen für Ihr digitales Wachstum. Marketing, SEO & Webdesign aus einer Hand.",
+      "Von komplexer Webentwicklung bis zur KI-gestützten Prozessautomatisierung. Wir skalieren Ihr Business durch datengetriebene Strategien.",
     type: "website",
     locale: "de_DE",
     url: "https://invertadigital.de",
-    siteName: "INVERTA",
+    siteName: "INVERTA Digital Agency",
   },
   robots: {
     index: true,

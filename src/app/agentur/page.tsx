@@ -11,24 +11,27 @@ import { WhyUs } from "@/components/sections/WhyUs";
 import { PrinzipienSection } from "./PrinzipienSection";
 
 export const metadata: Metadata = {
-  title: "Über uns | INVERTA DIGITAL – Ihre Digitalagentur aus Dresden",
+  title: "Ihre Digitalagentur für Webentwicklung, Webdesign & SEO | INVERTA",
   description:
-    "Lernen Sie INVERTA DIGITAL kennen – Ihre Performance-Agentur für Marketing & Webentwicklung aus Dresden. Strategie, Design und Entwicklung aus einer Hand.",
+    "Lernen Sie INVERTA kennen – Ihre Premium Performance-Agentur für professionelle Webentwicklung, kreatives Webdesign, SEO & KI-Automatisierung. Wir skalieren Ihren Umsatz.",
   keywords: [
-    "Digitalagentur Dresden",
-    "Marketing Agentur",
-    "Webentwicklung",
-    "INVERTA DIGITAL",
-    "Über uns",
+    "Digitalagentur",
+    "Agentur für Webentwicklung",
+    "Webdesign Agentur",
+    "SEO-Strategie Agentur",
     "Performance Marketing",
+    "KI-Automatisierung",
+    "Marketing Agentur",
+    "INVERTA Digital",
+    "Webdesign",
   ],
   alternates: {
     canonical: "https://invertadigital.de/agentur",
   },
   openGraph: {
-    title: "Über uns | INVERTA DIGITAL",
+    title: "Ihre Agentur für Webentwicklung & Performance Marketing | INVERTA",
     description:
-      "Strategie, Design und Entwicklung aus einer Hand. Lernen Sie unser Team und unsere Arbeitsweise kennen.",
+      "Lernen Sie unser Expertenteam für Premium Webdesign, komplexe Webentwicklung und datengetriebene SEO-Prozesse kennen. Gemeinsam zum digitalen Erfolg.",
     url: "https://invertadigital.de/agentur",
     type: "website",
   },
@@ -37,14 +40,16 @@ export const metadata: Metadata = {
 export default function AgenturPage() {
   return (
     <>
-      <AgenturClient />
-      <MissionSection />
-      <WhyUs />
-      <PrinzipienSection />
-      <ServicesOverview />
-      <TeamSection />
-      <Testimonials />
-      <CTASection />
+      <main>
+        <AgenturClient />
+        <MissionSection />
+        <WhyUs />
+        <PrinzipienSection />
+        <ServicesOverview />
+        <TeamSection />
+        <Testimonials />
+        <CTASection />
+      </main>
       <Footer />
     </>
   );

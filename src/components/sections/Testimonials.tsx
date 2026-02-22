@@ -1,19 +1,18 @@
 "use client";
 
-import { motion, animate } from "framer-motion";
+import { motion } from "framer-motion";
 import { MessageSquare, Star } from "lucide-react";
 import { BlurTextEffect } from "@/components/ui/blur-text-effect";
-import { useEffect, useRef } from "react";
 
 const testimonials = [
   {
     id: 1,
-    company: "SaxoHandwerk",
+    company: "VanturaHandwerk",
     role: "Geschäftsführung",
-    name: "Reza Pahlavan",
+    name: "Reza Vantura",
     quote:
       "Durch die individuelle Multi-Page-Website heben wir uns endlich deutlich von der Konkurrenz ab. Die Qualität unserer Handwerksleistungen wird digital perfekt transportiert, was zu spürbar mehr qualifizierten Anfragen geführt hat.",
-    image: "/images/projects/ma-bau-gmbh.jpeg",
+    image: "/images/projects/vanturahandwerk.jpeg",
   },
   {
     id: 2,
@@ -126,7 +125,7 @@ export function Testimonials() {
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
                 style={{
-                  backgroundImage: "url(/images/projects/saxohandwerk.jpeg)",
+                  backgroundImage: "url(/images/projects/vanturahandwerk.jpeg)",
                 }}
               />
             </div>
