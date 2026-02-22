@@ -14,7 +14,7 @@ const projects = [
     available: true,
     id: 1,
     number: "01",
-    label: "SaxoHandwerk",
+    label: "vanturahandwerk",
     title: "Premium Handwerkskunst",
     description:
       "Individuelle Multi-Page-Website für Komplettsanierung, Innenausbau und Sanitär. Ein einzigartiges, nicht-schablonenhaftes Design, das die Qualität und Vielfalt der Handwerksleistungen digital erlebbar macht.",
@@ -22,7 +22,7 @@ const projects = [
       { value: "100%", label: "Individuelles Design" },
       { value: "6+", label: "Leistungsbereiche" },
     ],
-    image: "/images/projects/saxohandwerk.jpeg",
+    image: "/images/projects/vanturahandwerk.jpeg",
   },
   {
     available: true,
