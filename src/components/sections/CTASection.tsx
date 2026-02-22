@@ -4,6 +4,7 @@ import { useRef } from "react";
 import Link from "next/link";
 import { Rocket, ArrowRight } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { motion } from "framer-motion";
 
 const NEUMORPHIC_SHADOW =
   "rgba(0, 0, 0, 0.08) 0px 0.706592px 0.706592px -0.666667px, rgba(0, 0, 0, 0.08) 0px 1.80656px 1.80656px -1.33333px, rgba(0, 0, 0, 0.07) 0px 3.62176px 3.62176px -2px, rgba(0, 0, 0, 0.07) 0px 6.8656px 6.8656px -2.66667px, rgba(0, 0, 0, 0.05) 0px 13.6468px 13.6468px -3.33333px, rgba(0, 0, 0, 0.02) 0px 30px 30px -4px, rgb(255, 255, 255) 0px 3px 1px 0px inset";
@@ -39,7 +40,13 @@ export function CTASection() {
               style={{ boxShadow: NEUMORPHIC_SHADOW }}
             >
               {/* Headline */}
-              <h2 className="text-[clamp(2.5rem,5vw,5.5rem)] font-medium tracking-tight leading-[0.95] text-black">
+              <motion.h2
+                className="text-[clamp(2.5rem,5vw,5.5rem)] font-medium tracking-tight leading-[0.95] text-black"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              >
                 Lassen Sie uns
                 <br />
                 gemeinsam{" "}
@@ -51,7 +58,7 @@ export function CTASection() {
                   <span className="absolute bottom-[4px] left-0 w-full h-[8px] md:h-[12px] bg-[#daff02] z-0" />
                   <span className="relative z-10">schaffen.</span>
                 </span>
-              </h2>
+              </motion.h2>
 
               <p className="text-base md:text-lg text-black/60 font-normal leading-relaxed max-w-lg">
                 Jedes erfolgreiche Projekt beginnt mit einem Gespräch. Erzählen

@@ -47,13 +47,19 @@ export function ProjekteClient() {
               </FadeIn>
 
               <div className="max-w-4xl">
-                <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black mb-6">
+                <motion.h2
+                  className="text-4xl md:text-6xl font-medium tracking-tight text-black mb-6"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                >
                   Digitale Lösungen, die <br />
                   <span className="relative inline-block">
                     <span className="absolute bottom-1 md:bottom-2 left-0 w-full h-4 bg-[#daff02] z-0" />
                     <span className="relative z-10">Märkte dominieren.</span>
                   </span>
-                </h2>
+                </motion.h2>
                 <h3 className="text-lg md:text-xl text-black/80 font-normal leading-relaxed max-w-2xl mx-auto">
                   Wir verbinden professionelle <strong>Webentwicklung</strong>,
                   anspruchsvolles <strong>Webdesign</strong>, datengetriebene{" "}

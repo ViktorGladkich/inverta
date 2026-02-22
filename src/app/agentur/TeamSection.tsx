@@ -157,9 +157,13 @@ export function TeamSection() {
                 </span>
               </div>
 
-              <h2
+              <motion.h2
                 id="team-heading"
                 className="flex flex-wrap items-center justify-center gap-x-4 text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight text-black"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
                 <span className="font-medium">Die Menschen hinter</span>
                 <div className="relative flex items-center h-[60px] md:h-[100px]">
@@ -169,7 +173,7 @@ export function TeamSection() {
                     <span className="text-[#daff02]">.</span>
                   </span>
                 </div>
-              </h2>
+              </motion.h2>
             </div>
 
             <div className="flex flex-col items-center gap-6 max-w-2xl mx-auto">

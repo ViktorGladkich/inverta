@@ -47,13 +47,19 @@ export function ProcessSection() {
           </FadeIn>
 
           <div className="max-w-4xl">
-            <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black mb-6">
+            <motion.h2
+              className="text-4xl md:text-6xl font-medium tracking-tight text-black mb-6"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            >
               Vom Chaos zur{" "}
               <span className="relative inline-block">
                 <span className="absolute bottom-1 md:bottom-2 left-0 w-full h-4 bg-[#daff02] z-0" />
                 <span className="relative z-10">Präzision.</span>
               </span>
-            </h2>
+            </motion.h2>
             <p className="text-lg md:text-xl text-black font-normal leading-relaxed max-w-2xl mx-auto">
               Ein strukturierter Weg zu Ihrer digitalen Exzellenz — transparent,
               effizient und ergebnisorientiert.

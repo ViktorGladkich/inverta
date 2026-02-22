@@ -3,6 +3,7 @@
 import { Zap } from "lucide-react";
 import { FEATURES, NEUMORPHIC_SHADOW } from "../constants";
 import { CardsParallax } from "@/components/ui/CardsParallax";
+import { motion } from "framer-motion";
 
 export function FeaturesSection() {
   // Map FEATURES to the format expected by CardsParallax
@@ -32,9 +33,15 @@ export function FeaturesSection() {
           </div>
 
           <div className="max-w-3xl">
-            <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black mb-6">
+            <motion.h2
+              className="text-4xl md:text-6xl font-medium tracking-tight text-black mb-6"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            >
               Was wir automatisieren.
-            </h2>
+            </motion.h2>
             <p className="text-lg md:text-xl text-black font-normal leading-relaxed">
               Wir transformieren Ihre manuellen Prozesse in hochperformante
               digitale Workflows. Von der KI-basierten Datenanalyse bis hin zur

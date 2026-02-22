@@ -64,7 +64,6 @@ export function ProjectDetailClient({ project }: { project: Project }) {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 backdrop-blur-md mb-8"
           >
-            <div className="w-1.5 h-1.5 bg-[#daff02] rounded-full animate-pulse shadow-[0_0_8px_#daff02]" />
             <span className="text-[10px] md:text-[11px] font-bold text-white tracking-[0.2em] uppercase mt-px">
               {project.category}
             </span>
@@ -220,10 +219,16 @@ export function ProjectDetailClient({ project }: { project: Project }) {
       <section className="py-24 md:py-40 bg-[#f5f5f5] text-black">
         <div className="max-w-[1400px] mx-auto px-6 text-center">
           <FadeIn>
-            <h2 className="text-4xl md:text-7xl font-medium tracking-tight mb-12">
+            <motion.h2
+              className="text-4xl md:text-7xl font-medium tracking-tight mb-12"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            >
               Hat dieses Projekt <br />
               <span className="text-black/30 italic">Sie inspiriert?</span>
-            </h2>
+            </motion.h2>
             <Link
               href="/kontakt"
               className="group relative inline-flex items-center justify-between gap-8 bg-black text-[#daff02] p-2 pr-8 rounded-full overflow-hidden transition-all duration-500 hover:pr-10 active:scale-95 shadow-xl w-fit"
