@@ -1,14 +1,20 @@
+import { Metadata } from "next";
 import { Footer } from "@/components/layout/Footer";
 
-export const metadata = {
-  title: "Datenschutz | INVERTA",
-  description: "Datenschutzerklärung von INVERTA DIGITAL.",
+export const metadata: Metadata = {
+  title: "Datenschutzerklärung | INVERTA Agency",
+  description:
+    "Datenschutzerklärung von INVERTA - Ihrer Premium Agentur für Webdesign und KI.",
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function DatenschutzPage() {
   return (
     <>
-      <main className="min-h-screen pt-32 pb-24 bg-[#fafafa] text-black">
+      <main className="min-h-screen pt-32 pb-24 bg-[#fafafa] text-black overflow-x-hidden w-full">
         <div className="container mx-auto px-6 md:px-10 max-w-4xl">
           <div className="mb-16">
             <h1 className="text-[clamp(3rem,5vw,5rem)] tracking-tighter leading-none font-medium uppercase mb-6">

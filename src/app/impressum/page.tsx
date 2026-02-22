@@ -1,9 +1,20 @@
+import { Metadata } from "next";
 import { Footer } from "@/components/layout/Footer";
+
+export const metadata: Metadata = {
+  title: "Impressum | INVERTA Agency",
+  description:
+    "Impressum und rechtliche Hinweise von INVERTA - Ihrer Premium Agentur für Webdesign und KI.",
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 export default function Impressum() {
   return (
     <>
-      <main className="min-h-screen pt-32 pb-20 bg-white">
+      <main className="min-h-screen pt-32 pb-20 bg-white overflow-x-hidden w-full">
         <div className="container mx-auto px-4 md:px-6 max-w-3xl">
           <h1 className="text-4xl font-bold mb-8">Impressum</h1>
 

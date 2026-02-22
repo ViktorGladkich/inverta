@@ -29,13 +29,13 @@ export function Navbar() {
     setScrolled(latest > 50);
   });
 
-  // Close dropdowns when navigating to a new page
+  // Dropdowns schließen, wenn auf eine neue Seite navigiert wird
   useEffect(() => {
     setHoveredIndex(null); // eslint-disable-line
     setMobileMenuOpen(false);
   }, [pathname]);
 
-  /* Hover Logic with Timeout to prevent flickering */
+  /* Hover-Logik mit Timeout, um Flackern zu vermeiden */
   const hoverTimeout = React.useRef<NodeJS.Timeout | null>(null);
 
   const handleMouseEnter = (index: number) => {
@@ -71,7 +71,12 @@ export function Navbar() {
         )}
       >
         <nav className="container mx-auto py-2 px-4 md:px-6 flex items-center justify-between">
-          <Link href="/" className="relative z-50 flex items-center gap-2">
+          {/* Logo - Optimiert für lokale SEO (Dresden) */}
+          <Link
+            href="/"
+            title="INVERTA Digitalagentur Startseite"
+            className="relative z-50 flex items-center gap-2"
+          >
             <Image
               src="/logo-inverta.png"
               alt="INVERTA DIGITAL Logo - Marketing & Webentwicklung Agentur aus Dresden"
@@ -82,10 +87,10 @@ export function Navbar() {
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          {/* Desktop Navigation (SEO-freundliche Liste) */}
+          <ul className="hidden lg:flex items-center gap-8">
             {navigationItems.map((item, index) => (
-              <div
+              <li
                 key={item.title}
                 className="h-full flex items-center justify-center p-2"
                 onMouseEnter={() => handleMouseEnter(index)}
@@ -94,9 +99,10 @@ export function Navbar() {
                 <Link
                   href={item.items ? "#" : item.href}
                   className="relative z-10 text-base font-medium text-black transition-colors duration-200 flex items-center gap-1 group"
+                  title={`Bereich ${item.title} entdecken`}
                 >
                   {item.title}
-                  {/* Hover Underline */}
+                  {/* Hover Unterstreichung */}
                   <span
                     className={cn(
                       "absolute -bottom-1 left-0 w-full h-[1.5px] bg-black origin-left transition-transform duration-300 ease-out",
@@ -120,14 +126,15 @@ export function Navbar() {
                     <MegaMenu item={item} />
                   )}
                 </AnimatePresence>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
 
-          {/* Call to Action */}
+          {/* Call to Action (Projekt starten) */}
           <div className="hidden lg:flex items-center gap-6">
             <Link
               href="/kontakt"
+              title="Starten Sie Ihr Projekt für Webdesign oder KI"
               className="group relative inline-flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-[10px] shadow-[0_30px_30px_-3.5px_rgba(0,0,0,0.15),0_13px_13px_-2.9px_rgba(0,0,0,0.26),0_6px_6px_-2.3px_rgba(0,0,0,0.3)] hover:shadow-[0_40px_40px_-5px_rgba(0,0,0,0.4)] hover:scale-[1.02] transition-all duration-300"
             >
               <span className="font-semibold text-sm">Projekt starten</span>
@@ -135,7 +142,7 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Toggle */}
+          {/* Mobiler Burger-Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="lg:hidden p-2 rounded-full bg-transparent hover:bg-white/10 transition-colors z-110 relative w-10 h-10 flex flex-col items-center justify-center gap-[5px]"

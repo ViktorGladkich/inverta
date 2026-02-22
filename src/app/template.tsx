@@ -2,9 +2,16 @@
 
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Template({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }, 0);
+  }, [pathname]);
 
   return (
     <div key={pathname} className="relative">

@@ -98,94 +98,103 @@ export function MobileMenu({
           exit="exit"
           className="fixed left-3 right-3 top-[55px] pb-[12px] h-[calc(100dvh-88px)] origin-top bg-[#050505] text-white z-90 flex flex-col justify-between overflow-y-auto overflow-x-hidden rounded-2xl shadow-[0px_20px_40px_rgba(0,0,0,0.4)] border border-white/10"
         >
-          <motion.div
-            variants={linkContainerVars}
-            initial="initial"
-            animate="animate"
-            exit="initial"
-            className="flex flex-col px-6 pt-10 pb-6 w-full flex-1 z-10"
-          >
-            {navigationItems.map((item, index) => (
-              <div
-                key={item.title}
-                className="overflow-hidden border-b border-white/10 relative"
-              >
-                <motion.div variants={linkVars}>
-                  {item.items ? (
-                    <div>
-                      <button
-                        onClick={() => toggleAccordion(item.title)}
-                        className="w-full flex justify-between items-center py-5 text-left group"
-                      >
-                        <span className="text-[8vw] sm:text-5xl font-black uppercase tracking-tighter text-white group-hover:text-white/70 transition-colors leading-[0.85] flex items-start gap-2 break-all sm:break-normal line-clamp-1">
-                          <span className="text-white/20 text-[10px] sm:text-sm font-medium tracking-widest mt-1 sm:mt-2 shrink-0">
-                            0{index + 1}
+          {/* Hauptnavigation Mobile (SEO-optimiert) */}
+          <nav>
+            <motion.div
+              variants={linkContainerVars}
+              initial="initial"
+              animate="animate"
+              exit="initial"
+              className="flex flex-col px-6 pt-10 pb-6 w-full flex-1 z-10"
+            >
+              {navigationItems.map((item, index) => (
+                <div
+                  key={item.title}
+                  className="overflow-hidden border-b border-white/10 relative"
+                >
+                  <motion.div variants={linkVars}>
+                    {item.items ? (
+                      <div>
+                        <button
+                          onClick={() => toggleAccordion(item.title)}
+                          aria-expanded={openAccordion === item.title}
+                          className="w-full flex justify-between items-center py-5 text-left group"
+                          title={`${item.title} Untermenü öffnen`}
+                        >
+                          <span className="text-[8vw] sm:text-5xl font-black uppercase tracking-tighter text-white group-hover:text-white/70 transition-colors leading-[0.85] flex items-start gap-2 break-all sm:break-normal line-clamp-1">
+                            <span className="text-white/20 text-[10px] sm:text-sm font-medium tracking-widest mt-1 sm:mt-2 shrink-0">
+                              0{index + 1}
+                            </span>
+                            <span className="truncate">{item.title}</span>
                           </span>
-                          <span className="truncate">{item.title}</span>
-                        </span>
-                        <div className="w-10 h-10 flex items-center justify-center bg-white/5 rounded-full shrink-0">
-                          {openAccordion === item.title ? (
-                            <Minus className="w-5 h-5 text-white/70" />
-                          ) : (
-                            <Plus className="w-5 h-5 text-white/70" />
-                          )}
-                        </div>
-                      </button>
-                      <AnimatePresence>
-                        {openAccordion === item.title && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{
-                              duration: 0.4,
-                              ease: [0.16, 1, 0.3, 1],
-                            }}
-                            className="overflow-hidden"
-                          >
-                            <div className="flex flex-col gap-4 pb-8 pt-2 pl-6 sm:pl-10">
-                              {item.items.map((subItem) => (
+                          <div className="w-10 h-10 flex items-center justify-center bg-white/5 rounded-full shrink-0">
+                            {openAccordion === item.title ? (
+                              <Minus className="w-5 h-5 text-white/70" />
+                            ) : (
+                              <Plus className="w-5 h-5 text-white/70" />
+                            )}
+                          </div>
+                        </button>
+                        <AnimatePresence>
+                          {openAccordion === item.title && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{
+                                duration: 0.4,
+                                ease: [0.16, 1, 0.3, 1],
+                              }}
+                              className="overflow-hidden"
+                            >
+                              <div className="flex flex-col gap-4 pb-8 pt-2 pl-6 sm:pl-10">
+                                {item.items.map((subItem) => (
+                                  <Link
+                                    key={subItem.title}
+                                    href={subItem.href}
+                                    onClick={onClose}
+                                    title={`Zur Leistungsseite: ${subItem.title}`}
+                                    className="text-base sm:text-xl text-white/60 hover:text-white transition-colors tracking-widest uppercase font-medium flex items-center gap-2"
+                                  >
+                                    <ArrowUpRight className="w-3 h-3 text-[#daff02]" />
+                                    {subItem.title}
+                                  </Link>
+                                ))}
+
                                 <Link
-                                  key={subItem.title}
-                                  href={subItem.href}
+                                  href={item.href}
                                   onClick={onClose}
-                                  className="text-base sm:text-xl text-white/60 hover:text-white transition-colors tracking-widest uppercase font-medium flex items-center gap-2"
+                                  title={`Alle Leistungen im Bereich ${item.title}`}
+                                  className="text-base sm:text-xl text-[#daff02] hover:text-white transition-colors tracking-widest uppercase font-semibold mt-4 flex items-center gap-2"
                                 >
-                                  <ArrowUpRight className="w-3 h-3 text-[#daff02]" />
-                                  {subItem.title}
+                                  <ArrowUpRight className="w-4 h-4" />
+                                  Alle {item.title} ansehen
                                 </Link>
-                              ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        onClick={onClose}
+                        title={`Zur Seite: ${item.title}`}
+                        className="py-5 flex items-start gap-2 text-[8vw] sm:text-5xl font-black uppercase tracking-tighter text-white hover:text-[#daff02] transition-colors leading-[0.85] line-clamp-1"
+                      >
+                        <span className="text-white/20 text-[10px] sm:text-sm font-medium tracking-widest mt-1 sm:mt-2 shrink-0">
+                          0{index + 1}
+                        </span>
+                        <span className="truncate">{item.title}</span>
+                      </Link>
+                    )}
+                  </motion.div>
+                </div>
+              ))}
+            </motion.div>
+          </nav>
 
-                              <Link
-                                href={item.href}
-                                onClick={onClose}
-                                className="text-base sm:text-xl text-[#daff02] hover:text-white transition-colors tracking-widest uppercase font-semibold mt-4 flex items-center gap-2"
-                              >
-                                <ArrowUpRight className="w-4 h-4" />
-                                Alle {item.title} ansehen
-                              </Link>
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      onClick={onClose}
-                      className="py-5 flex items-start gap-2 text-[8vw] sm:text-5xl font-black uppercase tracking-tighter text-white hover:text-[#daff02] transition-colors leading-[0.85] line-clamp-1"
-                    >
-                      <span className="text-white/20 text-[10px] sm:text-sm font-medium tracking-widest mt-1 sm:mt-2 shrink-0">
-                        0{index + 1}
-                      </span>
-                      <span className="truncate">{item.title}</span>
-                    </Link>
-                  )}
-                </motion.div>
-              </div>
-            ))}
-          </motion.div>
-
+          {/* Socials & Kontakt (Mobile Footer) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -234,6 +243,7 @@ export function MobileMenu({
             </div>
           </motion.div>
 
+          {/* Hintergrund-Effekte */}
           <div className="absolute top-[10%] right-[-30%] w-[300px] h-[300px] bg-[#daff02] rounded-full blur-[160px] opacity-10 pointer-events-none z-0" />
           <div className="absolute bottom-[20%] left-[-20%] w-[250px] h-[250px] bg-[#daff02] rounded-full blur-[140px] opacity-10 pointer-events-none z-0" />
         </motion.div>

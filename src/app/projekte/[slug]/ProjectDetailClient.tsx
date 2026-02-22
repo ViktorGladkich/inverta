@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { type Project } from "@/data/projects";
@@ -14,8 +14,25 @@ export function ProjectDetailClient({ project }: { project: Project }) {
     offset: ["start start", "end start"],
   });
 
-  const headerY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Parallax effects disabled on mobile
+  const headerY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["0%", isMobile ? "0%" : "50%"],
+  );
+  const imageY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["0%", isMobile ? "0%" : "20%"],
+  );
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
@@ -23,7 +40,8 @@ export function ProjectDetailClient({ project }: { project: Project }) {
       {/* Header-Bereich mit animiertem Projektbild */}
       <div
         ref={heroRef}
-        className="relative h-[80vh] md:h-screen w-full overflow-hidden flex items-center justify-center bg-black"
+        className="relative w-full overflow-hidden flex items-center justify-center bg-black"
+        style={{ minHeight: "calc(var(--vh, 1vh) * 100)" }}
       >
         <motion.div
           style={{ y: imageY, opacity }}
