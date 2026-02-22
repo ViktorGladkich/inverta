@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
-  const isMaintenanceMode = true;
+  const isMaintenanceMode = false;
   const isDev = process.env.NODE_ENV === "development";
 
   if (isDev || !isMaintenanceMode) {
@@ -11,7 +11,6 @@ export function middleware(request: NextRequest) {
 
   const previewKey = "inverta2026";
 
-  // Если пользователь пришёл с секретным параметром — ставим cookie
   if (request.nextUrl.searchParams.get("preview") === previewKey) {
     const response = NextResponse.next();
     response.cookies.set("preview_access", "granted", {

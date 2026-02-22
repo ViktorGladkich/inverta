@@ -110,7 +110,7 @@ export function ContactForm() {
                     placeholder="Erika *"
                     required
                     disabled={status === "loading"}
-                    className="w-full bg-transparent border-b border-black/10 pb-4 pt-2 text-xl md:text-2xl font-normal placeholder:text-black/20 focus:outline-none focus:border-black transition-colors rounded-none disabled:opacity-50"
+                    className="w-full bg-transparent border-b border-black pb-4 pt-2 text-xl md:text-2xl font-normal placeholder:text-black/20 focus:outline-none focus:border-black transition-colors rounded-none disabled:opacity-50"
                   />
                 </div>
                 <div className="flex flex-col gap-2 w-full">
@@ -127,7 +127,7 @@ export function ContactForm() {
                     placeholder="Mustermann *"
                     required
                     disabled={status === "loading"}
-                    className="w-full bg-transparent border-b border-black/10 pb-4 pt-2 text-xl md:text-2xl font-normal placeholder:text-black/20 focus:outline-none focus:border-black transition-colors rounded-none disabled:opacity-50"
+                    className="w-full bg-transparent border-b border-black pb-4 pt-2 text-xl md:text-2xl font-normal placeholder:text-black/20 focus:outline-none focus:border-black transition-colors rounded-none disabled:opacity-50"
                   />
                 </div>
               </div>
@@ -147,7 +147,7 @@ export function ContactForm() {
                   placeholder="info@firma.de *"
                   required
                   disabled={status === "loading"}
-                  className="w-full bg-transparent border-b border-black/10 pb-4 pt-2 text-xl md:text-2xl font-normal placeholder:text-black/20 focus:outline-none focus:border-black transition-colors rounded-none disabled:opacity-50"
+                  className="w-full bg-transparent border-b border-black pb-4 pt-2 text-xl md:text-2xl font-normal placeholder:text-black/20 focus:outline-none focus:border-black transition-colors rounded-none disabled:opacity-50"
                 />
               </div>
 
@@ -165,7 +165,7 @@ export function ContactForm() {
                   name="company"
                   placeholder="Muster GmbH"
                   disabled={status === "loading"}
-                  className="w-full bg-transparent border-b border-black/10 pb-4 pt-2 text-xl md:text-2xl font-normal placeholder:text-black/20 focus:outline-none focus:border-black transition-colors rounded-none disabled:opacity-50"
+                  className="w-full bg-transparent border-b border-black pb-4 pt-2 text-xl md:text-2xl font-normal placeholder:text-black/20 focus:outline-none focus:border-black transition-colors rounded-none disabled:opacity-50"
                 />
               </div>
 
@@ -182,7 +182,7 @@ export function ContactForm() {
                   name="service"
                   defaultValue=""
                   disabled={status === "loading"}
-                  className="w-full bg-transparent border-b border-black/10 pb-4 pt-2 text-xl md:text-2xl font-normal text-black appearance-none focus:outline-none focus:border-black transition-colors rounded-none cursor-pointer disabled:opacity-50"
+                  className="w-full bg-transparent border-b border-black pb-4 pt-2 text-xl md:text-2xl font-normal text-black appearance-none focus:outline-none focus:border-black transition-colors rounded-none cursor-pointer disabled:opacity-50"
                 >
                   <option value="" disabled className="text-black/20">
                     Bitte wählen...
@@ -209,7 +209,7 @@ export function ContactForm() {
                   placeholder="Erzählen Sie uns von Ihrer Vision... *"
                   required
                   disabled={status === "loading"}
-                  className="w-full bg-transparent border-b border-black/10 pb-4 pt-2 text-xl md:text-2xl font-normal placeholder:text-black/20 focus:outline-none focus:border-black transition-colors rounded-none resize-none disabled:opacity-50"
+                  className="w-full bg-transparent border-b border-black pb-4 pt-2 text-xl md:text-2xl font-normal placeholder:text-black/20 focus:outline-none focus:border-black transition-colors rounded-none resize-none disabled:opacity-50"
                 />
               </div>
 
