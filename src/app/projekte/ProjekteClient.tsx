@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, FolderKanban } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
@@ -89,20 +89,31 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: cardRef,
-    // Start animation when top of card hits the bottom of the viewport
-    // End when the center of the card hits the center of the viewport
+
     offset: ["0 1", "0.5 0.5"],
   });
+
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const isEven = index % 2 === 0;
 
   // Hier verknüpfen wir die Scroll-Position mit den seitlichen X-Werten.
-  // Es imitiert den GSAP ScrollTrigger-Effekt.
+
   const leftX = useTransform(scrollYProgress, [0, 1], [-150, 0]);
   const rightX = useTransform(scrollYProgress, [0, 1], [150, 0]);
 
-  // Bildskalierung für den sauberen Parallax-Effekt
-  const imageScale = useTransform(scrollYProgress, [0, 1], [1.5, 1]);
+  // Bildskalierung für den sauberen Parallax-Effekt (nur auf Desktop, stoppt den 3D-Effekt auf Mobile)
+  const imageScale = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [isMobile ? 1 : 1.5, 1],
+  );
 
   const imageX = isEven ? leftX : rightX;
   const textX = isEven ? rightX : leftX;

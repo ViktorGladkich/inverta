@@ -2,7 +2,7 @@
 
 import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export interface CardItem {
   title: string;
@@ -60,7 +60,20 @@ const Card = ({
     offset: ["start end", "start start"],
   });
 
-  const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Apply parallax zoom only on desktop
+  const imageScale = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [isMobile ? 1 : 2, 1],
+  );
   const scale = useTransform(progress, range, [1, targetScale]);
 
   const neumorphicShadow =
