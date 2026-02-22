@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion, Variants } from "framer-motion";
-import { TechnologyCard } from "./technology/technology-card";
+import { TechnologyCard } from "./technology/TechnologyCard";
 import {
   TechnologyIcon,
   CuttingEdgeIcon,
@@ -10,7 +10,7 @@ import {
   AnalyticsIcon,
   SupportIcon,
   ButtonArrow,
-} from "./technology/technology-icons";
+} from "./technology/TechnologyIcons";
 import Link from "next/link";
 
 export function Technology() {

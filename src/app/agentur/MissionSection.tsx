@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { Compass } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { BlurTextEffect } from "@/components/ui/blur-text-effect";
+import { BlurTextEffect } from "@/components/ui/BlurTextEffect";
 
 import { CountUp } from "./mission/CountUp";
 import { StrategyCard, DesignCard, GrowthCard } from "./mission/AnimatedCards";

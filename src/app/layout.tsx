@@ -3,7 +3,7 @@ import { ViewportFix } from "@/components/Viewport/ViewportFix";
 import { Geist, Geist_Mono } from "next/font/google";
 import { CookieConsent } from "@/components/ui/CookieConsent";
 import { Navbar } from "@/components/layout/Navbar";
-import { ProgressiveBlur } from "@/components/ui/progressive-blur";
+import { ProgressiveBlur } from "@/components/ui/ProgressiveBlur";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { Preloader } from "@/components/ui/Preloader";
 import "./globals.css";

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { MessageSquare, Star } from "lucide-react";
-import { BlurTextEffect } from "@/components/ui/blur-text-effect";
+import { BlurTextEffect } from "@/components/ui/BlurTextEffect";
 
 const testimonials = [
   {

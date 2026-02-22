@@ -2,8 +2,8 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import { WhyUsCard } from "./why-us-ui";
-import { SyncIcon, ChartBarIcon, DataIcon, InsightsIcon } from "./why-us-icons";
+import { WhyUsCard } from "./WhyUsUi";
+import { SyncIcon, ChartBarIcon, DataIcon, InsightsIcon } from "./WhyUsIcons";
 
 export function IntegrationCard() {
   return (

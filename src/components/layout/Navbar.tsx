@@ -14,8 +14,8 @@ import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 import { navigationItems } from "./navbar/config";
-import { MegaMenu } from "./navbar/mega-menu";
-import { MobileMenu } from "./navbar/mobile-menu";
+import { MegaMenu } from "./navbar/MegaMenu";
+import { MobileMenu } from "./navbar/MobileMenu";
 import { ButtonArrow } from "./navbar/icons";
 
 export function Navbar() {

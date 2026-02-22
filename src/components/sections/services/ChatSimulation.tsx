@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Sparkles } from "lucide-react";
-import { Typewriter } from "@/components/ui/typewriter-text";
+import { Typewriter } from "@/components/ui/TypewriterText";
 import { neumorphicShadow } from "./ServicesOverviewCard";
 
 export const ChatSimulation = () => {

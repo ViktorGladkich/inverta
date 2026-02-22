@@ -10,7 +10,7 @@ import {
   InsightsIcon,
   AutomationIcon,
   DataIcon,
-} from "./why-us-icons";
+} from "./WhyUsIcons";
 
 // Marquee items data
 const marqueeItems = [

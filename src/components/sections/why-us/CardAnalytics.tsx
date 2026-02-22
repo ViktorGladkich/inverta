@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import { WhyUsCard } from "./why-us-ui";
+import { WhyUsCard } from "./WhyUsUi";
 
 export function AnalyticsCard() {
   return (

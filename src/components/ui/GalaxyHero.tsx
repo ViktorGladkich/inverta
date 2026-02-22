@@ -4,7 +4,7 @@ import React from "react";
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { BlurTextEffect } from "@/components/ui/blur-text-effect";
+import { BlurTextEffect } from "@/components/ui/BlurTextEffect";
 
 export function GalaxyHero() {
   const containerVariants: Variants = {

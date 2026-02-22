@@ -2,11 +2,11 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { CrownIcon } from "./why-us/why-us-icons";
-import { AnalyticsCard } from "./why-us/card-analytics";
-import { EfficiencyCard } from "./why-us/card-efficiency";
-import { IntegrationCard } from "./why-us/card-integration";
-import { WhyUsMarquee } from "./why-us/why-us-marquee";
+import { CrownIcon } from "./why-us/WhyUsIcons";
+import { AnalyticsCard } from "./why-us/CardAnalytics";
+import { EfficiencyCard } from "./why-us/CardEfficiency";
+import { IntegrationCard } from "./why-us/CardIntegration";
+import { WhyUsMarquee } from "./why-us/WhyUsMarquee";
 
 export function WhyUs() {
   return (

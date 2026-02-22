@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { MoveRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Typewriter } from "@/components/ui/typewriter-text";
+import { Typewriter } from "@/components/ui/TypewriterText";
 import { ServicesOverviewCard, neumorphicShadow } from "./ServicesOverviewCard";
 
 export const WebDevCard = ({ className }: { className?: string }) => {

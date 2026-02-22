@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { BlurTextEffect } from "@/components/ui/blur-text-effect";
+import { BlurTextEffect } from "@/components/ui/BlurTextEffect";
 import { CountUp } from "@/app/agentur/mission/CountUp";
 import {
   QuantumPathCard,
