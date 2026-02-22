@@ -5,6 +5,7 @@ import { CookieConsent } from "@/components/ui/CookieConsent";
 import { Navbar } from "@/components/layout/Navbar";
 import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
+import { Preloader } from "@/components/ui/Preloader";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -69,6 +70,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-neutral-900 selection:bg-black selection:text-white`}
       >
+        <Preloader />
         <ViewportFix />
         <Navbar />
         {children}

@@ -15,41 +15,49 @@ export default function Template({ children }: { children: React.ReactNode }) {
 
   return (
     <div key={pathname} className="relative">
-      {/* Page Content with fade + slide up animation */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
-          duration: 0.5,
-          ease: [0.25, 0.46, 0.45, 0.94],
-          delay: 0.1,
+          duration: 0.8,
+          ease: [0.76, 0, 0.24, 1],
+          delay: 0.2,
         }}
       >
         {children}
       </motion.div>
 
-      {/* Curtain reveal overlay — slides up on page enter */}
-      <motion.div
-        initial={{ scaleY: 1 }}
-        animate={{ scaleY: 0 }}
-        transition={{
-          duration: 0.7,
-          ease: [0.65, 0, 0.35, 1],
-        }}
-        className="fixed inset-0 z-9990 bg-[#f5f5f5] origin-top pointer-events-none"
-      />
+      <div className="fixed inset-0 z-9990 flex w-full h-screen pointer-events-none">
+        {[...Array(5)].map((_, i) => (
+          <motion.div
+            key={`black-${i}`}
+            initial={{ scaleY: 1 }}
+            animate={{ scaleY: 0 }}
+            transition={{
+              duration: 0.8,
+              ease: [0.76, 0, 0.24, 1],
+              delay: 0.06 * i,
+            }}
+            className="h-full w-full bg-[#050505] origin-top"
+          />
+        ))}
+      </div>
 
-      {/* Secondary curtain for depth */}
-      <motion.div
-        initial={{ scaleY: 1 }}
-        animate={{ scaleY: 0 }}
-        transition={{
-          duration: 0.7,
-          ease: [0.65, 0, 0.35, 1],
-          delay: 0.05,
-        }}
-        className="fixed inset-0 z-9989 bg-white origin-top pointer-events-none"
-      />
+      <div className="fixed inset-0 z-9989 flex w-full h-screen pointer-events-none">
+        {[...Array(5)].map((_, i) => (
+          <motion.div
+            key={`neon-${i}`}
+            initial={{ scaleY: 1 }}
+            animate={{ scaleY: 0 }}
+            transition={{
+              duration: 0.8,
+              ease: [0.76, 0, 0.24, 1],
+              delay: 0.06 * i + 0.08,
+            }}
+            className="h-full w-full bg-[#daff02] origin-top"
+          />
+        ))}
+      </div>
     </div>
   );
 }
