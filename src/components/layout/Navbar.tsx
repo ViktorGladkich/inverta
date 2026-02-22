@@ -97,7 +97,7 @@ export function Navbar() {
                 onMouseLeave={handleMouseLeave}
               >
                 <Link
-                  href={item.items ? "#" : item.href}
+                  href={item.href}
                   className="relative z-10 text-base font-medium text-black transition-colors duration-200 flex items-center gap-1 group"
                   title={`Bereich ${item.title} entdecken`}
                 >

@@ -18,7 +18,7 @@ export default function Impressum() {
         <div className="container mx-auto px-4 md:px-6 max-w-3xl">
           <h1 className="text-4xl font-bold mb-8">Impressum</h1>
 
-          <div className="prose prose-neutral max-w-none">
+          <div className="prose prose-neutral max-w-none break-all sm:break-normal">
             <h2 className="text-2xl font-bold mt-8 mb-4">
               Angaben gemäß § 5 TMG
             </h2>
@@ -51,8 +51,16 @@ export default function Impressum() {
             </h2>
             <p className="mb-4">
               Die Europäische Kommission stellt eine Plattform zur
-              Online-Streitbeilegung (OS) bereit:
-              https://ec.europa.eu/consumers/odr/.
+              Online-Streitbeilegung (OS) bereit:{" "}
+              <a
+                href="https://ec.europa.eu/consumers/odr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="break-all text-blue-600 hover:underline"
+              >
+                https://ec.europa.eu/consumers/odr/
+              </a>
+              .
               <br />
               Unsere E-Mail-Adresse finden Sie oben im Impressum.
             </p>

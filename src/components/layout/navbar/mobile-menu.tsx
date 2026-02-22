@@ -115,26 +115,38 @@ export function MobileMenu({
                   <motion.div variants={linkVars}>
                     {item.items ? (
                       <div>
-                        <button
-                          onClick={() => toggleAccordion(item.title)}
-                          aria-expanded={openAccordion === item.title}
-                          className="w-full flex justify-between items-center py-5 text-left group"
-                          title={`${item.title} Untermenü öffnen`}
-                        >
-                          <span className="text-[8vw] sm:text-5xl font-black uppercase tracking-tighter text-white group-hover:text-white/70 transition-colors leading-[0.85] flex items-start gap-2 break-all sm:break-normal line-clamp-1">
-                            <span className="text-white/20 text-[10px] sm:text-sm font-medium tracking-widest mt-1 sm:mt-2 shrink-0">
-                              0{index + 1}
+                        <div className="w-full flex justify-between items-center group">
+                          <Link
+                            href={item.href}
+                            onClick={onClose}
+                            title={`${item.title} Seite aufrufen`}
+                            className="flex-1 py-5 text-left"
+                          >
+                            <span className="text-[8vw] sm:text-5xl font-black uppercase tracking-tighter text-white hover:text-[#daff02] transition-colors leading-[0.85] flex items-start gap-2 break-all sm:break-normal line-clamp-1">
+                              <span className="text-white/20 text-[10px] sm:text-sm font-medium tracking-widest mt-1 sm:mt-2 shrink-0">
+                                0{index + 1}
+                              </span>
+                              <span className="truncate">{item.title}</span>
                             </span>
-                            <span className="truncate">{item.title}</span>
-                          </span>
-                          <div className="w-10 h-10 flex items-center justify-center bg-white/5 rounded-full shrink-0">
-                            {openAccordion === item.title ? (
-                              <Minus className="w-5 h-5 text-white/70" />
-                            ) : (
-                              <Plus className="w-5 h-5 text-white/70" />
-                            )}
-                          </div>
-                        </button>
+                          </Link>
+                          <button
+                            onClick={(e) => {
+                              e.preventDefault();
+                              toggleAccordion(item.title);
+                            }}
+                            aria-expanded={openAccordion === item.title}
+                            className="pl-4 py-5 flex items-center justify-end shrink-0"
+                            title={`${item.title} Untermenü öffnen`}
+                          >
+                            <div className="w-10 h-10 flex items-center justify-center bg-white/5 rounded-full hover:bg-white/10 transition-colors">
+                              {openAccordion === item.title ? (
+                                <Minus className="w-5 h-5 text-white/70" />
+                              ) : (
+                                <Plus className="w-5 h-5 text-white/70" />
+                              )}
+                            </div>
+                          </button>
+                        </div>
                         <AnimatePresence>
                           {openAccordion === item.title && (
                             <motion.div
