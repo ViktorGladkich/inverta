@@ -10,20 +10,25 @@ import { CTASection } from "@/components/sections/CTASection";
 export function AutomationClient() {
   return (
     <div className="relative bg-[#f5f5f5]">
-      {/* Hero Section with Parallax and Marquee */}
+      <h1 className="sr-only">
+        Agentur für KI-Automatisierung, intelligente Workflows & Performance
+        Marketing | INVERTA
+      </h1>
+      {/* Header-Bereich mit animierter Laufschrift */}
       <PageHero
         titleTop="AUTOMATISIERUNG"
         titleMain="NEU GEDACHT"
         marqueeItems={MARQUEE_ITEMS}
+        as="h2"
       />
 
-      {/* Main Content Area */}
-      <main className="relative z-10">
+      {/* Kernbereiche der Automatisierung */}
+      <div className="relative z-10 bg-[#f5f5f5]">
         <IntroSection />
         <FeaturesSection />
         <ProcessSection />
         <CTASection />
-      </main>
+      </div>
     </div>
   );
 }

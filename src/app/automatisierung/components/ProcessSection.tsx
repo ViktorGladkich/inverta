@@ -17,7 +17,7 @@ const STEP_ICONS = [
 export function ProcessSection() {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Scroll Tracking for the vertical progress line
+  // Scroll-Überwachung für die vertikale Fortschrittslinie
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start center", "end end"],
@@ -35,7 +35,7 @@ export function ProcessSection() {
       className="bg-[#f5f5f5] py-16 md:py-24 px-6 md:px-20 lg:px-32 relative overflow-hidden selection:bg-[#daff02] selection:text-black"
     >
       <div className="max-w-[1400px] mx-auto relative z-10">
-        {/* Section Header */}
+        {/* Bereichsüberschrift und Einleitung */}
         <div className="flex flex-col items-center text-center gap-6 mb-12 md:mb-20">
           <FadeIn>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-black/5 shadow-sm">
@@ -61,12 +61,12 @@ export function ProcessSection() {
           </div>
         </div>
 
-        {/* Timeline Layout */}
+        {/* Timeline-Layout der Prozessschritte */}
         <div className="relative">
-          {/* Centered Progress Line Background */}
+          {/* Zentrierte Fortschrittslinie im Hintergrund */}
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[2px] bg-black/5 -translate-x-1/2" />
 
-          {/* Animated Progress Line */}
+          {/* Animierte Ladeanzeige-Linie (Scroll-Trigger) */}
           <motion.div
             className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[2px] bg-black origin-top will-change-transform -translate-x-1/2"
             style={{ scaleY }}
@@ -103,7 +103,7 @@ function StepItem({
         isEven ? "md:justify-start" : "md:justify-end"
       }`}
     >
-      {/* Centered Neumorphic Icon Bubble */}
+      {/* Kreis-Icon in der horizontalen Mitte (Timeline-Punkt) */}
       <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 z-20 items-center justify-center">
         <div
           className="flex items-center justify-center p-[6px] bg-[#f5f5f5] rounded-full"
@@ -118,7 +118,7 @@ function StepItem({
         </div>
       </div>
 
-      {/* Card Content Row */}
+      {/* Inhaltsblock der Stufe (wechselseitig) */}
       <motion.div
         initial={{ opacity: 0, x: isEven ? -40 : 40 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -134,13 +134,13 @@ function StepItem({
         >
           <div className="flex flex-col gap-6">
             <div className="flex items-center justify-between">
-              {/* Step Badge */}
+              {/* Stufen-Label */}
               <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-white border border-black/5 shadow-sm">
                 <span className="text-[10px] md:text-[11px] font-bold text-black tracking-[0.2em] uppercase mt-px">
                   STUFE 0{index + 1}
                 </span>
               </div>
-              {/* Step indicator circle */}
+              {/* Nummerischer Indikator am Rand */}
               <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center text-[#daff02] text-xs font-bold shadow-lg">
                 {item.step}
               </div>

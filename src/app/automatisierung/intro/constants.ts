@@ -28,10 +28,10 @@ export const quoteWords = [
   { text: "Skalierbarkeit.", muted: false },
 ];
 
-/* Body paragraphs */
+/* Strategische SEO Paragraphs */
 export const bodyParagraphs = [
-  "Wir verstehen Automatisierung als digitalen Hebel für Ihr Unternehmen. Repetitive Aufgaben fressen Zeit und kreative Energie, die Ihr Team besser in Innovation und Strategie investieren könnte.",
-  "Mit intelligenten Workflows und KI-Agenten bauen wir Systeme, die 24/7 für Sie arbeiten — mit höchster Präzision und ohne Ermüdungserscheinungen.",
-  "Unser Ziel ist es, operative Reibungsverluste zu eliminieren, damit Sie sich wieder auf das konzentrieren können, was wirklich zählt: Ihr Wachstum und Ihre Vision.",
-  "Wir begleiten Sie auf dem gesamten Weg der Transformation — von der ersten Analyse bis zur nahtlosen Implementierung und kontinuierlichen Optimierung Ihrer digitalen Infrastruktur.",
+  "Wir betrachten intelligente KI-Automatisierung als den stärksten digitalen Wachstumshebel für moderne Unternehmen. Repetitive, manuelle Aufgaben fressen nicht nur Zeit, sondern blockieren kreative Ressourcen, die Ihr Team besser in skalierbare Strategien investieren könnte.",
+  "Mit nahtloser Prozessoptimierung und leistungsfähigen KI-Agenten erschaffen wir digitale Infrastrukturen, die 24/7 für Sie Umsatz generieren. Durch Marketing-Automatisierung und tiefe CRM-Integrationen garantieren wir fehlerfreie Workflows auf Enterprise-Niveau.",
+  "Unser Anspruch als Premium-Agentur ist es, operative Reibungsverluste drastisch zu eliminieren. So können Sie sich auf Ihre Kernkompetenz konzentrieren: Die Skalierung Ihres Unternehmens durch messbare Ergebnisse.",
+  "Egal ob komplexe Webentwicklung, API-Schnittstellen oder intelligente Vertriebs-Dashboards – wir begleiten Ihre digitale Transformation strategisch von der ersten Codezeile bis zum messbaren Return on Investment.",
 ];

@@ -18,29 +18,29 @@ export const MARQUEE_ITEMS: string[] = [
 export const FEATURES: Feature[] = [
   {
     icon: <Zap className="w-6 h-6" />,
-    title: "Marketing Flow",
-    desc: "Wir entwickeln intelligente Lead-Gen-Systeme, die potenzielle Kunden automatisiert qualifizieren und durch den Sales-Funnel leiten. So gewinnen Sie wertvolle Anfragen, während sich Ihr Team auf den Abschluss konzentriert.",
+    title: "Marketing Automatisierung",
+    desc: "Wir entwickeln smarte Lead-Generation-Systeme, die Ihre potenziellen Kunden vollautomatisch qualifizieren und durch den Funnel führen. So gewinnt Ihr Sales-Team signifikant mehr hochwertige Anfragen bei weniger manuellem Aufwand.",
     tag: "GROWTH",
     src: "/images/automatisierung/marketing-flow.png",
   },
   {
     icon: <Cpu className="w-6 h-6" />,
-    title: "KI-Agenten",
-    desc: "Nutzen Sie die Power moderner Sprachmodelle für Ihren Kundensupport oder interne Prozesse. Unsere KI-Agenten verstehen Kontext, beantworten komplexe Anfragen und erledigen Aufgaben autonom — 24/7 und in jeder Sprache.",
+    title: "KI-Automatisierung",
+    desc: "Integrieren Sie maßgeschneiderte KI-Agenten und fortschrittliche Machine-Learning-Algorithmen in Ihren Unternehmensalltag. Unsere Systeme übernehmen den 24/7-Support und komplexe, datengetriebene Auswertungen komplett autonom.",
     tag: "AI",
     src: "/images/automatisierung/ai-agents.png",
   },
   {
     icon: <Settings2 className="w-6 h-6" />,
-    title: "Workflows",
-    desc: "Schluss mit manuellem Copy-Paste zwischen verschiedenen Tools. Wir vernetzen Ihre Software-Landschaft (ERP, CRM, Slack, Google) zu einer nahtlosen Pipeline, die Daten in Echtzeit synchronisiert und Fehlerquellen eliminiert.",
+    title: "API & Workflows",
+    desc: "Schluss mit isolierten Datensilos. Durch komplexe Webentwicklung und API-Schnittstellen vernetzen wir all Ihre Tools (ERP, CRM, Slack, Google) zu einer nahtlosen, fehlerfreien Pipeline – für Echtzeitdaten auf Enterprise-Niveau.",
     tag: "TECH",
     src: "/images/automatisierung/workflows.png",
   },
   {
     icon: <BarChart3 className="w-6 h-6" />,
-    title: "Dashboarding",
-    desc: "Treffen Sie Entscheidungen auf Basis von Fakten, nicht auf Bauchgefühl. Wir bündeln Ihre Prozessdaten in interaktiven Dashboards, die Ihnen jederzeit volle Transparenz über Performance, Kosten und Optimierungspotenziale geben.",
+    title: "Business Dashboards",
+    desc: "Ersetzen Sie das Bauchgefühl durch harte Fakten. Wir aggregieren Ihre gesamten Prozessdaten in interaktiven Management-Dashboards. Volle Transparenz über Performance-Metrics, Kosten und brachliegende ROI-Potenziale ab Day 1.",
     tag: "DATA",
     src: "/images/automatisierung/dashboarding.png",
   },
@@ -49,22 +49,22 @@ export const FEATURES: Feature[] = [
 export const PROCESS_STEPS: ProcessStep[] = [
   {
     step: "01",
-    title: "Audit & Analyse",
-    desc: "Wir tauchen tief in Ihre bestehenden Arbeitsabläufe ein. Durch datengestützte Analysen identifizieren wir präzise Engpässe und Ineffizienzen in Ihrer aktuellen Infrastruktur, um das volle Potenzial für automatisierte Optimierungen aufzudecken.",
+    title: "System-Audit & Analyse",
+    desc: "Das Fundament erfolgreicher Prozessoptimierung. Wir analysieren tiefgreifend Ihre bisherigen Arbeitsabläufe, identifizieren ineffiziente Engpässe und bewerten das digitale Skalierungspotenzial Ihres Unternehmens.",
   },
   {
     step: "02",
-    title: "Logic Design",
-    desc: "Auf Basis der Analyse entwerfen wir eine maßgeschneiderte Automatisierungs-Architektur. Wir definieren klare Logiken, Datenflüsse und Schnittstellen, die exakt auf Ihre Geschäftsziele zugeschnitten sind und eine nahtlose Integration garantieren.",
+    title: "Architektur & Strategy",
+    desc: "Basierend auf realen Daten entwerfen wir Ihr zukünftiges Setup. Dabei definieren wir logische Datenflüsse und CRM-Integrationen, die exakt auf Ihre Geschäftsziele abgestimmt sind und extrem leistungsstark skalieren.",
   },
   {
     step: "03",
-    title: "Implementation",
-    desc: "Unsere Experten setzen die geplante Lösung mit modernsten Technologien um. Von der Cloud-Infrastruktur bis hin zu KI-gestützten Agenten — wir bauen robuste Systeme, die sofortigen Mehrwert liefern und Ihre operativen Kosten signifikant senken.",
+    title: "Design & Implementation",
+    desc: "Vom professionellen Webdesign der Interfaces bis zur hochsicheren Backend-Infrastruktur. Unsere Senior-Entwickler bauen robuste Automatisierungslösungen, die sofort anwendbar sind und Ihre operativen Kosten minimal halten.",
   },
   {
     step: "04",
-    title: "Scalability",
-    desc: "Automatisierung ist ein fortlaufender Prozess. Wir überwachen die Performance Ihrer neuen Systeme in Echtzeit und optimieren sie kontinuierlich. So stellen wir sicher, dass Ihre digitale Infrastruktur mit Ihrem Unternehmen gesund mitwächst.",
+    title: "Scaling & Maintenance",
+    desc: "Echte KI-Automatisierung ist ein fortlaufender Zyklus. Wir monitoren die Performance in Echtzeit und trainieren Systeme kontinuierlich weiter, damit Ihre digitale Transformation zukunftssicher bleibt.",
   },
 ];

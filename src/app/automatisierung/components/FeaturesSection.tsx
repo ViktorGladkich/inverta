@@ -18,7 +18,7 @@ export function FeaturesSection() {
     <section className="bg-[#f5f5f5] pt-32 pb-20 px-6">
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col items-center text-center gap-6 mb-16 md:mb-24">
-          {/* Badge */}
+          {/* Label-Badge: Kernkompetenzen */}
           <div
             className="flex items-center justify-center px-[12px] py-[6px] gap-2 rounded-[60px] bg-[#f5f5f5]"
             style={{ boxShadow: NEUMORPHIC_SHADOW }}
@@ -37,13 +37,14 @@ export function FeaturesSection() {
             </h2>
             <p className="text-lg md:text-xl text-black font-normal leading-relaxed">
               Wir transformieren Ihre manuellen Prozesse in hochperformante
-              digitale Workflows. Von der Lead-Generierung bis zur KI-basierten
-              Datenanalyse — wir schaffen Systeme, die für Sie arbeiten.
+              digitale Workflows. Von der KI-basierten Datenanalyse bis hin zur
+              skalierbaren <strong>Webentwicklung</strong> — wir erschaffen
+              Systeme, die wie ein Uhrwerk für Sie arbeiten.
             </p>
           </div>
         </div>
 
-        {/* Parallax Cards */}
+        {/* Interaktives Parallax-Grid für KI und Automatisierung */}
         <CardsParallax items={parallaxItems} />
       </div>
     </section>

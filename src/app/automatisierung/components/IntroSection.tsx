@@ -34,7 +34,7 @@ export function IntroSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-16 lg:gap-24 items-start">
-          {/* Left Column — Sticky visual block */}
+          {/* Linke Spalte — Fixierter visueller Block (Sticky) */}
           <div className="lg:sticky lg:top-32 flex flex-col gap-12">
             <div className="flex flex-col gap-10">
               <FadeIn delay={0.1}>
@@ -113,7 +113,7 @@ export function IntroSection() {
             </FadeIn>
           </div>
 
-          {/* Right Column — Content */}
+          {/* Rechte Spalte — Fließtext der Philosophie (Scroll) */}
           <div className="flex flex-col">
             <div className="mb-20">
               <p className="text-2xl md:text-3xl lg:text-4xl text-black font-medium leading-[1.3] tracking-tight">
