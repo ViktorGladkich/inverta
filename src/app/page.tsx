@@ -7,8 +7,7 @@ import { WhyUs } from "@/components/sections/WhyUs";
 import { Technology } from "@/components/sections/Technology";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
-import { CTASection } from "./agentur/CTASection";
-import { TeamSection } from "./agentur/TeamSection";
+import { CTASection } from "@/components/sections/CTASection";
 
 export default function Home() {
   return (

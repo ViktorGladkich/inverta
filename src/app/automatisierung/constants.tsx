@@ -1,7 +1,10 @@
 import { Zap, Cpu, Settings2, BarChart3 } from "lucide-react";
 import { Feature, ProcessStep } from "./types";
 
-export const MARQUEE_ITEMS = [
+export const NEUMORPHIC_SHADOW =
+  "rgba(0, 0, 0, 0.08) 0px 0.706592px 0.706592px -0.666667px, rgba(0, 0, 0, 0.08) 0px 1.80656px 1.80656px -1.33333px, rgba(0, 0, 0, 0.07) 0px 3.62176px 3.62176px -2px, rgba(0, 0, 0, 0.07) 0px 6.8656px 6.8656px -2.66667px, rgba(0, 0, 0, 0.05) 0px 13.6468px 13.6468px -3.33333px, rgba(0, 0, 0, 0.02) 0px 30px 30px -4px, rgb(255, 255, 255) 0px 3px 1px 0px inset";
+
+export const MARQUEE_ITEMS: string[] = [
   "PROCESS OPTIMIZATION",
   "AI INTEGRATION",
   "CRM AUTOMATION",

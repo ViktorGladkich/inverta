@@ -26,7 +26,7 @@ export function IntroSection() {
           <FadeIn>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-black/5 shadow-sm">
               <Sparkles className="w-3.5 h-3.5 text-black/40" />
-              <span className="text-[11px] font-semibold text-black/60 tracking-widest uppercase mt-px">
+              <span className="text-[11px] font-semibold text-black tracking-widest uppercase mt-px">
                 Unsere Philosophie
               </span>
             </div>

@@ -34,8 +34,11 @@ export function PageHero({ titleTop, titleMain, marqueeItems }: PageHeroProps) {
     <>
       <section
         className={`${
-          isMobile ? "relative h-screen" : "fixed inset-0"
+          isMobile ? "relative" : "fixed inset-0"
         } z-0 flex flex-col items-center justify-center overflow-hidden bg-white text-black`}
+        style={{
+          minHeight: isMobile ? "calc(var(--vh, 1vh) * 100)" : undefined,
+        }}
       >
         <div className="absolute inset-0 z-0 select-none border-b border-black/5">
           <video

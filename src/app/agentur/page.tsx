@@ -5,7 +5,7 @@ import { ServicesOverview } from "@/components/sections/ServicesOverview";
 import { TeamSection } from "./TeamSection";
 import { MissionSection } from "./MissionSection";
 
-import { CTASection } from "./CTASection";
+import { CTASection } from "@/components/sections/CTASection";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { PrinzipienSection } from "./PrinzipienSection";
@@ -40,10 +40,10 @@ export default function AgenturPage() {
       <AgenturClient />
       <MissionSection />
       <WhyUs />
-      <PrinzipienSection/>
+      <PrinzipienSection />
       <ServicesOverview />
       <TeamSection />
-      <Testimonials/>
+      <Testimonials />
       <CTASection />
       <Footer />
     </>
