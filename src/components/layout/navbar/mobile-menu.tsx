@@ -122,11 +122,11 @@ export function MobileMenu({
                             title={`${item.title} Seite aufrufen`}
                             className="flex-1 py-5 text-left"
                           >
-                            <span className="text-[8vw] sm:text-5xl font-black uppercase tracking-tighter text-white hover:text-[#daff02] transition-colors leading-[0.85] flex items-start gap-2 break-all sm:break-normal line-clamp-1">
+                            <span className="text-[7vw] sm:text-4xl font-black uppercase tracking-tighter text-white hover:text-[#daff02] transition-colors leading-[0.9] flex items-start gap-2 wrap-break-word">
                               <span className="text-white/20 text-[10px] sm:text-sm font-medium tracking-widest mt-1 sm:mt-2 shrink-0">
                                 0{index + 1}
                               </span>
-                              <span className="truncate">{item.title}</span>
+                              <span>{item.title}</span>
                             </span>
                           </Link>
                           <button
@@ -192,12 +192,12 @@ export function MobileMenu({
                         href={item.href}
                         onClick={onClose}
                         title={`Zur Seite: ${item.title}`}
-                        className="py-5 flex items-start gap-2 text-[8vw] sm:text-5xl font-black uppercase tracking-tighter text-white hover:text-[#daff02] transition-colors leading-[0.85] line-clamp-1"
+                        className="py-5 flex items-start gap-2 text-[7vw] sm:text-4xl font-black uppercase tracking-tighter text-white hover:text-[#daff02] transition-colors leading-[0.9] wrap-break-word"
                       >
                         <span className="text-white/20 text-[10px] sm:text-sm font-medium tracking-widest mt-1 sm:mt-2 shrink-0">
                           0{index + 1}
                         </span>
-                        <span className="truncate">{item.title}</span>
+                        <span>{item.title}</span>
                       </Link>
                     )}
                   </motion.div>
