@@ -141,6 +141,7 @@ export function Preloader() {
                     src="/logo-inverta-white.png"
                     alt="INVERTA"
                     fill
+                    sizes="(max-width: 768px) 160px, 220px"
                     className="object-contain"
                     priority
                   />

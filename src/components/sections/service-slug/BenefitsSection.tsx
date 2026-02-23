@@ -18,7 +18,7 @@ export const BenefitsSection = ({ benefits }: { benefits: string[] }) => {
   );
 
   return (
-    <>
+    <div ref={targetRef} className="relative w-full">
       {/* MOBILE VERSION: Vertical stack, no sticky */}
       <section
         aria-label="Advantages and Benefits"
@@ -52,7 +52,6 @@ export const BenefitsSection = ({ benefits }: { benefits: string[] }) => {
 
       {/* DESKTOP VERSION: Sticky horizontal scroll */}
       <section
-        ref={targetRef}
         aria-label="Advantages and Benefits Desktop"
         className="hidden md:block relative bg-[#f5f5f5] text-black"
         style={{ height: `${benefits.length * 100}vh` }}
@@ -96,6 +95,6 @@ export const BenefitsSection = ({ benefits }: { benefits: string[] }) => {
           </motion.div>
         </div>
       </section>
-    </>
+    </div>
   );
 };

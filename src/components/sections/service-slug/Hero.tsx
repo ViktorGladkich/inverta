@@ -25,7 +25,7 @@ export const Hero = ({ service, categoryLabel }: HeroProps) => {
   return (
     <section
       ref={containerRef}
-      className="relative h-screen min-h-[800px] flex items-center justify-center px-6 overflow-hidden bg-white"
+      className="relative min-h-[800px] flex items-center justify-center px-6 overflow-hidden bg-white"
       style={{ minHeight: "calc(var(--vh, 1vh) * 100)" }}
     >
       <div className="absolute inset-0 z-0 bg-white">

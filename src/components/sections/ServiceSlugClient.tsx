@@ -19,7 +19,7 @@ export function ServiceSlugClient({
   categoryLabel: string;
 }) {
   return (
-    <article className="bg-white">
+    <article className="relative bg-white">
       {/* JSON-LD Schema for Google Service Listings */}
       <ServiceSchema service={service} />
 

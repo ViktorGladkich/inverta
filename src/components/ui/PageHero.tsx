@@ -39,6 +39,7 @@ export function PageHero({
   return (
     <>
       <section
+        ref={heroRef}
         className={`${
           isMobile ? "relative" : "fixed inset-0"
         } z-0 flex flex-col items-center justify-center overflow-hidden bg-white text-black`}
@@ -141,7 +142,6 @@ export function PageHero({
       {/* Scroll Spacer */}
       {!isMobile && (
         <div
-          ref={heroRef}
           className="relative z-0 pointer-events-none"
           style={{ height: "calc(var(--vh, 1vh) * 100)" }}
         />
