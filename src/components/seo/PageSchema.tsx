@@ -1,7 +1,6 @@
-"use client";
-
 /**
  * PageSchema - Dynamic JSON-LD for generic pages like About, Contact, etc.
+ * Server component — no "use client" needed for static data.
  */
 export const PageSchema = ({
   type,
@@ -21,13 +20,23 @@ export const PageSchema = ({
     "@graph": [
       {
         "@type": type,
-        name: name,
-        description: description,
-        url: url,
-        publisher: { "@id": "https://invertadigital.de/#organization" },
+        "@id": `${url}#webpage`,
+        name,
+        description,
+        url,
+        inLanguage: "de-DE",
+        // Связывает страницу с сайтом
+        isPartOf: {
+          "@id": "https://invertadigital.de/#website",
+        },
+        // Связывает с организацией
+        publisher: {
+          "@id": "https://invertadigital.de/#organization",
+        },
       },
       crumbs && {
         "@type": "BreadcrumbList",
+        "@id": `${url}#breadcrumb`,
         itemListElement: [
           {
             "@type": "ListItem",
