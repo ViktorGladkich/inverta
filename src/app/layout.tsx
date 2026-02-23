@@ -6,6 +6,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { ProgressiveBlur } from "@/components/ui/ProgressiveBlur";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { Preloader } from "@/components/ui/Preloader";
+import { GlobalSchema } from "@/components/seo/GlobalSchema";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -70,6 +71,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-neutral-900 selection:bg-black selection:text-white`}
       >
+        <GlobalSchema />
         <Preloader />
         <ViewportFix />
         <Navbar />

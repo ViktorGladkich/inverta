@@ -2,7 +2,7 @@ import { Footer } from "@/components/layout/Footer";
 import { getServiceBySlug, SERVICES } from "@/data/services";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
-import { AutomationDetailClient } from "../AutomationDetailClient";
+import { ServiceSlugClient } from "@/components/sections/ServiceSlugClient";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -42,8 +42,11 @@ export default async function AutomatisierungServicePage({ params }: Props) {
 
   return (
     <>
-      <main>
-        <AutomationDetailClient service={service} />
+      <main className="min-h-screen z-10 relative">
+        <ServiceSlugClient
+          service={service}
+          categoryLabel="KI Automatisierung"
+        />
       </main>
       <Footer />
     </>

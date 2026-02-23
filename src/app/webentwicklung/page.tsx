@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { Footer } from "@/components/layout/Footer";
 import { WebentwicklungClient } from "./WebentwicklungClient";
+import { PageSchema } from "@/components/seo/PageSchema";
 
 export const metadata: Metadata = {
   title: "Premium Webentwicklung & Webdesign Agentur | INVERTA",
@@ -32,6 +33,18 @@ export const metadata: Metadata = {
 export default function WebentwicklungPage() {
   return (
     <>
+      <PageSchema
+        type="WebPage"
+        name="Webentwicklung & Webdesign | INVERTA"
+        description="Maßgeschneiderte Webentwicklung, High-End Webdesign und Onlineshops."
+        url="https://invertadigital.de/webentwicklung"
+        crumbs={[
+          {
+            name: "Webentwicklung",
+            item: "https://invertadigital.de/webentwicklung",
+          },
+        ]}
+      />
       <WebentwicklungClient />
       <Footer />
     </>

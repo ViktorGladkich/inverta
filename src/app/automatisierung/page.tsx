@@ -1,5 +1,6 @@
 import { AutomationClient } from "./AutomationClient";
 import { Footer } from "@/components/layout/Footer";
+import { PageSchema } from "@/components/seo/PageSchema";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -31,6 +32,18 @@ export const metadata: Metadata = {
 export default function AutomationPage() {
   return (
     <>
+      <PageSchema
+        type="WebPage"
+        name="KI-Automatisierung & Prozessoptimierung | INVERTA"
+        description="Effizienzsteigerung durch intelligente KI-Automatisierung und Workflows."
+        url="https://invertadigital.de/automatisierung"
+        crumbs={[
+          {
+            name: "Automatisierung",
+            item: "https://invertadigital.de/automatisierung",
+          },
+        ]}
+      />
       <main>
         <AutomationClient />
       </main>

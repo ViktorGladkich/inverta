@@ -20,10 +20,9 @@ export const SERVICES: ServiceContent[] = [
     category: "marketing",
     title: "Neukundengewinnung",
     description: "Strategien, die aus Besuchern loyale Kunden machen.",
-    seoTitle:
-      "Neukundengewinnung & Lead Generierung | INVERTA Marketing Agentur",
+    seoTitle: "Neukundengewinnung & B2B Lead Generierung Agentur | INVERTA",
     seoDescription:
-      "Steigern Sie Ihre Umsätze mit gezielten Kampagnen zur Neukundengewinnung. Wir optimieren Ihren Sales-Funnel für maximale Conversion.",
+      "Automatisierte Neukundengewinnung für Unternehmen. Wir entwickeln hochkonvertierende Sales Funnels und Strategien zur Lead-Generierung in Dresden & Deutschland.",
     heroText:
       "Verwandeln Sie Interesse in Umsatz. Wir entwickeln Kampagnen, die Ihre Zielgruppe nicht nur erreichen, sondern überzeugen.",
     benefits: [
@@ -55,9 +54,10 @@ export const SERVICES: ServiceContent[] = [
     category: "marketing",
     title: "Suchmaschinenoptimierung (SEO)",
     description: "Dominieren Sie die Suchergebnisse und werden Sie gefunden.",
-    seoTitle: "Professionelle SEO Agentur | Top Rankings bei Google | INVERTA",
+    seoTitle:
+      "SEO Agentur Dresden | Suchmaschinenoptimierung & Top Rankings | INVERTA",
     seoDescription:
-      "Nachhaltige Suchmaschinenoptimierung für mehr organischen Traffic. OnPage, OffPage und technisches SEO aus einer Hand.",
+      "Ihre Experten für Suchmaschinenoptimierung (SEO) in Dresden. Wir steigern Ihre Sichtbarkeit, Klicks und Umsätze durch nachhaltige Google-Strategien.",
     heroText:
       "Wer nicht gefunden wird, existiert nicht. Wir bringen Ihre Website auf die vorderen Plätze bei Google & Co.",
     benefits: [
@@ -90,9 +90,10 @@ export const SERVICES: ServiceContent[] = [
     title: "Social Media Marketing",
     description:
       "Bauen Sie eine Marke, die in den sozialen Medien geliebt wird.",
-    seoTitle: "Social Media Agentur | Strategie & Content | INVERTA",
+    seoTitle:
+      "Social Media Agentur Dresden | Strategie, Reichweite & Social Ads | INVERTA",
     seoDescription:
-      "Professionelles Social Media Marketing für Facebook, Instagram & LinkedIn. Wir steigern Ihre Reichweite und Interaktion.",
+      "Professionelles Social Media Marketing in Dresden. Wir betreuen Ihre Kanäle auf Instagram, Facebook & LinkedIn für mehr Sichtbarkeit und Kundenbindung.",
     heroText:
       "Mehr als nur Likes. Wir nutzen Social Media als kraftvollen Kanal für Markenaufbau und Kundenbindung.",
     benefits: [
@@ -125,9 +126,10 @@ export const SERVICES: ServiceContent[] = [
     title: "Ladezeitoptimierung",
     description:
       "Geschwindigkeit konvertiert. Wir machen Ihre Seite blitzschnell.",
-    seoTitle: "Ladezeitoptimierung & Page Speed | Schnelle Websites | INVERTA",
+    seoTitle:
+      "Ladezeitoptimierung & Google Core Web Vitals | PageSpeed Agentur | INVERTA",
     seoDescription:
-      "Optimieren Sie Ihre Ladezeiten für bessere Google-Rankings und höhere Conversion-Raten. Professioneller Page Speed Service.",
+      "Wir machen Ihre Website blitzschnell! Professionelle Ladezeitoptimierung für bessere Google-Rankings (Core Web Vitals) und höhere Conversion-Raten.",
     heroText:
       "Jede Millisekunde zählt. Schnelle Websites ranken besser und verkaufen mehr.",
     benefits: [
@@ -159,9 +161,10 @@ export const SERVICES: ServiceContent[] = [
     title: "Support & Wartung",
     description:
       "Keine Downtime, immer aktuell. Wir kümmern uns um Ihre Technik.",
-    seoTitle: "WordPress Wartung & Website Support | INVERTA",
+    seoTitle:
+      "WordPress Wartung & professioneller Website Support | Agentur INVERTA",
     seoDescription:
-      "Zuverlässiger Support und Wartung für Ihre Website. Updates, Backups und schnelle Hilfe bei Problemen.",
+      "Zuverlässiger Web-Support & Wartungsservice. Wir kümmern uns um Updates, Backups und Sicherheit, damit Ihre Website immer perfekt läuft.",
     heroText:
       "Konzentrieren Sie sich auf Ihr Geschäft. Wir kümmern uns darum, dass Ihre Website läuft – sicher, schnell und immer aktuell.",
     benefits: [
@@ -195,9 +198,10 @@ export const SERVICES: ServiceContent[] = [
     title: "Website | Onlineshop",
     description:
       "Individuelle Designs und Shop-Systeme für maximale Conversion.",
-    seoTitle: "Professionelle Website & Onlineshop Erstellung | INVERTA",
+    seoTitle:
+      "Website Erstellung & professionelle Onlineshops | Agentur INVERTA",
     seoDescription:
-      "Wir entwickeln moderne Websites und leistungsstarke Onlineshops. Responsiv, schnell und conversion-optimiert.",
+      "Wir bauen High-End Websites und Onlineshops mit Fokus auf Design & Conversion. Professionelle Webentwicklung in Dresden für Ihr digitales Wachstum.",
     heroText:
       "Ihr digitales Aushängeschild. Wir entwickeln Websites und Shops, die nicht nur gut aussehen, sondern verkaufen.",
     benefits: [
@@ -230,9 +234,10 @@ export const SERVICES: ServiceContent[] = [
     title: "Website Relaunch",
     description:
       "Verleihen Sie Ihrer bestehenden Seite neuen Glanz und moderne Technik.",
-    seoTitle: "Website Relaunch Agentur | Modernisierung & Redesign | INVERTA",
+    seoTitle:
+      "Website Relaunch & Modernisierung | Neue Technik & SEO Erhalt | INVERTA",
     seoDescription:
-      "Professioneller Relaunch Ihrer Website. Modernes Design, bessere Technik und SEO-Erhalt garantiert.",
+      "Planen Sie einen Website Relaunch? Wir übernehmen das Redesign und die technische Migration ohne Ranking-Verluste. Modern, schnell & sicher.",
     heroText:
       "Zeit für etwas Neues? Wir bringen Ihre veraltete Website technologisch und optisch in die Zukunft.",
     benefits: [
@@ -264,9 +269,10 @@ export const SERVICES: ServiceContent[] = [
     category: "webentwicklung",
     title: "Funnelsysteme",
     description: "Automatisierte Verkaufsprozesse, die Ihren Umsatz skalieren.",
-    seoTitle: "Sales Funnel & Marketing Automation | INVERTA",
+    seoTitle:
+      "Sales Funnel Erstellung & Marketing Automatisierung | Agentur INVERTA",
     seoDescription:
-      "Automatisierte Funnelsysteme zur Leadgenerierung und Verkaufsförderung. Skalieren Sie Ihren Vertrieb digital.",
+      "Automatisierte Funnelsysteme zur Lead-Generierung. Wir bauen Verkaufs-Funnels, die Ihre Kundenreise optimieren und den Umsatz skalieren.",
     heroText:
       "Automatisieren Sie Ihren Vertrieb. Unsere Funnels führen Besucher gezielt zum Abschluss.",
     benefits: [
@@ -299,9 +305,10 @@ export const SERVICES: ServiceContent[] = [
     title: "Individuelle Programmierung",
     description:
       "Spezielle Anforderungen? Wir entwickeln maßgeschneiderte Softwarelösungen.",
-    seoTitle: "Individuelle Webentwicklung & Softwarelösungen | INVERTA",
+    seoTitle:
+      "Individuelle Webentwicklung & Softwarelösungen Dresden | INVERTA",
     seoDescription:
-      "Maßgeschneiderte Webanwendungen und Softwarelösungen für komplexe Anforderungen. Full-Stack Development.",
+      "Maßgeschneiderte Webanwendungen und Enterprise-Software. Wir programmieren individuelle Lösungen für komplexe Anforderungen in Dresden.",
     heroText:
       "Standardlösungen reichen oft nicht. Wir entwickeln Software, die exakt auf Ihre Prozesse zugeschnitten ist.",
     benefits: [
@@ -335,9 +342,10 @@ export const SERVICES: ServiceContent[] = [
     title: "KI Automatisierung",
     description:
       "Sparen Sie Zeit und Kosten durch intelligente Automatisierung von Geschäftsprozessen.",
-    seoTitle: "KI Automatisierung & Prozessoptimierung | Agentur | INVERTA",
+    seoTitle:
+      "KI Automatisierung für Unternehmen | AI Consulting & Integration | INVERTA",
     seoDescription:
-      "Automatisieren Sie mit uns Ihre Aufgaben. KI-Integration, Chatbots und intelligente Workflows für effizientere Unternehmensprozesse.",
+      "Integrieren Sie Künstliche Intelligenz (ChatGPT, AI-Workflows) in Ihre Business-Prozesse. Wir automatisieren Routineaufgaben und sparen Zeit.",
     heroText:
       "Entlasten Sie Ihr Team von Routineaufgaben. Wir integrieren Künstliche Intelligenz in Ihren Alltag, damit Sie sich auf das Wesentliche konzentrieren können.",
     benefits: [

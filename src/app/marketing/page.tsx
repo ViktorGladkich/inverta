@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { Footer } from "@/components/layout/Footer";
 import { MarketingClient } from "./MarketingClient";
+import { PageSchema } from "@/components/seo/PageSchema";
 
 export const metadata: Metadata = {
   title: "Performance Marketing & SEO Agentur | INVERTA",
@@ -31,6 +32,15 @@ export const metadata: Metadata = {
 export default function MarketingPage() {
   return (
     <>
+      <PageSchema
+        type="WebPage"
+        name="Performance Marketing & SEO | INVERTA"
+        description="Skalieren Sie Ihren Umsatz mit datengetriebenem Performance Marketing und SEO."
+        url="https://invertadigital.de/marketing"
+        crumbs={[
+          { name: "Marketing", item: "https://invertadigital.de/marketing" },
+        ]}
+      />
       <MarketingClient />
       <Footer />
     </>
