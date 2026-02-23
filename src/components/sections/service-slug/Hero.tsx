@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import { Sparkles } from "lucide-react";
 import { ServiceContent } from "@/data/services";
 
@@ -12,22 +12,37 @@ interface HeroProps {
 
 export const Hero = ({ service, categoryLabel }: HeroProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const isMobile = useMemo(() => {
+    if (typeof window === "undefined") return false;
+    return window.innerWidth < 768;
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const y = useTransform(
+    scrollYProgress,
+    [0, 1],
+    isMobile ? ["0%", "0%"] : ["0%", "50%"],
+  );
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.8],
+    isMobile ? [1, 1] : [1, 0],
+  );
 
   const titleWords = service.title.split(" ");
 
   return (
     <section
       ref={containerRef}
-      className="relative min-h-[800px] flex items-center justify-center px-6 overflow-hidden bg-white"
-      style={{ minHeight: "calc(var(--vh, 1vh) * 100)" }}
+      className="relative flex items-center justify-center px-6 overflow-hidden bg-white"
+      style={{ height: "calc(var(--vh, 1vh) * 100)" }}
     >
+      {/* Video background */}
       <div className="absolute inset-0 z-0 bg-white">
         <video
           autoPlay
@@ -44,6 +59,7 @@ export const Hero = ({ service, categoryLabel }: HeroProps) => {
         style={{ y, opacity }}
         className="max-w-[1400px] mx-auto w-full relative z-10 flex flex-col items-center text-center mt-12 md:mt-20 text-white"
       >
+        {/* Badge */}
         <div className="overflow-hidden mb-12 md:mb-16">
           <motion.div
             initial={{ y: "100%" }}
@@ -60,6 +76,7 @@ export const Hero = ({ service, categoryLabel }: HeroProps) => {
           </motion.div>
         </div>
 
+        {/* Title */}
         <h1 className="text-[10vw] sm:text-[8vw] md:text-[5rem] lg:text-[6rem] xl:text-[7.5rem] text-black font-medium tracking-tighter leading-[0.85] uppercase flex flex-wrap justify-center gap-x-2 md:gap-x-6 gap-y-2 mb-16 md:mb-24 px-4 w-full drop-shadow-sm">
           {titleWords.map((word, i) => (
             <div key={i} className="overflow-hidden pb-4 max-w-full">
@@ -79,6 +96,7 @@ export const Hero = ({ service, categoryLabel }: HeroProps) => {
           ))}
         </h1>
 
+        {/* Accent line */}
         <motion.div
           initial={{ opacity: 0, scaleX: 0 }}
           animate={{ opacity: 1, scaleX: 1 }}
@@ -86,6 +104,7 @@ export const Hero = ({ service, categoryLabel }: HeroProps) => {
           className="w-24 h-1 bg-[#daff02] mb-12"
         />
 
+        {/* Description */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

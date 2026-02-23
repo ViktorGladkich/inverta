@@ -54,7 +54,7 @@ export const BenefitsSection = ({ benefits }: { benefits: string[] }) => {
       <section
         aria-label="Advantages and Benefits Desktop"
         className="hidden md:block relative bg-[#f5f5f5] text-black"
-        style={{ height: `${benefits.length * 100}vh` }}
+        style={{ height: `calc(var(--vh, 1vh) * 100 * ${benefits.length})` }}
       >
         <div
           className="sticky top-0 flex items-center overflow-hidden"
