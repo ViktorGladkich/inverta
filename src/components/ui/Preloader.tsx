@@ -24,7 +24,6 @@ export function Preloader() {
     htmlStyle.height = "100vh";
     bodyStyle.overflow = "hidden";
     bodyStyle.height = "100vh";
-    bodyStyle.height = "100vh";
     bodyStyle.touchAction = "none";
     window.scrollTo(0, 0);
 
@@ -100,8 +99,6 @@ export function Preloader() {
           transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
           className="fixed inset-0 z-10000 bg-[#050505] flex items-center justify-center overflow-hidden"
         >
-          <span className="sr-only">INVERTA DIGITAL - Seite lädt...</span>
-
           <span className="sr-only">INVERTA DIGITAL - Seite lädt...</span>
 
           <div className="relative z-10 flex flex-col items-center justify-center w-full px-6">
