@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { ServiceContent } from "@/data/services";
-import { MoveRight } from "lucide-react";
+import { MoveRight, Mouse, Route } from "lucide-react";
 import { CTASection } from "@/components/sections/CTASection";
 
 // --- HERO SECTION ---
@@ -23,61 +23,74 @@ const Hero = ({
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
+  const titleWords = service.title.split(" ");
+
   return (
     <section
       ref={containerRef}
-      className="relative h-screen min-h-[800px] flex items-end pb-20 md:pb-32 px-6 overflow-hidden bg-white"
+      className="relative h-screen min-h-[800px] flex items-center justify-center px-6 overflow-hidden bg-white"
+      style={{ minHeight: "calc(var(--vh, 1vh) * 100)" }}
     >
-      {/* Massive Background Stroke Text */}
-      <motion.div
-        style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "80%"]) }}
-        className="absolute top-[10%] left-[-5%] whitespace-nowrap opacity-[0.03] z-0 pointer-events-none select-none"
-      >
-        <span
-          className="text-[30vw] font-black uppercase tracking-tighter"
-          style={{ WebkitTextStroke: "2px black", color: "transparent" }}
+      <div className="absolute inset-0 z-0 bg-white">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
         >
-          {categoryLabel}
-        </span>
-      </motion.div>
+          <source src="/slug-loop.mp4" type="video/mp4" />
+        </video>
+      </div>
 
       <motion.div
         style={{ y, opacity }}
-        className="max-w-[1400px] mx-auto w-full relative z-10 text-black"
+        className="max-w-[1400px] mx-auto w-full relative z-10 flex flex-col items-center text-center mt-12 md:mt-20 text-white"
       >
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-          <div className="lg:col-span-9">
-            <FadeIn>
-              <div className="overflow-hidden mb-6">
-                <motion.div
-                  initial={{ y: "100%" }}
-                  animate={{ y: "0%" }}
-                  transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-                  className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-black/10 bg-black/5 backdrop-blur-xl"
-                >
-                  <div className="w-2 h-2 rounded-full bg-black animate-pulse" />
-                  <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase">
-                    {categoryLabel}
-                  </span>
-                </motion.div>
-              </div>
-            </FadeIn>
+        <div className="overflow-hidden mb-12 md:mb-16">
+          <motion.div
+            initial={{ y: "100%" }}
+            animate={{ y: "0%" }}
+            transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
+            className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-black/20 bg-white/30 backdrop-blur-xl"
+          >
+            <span className="text-[11px] font-bold tracking-[0.2em] text-black uppercase">
+              {categoryLabel}
+            </span>
+          </motion.div>
+        </div>
 
-            <FadeIn delay={0.1}>
-              <h1 className="text-5xl sm:text-7xl md:text-[6.5rem] lg:text-[8rem] font-medium tracking-tighter leading-[0.9] wrap-break-word uppercase">
-                {service.title}
-              </h1>
-            </FadeIn>
-          </div>
+        <h1 className="text-[10vw] sm:text-[8vw] md:text-[5rem] lg:text-[6rem] xl:text-[7.5rem] text-black font-medium tracking-tighter leading-[0.85] uppercase flex flex-wrap justify-center gap-x-2 md:gap-x-6 gap-y-2 mb-16 md:mb-24 px-4 w-full">
+          {titleWords.map((word, i) => (
+            <div key={i} className="overflow-hidden pb-4 max-w-full">
+              <motion.span
+                initial={{ y: "110%", rotateZ: 5 }}
+                animate={{ y: "0%", rotateZ: 0 }}
+                transition={{
+                  duration: 1.2,
+                  ease: [0.76, 0, 0.24, 1],
+                  delay: i * 0.1,
+                }}
+                className="inline-block origin-bottom-left wrap-break-word max-w-full"
+              >
+                {word}
+              </motion.span>
+            </div>
+          ))}
+        </h1>
 
-          <div className="lg:col-span-3 pb-2 lg:pb-6">
-            <FadeIn delay={0.3}>
-              <div className="w-full h-px bg-black/20 mb-6 hidden lg:block" />
-              <p className="text-lg md:text-xl text-black/60 font-medium leading-relaxed">
-                {service.heroText}
-              </p>
-            </FadeIn>
-          </div>
+        <div className="overflow-hidden w-full max-w-2xl px-4 mb-20">
+          <motion.div
+            initial={{ y: "100%", opacity: 0 }}
+            animate={{ y: "0%", opacity: 1 }}
+            transition={{ duration: 1.2, delay: 0.4, ease: [0.76, 0, 0.24, 1] }}
+            className="flex flex-col items-center"
+          >
+            <div className="w-24 h-[2px] bg-[#daff02] mb-5 " />
+            <p className="text-lg md:text-2xl text-black font-medium leading-relaxed max-w-xl mx-auto">
+              {service.heroText}
+            </p>
+          </motion.div>
         </div>
       </motion.div>
     </section>
@@ -97,32 +110,36 @@ const HorizontalScrollBenefits = ({ benefits }: { benefits: string[] }) => {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[400vh] bg-[#daff02]">
+    <section
+      ref={targetRef}
+      className="relative h-[400vh] bg-[#f5f5f5] text-black"
+    >
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
         {/* Decorative corner texts */}
-        <div className="absolute top-10 left-10 font-mono text-black/30 text-sm font-bold tracking-widest uppercase">
+        <div className="absolute top-10 left-10 font-mono text-black text-sm font-bold tracking-widest uppercase">
           [ Advantages ]
         </div>
-        <div className="absolute bottom-10 right-10 font-mono text-black/30 text-sm font-bold tracking-widest uppercase">
-          Scroll {"->"}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 font-mono text-black text-sm font-bold tracking-widest uppercase flex flex-col items-center gap-2">
+          <Mouse className="w-6 h-6 animate-bounce" />
+          <span>Scroll</span>
         </div>
 
         <motion.div style={{ x }} className="flex w-[400vw]">
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="w-screen h-scren flex items-center justify-center relative px-6 md:px-20"
+              className="w-screen h-screen flex items-center justify-center relative px-6 md:px-20"
             >
-              <div className="relative w-full max-w-5xl">
+              <div className="relative w-full max-w-5xl flex items-center justify-center">
                 {/* Massive Number */}
-                <div className="absolute -top-[20vh] md:-top-[30vh] md:-left-20 text-[200px] md:text-[400px] font-black text-black/5 leading-none select-none tracking-tighter">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[300px] sm:text-[400px] md:text-[600px] font-black text-[#daff02] leading-none select-none tracking-tighter pointer-events-none">
                   0{index + 1}
                 </div>
 
                 {/* Content */}
-                <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-8 md:gap-16">
-                  <div className="w-16 md:w-32 h-[2px] bg-black shrink-0" />
-                  <h3 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-medium tracking-tighter leading-[1.05] text-black uppercase">
+                <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-8 md:gap-16 w-full mt-10 md:mt-0">
+                  <div className="w-16 md:w-32 h-[2px] sm:h-2 bg-black shrink-0" />
+                  <h3 className="text-4xl sm:text-6xl md:text-7xl lg:text-[7.5rem] font-medium tracking-tighter leading-[1.05] text-black uppercase drop-shadow-2xl">
                     {benefit}
                   </h3>
                 </div>
@@ -142,14 +159,25 @@ const FeaturesAccordion = ({
   features: { title: string; description: string }[];
 }) => {
   return (
-    <section className="relative bg-white pt-40 pb-20 px-6">
+    <section className="relative bg-[#f5f5f5] pt-40 px-8">
       <div className="max-w-[1400px] mx-auto">
-        <div className="mb-32">
-          <FadeIn>
-            <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05]">
-              Der Weg <span className="text-black/30 italic">Zum Ziel.</span>
+        <div className="mb-24 md:mb-32">
+          <FadeIn className="flex flex-col items-center text-center gap-6 md:gap-8 mb-16">
+            <div className="w-fit flex items-center justify-center px-[12px] py-[6px] gap-2 rounded-[60px] bg-white shadow-[0px_0.706592px_0.706592px_-0.541667px_rgba(0,0,0,0.1),0px_1.80656px_1.80656px_-1.08333px_rgba(0,0,0,0.09),0px_3.62176px_3.62176px_-1.625px_rgba(0,0,0,0.09),0px_6.8656px_6.8656px_-2.16667px_rgba(0,0,0,0.09),0px_13.6468px_13.6468px_-2.70833px_rgba(0,0,0,0.08),0px_30px_30px_-3.25px_rgba(0,0,0,0.05),inset_0px_3px_1px_0px_white]">
+              <div className="w-[14px] h-[14px] text-black/40">
+                <Route className="w-full h-full" />
+              </div>
+              <span className="text-[12px] font-medium text-black tracking-wider uppercase">
+                Methodik
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black">
+              Der Weg{" "}
+              <span className="relative inline-block">
+                <span className="absolute bottom-1 left-0 w-full h-4 bg-[#daff02] z-0" />
+                <span className="relative z-10 text-black">Zum Ziel.</span>
+              </span>
             </h2>
-            <div className="w-12 h-1 bg-[#daff02] mt-8" />
           </FadeIn>
         </div>
 
@@ -162,9 +190,9 @@ const FeaturesAccordion = ({
               {/* Hover Sliding Background */}
               <div className="absolute inset-0 bg-black translate-y-[101%] group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] z-0" />
 
-              <div className="relative z-10 lg:w-1/4 mb-6 lg:mb-0 flex items-start gap-4">
+              <div className="relative z-10 lg:w-1/4 mb-6 lg:mb-0 flex items-start gap-4 pl-2 md:pl-4">
                 <span className="text-lg md:text-xl font-mono text-black/40 group-hover:text-white/50 transition-colors duration-500">
-                  (0{i + 1})
+                  0{i + 1}
                 </span>
                 <MoveRight className="w-6 h-6 text-black opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-[#daff02] transition-all duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]" />
               </div>
@@ -199,7 +227,7 @@ export function ServiceSlugClient({
       <FeaturesAccordion features={service.features} />
 
       {/* Clean transition into CTA */}
-      <div className="bg-white pt-20">
+      <div className="bg-[#f5f5f5] pt-20">
         <CTASection />
       </div>
     </div>
