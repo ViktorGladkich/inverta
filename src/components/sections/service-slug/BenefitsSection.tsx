@@ -1,14 +1,33 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Mouse } from "lucide-react";
+
+export const BenefitsSection = ({ benefits }: { benefits: string[] }) => {
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window === "undefined") return true;
+    return window.innerWidth < 768;
+  });
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return isMobile ? (
+    <MobileBenefits benefits={benefits} />
+  ) : (
+    <DesktopBenefits benefits={benefits} />
+  );
+};
 
 function MobileBenefits({ benefits }: { benefits: string[] }) {
   return (
     <section
       aria-label="Advantages and Benefits"
-      className="md:hidden relative bg-[#f5f5f5] text-black py-20 px-6"
+      className="relative bg-[#f5f5f5] text-black py-20 px-6"
     >
       <h2 className="font-mono text-black text-xs font-bold tracking-widest uppercase mb-12 flex justify-center">
         [ ADVANTAGES ]
@@ -52,7 +71,7 @@ function DesktopBenefits({ benefits }: { benefits: string[] }) {
   return (
     <div
       ref={targetRef}
-      className="hidden md:block relative bg-[#f5f5f5] text-black"
+      className="relative bg-[#f5f5f5] text-black"
       style={{ height: `calc(var(--vh, 1vh) * 100 * ${benefits.length})` }}
     >
       <div
@@ -92,12 +111,3 @@ function DesktopBenefits({ benefits }: { benefits: string[] }) {
     </div>
   );
 }
-
-export const BenefitsSection = ({ benefits }: { benefits: string[] }) => {
-  return (
-    <>
-      <MobileBenefits benefits={benefits} />
-      <DesktopBenefits benefits={benefits} />
-    </>
-  );
-};
