@@ -65,7 +65,7 @@ export function Footer() {
 
           <ul className="flex flex-wrap gap-6 md:gap-10 text-xs tracking-[0.15em] font-medium uppercase">
             <li>
-              <a href="#" className="hover:text-black/60 transition-colors">
+              <a href="#" className="hover:text-black/60 transition-colors underline underline-offset-4 decoration-black">
                 LINKEDIN
               </a>
             </li>
@@ -74,7 +74,7 @@ export function Footer() {
                 href="https://www.facebook.com/invertadigitall"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-black/60 transition-colors"
+                className="hover:text-black/60 transition-colors underline underline-offset-4 decoration-black"
               >
                 FACEBOOK
               </a>
@@ -84,7 +84,7 @@ export function Footer() {
                 href="https://www.instagram.com/invertadigital/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-black/60 transition-colors"
+                className="hover:text-black/60 transition-colors underline underline-offset-4 decoration-black"
               >
                 INSTAGRAM
               </a>
@@ -92,7 +92,7 @@ export function Footer() {
             <li>
               <Link
                 href="/impressum"
-                className="hover:text-black/60 transition-colors"
+                className="hover:text-black transition-colors underline underline-offset-4 decoration-black"
               >
                 IMPRESSUM
               </Link>
@@ -100,7 +100,7 @@ export function Footer() {
             <li>
               <Link
                 href="/datenschutz"
-                className="hover:text-black/60 transition-colors"
+                className="hover:text-black transition-colors underline underline-offset-4 decoration-black"
               >
                 DATENSCHUTZ
               </Link>

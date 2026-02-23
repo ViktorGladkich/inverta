@@ -78,7 +78,7 @@ export function Testimonials() {
                 "rgba(0, 0, 0, 0.08) 0px 0.706592px 0.706592px -0.666667px, rgba(0, 0, 0, 0.08) 0px 1.80656px 1.80656px -1.33333px, rgba(0, 0, 0, 0.07) 0px 3.62176px 3.62176px -2px, rgba(0, 0, 0, 0.07) 0px 6.8656px 6.8656px -2.66667px, rgba(0, 0, 0, 0.05) 0px 13.6468px 13.6468px -3.33333px, rgba(0, 0, 0, 0.02) 0px 30px 30px -4px, rgb(255, 255, 255) 0px 3px 1px 0px inset",
             }}
           >
-            <h4 className="text-xl md:text-[24px] font-medium leading-normal text-[#16101e] max-w-lg">
+            <h3 className="text-xl md:text-[24px] font-medium leading-normal text-[#16101e] max-w-lg">
               <BlurTextEffect>
                 Ihr{" "}
                 <span className="text-black/40 inline-block">
@@ -94,7 +94,7 @@ export function Testimonials() {
                 </span>
                 , die wir zuvor nicht erreichen konnten.
               </BlurTextEffect>
-            </h4>
+            </h3>
 
             <div className="w-8 h-8 md:w-10 md:h-10 text-black">
               <svg
@@ -156,9 +156,9 @@ export function Testimonials() {
                 ))}
               </div>
 
-              <h4 className="text-sm md:text-base leading-relaxed text-black/80 font-medium">
+              <h3 className="text-sm md:text-base leading-relaxed text-black/80 font-medium">
                 &quot;{t.quote}&quot;
-              </h4>
+              </h3>
 
               <div className="flex items-center gap-4 pt-6 mt-auto">
                 {/* Avatar */}

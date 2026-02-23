@@ -33,6 +33,7 @@ export const SyncIcon = () => (
       src="/cube-black.png"
       alt="INVERTA DIGITAL - Performance Agentur"
       fill
+      sizes="120px"
       className="object-contain"
     />
   </div>

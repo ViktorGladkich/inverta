@@ -125,7 +125,9 @@ export function GalaxyHero() {
                       src="/cube.png"
                       alt="INVERTA Logo - Digitalagentur"
                       fill
-                      className="object-contain "
+                      sizes="100px"
+                      className="object-contain"
+                      priority
                     />
                   </div>
                 </div>
@@ -217,6 +219,7 @@ export function GalaxyHero() {
               src="/viktor.jpg"
               alt="Founder"
               fill
+              sizes="80px"
               className="object-cover"
             />
           </div>

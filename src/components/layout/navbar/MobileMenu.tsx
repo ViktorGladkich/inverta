@@ -243,7 +243,7 @@ export function MobileMenu({
                 <span className="text-white/30">Kontakt</span>
                 <a
                   href="mailto:info@invertadigital.de"
-                  className="text-[#daff02] hover:text-white transition-colors"
+                  className="text-[#daff02] hover:text-white transition-colors underline underline-offset-4 decoration-[#daff02]/30"
                 >
                   info@invertadigital.de
                 </a>

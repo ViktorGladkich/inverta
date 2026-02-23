@@ -144,7 +144,7 @@ export function CookieConsent() {
                   Informationen finden Sie in unserer{" "}
                   <Link
                     href="/datenschutz"
-                    className="text-black/50 font-semibold underline underline-offset-2 decoration-black/15 hover:decoration-black/50 transition-all"
+                    className="text-black/70 font-semibold underline underline-offset-2 decoration-black/30 hover:decoration-black/60 transition-all font-sans"
                   >
                     Datenschutzerklärung
                   </Link>
@@ -156,7 +156,7 @@ export function CookieConsent() {
               <div className="px-6 sm:px-7 mt-4">
                 <button
                   onClick={() => setShowDetails(!showDetails)}
-                  className="flex items-center gap-2 text-[12px] font-semibold text-black/50 hover:text-black/80 transition-colors uppercase tracking-wider group cursor-pointer"
+                  className="flex items-center gap-2 text-[12px] font-bold text-black/70 hover:text-black transition-colors uppercase tracking-wider group cursor-pointer"
                 >
                   <ChevronDown
                     className={`w-3.5 h-3.5 transition-transform duration-300 ${showDetails ? "rotate-180" : ""}`}
@@ -265,7 +265,7 @@ export function CookieConsent() {
                   )}
                   <button
                     onClick={handleDecline}
-                    className={`${showDetails ? "flex-1" : "w-full"} py-3 rounded-xl text-[12px] font-semibold text-black/50 bg-black/4 hover:bg-black/8 transition-all duration-200 tracking-tight cursor-pointer`}
+                    className={`${showDetails ? "flex-1" : "w-full"} py-3 rounded-xl text-[12px] font-bold text-black/70 bg-black/5 hover:bg-black/10 transition-all duration-200 tracking-tight cursor-pointer`}
                   >
                     Nur Essentielle
                   </button>

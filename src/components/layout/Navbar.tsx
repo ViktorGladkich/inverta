@@ -145,6 +145,7 @@ export function Navbar() {
           {/* Mobiler Burger-Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
             className="lg:hidden p-2 rounded-full bg-transparent hover:bg-white/10 transition-colors z-110 relative w-10 h-10 flex flex-col items-center justify-center gap-[5px]"
           >
             <motion.span
