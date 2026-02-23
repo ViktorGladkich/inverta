@@ -69,7 +69,7 @@ export function GalaxyHero() {
           KI-Automatisierung | INVERTA
         </h1>
         {/* Hintergrund-Video für immersives Design */}
-        <div className="absolute inset-0 z-0 select-none pointer-events-none">
+        <div className="absolute inset-0 z-0 select-none">
           <video
             src="/hero-loop.mp4"
             autoPlay
