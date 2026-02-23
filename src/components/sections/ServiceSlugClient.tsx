@@ -105,16 +105,23 @@ const HorizontalScrollBenefits = ({ benefits }: { benefits: string[] }) => {
     offset: ["start start", "end end"],
   });
 
-  // For 4 benefits, we need a container that scrolls left.
-  // 4 items = window width * 4. We scroll horizontally by -75% of the total width.
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
+  // Calculate horizontal scroll distance dynamically based on item count
+  const x = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["0%", `-${((benefits.length - 1) / benefits.length) * 100}%`],
+  );
 
   return (
     <section
       ref={targetRef}
-      className="relative h-[400vh] bg-[#f5f5f5] text-black"
+      className="relative bg-[#f5f5f5] text-black"
+      style={{ height: `${benefits.length * 100}vh` }}
     >
-      <div className="sticky top-0 h-screen flex items-center overflow-hidden">
+      <div
+        className="sticky top-0 flex items-center overflow-hidden"
+        style={{ height: "calc(var(--vh, 1vh) * 100)" }}
+      >
         {/* Decorative corner texts */}
         <div className="absolute top-10 left-10 font-mono text-black text-sm font-bold tracking-widest uppercase">
           [ Advantages ]
@@ -124,11 +131,12 @@ const HorizontalScrollBenefits = ({ benefits }: { benefits: string[] }) => {
           <span>Scroll</span>
         </div>
 
-        <motion.div style={{ x }} className="flex w-[400vw]">
+        <motion.div style={{ x }} className="flex h-full">
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="w-screen h-screen flex items-center justify-center relative px-6 md:px-20"
+              className="w-screen shrink-0 flex items-center justify-center relative px-6 md:px-20"
+              style={{ height: "calc(var(--vh, 1vh) * 100)" }}
             >
               <div className="relative w-full max-w-5xl flex items-center justify-center">
                 {/* Massive Number */}
