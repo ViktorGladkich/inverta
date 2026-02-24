@@ -1,13 +1,10 @@
 import {
   Body,
-  Container,
   Head,
-  Heading,
   Html,
   Img,
   Link,
   Preview,
-  Section,
   Text,
 } from "@react-email/components";
 import * as React from "react";
@@ -19,189 +16,428 @@ interface AutoReplyEmailProps {
 
 export const AutoReplyEmail = ({
   name = "Interessent",
-  service = "eines Projekts",
+  service = "Digitale Lösungen",
 }: AutoReplyEmailProps) => {
-  const previewText = `Vielen Dank für Ihre Anfrage bei INVERTA DIGITAL.`;
+  const previewText = `Bestätigung Ihrer Anfrage bei INVERTA DIGITAL.`;
+  const baseUrl = "https://invertadigital.de";
 
   return (
     <Html>
-      <Head />
+      <Head>
+        <style>{`
+          @media (max-width: 450px) {
+            .layout-0, .layout-1, .layout-2, .layout-3 {
+              display: none !important;
+            }
+            .layout-0-under-450, .layout-1-under-450, .layout-2-under-450, .layout-3-under-450 {
+              display: table !important;
+            }
+          }
+        `}</style>
+      </Head>
       <Preview>{previewText}</Preview>
-      <Body style={main}>
-        <div
-          style={{
-            backgroundColor: "#000000",
-            width: "100%",
-            padding: "40px 0",
-          }}
+      <Body
+        style={{
+          width: "100%",
+          backgroundColor: "#f0f1f5",
+          margin: 0,
+          padding: 0,
+        }}
+      >
+        <table
+          width="100%"
+          border={0}
+          cellPadding={0}
+          cellSpacing={0}
+          style={{ backgroundColor: "#f0f1f5" }}
         >
-          <Container style={container}>
-            <Section style={logoBox}>
-              <Img
-                src="https://invertadigital.de/logo-inverta-white.png"
-                width="120"
-                height="40"
-                alt="INVERTA DIGITAL Logo"
-                style={logoImage}
-              />
-            </Section>
-
-            <Heading style={heading}>Guten Tag {name},</Heading>
-
-            <Text style={paragraph}>
-              vielen Dank für Ihre Nachricht und Ihr Interesse an einer
-              Zusammenarbeit mit INVERTA DIGITAL im Bereich{" "}
-              <strong>{service}</strong>.
-            </Text>
-
-            <Text style={paragraph}>
-              Wir haben Ihre Projektanfrage erfolgreich erhalten. Unser Team
-              wird Ihre Angaben intern prüfen. Wir werden uns innerhalb der
-              nächsten 24 Stunden bei Ihnen melden, um die weiteren Schritte für
-              Ihr Projekt zu besprechen.
-            </Text>
-
-            <Text style={paragraph}>
-              In der Zwischenzeit laden wir Sie ein, sich unsere aktuellen
-              Arbeiten auf unserer Website anzusehen:
-            </Text>
-
-            <Section style={buttonContainer}>
-              <Link href="https://invertadigital.de/projekte" style={button}>
-                Unsere Projekte entdecken
-              </Link>
-            </Section>
-
-            <Text style={paragraph}>
-              Wir freuen uns darauf, mit Ihnen gemeinsam etwas Außergewöhnliches
-              zu erschaffen!
-            </Text>
-
-            <Text style={signoff}>
-              Beste Grüße,
-              <br />
-              Das Team von INVERTA DIGITAL
-            </Text>
-
-            <Section style={footer}>
-              <Text style={footerText}>
-                INVERTA DIGITAL
-                <br />
-                Rubensweg 1, 01217 Dresden, Deutschland
-              </Text>
-              <Text style={footerLinks}>
-                <Link
-                  href="https://invertadigital.de/impressum"
-                  style={footerLink}
+          <tbody>
+            <tr>
+              <td>
+                <table
+                  align="center"
+                  width="100%"
+                  border={0}
+                  cellPadding={0}
+                  cellSpacing={0}
+                  style={{
+                    maxWidth: "600px",
+                    margin: "0 auto",
+                    backgroundColor: "#ffffff",
+                  }}
                 >
-                  Impressum
-                </Link>{" "}
-                •{" "}
-                <Link
-                  href="https://invertadigital.de/datenschutz"
-                  style={footerLink}
-                >
-                  Datenschutz
-                </Link>
-              </Text>
-            </Section>
-          </Container>
-        </div>
+                  <tbody>
+                    {/* Header Image */}
+                    <tr>
+                      <td style={{ verticalAlign: "top" }}>
+                        <table
+                          cellPadding={0}
+                          cellSpacing={0}
+                          border={0}
+                          style={{ width: "100%" }}
+                        >
+                          <tbody>
+                            <tr>
+                              <td align="center">
+                                <Img
+                                  src={`${baseUrl}/emails/831fd729228e337614e345eff3e22954.png`}
+                                  width="600"
+                                  style={{
+                                    display: "block",
+                                    width: "100%",
+                                    height: "auto",
+                                  }}
+                                />
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+
+                    {/* Main Content */}
+                    <tr>
+                      <td style={{ verticalAlign: "top", padding: "10px 0" }}>
+                        <table
+                          align="center"
+                          width="100%"
+                          border={0}
+                          cellPadding={0}
+                          cellSpacing={0}
+                          style={{ fontFamily: "Arial, sans-serif" }}
+                        >
+                          <tbody>
+                            <tr>
+                              <td
+                                style={{
+                                  fontSize: "57px",
+                                  letterSpacing: "-0.09em",
+                                  lineHeight: "1.1",
+                                  fontWeight: "bold",
+                                  padding: "0 20px",
+                                }}
+                              >
+                                BESTÄTIGUNG <br />
+                                IHRER <br />
+                                ANFRAGE
+                              </td>
+                            </tr>
+                            <tr>
+                              <td height={20}>&nbsp;</td>
+                            </tr>
+
+                            {/* Hero Image */}
+                            <tr>
+                              <td style={{ padding: "0 20px" }}>
+                                <Img
+                                  src={`${baseUrl}/emails/5269794b53128cc7a4c86fc1809fcd0e.png`}
+                                  width="560"
+                                  style={{
+                                    display: "block",
+                                    width: "100%",
+                                    height: "auto",
+                                  }}
+                                />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td height={20}>&nbsp;</td>
+                            </tr>
+
+                            {/* Text Columns */}
+                            <tr>
+                              <td style={{ padding: "20px" }}>
+                                <table
+                                  width="100%"
+                                  border={0}
+                                  cellPadding={0}
+                                  cellSpacing={0}
+                                >
+                                  <tbody>
+                                    <tr>
+                                      <td
+                                        width="50%"
+                                        style={{
+                                          verticalAlign: "top",
+                                          paddingRight: "10px",
+                                        }}
+                                      >
+                                        <Text
+                                          style={{
+                                            fontSize: "28px",
+                                            fontWeight: "bold",
+                                            lineHeight: "1.1",
+                                            margin: 0,
+                                          }}
+                                        >
+                                          Digitale Exzellenz ist unser Standard
+                                        </Text>
+                                      </td>
+                                      <td
+                                        width="50%"
+                                        style={{ verticalAlign: "top" }}
+                                      >
+                                        <Text
+                                          style={{
+                                            fontSize: "14px",
+                                            lineHeight: "1.4",
+                                            margin: 0,
+                                          }}
+                                        >
+                                          Hallo {name},<br />
+                                          <br />
+                                          vielen Dank für Ihr Vertrauen in{" "}
+                                          <strong>INVERTA DIGITAL</strong>. Wir
+                                          haben Ihre Projektanfrage im Bereich{" "}
+                                          <strong>{service}</strong> erhalten.
+                                          Unser Expertenteam analysiert bereits
+                                          Ihre Anforderungen, um Ihnen eine
+                                          maßgeschneiderte Strategie für Ihren
+                                          digitalen Erfolg zu präsentieren.
+                                        </Text>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+
+                            {/* Dark Grid */}
+                            <tr>
+                              <td style={{ padding: "0 20px" }}>
+                                <table
+                                  width="100%"
+                                  border={0}
+                                  cellPadding={20}
+                                  cellSpacing={0}
+                                  style={{
+                                    backgroundColor: "#050505",
+                                    borderRadius: "8px",
+                                    color: "#ffffff",
+                                  }}
+                                >
+                                  <tbody>
+                                    <tr>
+                                      <td
+                                        width="33%"
+                                        align="center"
+                                        style={{ verticalAlign: "top" }}
+                                      >
+                                        <Text
+                                          style={{
+                                            fontSize: "18px",
+                                            fontWeight: "bold",
+                                            margin: "0 0 10px 0",
+                                            color: "#ffffff",
+                                          }}
+                                        >
+                                          High-End Tech
+                                        </Text>
+                                        <Text
+                                          style={{
+                                            fontSize: "13px",
+                                            margin: 0,
+                                            color: "#ffffff",
+                                          }}
+                                        >
+                                          Wir setzen auf modernste Frameworks
+                                          wie Next.js & React.
+                                        </Text>
+                                      </td>
+                                      <td
+                                        width="33%"
+                                        align="center"
+                                        style={{ verticalAlign: "top" }}
+                                      >
+                                        <Text
+                                          style={{
+                                            fontSize: "18px",
+                                            fontWeight: "bold",
+                                            margin: "0 0 10px 0",
+                                            color: "#ffffff",
+                                          }}
+                                        >
+                                          Performance
+                                        </Text>
+                                        <Text
+                                          style={{
+                                            fontSize: "13px",
+                                            margin: 0,
+                                            color: "#ffffff",
+                                          }}
+                                        >
+                                          Maximale Ladegeschwindigkeit & Core
+                                          Web Vitals Optimierung.
+                                        </Text>
+                                      </td>
+                                      <td
+                                        width="33%"
+                                        align="center"
+                                        style={{ verticalAlign: "top" }}
+                                      >
+                                        <Text
+                                          style={{
+                                            fontSize: "18px",
+                                            fontWeight: "bold",
+                                            margin: "0 0 10px 0",
+                                            color: "#ffffff",
+                                          }}
+                                        >
+                                          Strategie
+                                        </Text>
+                                        <Text
+                                          style={{
+                                            fontSize: "13px",
+                                            margin: 0,
+                                            color: "#ffffff",
+                                          }}
+                                        >
+                                          Kein Standard. Wir entwickeln
+                                          individuelle Lösungen.
+                                        </Text>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td height={20}>&nbsp;</td>
+                            </tr>
+
+                            {/* Bottom Text */}
+                            <tr>
+                              <td style={{ padding: "20px" }}>
+                                <table
+                                  width="100%"
+                                  border={0}
+                                  cellPadding={0}
+                                  cellSpacing={0}
+                                >
+                                  <tbody>
+                                    <tr>
+                                      <td
+                                        width="50%"
+                                        style={{
+                                          verticalAlign: "top",
+                                          color: "#daff02",
+                                        }}
+                                      >
+                                        <Text
+                                          style={{
+                                            fontSize: "28px",
+                                            fontWeight: "bold",
+                                            lineHeight: "1.1",
+                                            margin: 0,
+                                            color: "#9eb3f4",
+                                          }}
+                                        >
+                                          Immer einen Schritt voraus.
+                                        </Text>
+                                      </td>
+                                      <td
+                                        width="50%"
+                                        style={{ verticalAlign: "top" }}
+                                      >
+                                        <Text
+                                          style={{
+                                            fontSize: "14px",
+                                            lineHeight: "1.4",
+                                            margin: 0,
+                                          }}
+                                        >
+                                          Gemeinsam definieren wir neue
+                                          Standards in Design & Technologie für
+                                          Ihre unangefochtene digitale Dominanz.
+                                        </Text>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+
+                            {/* Footer Image */}
+                            <tr>
+                              <td style={{ padding: "0 20px" }}>
+                                <Img
+                                  src={`${baseUrl}/emails/75c5178a7f54f0a89dd189fd11c43d79.png`}
+                                  width="560"
+                                  style={{
+                                    display: "block",
+                                    width: "100%",
+                                    height: "auto",
+                                  }}
+                                />
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+
+                    {/* Footer */}
+                    <tr>
+                      <td
+                        style={{
+                          backgroundColor: "#000000",
+                          padding: "40px 20px",
+                          textAlign: "center",
+                          color: "#ffffff",
+                        }}
+                      >
+                        <Text
+                          style={{
+                            fontSize: "12px",
+                            margin: "0 0 10px 0",
+                            color: "#ffffff",
+                          }}
+                        >
+                          © 2024 INVERTA DIGITAL. Alle Rechte vorbehalten.
+                        </Text>
+                        <Text
+                          style={{
+                            fontSize: "12px",
+                            margin: 0,
+                            color: "#ffffff",
+                          }}
+                        >
+                          Rubensweg 1, 01159 Dresden, Deutschland
+                        </Text>
+                        <div style={{ marginTop: "20px" }}>
+                          <Link
+                            href={`${baseUrl}/impressum`}
+                            style={{
+                              color: "#ffffff",
+                              fontSize: "12px",
+                              textDecoration: "underline",
+                              marginRight: "10px",
+                            }}
+                          >
+                            Impressum
+                          </Link>
+                          <Link
+                            href={`${baseUrl}/datenschutz`}
+                            style={{
+                              color: "#ffffff",
+                              fontSize: "12px",
+                              textDecoration: "underline",
+                            }}
+                          >
+                            Datenschutz
+                          </Link>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </Body>
     </Html>
   );
 };
 
 export default AutoReplyEmail;
-
-// Styles
-const main = {
-  backgroundColor: "#000000",
-  fontFamily:
-    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
-  padding: "40px 0",
-};
-
-const container = {
-  margin: "0 auto",
-  padding: "40px",
-  backgroundColor: "#000000",
-  borderRadius: "16px",
-  maxWidth: "600px",
-};
-
-const logoBox = {
-  marginBottom: "32px",
-};
-
-const logoImage = {
-  display: "block",
-  height: "auto",
-};
-
-const heading = {
-  fontSize: "24px",
-  letterSpacing: "-0.5px",
-  lineHeight: "1.3",
-  fontWeight: "600",
-  color: "#ffffff",
-  marginBottom: "24px",
-};
-
-const paragraph = {
-  fontSize: "16px",
-  lineHeight: "26px",
-  color: "#ffffff",
-  marginBottom: "24px",
-};
-
-const buttonContainer = {
-  textAlign: "center" as const,
-  marginTop: "32px",
-  marginBottom: "32px",
-};
-
-const button = {
-  backgroundColor: "#ffffff",
-  borderRadius: "8px",
-  color: "#000000",
-  fontSize: "14px",
-  fontWeight: "600",
-  textDecoration: "none",
-  textAlign: "center" as const,
-  display: "inline-block",
-  padding: "16px 32px",
-  letterSpacing: "1px",
-  textTransform: "uppercase" as const,
-};
-
-const signoff = {
-  fontSize: "16px",
-  lineHeight: "26px",
-  color: "#ffffff",
-  marginTop: "40px",
-  marginBottom: "40px",
-};
-
-const footer = {
-  borderTop: "1px solid rgba(255,255,255,0.1)",
-  paddingTop: "32px",
-};
-
-const footerText = {
-  fontSize: "12px",
-  lineHeight: "20px",
-  color: "#888888",
-  margin: "0 0 8px 0",
-};
-
-const footerLinks = {
-  fontSize: "12px",
-  color: "#888888",
-  margin: "0",
-};
-
-const footerLink = {
-  color: "#888888",
-  textDecoration: "underline",
-};
