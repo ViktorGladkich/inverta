@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Compass } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { BlurTextEffect } from "@/components/ui/BlurTextEffect";
@@ -17,6 +17,14 @@ import {
 
 export function MissionSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <section
@@ -92,7 +100,7 @@ export function MissionSection() {
             {/* Animiertes Zitat mit Unschärfe-Effekt */}
             <div className="mb-14 md:mb-16">
               <p className="text-2xl md:text-3xl font-medium leading-[1.4] tracking-tight text-black">
-                <BlurTextEffect delay={0.2}>
+                <BlurTextEffect delay={0.2} animate={!isMobile}>
                   {quoteWords.map((word, i) => (
                     <span
                       key={i}

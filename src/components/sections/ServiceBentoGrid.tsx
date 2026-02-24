@@ -21,11 +21,18 @@ export function ServiceBentoGrid({ services }: ServiceBentoGridProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
+
+    const frameId = requestAnimationFrame(() => {
+      setMounted(true);
+      checkMobile();
+    });
+
     window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+    return () => {
+      cancelAnimationFrame(frameId);
+      window.removeEventListener("resize", checkMobile);
+    };
   }, []);
 
   if (!services || services.length < 4) return null;
