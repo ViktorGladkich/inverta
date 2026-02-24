@@ -27,24 +27,24 @@ function MobileBenefits({ benefits }: { benefits: string[] }) {
   return (
     <section
       aria-label="Advantages and Benefits"
-      className="relative bg-[#f5f5f5] text-black py-20 px-6"
+      className="relative bg-[#f5f5f5] text-black py-20 px-6 overflow-hidden"
     >
       <h2 className="font-mono text-black text-xs font-bold tracking-widest uppercase mb-12 flex justify-center">
         [ ADVANTAGES ]
       </h2>
 
-      <div className="flex flex-col gap-12">
+      <div className="flex flex-col gap-16">
         {benefits.map((benefit, index) => (
           <div
             key={index}
-            className="relative w-full flex items-center justify-center min-h-[30vh]"
+            className="relative w-full flex items-center justify-center min-h-[25vh]"
           >
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[150px] sm:text-[200px] font-black text-[#daff02] leading-none select-none tracking-tighter opacity-70 pointer-events-none">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[120px] xs:text-[150px] font-black text-[#daff02] leading-none select-none tracking-tighter opacity-60 pointer-events-none">
               0{index + 1}
             </div>
-            <div className="relative z-10 flex flex-col items-center text-center gap-6">
-              <div className="w-12 h-[2px] bg-black" />
-              <h3 className="text-4xl text-black font-medium tracking-tight uppercase leading-tight max-w-xs">
+            <div className="relative z-10 flex flex-col items-center text-center gap-4 px-4 w-full">
+              <div className="w-10 h-[2px] bg-black" />
+              <h3 className="text-3xl xs:text-4xl text-black font-medium tracking-tight uppercase leading-tight max-w-[280px] xs:max-w-xs break-words">
                 {benefit}
               </h3>
             </div>

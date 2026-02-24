@@ -24,6 +24,8 @@ export const AutoReplyEmail = ({
   return (
     <Html>
       <Head>
+        <meta name="color-scheme" content="light dark" />
+        <meta name="supported-color-schemes" content="light dark" />
         <style>{`
           @media (max-width: 450px) {
             .layout-0, .layout-1, .layout-2, .layout-3 {
@@ -32,6 +34,11 @@ export const AutoReplyEmail = ({
             .layout-0-under-450, .layout-1-under-450, .layout-2-under-450, .layout-3-under-450 {
               display: table !important;
             }
+          }
+          @media (prefers-color-scheme: dark) {
+            .email-container { background-color: #ffffff !important; }
+            .header-cell { background-color: #ffffff !important; }
+            .content-text { color: #000000 !important; }
           }
         `}</style>
       </Head>
@@ -60,6 +67,7 @@ export const AutoReplyEmail = ({
                   border={0}
                   cellPadding={0}
                   cellSpacing={0}
+                  className="email-container"
                   style={{
                     maxWidth: "600px",
                     margin: "0 auto",
@@ -70,9 +78,11 @@ export const AutoReplyEmail = ({
                     {/* Header: Logo & Dynamic Date */}
                     <tr>
                       <td
+                        className="header-cell"
                         style={{
                           padding: "30px 20px",
                           borderBottom: "1px solid #f0f1f5",
+                          backgroundColor: "#ffffff",
                         }}
                       >
                         <table
@@ -136,9 +146,8 @@ export const AutoReplyEmail = ({
                                   padding: "0 20px",
                                 }}
                               >
-                                BESTÄTIGUNG <br />
-                                IHRER <br />
-                                ANFRAGE
+                                KONTAKT- <br />
+                                BESTÄTIGUNG
                               </td>
                             </tr>
                             <tr>
@@ -180,7 +189,7 @@ export const AutoReplyEmail = ({
                                     textAlign: "center",
                                   }}
                                 >
-                                  Digitale Exzellenz ist unser Standard
+                                  EXZELLENZ ALS FUNDAMENT.
                                 </Text>
                                 <Text
                                   style={{
@@ -191,16 +200,17 @@ export const AutoReplyEmail = ({
                                     textAlign: "center",
                                   }}
                                 >
-                                  Hallo {name},<br />
+                                  Sehr geehrte(r) {name},<br />
                                   <br />
-                                  vielen Dank für Ihr Vertrauen in{" "}
+                                  vielen Dank für Ihr Interesse an einer
+                                  Zusammenarbeit mit{" "}
                                   <strong>INVERTA DIGITAL</strong>. Wir haben
                                   Ihre Projektanfrage im Bereich{" "}
-                                  <strong>{service}</strong> erhalten. Unser
-                                  Expertenteam analysiert bereits Ihre
-                                  Anforderungen, um Ihnen eine maßgeschneiderte
-                                  Strategie für Ihren digitalen Erfolg zu
-                                  präsentieren.
+                                  <strong>{service}</strong> erfolgreich
+                                  erfasst. Unsere Strategie-Abteilung evaluiert
+                                  derzeit Ihre Anforderungen, um ein Konzept zu
+                                  entwerfen, welches Ihre digitale Marktposition
+                                  nachhaltig transformiert.
                                 </Text>
                               </td>
                             </tr>
@@ -237,7 +247,7 @@ export const AutoReplyEmail = ({
                                             color: "#ffffff",
                                           }}
                                         >
-                                          High-End Tech
+                                          ENGINEERING
                                         </Text>
                                         <Text
                                           style={{
@@ -247,8 +257,9 @@ export const AutoReplyEmail = ({
                                             color: "#aaa",
                                           }}
                                         >
-                                          Modernste Frameworks wie Next.js &
-                                          React für maximale Power.
+                                          Entwicklung auf Enterprise-Niveau mit
+                                          modernsten Tech-Stacks. Kompromisslos
+                                          in Skalierbarkeit und Stabilität.
                                         </Text>
                                       </td>
                                     </tr>
@@ -268,7 +279,7 @@ export const AutoReplyEmail = ({
                                             color: "#ffffff",
                                           }}
                                         >
-                                          Performance
+                                          PERFORMANCE
                                         </Text>
                                         <Text
                                           style={{
@@ -278,8 +289,9 @@ export const AutoReplyEmail = ({
                                             color: "#aaa",
                                           }}
                                         >
-                                          Blitzschnelle Ladezeiten & optimale
-                                          Core Web Vitals.
+                                          Maximale Effizienz durch tiefgreifende
+                                          Code-Optimierung. Wir sichern
+                                          Bestwerte in allen Core Web Vitals.
                                         </Text>
                                       </td>
                                     </tr>
@@ -298,7 +310,7 @@ export const AutoReplyEmail = ({
                                             color: "#ffffff",
                                           }}
                                         >
-                                          Strategie
+                                          VISION
                                         </Text>
                                         <Text
                                           style={{
@@ -308,8 +320,9 @@ export const AutoReplyEmail = ({
                                             color: "#aaa",
                                           }}
                                         >
-                                          Individuelle Lösungen, die exakt Ihre
-                                          Ziele erreichen.
+                                          Keine Templates, keine Kompromisse.
+                                          Wir kreieren digitale Masterpieces für
+                                          Ihre unternehmerische DNA.
                                         </Text>
                                       </td>
                                     </tr>
@@ -339,7 +352,7 @@ export const AutoReplyEmail = ({
                                     textAlign: "center",
                                   }}
                                 >
-                                  Immer einen Schritt voraus.
+                                  DIE ZUKUNFT DER DIGITALEN DOMINANZ.
                                 </Text>
                                 <Text
                                   style={{
@@ -350,13 +363,16 @@ export const AutoReplyEmail = ({
                                     textAlign: "center",
                                   }}
                                 >
-                                  Gemeinsam definieren wir neue Standards in
-                                  Design & Technologie für Ihre digitale
-                                  Dominanz.
+                                  Wir setzen dort an, wo Standards enden.
+                                  Gemeinsam definieren wir neue Maßstäbe für
+                                  Ihren unangefochtenen Markterfolg.
                                 </Text>
                               </td>
                             </tr>
 
+                            <tr>
+                              <td height={40}>&nbsp;</td>
+                            </tr>
                             {/* Footer Image */}
                             <tr>
                               <td style={{ padding: "0 20px" }}>
