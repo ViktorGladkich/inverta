@@ -47,6 +47,13 @@ export function ServiceBentoGrid({ services }: ServiceBentoGridProps) {
                       <p className="text-black/60 md:text-lg leading-relaxed pt-5 md:pt-6 font-normal opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
                         {services[0].description}
                       </p>
+                      {/* Learn More Link */}
+                      <div className="mt-6 md:mt-8 flex items-center gap-2 text-xs md:text-sm font-bold tracking-widest uppercase group-hover:translate-x-2 transition-transform duration-700 opacity-100 md:opacity-0 group-hover:opacity-100 delay-200">
+                        <span className="border-b border-black/20 group-hover:border-black transition-colors duration-500">
+                          Mehr erfahren
+                        </span>
+                        <ArrowUpRight className="w-4 h-4 transition-transform group-hover:rotate-45" />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -83,6 +90,13 @@ export function ServiceBentoGrid({ services }: ServiceBentoGridProps) {
                         <p className="text-white/50 text-base leading-relaxed pt-4 font-normal opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
                           {services[1].description}
                         </p>
+                        {/* Learn More Link */}
+                        <div className="mt-5 flex items-center gap-2 text-[10px] md:text-xs font-bold tracking-widest uppercase group-hover:translate-x-1 transition-transform duration-700 group-hover:text-[#daff02] opacity-100 md:opacity-0 group-hover:opacity-100 delay-200">
+                          <span className="border-b border-white/20 group-hover:border-[#daff02] transition-colors duration-500">
+                            Mehr erfahren
+                          </span>
+                          <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:rotate-45" />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -113,6 +127,13 @@ export function ServiceBentoGrid({ services }: ServiceBentoGridProps) {
                         <p className="text-black/50 text-base leading-relaxed pt-4 font-normal opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
                           {services[2].description}
                         </p>
+                        {/* Learn More Link */}
+                        <div className="mt-5 flex items-center gap-2 text-[10px] md:text-xs font-bold tracking-widest uppercase group-hover:translate-x-1 transition-transform duration-700 opacity-100 md:opacity-0 group-hover:opacity-100 delay-200">
+                          <span className="border-b border-black/20 group-hover:border-black transition-colors duration-500">
+                            Mehr erfahren
+                          </span>
+                          <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:rotate-45" />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -147,6 +168,13 @@ export function ServiceBentoGrid({ services }: ServiceBentoGridProps) {
                     <p className="text-black/70 md:text-lg leading-relaxed pt-5 md:pt-6 font-medium opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
                       {services[3].description}
                     </p>
+                    {/* Learn More Link */}
+                    <div className="mt-6 md:mt-8 flex items-center gap-2 text-xs md:text-sm font-bold tracking-widest uppercase group-hover:translate-x-2 transition-transform duration-700 opacity-100 md:opacity-0 group-hover:opacity-100 delay-200">
+                      <span className="border-b border-black/20 group-hover:border-black transition-colors duration-500">
+                        Mehr erfahren
+                      </span>
+                      <ArrowUpRight className="w-4 h-4 transition-transform group-hover:rotate-45" />
+                    </div>
                   </div>
                 </div>
               </div>
