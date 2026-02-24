@@ -67,27 +67,45 @@ export const AutoReplyEmail = ({
                   }}
                 >
                   <tbody>
-                    {/* Header Image */}
+                    {/* Header: Logo & Dynamic Date */}
                     <tr>
-                      <td style={{ verticalAlign: "top" }}>
+                      <td
+                        style={{
+                          padding: "30px 20px",
+                          borderBottom: "1px solid #f0f1f5",
+                        }}
+                      >
                         <table
+                          width="100%"
+                          border={0}
                           cellPadding={0}
                           cellSpacing={0}
-                          border={0}
-                          style={{ width: "100%" }}
                         >
                           <tbody>
                             <tr>
-                              <td align="center">
+                              <td align="left">
                                 <Img
-                                  src={`${baseUrl}/emails/831fd729228e337614e345eff3e22954.png`}
-                                  width="600"
-                                  style={{
-                                    display: "block",
-                                    width: "100%",
-                                    height: "auto",
-                                  }}
+                                  src={`${baseUrl}/logo-inverta.png`}
+                                  width="100"
+                                  alt="INVERTA"
+                                  style={{ display: "block" }}
                                 />
+                              </td>
+                              <td
+                                align="right"
+                                style={{
+                                  color: "#888",
+                                  fontSize: "12px",
+                                  fontWeight: "bold",
+                                  letterSpacing: "1px",
+                                }}
+                              >
+                                {new Date()
+                                  .toLocaleString("de-DE", {
+                                    month: "long",
+                                    year: "numeric",
+                                  })
+                                  .toUpperCase()}
                               </td>
                             </tr>
                           </tbody>
@@ -109,10 +127,11 @@ export const AutoReplyEmail = ({
                           <tbody>
                             <tr>
                               <td
+                                align="center"
                                 style={{
-                                  fontSize: "57px",
+                                  fontSize: "52px",
                                   letterSpacing: "-0.09em",
-                                  lineHeight: "1.1",
+                                  lineHeight: "1.0",
                                   fontWeight: "bold",
                                   padding: "0 20px",
                                 }}
@@ -144,88 +163,75 @@ export const AutoReplyEmail = ({
                               <td height={20}>&nbsp;</td>
                             </tr>
 
-                            {/* Text Columns */}
+                            {/* Centered Intro Text */}
                             <tr>
-                              <td style={{ padding: "20px" }}>
-                                <table
-                                  width="100%"
-                                  border={0}
-                                  cellPadding={0}
-                                  cellSpacing={0}
+                              <td
+                                style={{
+                                  padding: "0 40px",
+                                  textAlign: "center",
+                                }}
+                              >
+                                <Text
+                                  style={{
+                                    fontSize: "32px",
+                                    fontWeight: "bold",
+                                    lineHeight: "1.1",
+                                    margin: "0 0 20px 0",
+                                    textAlign: "center",
+                                  }}
                                 >
-                                  <tbody>
-                                    <tr>
-                                      <td
-                                        width="50%"
-                                        style={{
-                                          verticalAlign: "top",
-                                          paddingRight: "10px",
-                                        }}
-                                      >
-                                        <Text
-                                          style={{
-                                            fontSize: "28px",
-                                            fontWeight: "bold",
-                                            lineHeight: "1.1",
-                                            margin: 0,
-                                          }}
-                                        >
-                                          Digitale Exzellenz ist unser Standard
-                                        </Text>
-                                      </td>
-                                      <td
-                                        width="50%"
-                                        style={{ verticalAlign: "top" }}
-                                      >
-                                        <Text
-                                          style={{
-                                            fontSize: "14px",
-                                            lineHeight: "1.4",
-                                            margin: 0,
-                                          }}
-                                        >
-                                          Hallo {name},<br />
-                                          <br />
-                                          vielen Dank für Ihr Vertrauen in{" "}
-                                          <strong>INVERTA DIGITAL</strong>. Wir
-                                          haben Ihre Projektanfrage im Bereich{" "}
-                                          <strong>{service}</strong> erhalten.
-                                          Unser Expertenteam analysiert bereits
-                                          Ihre Anforderungen, um Ihnen eine
-                                          maßgeschneiderte Strategie für Ihren
-                                          digitalen Erfolg zu präsentieren.
-                                        </Text>
-                                      </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
+                                  Digitale Exzellenz ist unser Standard
+                                </Text>
+                                <Text
+                                  style={{
+                                    fontSize: "16px",
+                                    lineHeight: "1.6",
+                                    color: "#444",
+                                    margin: 0,
+                                    textAlign: "center",
+                                  }}
+                                >
+                                  Hallo {name},<br />
+                                  <br />
+                                  vielen Dank für Ihr Vertrauen in{" "}
+                                  <strong>INVERTA DIGITAL</strong>. Wir haben
+                                  Ihre Projektanfrage im Bereich{" "}
+                                  <strong>{service}</strong> erhalten. Unser
+                                  Expertenteam analysiert bereits Ihre
+                                  Anforderungen, um Ihnen eine maßgeschneiderte
+                                  Strategie für Ihren digitalen Erfolg zu
+                                  präsentieren.
+                                </Text>
                               </td>
                             </tr>
 
-                            {/* Dark Grid */}
+                            {/* Dark Grid: Improved for Readability */}
                             <tr>
                               <td style={{ padding: "0 20px" }}>
                                 <table
                                   width="100%"
                                   border={0}
-                                  cellPadding={20}
+                                  cellPadding={0}
                                   cellSpacing={0}
                                   style={{
                                     backgroundColor: "#050505",
-                                    borderRadius: "8px",
+                                    borderRadius: "16px",
                                     color: "#ffffff",
+                                    overflow: "hidden",
                                   }}
                                 >
                                   <tbody>
                                     <tr>
                                       <td
-                                        width="33%"
-                                        align="center"
-                                        style={{ verticalAlign: "top" }}
+                                        style={{
+                                          padding: "30px 20px",
+                                          textAlign: "center",
+                                          borderBottom: "1px solid #222",
+                                        }}
                                       >
                                         <Text
                                           style={{
-                                            fontSize: "18px",
+                                            fontSize: "20px",
                                             fontWeight: "bold",
                                             margin: "0 0 10px 0",
                                             color: "#ffffff",
@@ -235,23 +241,28 @@ export const AutoReplyEmail = ({
                                         </Text>
                                         <Text
                                           style={{
-                                            fontSize: "13px",
+                                            fontSize: "14px",
+                                            lineHeight: "1.4",
                                             margin: 0,
-                                            color: "#ffffff",
+                                            color: "#aaa",
                                           }}
                                         >
-                                          Wir setzen auf modernste Frameworks
-                                          wie Next.js & React.
+                                          Modernste Frameworks wie Next.js &
+                                          React für maximale Power.
                                         </Text>
                                       </td>
+                                    </tr>
+                                    <tr>
                                       <td
-                                        width="33%"
-                                        align="center"
-                                        style={{ verticalAlign: "top" }}
+                                        style={{
+                                          padding: "30px 20px",
+                                          textAlign: "center",
+                                          borderBottom: "1px solid #222",
+                                        }}
                                       >
                                         <Text
                                           style={{
-                                            fontSize: "18px",
+                                            fontSize: "20px",
                                             fontWeight: "bold",
                                             margin: "0 0 10px 0",
                                             color: "#ffffff",
@@ -261,23 +272,27 @@ export const AutoReplyEmail = ({
                                         </Text>
                                         <Text
                                           style={{
-                                            fontSize: "13px",
+                                            fontSize: "14px",
+                                            lineHeight: "1.4",
                                             margin: 0,
-                                            color: "#ffffff",
+                                            color: "#aaa",
                                           }}
                                         >
-                                          Maximale Ladegeschwindigkeit & Core
-                                          Web Vitals Optimierung.
+                                          Blitzschnelle Ladezeiten & optimale
+                                          Core Web Vitals.
                                         </Text>
                                       </td>
+                                    </tr>
+                                    <tr>
                                       <td
-                                        width="33%"
-                                        align="center"
-                                        style={{ verticalAlign: "top" }}
+                                        style={{
+                                          padding: "30px 20px",
+                                          textAlign: "center",
+                                        }}
                                       >
                                         <Text
                                           style={{
-                                            fontSize: "18px",
+                                            fontSize: "20px",
                                             fontWeight: "bold",
                                             margin: "0 0 10px 0",
                                             color: "#ffffff",
@@ -287,13 +302,14 @@ export const AutoReplyEmail = ({
                                         </Text>
                                         <Text
                                           style={{
-                                            fontSize: "13px",
+                                            fontSize: "14px",
+                                            lineHeight: "1.4",
                                             margin: 0,
-                                            color: "#ffffff",
+                                            color: "#aaa",
                                           }}
                                         >
-                                          Kein Standard. Wir entwickeln
-                                          individuelle Lösungen.
+                                          Individuelle Lösungen, die exakt Ihre
+                                          Ziele erreichen.
                                         </Text>
                                       </td>
                                     </tr>
@@ -305,55 +321,39 @@ export const AutoReplyEmail = ({
                               <td height={20}>&nbsp;</td>
                             </tr>
 
-                            {/* Bottom Text */}
+                            {/* Centered Bottom Section */}
                             <tr>
-                              <td style={{ padding: "20px" }}>
-                                <table
-                                  width="100%"
-                                  border={0}
-                                  cellPadding={0}
-                                  cellSpacing={0}
+                              <td
+                                style={{
+                                  padding: "0 40px",
+                                  textAlign: "center",
+                                }}
+                              >
+                                <Text
+                                  style={{
+                                    fontSize: "32px",
+                                    fontWeight: "bold",
+                                    lineHeight: "1.1",
+                                    margin: "0 0 15px 0",
+                                    color: "#000000",
+                                    textAlign: "center",
+                                  }}
                                 >
-                                  <tbody>
-                                    <tr>
-                                      <td
-                                        width="50%"
-                                        style={{
-                                          verticalAlign: "top",
-                                          color: "#daff02",
-                                        }}
-                                      >
-                                        <Text
-                                          style={{
-                                            fontSize: "28px",
-                                            fontWeight: "bold",
-                                            lineHeight: "1.1",
-                                            margin: 0,
-                                            color: "#9eb3f4",
-                                          }}
-                                        >
-                                          Immer einen Schritt voraus.
-                                        </Text>
-                                      </td>
-                                      <td
-                                        width="50%"
-                                        style={{ verticalAlign: "top" }}
-                                      >
-                                        <Text
-                                          style={{
-                                            fontSize: "14px",
-                                            lineHeight: "1.4",
-                                            margin: 0,
-                                          }}
-                                        >
-                                          Gemeinsam definieren wir neue
-                                          Standards in Design & Technologie für
-                                          Ihre unangefochtene digitale Dominanz.
-                                        </Text>
-                                      </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
+                                  Immer einen Schritt voraus.
+                                </Text>
+                                <Text
+                                  style={{
+                                    fontSize: "16px",
+                                    lineHeight: "1.6",
+                                    color: "#444",
+                                    margin: 0,
+                                    textAlign: "center",
+                                  }}
+                                >
+                                  Gemeinsam definieren wir neue Standards in
+                                  Design & Technologie für Ihre digitale
+                                  Dominanz.
+                                </Text>
                               </td>
                             </tr>
 
