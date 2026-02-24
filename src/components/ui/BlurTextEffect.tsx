@@ -8,12 +8,14 @@ interface BlurTextEffectProps {
   children: React.ReactNode;
   className?: string;
   delay?: number;
+  animate?: boolean;
 }
 
 export const BlurTextEffect = ({
   children,
   className = "",
   delay = 0,
+  animate = true,
 }: BlurTextEffectProps) => {
   const container = {
     hidden: { opacity: 0 },
@@ -73,6 +75,10 @@ export const BlurTextEffect = ({
       return node;
     });
   };
+
+  if (!animate) {
+    return <span className={cn("inline-block", className)}>{children}</span>;
+  }
 
   return (
     <motion.span

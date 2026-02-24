@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,6 +8,17 @@ import { BlurTextEffect } from "@/components/ui/BlurTextEffect";
 import { VideoSchema } from "@/components/seo/VideoSchema";
 
 export function GalaxyHero() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -200,7 +211,11 @@ export function GalaxyHero() {
       >
         <div className="max-w-4xl text-center">
           <h3 className="text-2xl md:text-3xl font-medium leading-snug text-neutral-800">
-            <BlurTextEffect className="inline-block" delay={0.1}>
+            <BlurTextEffect
+              className="inline-block"
+              delay={0.1}
+              animate={!isMobile}
+            >
               <span className="text-black/60">
                 &quot;Wir erschaffen nicht nur Präsenzen, wir{" "}
               </span>
