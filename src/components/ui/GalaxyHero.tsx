@@ -5,6 +5,7 @@ import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { BlurTextEffect } from "@/components/ui/BlurTextEffect";
+import { VideoSchema } from "@/components/seo/VideoSchema";
 
 export function GalaxyHero() {
   const containerVariants: Variants = {
@@ -64,6 +65,12 @@ export function GalaxyHero() {
         className="relative w-full flex flex-col items-center justify-center overflow-hidden bg-gray-50/10"
         style={{ minHeight: "calc(var(--vh, 1vh) * 100)" }}
       >
+        <VideoSchema
+          name="INVERTA DIGITAL Experience"
+          description="Immersives Video-Intro der Digitalagentur INVERTA"
+          thumbnailUrl="https://invertadigital.de/hero-poster.jpg"
+          contentUrl="https://invertadigital.de/hero-loop.mp4"
+        />
         <h1 className="sr-only">
           Premium Agentur für Webdesign, Webentwicklung, Performance Marketing &
           KI-Automatisierung | INVERTA
@@ -72,6 +79,7 @@ export function GalaxyHero() {
         <div className="absolute inset-0 z-0 select-none">
           <video
             src="/hero-loop.mp4"
+            poster="/hero-poster.jpg"
             autoPlay
             loop
             muted

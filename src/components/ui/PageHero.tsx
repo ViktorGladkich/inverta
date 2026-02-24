@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
+import { VideoSchema } from "@/components/seo/VideoSchema";
 
 interface PageHeroProps {
   titleTop: string;
@@ -47,9 +48,16 @@ export function PageHero({
           minHeight: isMobile ? "calc(var(--vh, 1vh) * 100)" : undefined,
         }}
       >
+        <VideoSchema
+          name={`${titleTop} ${titleMain}`}
+          description={`Präsentation von ${titleMain} - INVERTA Digitalagentur`}
+          thumbnailUrl="https://invertadigital.de/hero-poster.jpg"
+          contentUrl="https://invertadigital.de/hero-loop.mp4"
+        />
         <div className="absolute inset-0 z-0 select-none border-b border-black/5">
           <video
             src="/hero-loop.mp4"
+            poster="/hero-poster.jpg"
             autoPlay
             loop
             muted

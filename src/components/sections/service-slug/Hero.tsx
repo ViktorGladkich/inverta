@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Sparkles } from "lucide-react";
 import { ServiceContent } from "@/data/services";
+import { VideoSchema } from "@/components/seo/VideoSchema";
 
 interface HeroProps {
   service: ServiceContent;
@@ -64,13 +65,20 @@ const accentAndText = (heroText: string) => (
   </>
 );
 
-const videoBackground = () => (
+const videoBackground = (serviceTitle: string) => (
   <div className="absolute inset-0 z-0 bg-white">
+    <VideoSchema
+      name={`${serviceTitle} Service Background`}
+      description={`Videopräsentation für ${serviceTitle} - INVERTA Digital`}
+      thumbnailUrl="https://invertadigital.de/slug-poster.jpg"
+      contentUrl="https://invertadigital.de/slug-loop.mp4"
+    />
     <video
       autoPlay
       muted
       loop
       playsInline
+      poster="/slug-poster.jpg"
       className="w-full h-full object-cover"
     >
       <source src="/slug-loop.mp4" type="video/mp4" />
@@ -87,7 +95,7 @@ function MobileHero({ service, categoryLabel }: HeroProps) {
       className="relative flex items-center justify-center px-6 overflow-hidden bg-white"
       style={{ height: "calc(var(--vh, 1vh) * 100)" }}
     >
-      {videoBackground()}
+      {videoBackground(service.title)}
       <div className="max-w-[1400px] mx-auto w-full relative z-10 flex flex-col items-center text-center mt-12">
         {badge(categoryLabel)}
         {title(titleWords)}
@@ -116,7 +124,7 @@ function DesktopHero({ service, categoryLabel }: HeroProps) {
       className="relative flex items-center justify-center px-6 overflow-hidden bg-white"
       style={{ height: "calc(var(--vh, 1vh) * 100)" }}
     >
-      {videoBackground()}
+      {videoBackground(service.title)}
       <motion.div
         style={{ y, opacity }}
         className="max-w-[1400px] mx-auto w-full relative z-10 flex flex-col items-center text-center mt-20"

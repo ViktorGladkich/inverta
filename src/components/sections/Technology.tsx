@@ -178,12 +178,6 @@ export function Technology() {
           <span className="font-semibold text-lg">Jetzt starten</span>
           <ButtonArrow className="w-4 h-4 ml-1" />
         </Link>
-        <Link
-          href="/#services"
-          className="group relative inline-flex items-center justify-center gap-2 bg-[#F5F5F5] text-black px-8 py-4 rounded-[10px] shadow-[0px_0.706592px_0.706592px_-0.583333px_rgba(158,158,158,0.69),0px_1.80656px_1.80656px_-1.16667px_rgba(158,158,158,0.68),0px_3.62176px_3.62176px_-1.75px_rgba(158,158,158,0.65),0px_6.8656px_6.8656px_-2.33333px_rgba(158,158,158,0.61),0px_13.6468px_13.6468px_-2.91667px_rgba(158,158,158,0.52),0px_30px_30px_-3.5px_rgba(158,158,158,0.3),inset_0px_3px_1px_0px_rgb(255,255,255)] hover:shadow-[0px_10px_20px_rgba(0,0,0,0.1),inset_0px_3px_1px_0px_rgb(255,255,255)] hover:scale-[1.02] transition-all duration-300"
-        >
-          <span className="font-semibold text-lg">Unsere Leistungen</span>
-        </Link>
       </div>
     </section>
   );
