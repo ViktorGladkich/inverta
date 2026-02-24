@@ -19,7 +19,7 @@ export function IntegrationCard() {
           }}
           animate={{ scale: [1, 2.1], opacity: [0.3, 0] }}
           transition={{
-            duration: 3,
+            duration: 2,
             repeat: Infinity,
             ease: "easeOut",
           }}
@@ -54,7 +54,7 @@ export function IntegrationCard() {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: [0, 1, 1, 0], scale: [0.5, 1, 1, 0.5] }}
           transition={{
-            duration: 12,
+            duration: 6,
             times: [0, 0.1, 0.9, 1],
             repeat: Infinity,
             ease: "easeInOut",
@@ -71,7 +71,7 @@ export function IntegrationCard() {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: [0, 0, 1, 1, 0], scale: [0.5, 0.5, 1, 1, 0.5] }}
           transition={{
-            duration: 12,
+            duration: 6,
             times: [0, 0.25, 0.35, 0.9, 1],
             repeat: Infinity,
             ease: "easeInOut",
@@ -88,7 +88,7 @@ export function IntegrationCard() {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: [0, 0, 1, 1, 0], scale: [0.5, 0.5, 1, 1, 0.5] }}
           transition={{
-            duration: 12,
+            duration: 6,
             times: [0, 0.5, 0.6, 0.9, 1],
             repeat: Infinity,
             ease: "easeInOut",

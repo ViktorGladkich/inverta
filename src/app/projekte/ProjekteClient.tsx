@@ -135,16 +135,17 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       } gap-12 lg:gap-20 items-center justify-between w-full`}
     >
       <motion.div
+        key={`img-${isMobile}`}
         style={
           !isMobile
             ? { x: imageX, boxShadow: neumorphicShadow }
             : { boxShadow: neumorphicShadow }
         }
-        initial={isMobile ? { opacity: 0, x: isEven ? -80 : 80 } : undefined}
-        whileInView={isMobile ? { opacity: 1, x: 0 } : undefined}
-        viewport={{ once: true, margin: "-10%" }}
-        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-        className="w-full lg:w-[48%] bg-white rounded-[20px] p-3 md:p-5 transform-gpu"
+        initial={isMobile ? { opacity: 0, x: isEven ? -100 : 100 } : undefined}
+        whileInView={isMobile ? { opacity: 1, x: 0 } : { opacity: 1 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="w-full lg:w-[48%] bg-white rounded-[20px] p-3 md:p-5"
       >
         <div
           className="aspect-16/10 relative group overflow-hidden rounded-[16px] bg-neutral-200 cursor-pointer"
@@ -178,12 +179,15 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       </motion.div>
 
       <motion.div
+        key={`text-${isMobile}`}
         style={!isMobile ? { x: textX } : undefined}
-        initial={isMobile ? { opacity: 0, x: isEven ? -80 : 80 } : undefined}
-        whileInView={isMobile ? { opacity: 1, x: 0 } : undefined}
-        viewport={{ once: true, margin: "-10%" }}
-        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-        className="w-full lg:w-[42%] flex flex-col gap-6 md:gap-8 transform-gpu"
+        initial={
+          isMobile ? { opacity: 0, x: isEven ? -100 : 100 } : { opacity: 0 }
+        }
+        whileInView={isMobile ? { opacity: 1, x: 0 } : { opacity: 1 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+        className="w-full lg:w-[42%] flex flex-col gap-6 md:gap-8"
       >
         <div className="flex items-center gap-6">
           <span className="text-[11px] font-bold text-black tracking-[0.3em] uppercase">

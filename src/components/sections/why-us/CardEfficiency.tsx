@@ -26,17 +26,17 @@ export function EfficiencyCard() {
             style={{ boxShadow: barShadow }}
             animate={{ height: [80, 155, 155, 80, 80] }}
             transition={{
-              duration: 8,
+              duration: 4,
               repeat: Infinity,
-              times: [0, 0.125, 0.5, 0.625, 1],
+              times: [0, 0.25, 0.5, 0.75, 1],
               ease: "easeInOut",
             }}
           >
             <AnimatedPill
               label="Automatisierung"
               values={[30, 90, 90, 30, 30]}
-              times={[0, 0.125, 0.5, 0.625, 1]}
-              duration={8}
+              times={[0, 0.25, 0.5, 0.75, 1]}
+              duration={4}
             />
           </motion.div>
 
@@ -52,17 +52,17 @@ export function EfficiencyCard() {
             style={{ boxShadow: barShadow }}
             animate={{ height: [120, 75, 75, 120, 120] }}
             transition={{
-              duration: 8,
+              duration: 4,
               repeat: Infinity,
-              times: [0, 0.125, 0.5, 0.625, 1],
+              times: [0, 0.25, 0.5, 0.75, 1],
               ease: "easeInOut",
             }}
           >
             <AnimatedPill
               label="Kosten"
               values={[70, 20, 20, 70, 70]}
-              times={[0, 0.125, 0.5, 0.625, 1]}
-              duration={8}
+              times={[0, 0.25, 0.5, 0.75, 1]}
+              duration={4}
             />
           </motion.div>
         </div>

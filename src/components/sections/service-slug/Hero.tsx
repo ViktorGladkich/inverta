@@ -5,6 +5,7 @@ import { useRef, useEffect, useState } from "react";
 import { Sparkles } from "lucide-react";
 import { ServiceContent } from "@/data/services";
 import { VideoSchema } from "@/components/seo/VideoSchema";
+import { cn } from "@/lib/utils";
 
 interface HeroProps {
   service: ServiceContent;
@@ -29,20 +30,36 @@ const badge = (categoryLabel: string) => (
   </div>
 );
 
-const title = (words: string[]) => (
-  <h1 className="text-[10vw] sm:text-[8vw] md:text-[5rem] lg:text-[6rem] xl:text-[7.5rem] text-black font-medium tracking-tighter leading-[0.85] uppercase flex flex-wrap justify-center gap-x-2 md:gap-x-6 gap-y-2 mb-16 md:mb-24 px-4 w-full drop-shadow-sm">
-    {words.map((word, i) => (
-      <div key={i} className="overflow-hidden pb-4 max-w-full">
-        <motion.span
-          initial={{ y: "110%", rotateZ: 5 }}
-          animate={{ y: "0%", rotateZ: 0 }}
-          transition={{ duration: 1, delay: i * 0.1, ease: [0.76, 0, 0.24, 1] }}
-          className="block"
+const title = (words: string[], isMobile: boolean) => (
+  <h1
+    lang="de"
+    className="text-[10vw] sm:text-[8vw] md:text-[5rem] lg:text-[6rem] xl:text-[7.5rem] text-black font-medium tracking-tighter leading-[0.95] uppercase flex flex-wrap justify-center gap-x-2 md:gap-x-6 gap-y-2 mb-16 md:mb-24 px-4 w-full drop-shadow-sm hyphens-auto"
+  >
+    {words.map((word, i) => {
+      const isLongWord = isMobile && word.length > 12;
+      return (
+        <div
+          key={i}
+          className={cn(
+            "overflow-hidden py-4 max-w-full",
+            isLongWord && "text-[7.5vw] xs:text-[8.5vw]",
+          )}
         >
-          {word}
-        </motion.span>
-      </div>
-    ))}
+          <motion.span
+            initial={{ y: "110%", rotateZ: 5 }}
+            animate={{ y: "0%", rotateZ: 0 }}
+            transition={{
+              duration: 1,
+              delay: i * 0.1,
+              ease: [0.76, 0, 0.24, 1],
+            }}
+            className="block"
+          >
+            {word}
+          </motion.span>
+        </div>
+      );
+    })}
   </h1>
 );
 
@@ -98,7 +115,7 @@ function MobileHero({ service, categoryLabel }: HeroProps) {
       {videoBackground(service.title)}
       <div className="max-w-[1400px] mx-auto w-full relative z-10 flex flex-col items-center text-center mt-12">
         {badge(categoryLabel)}
-        {title(titleWords)}
+        {title(titleWords, true)}
         {accentAndText(service.heroText)}
       </div>
     </section>
@@ -130,7 +147,7 @@ function DesktopHero({ service, categoryLabel }: HeroProps) {
         className="max-w-[1400px] mx-auto w-full relative z-10 flex flex-col items-center text-center mt-20"
       >
         {badge(categoryLabel)}
-        {title(titleWords)}
+        {title(titleWords, false)}
         {accentAndText(service.heroText)}
       </motion.div>
     </section>

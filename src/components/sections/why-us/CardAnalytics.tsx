@@ -37,8 +37,8 @@ export function AnalyticsCard() {
             initial={{ rotate: 0 }}
             animate={{ rotate: [0, 150, 150, 0, 0] }}
             transition={{
-              duration: 8,
-              times: [0, 0.125, 0.5, 0.625, 1], // Move, Pause, Move back
+              duration: 4,
+              times: [0, 0.25, 0.5, 0.75, 1], // Move, Pause, Move back
               repeat: Infinity,
               ease: "easeInOut",
             }}
@@ -60,7 +60,7 @@ export function AnalyticsCard() {
               }}
               animate={{ opacity: [0, 0, 1, 1, 0, 0, 1, 1, 0] }}
               transition={{
-                duration: 8,
+                duration: 4,
                 repeat: Infinity,
                 times: [0, 0.14, 0.15, 0.48, 0.5, 0.64, 0.65, 0.975, 1],
                 ease: "linear",
@@ -75,7 +75,7 @@ export function AnalyticsCard() {
               }}
               animate={{ opacity: [0, 0, 1, 1, 0, 0, 1, 1, 0] }}
               transition={{
-                duration: 8,
+                duration: 4,
                 repeat: Infinity,
                 times: [0, 0.19, 0.2, 0.475, 0.485, 0.69, 0.7, 0.975, 1],
                 ease: "linear",
@@ -90,7 +90,7 @@ export function AnalyticsCard() {
               }}
               animate={{ opacity: [0, 0, 1, 1, 0, 0, 1, 1, 0] }}
               transition={{
-                duration: 8,
+                duration: 4,
                 repeat: Infinity,
                 times: [0, 0.24, 0.25, 0.475, 0.485, 0.74, 0.75, 0.975, 1],
                 ease: "linear",
