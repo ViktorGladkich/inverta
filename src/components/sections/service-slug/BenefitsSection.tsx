@@ -44,7 +44,7 @@ function MobileBenefits({ benefits }: { benefits: string[] }) {
             </div>
             <div className="relative z-10 flex flex-col items-center text-center gap-4 px-4 w-full">
               <div className="w-10 h-[2px] bg-black" />
-              <h3 className="text-3xl xs:text-4xl text-black font-medium tracking-tight uppercase leading-tight max-w-[280px] xs:max-w-xs break-words">
+              <h3 className="text-3xl xs:text-4xl text-black font-medium tracking-tight uppercase leading-tight max-w-[280px] xs:max-w-xs wrap-break-word">
                 {benefit}
               </h3>
             </div>

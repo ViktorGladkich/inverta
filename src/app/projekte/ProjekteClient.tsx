@@ -135,7 +135,15 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       } gap-12 lg:gap-20 items-center justify-between w-full`}
     >
       <motion.div
-        style={{ x: imageX, boxShadow: neumorphicShadow }}
+        style={
+          !isMobile
+            ? { x: imageX, boxShadow: neumorphicShadow }
+            : { boxShadow: neumorphicShadow }
+        }
+        initial={isMobile ? { opacity: 0, x: isEven ? -80 : 80 } : undefined}
+        whileInView={isMobile ? { opacity: 1, x: 0 } : undefined}
+        viewport={{ once: true, margin: "-10%" }}
+        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
         className="w-full lg:w-[48%] bg-white rounded-[20px] p-3 md:p-5 transform-gpu"
       >
         <div
@@ -170,7 +178,11 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       </motion.div>
 
       <motion.div
-        style={{ x: textX }}
+        style={!isMobile ? { x: textX } : undefined}
+        initial={isMobile ? { opacity: 0, x: isEven ? -80 : 80 } : undefined}
+        whileInView={isMobile ? { opacity: 1, x: 0 } : undefined}
+        viewport={{ once: true, margin: "-10%" }}
+        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
         className="w-full lg:w-[42%] flex flex-col gap-6 md:gap-8 transform-gpu"
       >
         <div className="flex items-center gap-6">
