@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { MessageSquare, Star } from "lucide-react";
 import { BlurTextEffect } from "@/components/ui/BlurTextEffect";
@@ -35,6 +36,15 @@ const testimonials = [
 ];
 
 export function Testimonials() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <section
       id="testimonials"
@@ -79,7 +89,7 @@ export function Testimonials() {
             }}
           >
             <h3 className="text-xl md:text-[24px] font-medium leading-normal text-[#16101e] max-w-lg">
-              <BlurTextEffect>
+              <BlurTextEffect animate={!isMobile}>
                 Ihr{" "}
                 <span className="text-black/40 inline-block">
                   AI-driven Ansatz
