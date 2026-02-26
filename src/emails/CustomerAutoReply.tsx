@@ -196,11 +196,11 @@ export const AutoReplyEmail = ({
                                     fontSize: "16px",
                                     lineHeight: "1.6",
                                     color: "#444",
-                                    margin: 0,
+                                    margin: "0 0 5px 0",
                                     textAlign: "center",
                                   }}
                                 >
-                                  Sehr geehrte(r) {name},<br />
+                                  Hallo {name},<br />
                                   <br />
                                   vielen Dank für Ihr Interesse an einer
                                   Zusammenarbeit mit{" "}
@@ -243,7 +243,7 @@ export const AutoReplyEmail = ({
                                           style={{
                                             fontSize: "20px",
                                             fontWeight: "bold",
-                                            margin: "0 0 10px 0",
+                                            margin: "0 0 5px 0",
                                             color: "#ffffff",
                                           }}
                                         >

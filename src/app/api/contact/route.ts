@@ -65,7 +65,6 @@ export async function POST(req: Request) {
     }
 
     // --- 2. Auto-Reply to the Customer ---
-    const customerFirstName = name.split(" ")[0] || "Interessent";
     const mappedService =
       service === "marketing"
         ? "Marketing & SEO"
@@ -80,7 +79,7 @@ export async function POST(req: Request) {
       to: [email],
       subject: "Wir haben Ihre Anfrage erhalten | INVERTA DIGITAL",
       react: AutoReplyEmail({
-        name: customerFirstName,
+        name: name,
         service: mappedService,
       }),
     });
