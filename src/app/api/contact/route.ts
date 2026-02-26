@@ -6,7 +6,8 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
-    const { name, email, company, service, message } = await req.json();
+    const body = await req.json();
+    const { name, email, company, service, message } = body;
 
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -83,6 +84,19 @@ export async function POST(req: Request) {
         service: mappedService,
       }),
     });
+
+    try {
+      await fetch(process.env.N8N_LEAD_WEBHOOK_URL!, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...body,
+          source: "invertadigital.de/kontakt",
+        }),
+      });
+    } catch (e) {
+      console.error("n8n error", e);
+    }
 
     return NextResponse.json(
       { success: true, message: "E-Mail erfolgreich versendet!" },
