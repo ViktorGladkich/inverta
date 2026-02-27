@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { ViewportFix } from "@/components/Viewport/ViewportFix";
-import { Geist, Geist_Mono } from "next/font/google";
 import { CookieConsent } from "@/components/ui/CookieConsent";
 import { Navbar } from "@/components/layout/Navbar";
 import { ProgressiveBlur } from "@/components/ui/ProgressiveBlur";
@@ -8,16 +7,6 @@ import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 
 import { GlobalSchema } from "@/components/seo/GlobalSchema";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://invertadigital.de"),
@@ -85,11 +74,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de" className="scroll-smooth">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-neutral-900 selection:bg-black selection:text-white`}
-      >
+      <body className="antialiased bg-white text-neutral-900 selection:bg-black selection:text-white">
         <GlobalSchema />
-        
+
         <ViewportFix />
         <Navbar />
         {children}

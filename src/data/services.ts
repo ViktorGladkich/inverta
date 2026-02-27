@@ -52,12 +52,12 @@ export const SERVICES: ServiceContent[] = [
   {
     slug: "seo",
     category: "marketing",
-    title: "Suchmaschinenoptimierung (SEO)",
+    title: "Suchmaschinenoptimierung",
     description: "Dominieren Sie die Suchergebnisse und werden Sie gefunden.",
     seoTitle:
       "SEO Agentur Dresden | Suchmaschinenoptimierung & Top Rankings | INVERTA",
     seoDescription:
-      "Ihre Experten für Suchmaschinenoptimierung (SEO) in Dresden. Wir steigern Ihre Sichtbarkeit, Klicks und Umsätze durch nachhaltige Google-Strategien.",
+      "Ihre Experten für Suchmaschinenoptimierung in Dresden. Wir steigern Ihre Sichtbarkeit, Klicks und Umsätze durch nachhaltige Google-Strategien.",
     heroText:
       "Wer nicht gefunden wird, existiert nicht. Wir bringen Ihre Website auf die vorderen Plätze bei Google & Co.",
     benefits: [

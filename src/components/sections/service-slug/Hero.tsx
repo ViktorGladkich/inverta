@@ -33,7 +33,7 @@ const badge = (categoryLabel: string) => (
 const title = (words: string[], isMobile: boolean) => (
   <h1
     lang="de"
-    className="text-[10vw] sm:text-[8vw] md:text-[5rem] lg:text-[6rem] xl:text-[7.5rem] text-black font-medium tracking-tighter leading-[0.95] uppercase flex flex-wrap justify-center gap-x-2 md:gap-x-6 gap-y-2 mb-16 md:mb-24 px-4 w-full drop-shadow-sm hyphens-auto"
+    className="text-[10vw] sm:text-[8vw] md:text-[4.5rem] lg:text-[5.5rem] xl:text-[6.5rem] text-black font-medium tracking-tighter leading-[0.95] uppercase flex flex-wrap justify-center gap-x-2 md:gap-x-4 gap-y-2 mb-8 md:mb-10 px-4 w-full drop-shadow-sm hyphens-auto"
   >
     {words.map((word, i) => {
       const isLongWord = isMobile && word.length > 12;
@@ -69,7 +69,7 @@ const accentAndText = (heroText: string) => (
       initial={{ opacity: 0, scaleX: 0 }}
       animate={{ opacity: 1, scaleX: 1 }}
       transition={{ duration: 1, delay: 0.4 }}
-      className="w-24 h-1 bg-[#daff02] mb-12"
+      className="w-24 h-1 bg-[#daff02] mb-6"
     />
     <motion.p
       initial={{ opacity: 0, y: 20 }}
@@ -144,7 +144,7 @@ function DesktopHero({ service, categoryLabel }: HeroProps) {
       {videoBackground(service.title)}
       <motion.div
         style={{ y, opacity }}
-        className="max-w-[1400px] mx-auto w-full relative z-10 flex flex-col items-center text-center mt-20"
+        className="max-w-[1400px] mx-auto w-full relative z-10 flex flex-col items-center text-center mt-12 md:mt-16"
       >
         {badge(categoryLabel)}
         {title(titleWords, false)}
