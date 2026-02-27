@@ -163,27 +163,6 @@ export const PROJECTS: Project[] = [
   {
     id: 8,
     number: "08",
-    slug: "system-logic",
-    label: "System Logic",
-    title: "Backend Architektur & Datensysteme",
-    category: "Cloud & Architektur",
-    description:
-      "Konzepte und Implementierung robuster, skalierbarer Backend-Architekturen zur Unterstützung komplexer Geschäftsprozesse.",
-    image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=2000",
-    services: ["Systemarchitektur", "API Design", "Datenbankoptimierung"],
-    challenge:
-      "Strukturierung und Optimierung komplexer Datenflüsse, um Engpässe zu beseitigen und absolute Skalierbarkeit zu gewährleisten.",
-    solution:
-      "Konzeptionierung einer Microservices-Architektur basierend auf cloud-nativen Technologien, unterstützt durch ein performantes API-Gateway.",
-    results: [
-      { label: "Latenz", value: "-40%" },
-      { label: "Uptime", value: "99.99%" },
-    ],
-  },
-  {
-    id: 9,
-    number: "09",
     slug: "ki-automatisierung",
     label: "KI Automatisierung",
     title: "Intelligente Workflows",
@@ -200,6 +179,56 @@ export const PROJECTS: Project[] = [
     results: [
       { label: "Zeitersparnis", value: "35h/Woche" },
       { label: "Fehlerquote", value: "< 1%" },
+    ],
+  },
+  {
+    id: 9,
+    number: "09",
+    slug: "content-marketing-automation",
+    label: "Content Engine",
+    title: "Automated Content Marketing",
+    category: "KI-Automatisierung & Marketing",
+    description:
+      "Ein vollautomatisiertes System für das Content-Marketing und Social-Media-Management. Von der Trend-Analyse via RSS bis hin zur KI-gestützten Content-Erstellung und automatisierten Veröffentlichung auf Twitter, LinkedIn und Instagram.",
+    image: "/images/projects/automated-content-marketing.png",
+    services: [
+      "n8n Workflows",
+      "OpenAI GPT-4",
+      "Social Media APIs",
+      "Auto-Posting",
+    ],
+    challenge:
+      "Die manuelle Erstellung von relevantem Content für verschiedene Plattformen ist zeitaufwendig. Trends gehen oft verloren, bevor sie genutzt werden können, und die konsistente Bespielung aller Kanäle erfordert hohen personellen Aufwand.",
+    solution:
+      "Implementierung eines intelligenten n8n-Workflows, der RSS-Feeds überwacht, Trends extrahiert und mittels GPT-4 plattformspezifische Posts generiert. Ein integriertes Freigabesystem (Slack) und automatisierte Analytics runden den Prozess ab.",
+    results: [
+      { label: "Content-Volumen", value: "+300%" },
+      { label: "Zeitaufwand", value: "-90%" },
+    ],
+  },
+  {
+    id: 10,
+    number: "10",
+    slug: "email-ai-assistant",
+    label: "Email Engine",
+    title: "AI-Powered Customer Support",
+    category: "KI-Automatisierung & Service",
+    description:
+      "Ein intelligenter E-Mail-Assistent für einen Smartphone-Reparaturservice. Das System analysiert eingehende Anfragen via IMAP, extrahiert Hersteller und Modell und generiert mittels AI-Agenten automatisierte, personalisierte Preisangebote auf Basis von Echtzeit-Daten.",
+    image: "/images/projects/alle-emails-abrufen.png",
+    services: [
+      "AI Agents (LangChain)",
+      "n8n Automation",
+      "Ollama / GPT Integration",
+      "E-Mail Workflow",
+    ],
+    challenge:
+      "Kundensupport-Teams verbringen Stunden damit, repetitive Preisanfragen für Reparaturen zu beantworten. Die manuelle Suche nach dem korrekten Preis in komplexen WooCommerce-Katalogen führt zu Verzögerungen und Fehlern.",
+    solution:
+      "Entwicklung eines Agenten-basierten Workflows, der Kundenabsichten erkennt, Produktvarianten im System identifiziert und unter Berücksichtigung der Lagerverfügbarkeit professionelle E-Mail-Antworten in Echtzeit versendet.",
+    results: [
+      { label: "Antwortzeit", value: "< 30 Sek." },
+      { label: "Automatisierungsgrad", value: "85%" },
     ],
   },
 ];
