@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     // OG image — показывается при отправке ссылки в WhatsApp, Telegram, соцсети
     images: [
       {
-        url: "https://invertadigital.de/og-image.jpg",
+        url: "https://invertadigital.de/og-image.png",
         width: 1200,
         height: 630,
         alt: "INVERTA DIGITAL — Digitalagentur der nächsten Generation aus Dresden",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: "Webentwicklung & Performance Marketing Agentur | INVERTA",
     description:
       "Von komplexer Webentwicklung bis zur KI-gestützten Prozessautomatisierung. Wir skalieren Ihr Business durch datengetriebene Strategien.",
-    images: ["https://invertadigital.de/og-image.jpg"],
+    images: ["https://invertadigital.de/og-image.png"],
   },
   robots: {
     index: true,

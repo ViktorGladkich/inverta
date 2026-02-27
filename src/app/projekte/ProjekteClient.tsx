@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, FolderKanban } from "lucide-react";
+import { ArrowUpRight, FolderKanban, Sparkles } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { PROJECTS, type Project } from "@/data/projects";
@@ -189,8 +189,11 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
         className="w-full lg:w-[42%] flex flex-col gap-6 md:gap-8"
       >
-        <div className="flex items-center gap-6">
-          <span className="text-[11px] font-bold text-black tracking-[0.3em] uppercase">
+        <div className="w-fit flex items-center justify-center px-[12px] py-[6px] gap-2 rounded-[60px] bg-white shadow-[0px_0.706592px_0.706592px_-0.541667px_rgba(0,0,0,0.1),0px_1.80656px_1.80656px_-1.08333px_rgba(0,0,0,0.09),0px_3.62176px_3.62176px_-1.625px_rgba(0,0,0,0.09),0px_6.8656px_6.8656px_-2.16667px_rgba(0,0,0,0.09),0px_13.6468px_13.6468px_-2.70833px_rgba(0,0,0,0.08),0px_30px_30px_-3.25px_rgba(0,0,0,0.05),inset_0px_3px_1px_0px_white]">
+          <div className="w-[14px] h-[14px] text-black/40">
+            <Sparkles className="w-full h-full" />
+          </div>
+          <span className="text-[12px] font-medium text-black tracking-widest uppercase mt-px">
             {project.category}
           </span>
         </div>

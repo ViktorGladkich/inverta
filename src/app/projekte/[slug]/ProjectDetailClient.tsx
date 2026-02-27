@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Sparkles } from "lucide-react";
 import { type Project } from "@/data/projects";
 import { FadeIn } from "@/components/ui/FadeIn";
 
@@ -47,7 +47,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
           style={{ y: imageY, opacity }}
           className="absolute inset-0 w-full h-full"
         >
-          <div className="absolute inset-0 bg-black/60 z-10" />
+          <div className="absolute inset-0 bg-black/15 z-10" />
           <div
             className="w-full h-full bg-cover bg-center"
             style={{ backgroundImage: `url(${project.image})` }}
@@ -56,15 +56,18 @@ export function ProjectDetailClient({ project }: { project: Project }) {
 
         <motion.div
           style={{ y: headerY, opacity }}
-          className="relative z-20 px-6 max-w-5xl mx-auto flex flex-col items-center text-center mt-20"
+          className="relative z-20 px-6 max-w-5xl mx-auto flex flex-col items-center text-center"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 backdrop-blur-md mb-8"
+            className="flex items-center justify-center px-[12px] py-[6px] gap-2 rounded-[60px] bg-white shadow-[0px_0.706592px_0.706592px_-0.541667px_rgba(0,0,0,0.1),0px_1.80656px_1.80656px_-1.08333px_rgba(0,0,0,0.09),0px_3.62176px_3.62176px_-1.625px_rgba(0,0,0,0.09),0px_6.8656px_6.8656px_-2.16667px_rgba(0,0,0,0.09),0px_13.6468px_13.6468px_-2.70833px_rgba(0,0,0,0.08),0px_30px_30px_-3.25px_rgba(0,0,0,0.05),inset_0px_3px_1px_0px_white] mb-8"
           >
-            <span className="text-[10px] md:text-[11px] font-bold text-white tracking-[0.2em] uppercase mt-px">
+            <div className="w-[14px] h-[14px] text-black/40">
+              <Sparkles className="w-full h-full" />
+            </div>
+            <span className="text-[12px] font-medium text-black tracking-widest uppercase mt-px">
               {project.category}
             </span>
           </motion.div>
@@ -83,7 +86,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
       </div>
 
       {/* Hauptbereich der Case Study */}
-      <article className="relative z-30 bg-[#f5f5f5] rounded-t-[40px] md:rounded-t-[64px] -mt-10 md:-mt-20 px-6 py-12 md:py-24 shadow-[0_-20px_40px_rgba(0,0,0,0.1)]">
+      <article className="relative z-30 bg-[#f5f5f5]  px-6 py-12 md:py-24 shadow-[0_-20px_40px_rgba(0,0,0,0.1)]">
         <div className="max-w-[1400px] mx-auto">
           {/* Zurück-Navigation */}
           <FadeIn delay={0.05} className="mb-12 md:mb-20">

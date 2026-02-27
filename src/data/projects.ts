@@ -39,6 +39,26 @@ export const PROJECTS: Project[] = [
   {
     id: 2,
     number: "02",
+    slug: "n8n-lead-automation",
+    label: "Lead Engine",
+    title: "CRM Automation mit n8n",
+    category: "KI-Automatisierung & Lead-Gen",
+    description:
+      "Ein hochkomplexes Automatisierungs-System, das den gesamten Lead-Management-Prozess digitalisiert. Von der ersten Anfrage bis zur CRM-Zuweisung und Team-Benachrichtigung erfolgt alles in unter 2 Sekunden – vollautomatisch und fehlerfrei.",
+    image: "/images/projects/n8n.png",
+    services: ["n8n Workflows", "Notion API", "Lead Scoping", "JavaScript"],
+    challenge:
+      "Manuelle Datenübertragung aus Kontaktformularen in CRM-Systeme ist zeitfressend und fehleranfällig. Ohne sofortige Benachrichtigung sinkt die Conversion-Rate (Speed-to-Lead), da potenzielle Kunden zu lange auf eine Rückmeldung warten.",
+    solution:
+      "Implementierung einer zentralen n8n-Instanz als 'Digitaler Vermittler'. Eingehende Webhooks werden gefiltert, mit Custom Code (JavaScript) validiert und formatiert, bevor sie simultan in Notion, Google Sheets und dedizierte Telegram-Channels für das Vertriebsteam gepusht werden.",
+    results: [
+      { label: "Bearbeitungszeit", value: "0 Min." },
+      { label: "Lead-Qualität", value: "100%" },
+    ],
+  },
+  {
+    id: 3,
+    number: "02",
     slug: "ma-bau-gmbh",
     label: "MA Bau GmbH",
     title: "Bau & Solarenergie",
@@ -58,8 +78,28 @@ export const PROJECTS: Project[] = [
     websiteUrl: "https://mabaugmbh.de/",
   },
   {
-    id: 3,
-    number: "03",
+    id: 4,
+    number: "04",
+    slug: "seo-master-automation",
+    label: "SEO Master",
+    title: "SEO Alerts & Reporting",
+    category: "KI-Automatisierung & SEO",
+    description:
+      "Ein intelligentes Monitoring-System zur Automatisierung von SEO-Workflows. Das System überwacht täglich Keyword-Rankings, prüft die Indexierung von Webseiten und sendet automatisierte Reports direkt an Telegram und Google Sheets.",
+    image: "/images/projects/seo-n8n.png",
+    services: ["n8n Workflows", "GSC API", "Telegram Automation", "SEO Tools"],
+    challenge:
+      "Die manuelle Überwachung von Keyword-Rankings und die regelmäßige Überprüfung des Index-Status hunderter URLs ist extrem zeitaufwendig. Ranking-Verluste werden oft erst bemerkt, wenn der Traffic bereits massiv eingebrochen ist.",
+    solution:
+      "Entwicklung eines n8n-Workflows, der die Google Search Console API nutzt, um Daten in Echtzeit zu analysieren. Das System vergleicht tägliche Performance-Werte und alarmiert das Team sofort bei signifikanten Positionsverlusten oder Indexierungs-Problemen.",
+    results: [
+      { label: "Monitoring", value: "24/7" },
+      { label: "Reaktionszeit", value: "< 1 Std." },
+    ],
+  },
+  {
+    id: 5,
+    number: "05",
     slug: "nexora-digital",
     label: "NEXORA Digital",
     title: "High-Performance IT & Web",
@@ -79,8 +119,8 @@ export const PROJECTS: Project[] = [
     websiteUrl: "https://nexora-smoky-omega.vercel.app/",
   },
   {
-    id: 4,
-    number: "04",
+    id: 6,
+    number: "06",
     slug: "ass-security",
     label: "A.S.S. Security",
     title: "Sicherheit & Vertrauen",
@@ -100,8 +140,8 @@ export const PROJECTS: Project[] = [
     websiteUrl: "https://www.ass-security.de/",
   },
   {
-    id: 5,
-    number: "05",
+    id: 7,
+    number: "07",
     slug: "brand-identity",
     label: "Brand Identity",
     title: "Strategisches Branding",
@@ -121,8 +161,8 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    id: 6,
-    number: "06",
+    id: 8,
+    number: "08",
     slug: "system-logic",
     label: "System Logic",
     title: "Backend Architektur & Datensysteme",
@@ -142,8 +182,8 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    id: 7,
-    number: "07",
+    id: 9,
+    number: "09",
     slug: "ki-automatisierung",
     label: "KI Automatisierung",
     title: "Intelligente Workflows",
