@@ -27,6 +27,14 @@ export const metadata: Metadata = {
       "Modernste Webtechnologien treffen auf Awwwards-Design. Skalieren Sie Ihr Business mit performanten Websites und Shops von INVERTA.",
     url: "https://invertadigital.de/webentwicklung",
     type: "website",
+    images: [
+      {
+        url: "https://invertadigital.de/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "INVERTA DIGITAL — Webentwicklung",
+      },
+    ],
   },
 };
 

@@ -26,6 +26,14 @@ export const metadata: Metadata = {
       "Lassen Sie repetitive Aufgaben von unseren KI-Systemen und automatisierten Workflows erledigen. Skalieren Sie Ihr Unternehmen mit INVERTA.",
     url: "https://invertadigital.de/automatisierung",
     type: "website",
+    images: [
+      {
+        url: "https://invertadigital.de/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "INVERTA DIGITAL — Automatisierung",
+      },
+    ],
   },
 };
 

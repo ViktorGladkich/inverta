@@ -26,6 +26,14 @@ export const metadata: Metadata = {
       "Kein Hokuspokus. Wir bringen Ihr Unternehmen durch exzellentes Marketing und kluge SEO-Strategien an die Spitze Ihrer Branche.",
     url: "https://invertadigital.de/marketing",
     type: "website",
+    images: [
+      {
+        url: "https://invertadigital.de/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "INVERTA DIGITAL — Marketing & SEO",
+      },
+    ],
   },
 };
 

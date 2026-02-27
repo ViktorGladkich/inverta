@@ -33,6 +33,14 @@ export const metadata: Metadata = {
       "Skalieren Sie Ihr Unternehmen durch Premium Webdesign, maßgeschneiderte Entwicklungsprozesse und automatisierte KI-Lösungen.",
     url: "https://invertadigital.de",
     type: "website",
+    images: [
+      {
+        url: "https://invertadigital.de/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "INVERTA DIGITAL — Digitalagentur",
+      },
+    ],
   },
 };
 

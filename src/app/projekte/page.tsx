@@ -20,6 +20,14 @@ export const metadata: Metadata = {
     title: "Erfolgreiche Projekte | INVERTA Digital",
     description:
       "Digitale Meisterwerke und Case Studies: Von der Webentwicklung bis hin zu smarten KI-Workflows.",
+    images: [
+      {
+        url: "https://invertadigital.de/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "INVERTA DIGITAL — Projekte",
+      },
+    ],
   },
 };
 
