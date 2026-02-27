@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://invertadigital.de/og-image.png",
+        url: "https://invertadigital.de/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "INVERTA DIGITAL — Marketing & SEO",

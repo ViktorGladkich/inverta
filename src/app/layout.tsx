@@ -10,7 +10,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://invertadigital.de"),
-  title: "Webentwicklung, SEO & KI-Automatisierung Agentur | INVERTA",
+  title: "Premium Webentwicklung & KI-Automatisierung | INVERTA",
   description:
     "Ihre Full-Service Agentur für messbaren Erfolg. Wir kombinieren professionelle Webentwicklung, erstklassiges Webdesign, datengetriebenes Performance Marketing, SEO und KI-Automatisierung für maximales Wachstum.",
   keywords: [
@@ -27,17 +27,17 @@ export const metadata: Metadata = {
     "INVERTA",
   ],
   openGraph: {
-    title: "Webentwicklung & Performance Marketing Agentur | INVERTA",
+    title: "Webentwicklung & KI-Automatisierung | INVERTA",
     description:
       "Von komplexer Webentwicklung bis zur KI-gestützten Prozessautomatisierung. Wir skalieren Ihr Business durch datengetriebene Strategien.",
     type: "website",
     locale: "de_DE",
     url: "https://invertadigital.de",
     siteName: "INVERTA Digital Agency",
-    // OG image — показывается при отправке ссылки в WhatsApp, Telegram, соцсети
+
     images: [
       {
-        url: "https://invertadigital.de/og-image.png",
+        url: "https://invertadigital.de/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "INVERTA DIGITAL — Digitalagentur der nächsten Generation aus Dresden",
@@ -47,10 +47,10 @@ export const metadata: Metadata = {
   // Twitter / X превью
   twitter: {
     card: "summary_large_image",
-    title: "Webentwicklung & Performance Marketing Agentur | INVERTA",
+    title: "Webentwicklung & KI-Automatisierung | INVERTA",
     description:
       "Von komplexer Webentwicklung bis zur KI-gestützten Prozessautomatisierung. Wir skalieren Ihr Business durch datengetriebene Strategien.",
-    images: ["https://invertadigital.de/og-image.png"],
+    images: ["https://invertadigital.de/og-image.jpg"],
   },
   robots: {
     index: true,

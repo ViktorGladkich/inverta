@@ -28,14 +28,14 @@ export const metadata: Metadata = {
     canonical: "https://invertadigital.de",
   },
   openGraph: {
-    title: "Startseite | Webdesign & SEO Agentur | INVERTA",
+    title: "Webentwicklung & KI-Automatisierung | INVERTA",
     description:
       "Skalieren Sie Ihr Unternehmen durch Premium Webdesign, maßgeschneiderte Entwicklungsprozesse und automatisierte KI-Lösungen.",
     url: "https://invertadigital.de",
     type: "website",
     images: [
       {
-        url: "https://invertadigital.de/og-image.png",
+        url: "https://invertadigital.de/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "INVERTA DIGITAL — Digitalagentur",

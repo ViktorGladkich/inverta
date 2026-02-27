@@ -22,7 +22,7 @@ export const metadata: Metadata = {
       "Digitale Meisterwerke und Case Studies: Von der Webentwicklung bis hin zu smarten KI-Workflows.",
     images: [
       {
-        url: "https://invertadigital.de/og-image.png",
+        url: "https://invertadigital.de/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "INVERTA DIGITAL — Projekte",
