@@ -118,6 +118,11 @@ export const SERVICES: ServiceContent[] = [
         description:
           "Nutzen Sie die Reichweite etablierter Persönlichkeiten für Ihre Marke.",
       },
+      {
+        title: "Analyse & Erfolgskontrolle",
+        description:
+          "Wir überwachen alle wichtigen Kennzahlen, um Ihre Strategie kontinuierlich zu optimieren.",
+      },
     ],
   },
   {

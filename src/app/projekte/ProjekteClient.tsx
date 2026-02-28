@@ -5,7 +5,6 @@ import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, FolderKanban, Sparkles } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
-import { FadeIn } from "@/components/ui/FadeIn";
 import { PROJECTS, type Project } from "@/data/projects";
 import { CTASection } from "@/components/sections/CTASection";
 
@@ -34,42 +33,61 @@ export function ProjekteClient() {
 
       <main className="relative z-10 bg-[#f5f5f5] rounded-t-[40px] md:rounded-t-[64px] overflow-hidden selection:bg-[#daff02] selection:text-black">
         {/* Einleitung mit Fokus auf unsere Kernkompetenzen für besseres SEO */}
-        <section className="pt-15 md:pt-20 pb-12 md:pb-24 px-6">
-          <div className="max-w-[1400px] mx-auto">
-            <div className="flex flex-col items-center text-center gap-6 mb-16">
-              <FadeIn>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-black/5 shadow-sm">
-                  <FolderKanban className="w-3.5 h-3.5 text-black/40" />
-                  <span className="text-[11px] font-semibold text-black tracking-widest uppercase mt-px">
-                    Portfolio
-                  </span>
-                </div>
-              </FadeIn>
-
-              <div className="max-w-4xl">
-                <motion.h2
-                  className="text-4xl md:text-6xl font-medium tracking-tight text-black mb-6"
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                >
-                  Digitale Lösungen, die <br />
-                  <span className="relative inline-block">
-                    <span className="absolute bottom-1 md:bottom-2 left-0 w-full h-4 bg-[#daff02] z-0" />
-                    <span className="relative z-10">Märkte dominieren.</span>
-                  </span>
-                </motion.h2>
-                <h3 className="text-lg md:text-xl text-black/80 font-normal leading-relaxed max-w-2xl mx-auto">
-                  Wir verbinden professionelle <strong>Webentwicklung</strong>,
-                  anspruchsvolles <strong>Webdesign</strong>, datengetriebene{" "}
-                  <strong>SEO-Strategien</strong> und gezieltes{" "}
-                  <strong>Performance Marketing</strong>, um messbares Wachstum
-                  für unsere Kunden zu erzielen. Entdecken Sie unsere Case
-                  Studies und smarte Lösungen im Bereich{" "}
-                  <strong>KI-Automatisierung</strong>.
-                </h3>
+        <section className="pt-15 md:pt-20 pb-12 md:pb-24 px-6 text-center">
+          <div className="max-w-[1400px] mx-auto flex flex-col items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="mb-8"
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-black/5 shadow-sm">
+                <FolderKanban className="w-3.5 h-3.5 text-black/40" />
+                <span className="text-[11px] font-semibold text-black tracking-widest uppercase mt-px">
+                  Portfolio
+                </span>
               </div>
+            </motion.div>
+
+            <div className="max-w-4xl flex flex-col items-center text-center uppercase">
+              <motion.h2
+                className="text-4xl md:text-6xl font-medium tracking-tight text-black mb-6"
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{
+                  duration: 0.9,
+                  delay: 0.1,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+              >
+                Digitale Lösungen, die <br />
+                <span className="relative inline-block">
+                  <span className="absolute bottom-1 md:bottom-2 left-0 w-full h-4 bg-[#daff02] z-0" />
+                  <span className="relative z-10">Märkte dominieren.</span>
+                </span>
+              </motion.h2>
+
+              <motion.h3
+                className="text-lg md:text-xl text-black/80 font-normal leading-relaxed max-w-2xl mx-auto lowercase first-letter:uppercase"
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{
+                  duration: 0.9,
+                  delay: 0.2,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+              >
+                Wir verbinden professionelle <strong>Webentwicklung</strong>,
+                anspruchsvolles <strong>Webdesign</strong>, datengetriebene{" "}
+                <strong>SEO-Strategien</strong> und gezieltes{" "}
+                <strong>Performance Marketing</strong>, um messbares Wachstum
+                für unsere Kunden zu erzielen. Entdecken Sie unsere Case Studies
+                und smarte Lösungen im Bereich{" "}
+                <strong>KI-Automatisierung</strong>.
+              </motion.h3>
             </div>
           </div>
         </section>

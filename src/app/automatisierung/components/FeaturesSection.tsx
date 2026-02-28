@@ -20,7 +20,11 @@ export function FeaturesSection() {
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col items-center text-center gap-6 mb-16 md:mb-24">
           {/* Label-Badge: Kernkompetenzen */}
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="flex items-center justify-center px-[12px] py-[6px] gap-2 rounded-[60px] bg-[#f5f5f5]"
             style={{ boxShadow: NEUMORPHIC_SHADOW }}
           >
@@ -30,24 +34,38 @@ export function FeaturesSection() {
             <span className="text-[12px] font-medium text-black tracking-wider uppercase">
               Kernkompetenzen
             </span>
-          </div>
+          </motion.div>
 
           <div className="max-w-3xl">
             <motion.h2
               className="text-4xl md:text-6xl font-medium tracking-tight text-black mb-6"
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                duration: 0.9,
+                delay: 0.1,
+                ease: [0.16, 1, 0.3, 1],
+              }}
             >
               Was wir automatisieren.
             </motion.h2>
-            <p className="text-lg md:text-xl text-black font-normal leading-relaxed">
+            <motion.p
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{
+                duration: 0.9,
+                delay: 0.2,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              className="text-lg md:text-xl text-black font-normal leading-relaxed"
+            >
               Wir transformieren Ihre manuellen Prozesse in hochperformante
               digitale Workflows. Von der KI-basierten Datenanalyse bis hin zur
               skalierbaren <strong>Webentwicklung</strong> — wir erschaffen
               Systeme, die wie ein Uhrwerk für Sie arbeiten.
-            </p>
+            </motion.p>
           </div>
         </div>
 

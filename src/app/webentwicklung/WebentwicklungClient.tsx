@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Monitor } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
-import { FadeIn } from "@/components/ui/FadeIn";
 import { CTASection } from "@/components/sections/CTASection";
 import { ServiceBentoGrid } from "@/components/sections/ServiceBentoGrid";
 import { ServiceMethodology } from "@/components/sections/ServiceMethodology";
@@ -64,6 +63,11 @@ const METHODOLOGY_STEPS = [
     title: "Launch & Scale",
     desc: "Intensive Pre-Launch Tests und ein makelloses Deployment zeichnen unsere Arbeit als Premium Webentwicklung Agentur aus. Auch nach dem Launch betreuen wir Ihre Codebase kontinuierlich weiter und skalieren Ihre Plattform in neuen Iterationen.",
   },
+  {
+    num: "04",
+    title: "Product Evolution",
+    desc: "Wir sehen Software als lebendigen Organismus. Durch datenbasiertes User-Feedback und technologische Roadmaps entwickeln wir Ihr Produkt kontinuierlich weiter, um es technologisch immer an der Weltspitze zu halten.",
+  },
 ];
 
 export function WebentwicklungClient() {
@@ -82,21 +86,31 @@ export function WebentwicklungClient() {
         {/* Intro Section */}
         <section className="pt-20 md:pt-32 pb-12 md:pb-20 px-6">
           <div className="max-w-[1400px] mx-auto flex flex-col items-center text-center">
-            <FadeIn>
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-black/10 bg-white shadow-sm mb-8">
                 <Monitor className="w-4 h-4 text-black/40" />
                 <span className="text-xs font-bold tracking-widest text-black uppercase mt-px">
                   Webentwicklung
                 </span>
               </div>
-            </FadeIn>
-            <div className="max-w-4xl flex flex-col items-center">
+            </motion.div>
+
+            <div className="max-w-4xl flex flex-col items-center uppercase">
               <motion.h2
                 className="text-4xl md:text-6xl font-medium tracking-tight text-black mb-6"
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                transition={{
+                  duration: 0.9,
+                  delay: 0.1,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
               >
                 Code, der <br />
                 <span className="relative inline-block">
@@ -104,11 +118,22 @@ export function WebentwicklungClient() {
                   <span className="relative z-10">Maßstäbe setzt.</span>
                 </span>
               </motion.h2>
-              <h3 className="text-lg md:text-xl text-black/80 font-normal leading-relaxed max-w-2xl">
+
+              <motion.h3
+                className="text-lg md:text-xl text-black/80 font-normal leading-relaxed max-w-2xl lowercase first-letter:uppercase"
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{
+                  duration: 0.9,
+                  delay: 0.2,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+              >
                 Wir programmieren nicht einfach nur Websites. Wir erschaffen{" "}
                 <strong>interaktive Premium-Erlebnisse</strong>, die sowohl
                 durch Design als auch durch Performance überzeugen.
-              </h3>
+              </motion.h3>
             </div>
           </div>
         </section>

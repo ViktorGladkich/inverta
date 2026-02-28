@@ -78,7 +78,7 @@ export function CTASection() {
                     <ArrowRight className="w-4 h-4 md:w-5 md:h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
                   </div>
 
-                  <span className="relative z-10 font-bold text-[10px] sm:text-sm md:text-base tracking-[0.1em] sm:tracking-widest uppercase transition-colors duration-500 group-hover:text-black whitespace-nowrap">
+                  <span className="relative z-10 font-bold text-[10px] sm:text-sm md:text-base tracking-widest sm:tracking-widest uppercase transition-colors duration-500 group-hover:text-black whitespace-nowrap">
                     Kostenloses Erstgespräch
                   </span>
                 </Link>

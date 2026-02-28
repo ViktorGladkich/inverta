@@ -23,29 +23,43 @@ export function IntroSection() {
     >
       <div className="px-6 md:px-12 lg:px-20 max-w-[1600px] mx-auto">
         <div className="flex justify-center mb-16 md:mb-24">
-          <FadeIn>
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-black/5 shadow-sm">
               <Sparkles className="w-3.5 h-3.5 text-black/40" />
               <span className="text-[11px] font-semibold text-black tracking-widest uppercase mt-px">
                 Unsere Philosophie
               </span>
             </div>
-          </FadeIn>
+          </motion.div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-16 lg:gap-24 items-start">
           {/* Linke Spalte — Fixierter visueller Block (Sticky) */}
           <div className="lg:sticky lg:top-32 flex flex-col gap-12">
             <div className="flex flex-col gap-10">
-              <FadeIn delay={0.1}>
-                <h2 className="text-5xl md:text-7xl lg:text-7xl font-medium tracking-tight text-black leading-[1.05]">
+              <motion.div
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{
+                  duration: 0.9,
+                  delay: 0.1,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+              >
+                <h2 className="text-5xl md:text-7xl lg:text-7xl font-medium tracking-tight text-black leading-[1.05] text-center md:text-left">
                   Zeit ist das einzige{" "}
                   <span className="relative inline-block">
                     <span className="absolute bottom-1 left-0 w-full h-4 bg-[#daff02] z-0" />
                     <span className="relative z-10">Luxusgut.</span>
                   </span>
                 </h2>
-              </FadeIn>
+              </motion.div>
             </div>
 
             <FadeIn delay={0.4}>

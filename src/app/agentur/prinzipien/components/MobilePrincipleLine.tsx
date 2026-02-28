@@ -56,15 +56,15 @@ export function MobilePrincipleLine({
         </h3>
       </div>
 
-      <div className="pl-[92px] flex flex-col gap-4">
-        <p className="text-xs text-black font-normal leading-relaxed max-w-md">
+      <div className="pl-[82px] md:pl-[92px] flex flex-col gap-4">
+        <p className="text-[15px] text-black font-normal leading-relaxed max-w-md">
           {principle.description}
         </p>
-        <div className="flex flex-wrap gap-1.5">
+        <div className="flex flex-row flex-nowrap items-center gap-1 w-full overflow-visible">
           {principle.tags.map((tag) => (
             <span
               key={tag}
-              className="inline-flex items-center justify-center px-3 py-1.5 rounded-full text-[8px] font-bold tracking-widest uppercase bg-[#f5f5f5] text-black whitespace-nowrap"
+              className="inline-flex items-center justify-center px-2 py-1 rounded-full text-[7px] font-black tracking-wider uppercase bg-white text-black whitespace-nowrap border border-black/5"
               style={{ boxShadow: NEUMORPHIC_SHADOW }}
             >
               {tag}

@@ -71,7 +71,7 @@ export function DesktopPrincipleLine({
         style={{ opacity: contentOpacity }}
         className="flex flex-col sm:flex-row gap-2 sm:gap-6 pb-1 pl-[88px] md:pl-[124px]"
       >
-        <p className="text-xs text-black font-normal leading-relaxed max-w-md flex-1">
+        <p className="text-sm text-black font-normal leading-relaxed max-w-md flex-1">
           {principle.description}
         </p>
       </motion.div>

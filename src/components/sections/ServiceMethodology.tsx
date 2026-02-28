@@ -1,6 +1,6 @@
 "use client";
 
-import { FadeIn } from "@/components/ui/FadeIn";
+import { motion } from "framer-motion";
 
 type StepItem = {
   num: string;
@@ -30,7 +30,12 @@ export function ServiceMethodology({
           {/* Sticky Left */}
           <aside className="lg:w-1/3">
             <div className="sticky top-32 flex flex-col gap-6">
-              <FadeIn>
+              <motion.div
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              >
                 <span className="text-[#daff02] text-sm font-bold tracking-[0.3em] uppercase">
                   {subtitle}
                 </span>
@@ -41,17 +46,27 @@ export function ServiceMethodology({
                 <p className="text-white/50 text-lg md:text-xl mt-8 font-light max-w-sm leading-relaxed">
                   {description}
                 </p>
-              </FadeIn>
+              </motion.div>
             </div>
           </aside>
 
           {/* Scrolling Right */}
           <div className="lg:w-2/3 flex flex-col gap-0 border-t border-white/10 mt-12 lg:mt-0">
             {steps.map((step, i) => (
-              <FadeIn key={i} delay={0.1}>
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{
+                  duration: 0.9,
+                  delay: i * 0.1,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+              >
                 <article className="group border-b border-white/10 py-12 md:py-24 transition-colors duration-700 hover:border-[#daff02]/30">
                   <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
-                    <span className="text-6xl md:text-8xl font-light text-white/5 group-hover:text-[#daff02] transition-colors duration-700 md:mt-[-10px]">
+                    <span className="text-6xl md:text-8xl font-light text-[#daff02] md:text-white/5 group-hover:text-[#daff02] transition-colors duration-700 md:mt-[-10px]">
                       {step.num}
                     </span>
                     <div className="flex flex-col gap-6 flex-1 mt-2 md:mt-0">
@@ -64,7 +79,7 @@ export function ServiceMethodology({
                     </div>
                   </div>
                 </article>
-              </FadeIn>
+              </motion.div>
             ))}
           </div>
         </div>
