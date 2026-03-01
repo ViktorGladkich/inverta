@@ -36,7 +36,7 @@ export function GalaxyHero() {
       opacity: 1,
       scale: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
     },
   };
 
@@ -46,7 +46,7 @@ export function GalaxyHero() {
       opacity: 1,
       scale: 1,
       y: 0,
-      transition: { duration: 1.0, ease: "easeOut" },
+      transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] },
     },
   };
 
@@ -56,7 +56,7 @@ export function GalaxyHero() {
       opacity: 1,
       scale: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "circOut" },
+      transition: { duration: 1.0, ease: [0.22, 1, 0.36, 1] },
     },
   };
 
@@ -66,7 +66,7 @@ export function GalaxyHero() {
       opacity: 1,
       scale: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" }, // Fallback
+      transition: { duration: 1.0, ease: [0.22, 1, 0.36, 1] }, // Fallback
     },
   };
 

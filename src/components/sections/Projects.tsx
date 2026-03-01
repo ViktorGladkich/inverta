@@ -131,10 +131,10 @@ export function Projects() {
       <div className="w-full px-[40px]">
         {/* Header - Standardized Style */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col items-center text-center gap-6 mb-16 md:mb-24"
         >
           {/* Badge */}
@@ -161,10 +161,10 @@ export function Projects() {
 
         {/* Content Area - Single Unified Card */}
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
           className="max-w-6xl mx-auto rounded-[20px] bg-[#f5f5f5] p-6 md:p-8 flex flex-col gap-8"
           style={{ boxShadow: neumorphicShadow }}
         >
