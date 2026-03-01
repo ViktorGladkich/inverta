@@ -44,12 +44,12 @@ export function Technology() {
   };
 
   const slideUp: Variants = {
-    hidden: { opacity: 0, x: 0, y: 30 },
+    hidden: { opacity: 0, x: 0, y: 50 },
     visible: {
       opacity: 1,
       x: 0,
       y: 0,
-      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
   return (

@@ -52,10 +52,10 @@ export function Testimonials() {
     >
       <div className="w-full  px-6 md:px-[40px] max-w-[1400px] mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
           className="flex flex-col items-center text-center gap-6 mb-12 md:mb-16"
         >
           <div className="w-fit flex items-center px-[12px] py-[6px] gap-2 rounded-[60px] bg-[#f5f5f5] shadow-[inset_0px_3px_1px_0px_white,0px_2px_4px_rgba(0,0,0,0.05)]">
@@ -80,8 +80,8 @@ export function Testimonials() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
             className="w-full rounded-[20px] bg-[#f5f5f5] px-6 py-10 md:px-10 md:pt-[60px] md:pb-10 flex flex-col justify-center items-center gap-6 h-full min-h-[300px] text-center"
             style={{
               boxShadow:
@@ -123,8 +123,8 @@ export function Testimonials() {
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="w-full rounded-[20px] bg-[#f5f5f5] p-[20px] relative h-full min-h-[250px] lg:min-h-auto shadow-lg flex flex-col"
             style={{
               boxShadow:
@@ -146,14 +146,10 @@ export function Testimonials() {
           {testimonials.map((t, i) => (
             <motion.div
               key={t.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{
-                duration: 0.8,
-                ease: [0.22, 1, 0.36, 1],
-                delay: 0.1 + i * 0.1,
-              }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
               className="rounded-[16px] bg-[#f5f5f5] p-6 flex flex-col justify-between gap-4"
               style={{
                 boxShadow:

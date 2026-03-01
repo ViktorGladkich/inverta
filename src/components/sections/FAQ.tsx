@@ -65,25 +65,13 @@ export function FAQ() {
         {/* Accordion */}
         <div className="w-full flex flex-col gap-4">
           {faqs.map((faq, index) => (
-            <motion.div
+            <FAQItem
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{
-                duration: 0.8,
-                ease: [0.22, 1, 0.36, 1],
-                delay: index * 0.1,
-              }}
-              className="w-full"
-            >
-              <FAQItem
-                question={faq.question}
-                answer={faq.answer}
-                isOpen={openIndex === index}
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-              />
-            </motion.div>
+              question={faq.question}
+              answer={faq.answer}
+              isOpen={openIndex === index}
+              onClick={() => setOpenIndex(openIndex === index ? null : index)}
+            />
           ))}
         </div>
 
