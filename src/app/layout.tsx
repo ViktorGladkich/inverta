@@ -44,7 +44,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  // Twitter / X превью
+  
   twitter: {
     card: "summary_large_image",
     title: "Webentwicklung & KI-Automatisierung | INVERTA",
