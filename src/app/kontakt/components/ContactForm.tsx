@@ -20,6 +20,7 @@ export function ContactForm() {
     const data = {
       name: `${formData.get("vorname")} ${formData.get("nachname")}`,
       email: formData.get("email"),
+      phone: formData.get("phone"),
       company: formData.get("company"),
       service: formData.get("service"),
       message: formData.get("message"),
@@ -151,13 +152,31 @@ export function ContactForm() {
                 />
               </div>
 
+              {/* Eingabefeld: Telefon */}
+              <div className="flex flex-col gap-2">
+                <label
+                  htmlFor="phone"
+                  className="text-xs tracking-[0.15em] font-semibold uppercase text-black"
+                >
+                  04. Ihre Telefonnummer
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="+49 123 456 789"
+                  disabled={status === "loading"}
+                  className="w-full bg-transparent border-b border-black pb-4 pt-2 text-xl md:text-2xl font-normal placeholder:text-black/20 focus:outline-none focus:border-black transition-colors rounded-none disabled:opacity-50"
+                />
+              </div>
+
               {/* Eingabefeld: Unternehmen */}
               <div className="flex flex-col gap-2">
                 <label
                   htmlFor="company"
                   className="text-xs tracking-[0.15em] font-semibold uppercase text-black"
                 >
-                  04. Ihr Unternehmen
+                  05. Ihr Unternehmen
                 </label>
                 <input
                   type="text"
@@ -175,7 +194,7 @@ export function ContactForm() {
                   htmlFor="service"
                   className="text-xs tracking-[0.15em] font-semibold uppercase text-black"
                 >
-                  05. Wofür interessieren Sie sich?
+                  06. Wofür interessieren Sie sich?
                 </label>
                 <select
                   id="service"
@@ -200,7 +219,7 @@ export function ContactForm() {
                   htmlFor="message"
                   className="text-xs tracking-[0.15em] font-semibold uppercase text-black"
                 >
-                  06. Ihr Projekt
+                  07. Ihr Projekt
                 </label>
                 <textarea
                   id="message"

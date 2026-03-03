@@ -1,13 +1,12 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
-import AutoReplyEmail from "@/emails/CustomerAutoReply";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, email, company, service, message } = body;
+    const { name, email, phone, company, service, message } = body;
 
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -17,8 +16,8 @@ export async function POST(req: Request) {
     }
 
     const data = await resend.emails.send({
-      from: "INVERTA DIGITAL <hello@invertadigital.de>", // The domain must be verified in Resend for this to work
-      to: ["info@invertadigital.de"], // Replace with your desired inward email
+      from: "INVERTA DIGITAL <hello@invertadigital.de>",
+      to: ["info@invertadigital.de"],
       subject: `Neue Projektanfrage von ${name} - ${company || "Ohne Unternehmen"}`,
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px; color: #000;">
@@ -37,6 +36,12 @@ export async function POST(req: Request) {
                   <a href="mailto:${email}" style="color: #000; text-decoration: underline;">
                     ${email}
                   </a>
+                </td>
+              </tr>
+              <tr style="border-top: 1px solid #eee;">
+                <td style="padding: 10px 0; font-weight: bold;">Telefon:</td>
+                <td style="padding: 10px 0;">
+                  ${phone ? `<a href="tel:${phone}" style="color: #000; text-decoration: underline;">${phone}</a>` : "-"}
                 </td>
               </tr>
               <tr style="border-top: 1px solid #eee;">
@@ -64,26 +69,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: data.error.message }, { status: 400 });
     }
 
-    // --- 2. Auto-Reply to the Customer ---
-    const mappedService =
-      service === "marketing"
-        ? "Marketing & SEO"
-        : service === "webdev"
-          ? "Webentwicklung"
-          : service === "automation"
-            ? "KI & Automatisierung"
-            : "Digitale Lösungen";
-
-    await resend.emails.send({
-      from: "INVERTA DIGITAL <hello@invertadigital.de>",
-      to: [email],
-      subject: "Wir haben Ihre Anfrage erhalten | INVERTA DIGITAL",
-      react: AutoReplyEmail({
-        name: name,
-        service: mappedService,
-      }),
-    });
-
+    // Send lead data to n8n webhook (auto-reply is handled by n8n)
     try {
       await fetch(process.env.N8N_LEAD_WEBHOOK_URL!, {
         method: "POST",

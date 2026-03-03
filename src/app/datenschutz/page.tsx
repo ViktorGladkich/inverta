@@ -21,7 +21,7 @@ export default function DatenschutzPage() {
               Datenschutz&shy;erklärung
             </h1>
             <p className="text-lg text-black/60 font-medium">
-              Stand: Februar 2026
+              Stand: März 2026
             </p>
           </div>
 
@@ -53,7 +53,7 @@ export default function DatenschutzPage() {
               <p className="text-black/80 leading-relaxed">
                 Die Datenverarbeitung auf dieser Website erfolgt durch den
                 Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt
-                „Hinweis zur verantwortlichen Stelle“ in dieser
+                &bdquo;Hinweis zur verantwortlichen Stelle&ldquo; in dieser
                 Datenschutzerklärung entnehmen.
               </p>
               <p className="text-black/80 leading-relaxed font-semibold">
@@ -61,10 +61,13 @@ export default function DatenschutzPage() {
               </p>
               <p className="text-black/80 leading-relaxed">
                 Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese
-                mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie
-                in ein Kontaktformular eingeben. Andere Daten werden automatisch
-                oder nach Ihrer Einwilligung beim Besuch der Website durch
-                unsere IT-Systeme erfasst.
+                mitteilen. Hierbei kann es sich z.&nbsp;B. um Daten handeln, die
+                Sie in ein Kontaktformular eingeben. Andere Daten werden
+                automatisch oder nach Ihrer Einwilligung beim Besuch der Website
+                durch unsere IT-Systeme erfasst. Das sind vor allem technische
+                Daten (z.&nbsp;B. Internetbrowser, Betriebssystem oder Uhrzeit
+                des Seitenaufrufs). Die Erfassung dieser Daten erfolgt
+                automatisch, sobald Sie diese Website betreten.
               </p>
               <p className="text-black/80 leading-relaxed font-semibold">
                 Wofür nutzen wir Ihre Daten?
@@ -95,52 +98,91 @@ export default function DatenschutzPage() {
             {/* Section 2 */}
             <section className="space-y-4">
               <h2 className="text-2xl md:text-3xl font-bold tracking-tight uppercase border-t border-black/10 pt-10">
-                2. Hosting
+                2. Hosting und Infrastruktur
               </h2>
 
               <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
                 Website-Hosting (Vercel)
               </h3>
               <p className="text-black/80 leading-relaxed">
-                Diese Website wird über Vercel gehostet. Die personenbezogenen
-                Daten, die auf dieser Website erfasst werden, werden auf den
-                Servern von Vercel gespeichert. Hierbei kann es sich v. a. um
-                IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten,
-                Vertragsdaten, Kontaktdaten, Namen sowie Websitezugriffe
-                handeln.
+                Diese Website wird über die Plattform Vercel gehostet. Die
+                personenbezogenen Daten, die auf dieser Website erfasst werden,
+                werden auf den Servern von Vercel gespeichert. Hierbei kann es
+                sich v.&nbsp;a. um IP-Adressen, Kontaktanfragen, Meta- und
+                Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen sowie
+                Websitezugriffe handeln.
               </p>
               <p className="text-black/80 leading-relaxed">
                 Der Einsatz des Hosters erfolgt zum Zwecke der Vertragserfüllung
                 gegenüber unseren potenziellen und bestehenden Kunden (Art. 6
                 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen
                 und effizienten Bereitstellung unseres Online-Angebots (Art. 6
-                Abs. 1 lit. f DSGVO).
+                Abs. 1 lit. f DSGVO). Soweit eine entsprechende Einwilligung
+                abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf
+                Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG.
               </p>
               <div className="bg-black/5 p-6 rounded-2xl text-black/90 font-medium">
                 <strong>Vercel Inc.</strong>
                 <br />
                 440 N Barranca Ave #4133
                 <br />
-                Covina, CA 91731, USA
+                Covina, CA 91723, USA
+                <br />
+                Datenschutz:{" "}
+                <a
+                  href="https://vercel.com/legal/privacy-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                >
+                  vercel.com/legal/privacy-policy
+                </a>
               </div>
 
               <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
-                Automatisierungs-Server (Hetzner)
+                Automatisierungs- und Datenbankserver (Hetzner)
               </h3>
               <p className="text-black/80 leading-relaxed">
-                Für die Verarbeitung von Kontaktanfragen und die interne
-                Prozessautomatisierung betreiben wir einen eigenen Server bei
-                Hetzner Online GmbH. Auf diesem Server läuft unsere
-                Automatisierungslösung (n8n), die eingehende Anfragen
-                verarbeitet, intern weiterleitet und in unserem
-                Projektmanagementsystem (Notion) speichert. Der Server befindet
-                sich in einem deutschen Rechenzentrum (Nürnberg, Deutschland)
-                und unterliegt damit vollständig der DSGVO.
+                Für die Verarbeitung von Kontaktanfragen, die interne
+                Prozessautomatisierung sowie die Speicherung von Kundendaten
+                betreiben wir einen eigenen dedizierten Server bei der Hetzner
+                Online GmbH. Auf diesem Server laufen ausschließlich
+                selbstgehostete Open-Source-Anwendungen:
+              </p>
+              <ul className="space-y-2 text-black/80">
+                <li className="flex gap-2">
+                  <span className="font-bold shrink-0">—</span>
+                  <span>
+                    <strong>n8n</strong> (Workflow-Automatisierung) — zur
+                    automatisierten Verarbeitung eingehender Kontaktanfragen
+                    sowie zur Erzeugung und Versendung individueller
+                    Antwort-E-Mails mittels KI-gestützter Textgenerierung.
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="font-bold shrink-0">—</span>
+                  <span>
+                    <strong>Baserow</strong> (Datenbankverwaltung) — zur
+                    strukturierten Speicherung und Verwaltung von Kontakt- und
+                    Projektdaten. Baserow wird als Open-Source-Lösung
+                    vollständig auf unserem eigenen Server betrieben; es erfolgt
+                    keine Datenweitergabe an Dritte.
+                  </span>
+                </li>
+              </ul>
+              <p className="text-black/80 leading-relaxed">
+                Der Server befindet sich in einem deutschen Rechenzentrum
+                (Nürnberg, Deutschland) und unterliegt damit vollständig den
+                Bestimmungen der DSGVO. Sämtliche personenbezogenen Daten
+                verbleiben auf diesem Server innerhalb der Bundesrepublik
+                Deutschland. Eine Übermittlung in Drittstaaten findet über
+                diesen Verarbeitungsweg nicht statt.
               </p>
               <p className="text-black/80 leading-relaxed">
                 Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b
                 DSGVO (Vertragsanbahnung) sowie Art. 6 Abs. 1 lit. f DSGVO
-                (berechtigtes Interesse an effizienter Anfragenbearbeitung).
+                (berechtigtes Interesse an einer effizienten und strukturierten
+                Anfragenbearbeitung).
               </p>
               <div className="bg-black/5 p-6 rounded-2xl text-black/90 font-medium">
                 <strong>Hetzner Online GmbH</strong>
@@ -150,6 +192,16 @@ export default function DatenschutzPage() {
                 91710 Gunzenhausen, Deutschland
                 <br />
                 Serverstandort: Nürnberg, Deutschland
+                <br />
+                Datenschutz:{" "}
+                <a
+                  href="https://www.hetzner.com/de/rechtliches/datenschutz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                >
+                  hetzner.com/de/rechtliches/datenschutz
+                </a>
               </div>
             </section>
 
@@ -166,7 +218,19 @@ export default function DatenschutzPage() {
                 Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen
                 Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten
                 vertraulich und entsprechend den gesetzlichen
-                Datenschutzvorschriften sowie dieser Datenschutzerklärung.
+                Datenschutzvorschriften sowie dieser Datenschutzerklärung. Wenn
+                Sie diese Website benutzen, werden verschiedene personenbezogene
+                Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie
+                persönlich identifiziert werden können. Die vorliegende
+                Datenschutzerklärung erläutert, welche Daten wir erheben und
+                wofür wir sie nutzen. Sie erläutert auch, wie und zu welchem
+                Zweck das geschieht.
+              </p>
+              <p className="text-black/80 leading-relaxed">
+                Wir weisen darauf hin, dass die Datenübertragung im Internet
+                (z.&nbsp;B. bei der Kommunikation per E-Mail) Sicherheitslücken
+                aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff
+                durch Dritte ist nicht möglich.
               </p>
 
               <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
@@ -187,6 +251,12 @@ export default function DatenschutzPage() {
                 <br />
                 E-Mail: info@invertadigital.de
               </div>
+              <p className="text-black/80 leading-relaxed">
+                Verantwortliche Stelle ist die natürliche oder juristische
+                Person, die allein oder gemeinsam mit anderen über die Zwecke
+                und Mittel der Verarbeitung von personenbezogenen Daten
+                (z.&nbsp;B. Namen, E-Mail-Adressen o.&nbsp;Ä.) entscheidet.
+              </p>
 
               <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
                 Speicherdauer
@@ -198,18 +268,40 @@ export default function DatenschutzPage() {
                 Wenn Sie ein berechtigtes Löschersuchen geltend machen oder eine
                 Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten
                 gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe
-                für die Speicherung haben.
+                für die Speicherung Ihrer personenbezogenen Daten haben
+                (z.&nbsp;B. steuer- oder handelsrechtliche
+                Aufbewahrungsfristen); im letztgenannten Fall erfolgt die
+                Löschung nach Fortfall dieser Gründe.
+              </p>
+
+              <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
+                Hinweis zur Datenweitergabe in Drittstaaten
+              </h3>
+              <p className="text-black/80 leading-relaxed">
+                Wir legen besonderen Wert darauf, personenbezogene Daten
+                überwiegend innerhalb der Europäischen Union bzw. des
+                Europäischen Wirtschaftsraums zu verarbeiten. Soweit wir
+                Dienstleister einsetzen, die ihren Sitz in den USA haben
+                (Vercel, Resend), stellen wir sicher, dass diese nach dem
+                EU-US-Datenschutzrahmen (Data Privacy Framework) zertifiziert
+                sind oder gleichwertige Garantien gemäß Art. 46 DSGVO bieten.
+                Unsere Kerndatenverarbeitung (Automatisierung, Datenbank)
+                erfolgt ausschließlich auf unserem eigenen Server in
+                Deutschland.
               </p>
 
               <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
                 SSL- bzw. TLS-Verschlüsselung
               </h3>
               <p className="text-black/80 leading-relaxed">
-                Diese Seite nutzt aus Sicherheitsgründen eine SSL- bzw.
+                Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der
+                Übertragung vertraulicher Inhalte eine SSL- bzw.
                 TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie
-                daran, dass die Adresszeile des Browsers von „http://“ auf
-                „https://“ wechselt und an dem Schloss-Symbol in Ihrer
-                Browserzeile.
+                daran, dass die Adresszeile des Browsers von
+                &bdquo;http://&ldquo; auf &bdquo;https://&ldquo; wechselt und an
+                dem Schloss-Symbol in Ihrer Browserzeile. Wenn die SSL- bzw.
+                TLS-Verschlüsselung aktiviert ist, können die Daten, die Sie an
+                uns übermitteln, nicht von Dritten mitgelesen werden.
               </p>
             </section>
 
@@ -225,10 +317,11 @@ export default function DatenschutzPage() {
               <p className="text-black/80 leading-relaxed">
                 Wenn Sie uns per Kontaktformular Anfragen zukommen lassen,
                 werden Ihre Angaben aus dem Anfrageformular inklusive der von
-                Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der
-                Anfrage und für den Fall von Anschlussfragen bei uns
-                gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung
-                weiter.
+                Ihnen dort angegebenen Kontaktdaten (Name, E-Mail-Adresse,
+                Telefonnummer, Unternehmen, gewünschte Leistung, Nachricht)
+                zwecks Bearbeitung der Anfrage und für den Fall von
+                Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht
+                ohne Ihre Einwilligung weiter.
               </p>
               <p className="text-black/80 leading-relaxed">
                 Bei der Übermittlung Ihrer Kontaktanfrage werden folgende Daten
@@ -237,40 +330,80 @@ export default function DatenschutzPage() {
               <ul className="list-none space-y-3 mt-4">
                 <li className="bg-black/5 p-4 rounded-xl text-black/80">
                   <strong>Resend (E-Mail-Versand):</strong> Ihre Anfrage wird
-                  per E-Mail an uns weitergeleitet und Sie erhalten eine
-                  automatische Bestätigungs-E-Mail. Anbieter: Resend Inc., 2261
-                  Market Street #5039, San Francisco, CA 94114, USA. Die
-                  Verarbeitung erfolgt auf Basis eines
-                  Auftragsverarbeitungsvertrags. Resend ist nach dem
+                  per E-Mail an unser internes Postfach weitergeleitet.
+                  Anbieter: Resend Inc., 2261 Market Street #5039, San
+                  Francisco, CA 94114, USA. Die Verarbeitung erfolgt auf Basis
+                  eines Auftragsverarbeitungsvertrags. Resend ist nach dem
                   EU-US-Datenschutzrahmen (Data Privacy Framework) zertifiziert.
+                  Resend erhält ausschließlich die zur E-Mail-Zustellung
+                  erforderlichen Daten und verarbeitet diese nicht für eigene
+                  Zwecke.
                 </li>
                 <li className="bg-black/5 p-4 rounded-xl text-black/80">
-                  <strong>n8n (Prozessautomatisierung):</strong> Ihre Anfrage
-                  wird auf unserem Hetzner-Server (Deutschland) automatisiert
-                  verarbeitet — zur internen Benachrichtigung und Speicherung im
-                  Projektmanagementsystem. Keine Weitergabe an Dritte.
+                  <strong>n8n (Prozessautomatisierung, Self-hosted):</strong>{" "}
+                  Ihre Anfrage wird auf unserem eigenen Hetzner-Server in
+                  Deutschland automatisiert verarbeitet. Dies umfasst die
+                  interne Benachrichtigung, die KI-gestützte Generierung einer
+                  individualisierten Antwort-E-Mail sowie die strukturierte
+                  Speicherung Ihrer Anfragedaten in unserer Datenbank. Es
+                  erfolgt keine Weitergabe personenbezogener Daten an Dritte
+                  über diesen Verarbeitungsweg.
                 </li>
                 <li className="bg-black/5 p-4 rounded-xl text-black/80">
-                  <strong>Notion (Projektmanagement):</strong> Ihre Kontaktdaten
-                  (Name, E-Mail, Unternehmen, Anfrageninhalt) werden in unserem
-                  internen Notion-Arbeitsbereich gespeichert, um Ihre Anfrage
-                  bearbeiten zu können. Anbieter: Notion Labs, Inc., 2300
-                  Harrison St., San Francisco, CA 94110, USA. Notion ist nach
-                  dem EU-US-Datenschutzrahmen zertifiziert.
+                  <strong>Baserow (Datenbankverwaltung, Self-hosted):</strong>{" "}
+                  Ihre Kontaktdaten (Name, E-Mail, Telefonnummer, Unternehmen,
+                  gewünschte Leistung, Nachricht) werden in unserer
+                  selbstgehosteten Baserow-Instanz auf unserem Hetzner-Server in
+                  Deutschland gespeichert. Baserow ist eine
+                  Open-Source-Datenbankverwaltungslösung, die vollständig unter
+                  unserer Kontrolle betrieben wird. Eine Übermittlung
+                  personenbezogener Daten an den Hersteller oder sonstige Dritte
+                  findet nicht statt. Sämtliche Daten verbleiben auf unserem
+                  Server in Deutschland.
                 </li>
                 <li className="bg-black/5 p-4 rounded-xl text-black/80">
-                  <strong>Google Sheets (interne Protokollierung):</strong>{" "}
-                  Eingehende Anfragen werden in einem internen Google Sheet
-                  protokolliert (Name, E-Mail, Service, Datum). Anbieter: Google
-                  Ireland Limited, Gordon House, Barrow Street, Dublin 4,
-                  Irland.
+                  <strong>OpenAI (KI-gestützte Textgenerierung):</strong> Im
+                  Rahmen der automatisierten Bearbeitung Ihrer Anfrage wird der
+                  Inhalt Ihrer Nachricht an die API von OpenAI übermittelt, um
+                  eine individualisierte Antwort-E-Mail zu generieren. Anbieter:
+                  OpenAI, L.L.C., 3180 18th St, San Francisco, CA 94110, USA.
+                  Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit.
+                  f DSGVO (berechtigtes Interesse an effizienter
+                  Kundenbetreuung). OpenAI ist vertraglich verpflichtet,
+                  API-Daten nicht für eigene Trainingszwecke zu verwenden.
                 </li>
               </ul>
+
+              <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
+                Interne Benachrichtigungen (Telegram)
+              </h3>
+              <p className="text-black/80 leading-relaxed">
+                Für interne Sofort-Benachrichtigungen bei eingehenden
+                Kontaktanfragen nutzen wir den Messenger-Dienst Telegram. Über
+                diesen Kanal werden ausschließlich anonymisierte
+                Benachrichtigungen versendet, die keine personenbezogenen Daten
+                enthalten. Übermittelt werden lediglich eine interne Anfrage-ID
+                sowie die Art der gewünschten Leistung. Rückschlüsse auf
+                einzelne Personen sind über die Telegram-Nachricht allein nicht
+                möglich.
+              </p>
+              <p className="text-black/80 leading-relaxed">
+                Da keine personenbezogenen Daten an Telegram übermittelt werden,
+                ist für diesen Verarbeitungsschritt keine gesonderte
+                datenschutzrechtliche Rechtsgrundlage für eine
+                Drittlandsübermittlung erforderlich.
+              </p>
+
               <p className="text-black/80 leading-relaxed mt-4">
-                Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6
-                Abs. 1 lit. b DSGVO (Vertragsanbahnung) sowie Art. 6 Abs. 1 lit.
-                f DSGVO (berechtigtes Interesse an effizienter
-                Anfragenbearbeitung).
+                Die Verarbeitung der im Kontaktformular erhobenen Daten erfolgt
+                auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung)
+                sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an
+                einer effizienten Anfragenbearbeitung). Die im Kontaktformular
+                eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung
+                auffordern, Ihre Einwilligung zur Speicherung widerrufen oder
+                der Zweck für die Datenspeicherung entfällt. Zwingende
+                gesetzliche Bestimmungen — insbesondere Aufbewahrungsfristen —
+                bleiben unberührt.
               </p>
             </section>
 
@@ -280,16 +413,23 @@ export default function DatenschutzPage() {
                 5. E-Mail-Versand (Resend)
               </h2>
               <p className="text-black/80 leading-relaxed">
-                Für den transaktionalen E-Mail-Versand (Bestätigungsmails,
-                Benachrichtigungen) nutzen wir den Dienst Resend. Wenn Sie das
-                Kontaktformular absenden, wird Ihre E-Mail-Adresse an Resend
-                übermittelt, um Ihnen eine Bestätigungsnachricht zuzusenden.
+                Für den transaktionalen E-Mail-Versand (interne
+                Benachrichtigungen bei eingehenden Anfragen sowie KI-generierte
+                Antwort-E-Mails an Anfragende) nutzen wir den Dienst Resend.
+                Wenn Sie das Kontaktformular absenden, wird Ihre E-Mail-Adresse
+                an Resend übermittelt, um die entsprechenden E-Mails
+                zuzustellen.
               </p>
               <p className="text-black/80 leading-relaxed">
-                Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO. Wir haben mit
-                Resend einen Auftragsverarbeitungsvertrag geschlossen. Resend
-                verarbeitet Daten ausschließlich zur Zustellung der E-Mails und
-                nicht für eigene Zwecke.
+                Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO
+                (Vertragsanbahnung) sowie Art. 6 Abs. 1 lit. f DSGVO
+                (berechtigtes Interesse an einer zeitnahen Kommunikation mit
+                Interessenten). Wir haben mit Resend einen
+                Auftragsverarbeitungsvertrag (Data Processing Agreement)
+                geschlossen. Resend verarbeitet Daten ausschließlich zur
+                Zustellung der E-Mails und nicht für eigene Zwecke. Resend ist
+                nach dem EU-US-Datenschutzrahmen (Data Privacy Framework)
+                zertifiziert.
               </p>
               <div className="bg-black/5 p-6 rounded-2xl text-black/90 font-medium">
                 <strong>Resend Inc.</strong>
@@ -327,9 +467,11 @@ export default function DatenschutzPage() {
               <p className="text-black/80 leading-relaxed">
                 Google Analytics ermöglicht es dem Websitebetreiber, das
                 Verhalten der Websitebesucher zu analysieren. Hierbei erhält der
-                Websitebetreiber verschiedene Nutzungsdaten, wie z. B.
+                Websitebetreiber verschiedene Nutzungsdaten, wie z.&nbsp;B.
                 Seitenaufrufe, Verweildauer, verwendete Betriebssysteme und
-                Herkunft des Nutzers.
+                Herkunft des Nutzers. Diese Daten werden von Google ggf. in
+                einem Profil zusammengefasst, das dem jeweiligen Nutzer bzw.
+                dessen Endgerät zugeordnet ist.
               </p>
               <p className="text-black/80 leading-relaxed">
                 Die Nutzung dieses Dienstes erfolgt auf Grundlage Ihrer
@@ -344,6 +486,12 @@ export default function DatenschutzPage() {
                 </strong>{" "}
                 Ohne Ihre Zustimmung werden keine Analyse-Cookies gesetzt und
                 keine Daten an Google übermittelt.
+              </p>
+              <p className="text-black/80 leading-relaxed">
+                Die Datenübertragung in die USA wird auf den
+                Angemessenheitsbeschluss der EU-Kommission gestützt. Google ist
+                unter dem EU-US-Datenschutzrahmen (Data Privacy Framework)
+                zertifiziert.
               </p>
               <p className="text-black/80 leading-relaxed">
                 Sie können die Erfassung durch Google Analytics verhindern,
@@ -362,79 +510,77 @@ export default function DatenschutzPage() {
             {/* Section 7 */}
             <section className="space-y-4">
               <h2 className="text-2xl md:text-3xl font-bold tracking-tight uppercase border-t border-black/10 pt-10">
-                7. Interne Benachrichtigungen (Telegram)
+                7. Ihre Rechte als betroffene Person
               </h2>
               <p className="text-black/80 leading-relaxed">
-                Für interne Benachrichtigungen bei eingehenden Kontaktanfragen
-                nutzen wir den Messenger-Dienst Telegram. Wenn Sie das
-                Kontaktformular absenden, werden Ihre Angaben (Name, E-Mail,
-                Unternehmen, Servicewunsch) automatisiert als interne
-                Nachricht an unseren geschäftlichen Telegram-Account
-                weitergeleitet. Diese Nachricht ist ausschließlich für interne
-                Bearbeitungszwecke bestimmt und wird nicht an Dritte
-                weitergegeben.
-              </p>
-              <p className="text-black/80 leading-relaxed">
-                Telegram wird von der Telegram FZ-LLC mit Sitz in Dubai, VAE
-                betrieben. Da Dubai kein Land mit einem von der EU-Kommission
-                anerkannten angemessenen Datenschutzniveau ist, erfolgt die
-                Übermittlung auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO
-                (berechtigtes Interesse an effizienter interner
-                Kommunikation) sowie Art. 49 Abs. 1 lit. b DSGVO
-                (Übermittlung zur Vertragserfüllung). Wir haben mit Telegram
-                keinen Auftragsverarbeitungsvertrag geschlossen, da Telegram
-                ausschließlich als internes Kommunikationsmittel genutzt wird
-                und keine dauerhaften Daten auf Telegram-Servern gespeichert
-                werden.
-              </p>
-              <div className="bg-black/5 p-6 rounded-2xl text-black/90 font-medium">
-                <strong>Telegram FZ-LLC</strong><br />
-                Dubai, Vereinigte Arabische Emirate<br />
-                Datenschutz:{" "}
-                <a
-                  href="https://telegram.org/privacy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline"
-                >
-                  telegram.org/privacy
-                </a>
-              </div>
-            </section>
-
-            {/* Section 8 */}
-            <section className="space-y-4">
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight uppercase border-t border-black/10 pt-10">
-                8. Ihre Rechte
-              </h2>
-              <p className="text-black/80 leading-relaxed">
-                Sie haben gegenüber uns folgende Rechte hinsichtlich Ihrer
-                personenbezogenen Daten:
+                Die DSGVO gewährt Ihnen als betroffene Person umfassende Rechte
+                hinsichtlich der Verarbeitung Ihrer personenbezogenen Daten. Im
+                Folgenden finden Sie eine Übersicht:
               </p>
               <ul className="space-y-2 text-black/80">
                 <li className="flex gap-2">
-                  <span className="font-bold shrink-0">—</span> Recht auf
-                  Auskunft (Art. 15 DSGVO)
+                  <span className="font-bold shrink-0">—</span>
+                  <span>
+                    <strong>Auskunftsrecht</strong> (Art. 15 DSGVO): Sie haben
+                    das Recht, eine Bestätigung darüber zu verlangen, ob Sie
+                    betreffende personenbezogene Daten verarbeitet werden, und
+                    ggf. Auskunft über diese Daten sowie weitere Informationen
+                    und eine Kopie der Daten zu erhalten.
+                  </span>
                 </li>
                 <li className="flex gap-2">
-                  <span className="font-bold shrink-0">—</span> Recht auf
-                  Berichtigung (Art. 16 DSGVO)
+                  <span className="font-bold shrink-0">—</span>
+                  <span>
+                    <strong>Recht auf Berichtigung</strong> (Art. 16 DSGVO): Sie
+                    haben das Recht, die Vervollständigung oder Berichtigung
+                    unrichtiger Sie betreffender personenbezogener Daten zu
+                    verlangen.
+                  </span>
                 </li>
                 <li className="flex gap-2">
-                  <span className="font-bold shrink-0">—</span> Recht auf
-                  Löschung (Art. 17 DSGVO)
+                  <span className="font-bold shrink-0">—</span>
+                  <span>
+                    <strong>Recht auf Löschung</strong> (Art. 17 DSGVO): Sie
+                    haben das Recht, zu verlangen, dass Sie betreffende
+                    personenbezogene Daten unverzüglich gelöscht werden, sofern
+                    einer der gesetzlich vorgesehenen Gründe zutrifft.
+                  </span>
                 </li>
                 <li className="flex gap-2">
-                  <span className="font-bold shrink-0">—</span> Recht auf
-                  Einschränkung der Verarbeitung (Art. 18 DSGVO)
+                  <span className="font-bold shrink-0">—</span>
+                  <span>
+                    <strong>Recht auf Einschränkung der Verarbeitung</strong>{" "}
+                    (Art. 18 DSGVO): Sie haben das Recht, die Einschränkung der
+                    Verarbeitung zu verlangen, wenn eine der gesetzlich
+                    vorgesehenen Voraussetzungen gegeben ist.
+                  </span>
                 </li>
                 <li className="flex gap-2">
-                  <span className="font-bold shrink-0">—</span> Recht auf
-                  Datenübertragbarkeit (Art. 20 DSGVO)
+                  <span className="font-bold shrink-0">—</span>
+                  <span>
+                    <strong>Recht auf Datenübertragbarkeit</strong> (Art. 20
+                    DSGVO): Sie haben das Recht, die Sie betreffenden
+                    personenbezogenen Daten in einem strukturierten, gängigen
+                    und maschinenlesbaren Format zu erhalten und diese Daten
+                    einem anderen Verantwortlichen zu übermitteln.
+                  </span>
                 </li>
                 <li className="flex gap-2">
-                  <span className="font-bold shrink-0">—</span> Recht auf
-                  Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)
+                  <span className="font-bold shrink-0">—</span>
+                  <span>
+                    <strong>Widerspruchsrecht</strong> (Art. 21 DSGVO): Sie
+                    haben das Recht, aus Gründen, die sich aus Ihrer besonderen
+                    Situation ergeben, jederzeit gegen die Verarbeitung Sie
+                    betreffender personenbezogener Daten Widerspruch einzulegen.
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="font-bold shrink-0">—</span>
+                  <span>
+                    <strong>Widerrufsrecht</strong> (Art. 7 Abs. 3 DSGVO): Sie
+                    haben das Recht, eine erteilte Einwilligung jederzeit mit
+                    Wirkung für die Zukunft zu widerrufen.
+                  </span>
                 </li>
               </ul>
               <p className="text-black/80 leading-relaxed mt-4">
@@ -447,12 +593,15 @@ export default function DatenschutzPage() {
                 </a>
               </p>
               <p className="text-black/80 leading-relaxed">
-                Sie haben zudem das Recht, sich bei der zuständigen
-                Datenschutz-Aufsichtsbehörde zu beschweren. Die zuständige
-                Behörde für Sachsen ist:
+                Darüber hinaus haben Sie das Recht, sich bei der zuständigen
+                Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer
+                personenbezogenen Daten durch uns zu beschweren. Die für uns
+                zuständige Aufsichtsbehörde ist:
               </p>
               <div className="bg-black/5 p-6 rounded-2xl text-black/90 font-medium">
-                <strong>Sächsischer Datenschutzbeauftragter</strong>
+                <strong>
+                  Sächsischer Datenschutz- und Transparenzbeauftragter
+                </strong>
                 <br />
                 Devrientstraße 5<br />
                 01067 Dresden
@@ -461,6 +610,114 @@ export default function DatenschutzPage() {
                 <br />
                 E-Mail: saechsdsb@slt.sachsen.de
               </div>
+            </section>
+
+            {/* Section 8 */}
+            <section className="space-y-4">
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight uppercase border-t border-black/10 pt-10">
+                8. Übersicht der Datenverarbeitungen
+              </h2>
+              <p className="text-black/80 leading-relaxed">
+                Die nachfolgende Übersicht fasst die Kategorien der
+                verarbeiteten Daten, die Zwecke der Verarbeitung und die
+                betroffenen Personen zusammen.
+              </p>
+
+              <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
+                Kategorien verarbeiteter Daten
+              </h3>
+              <ul className="space-y-1 text-black/80">
+                <li className="flex gap-2">
+                  <span className="font-bold shrink-0">—</span> Bestandsdaten
+                  (Name, Unternehmen)
+                </li>
+                <li className="flex gap-2">
+                  <span className="font-bold shrink-0">—</span> Kontaktdaten
+                  (E-Mail-Adresse, Telefonnummer)
+                </li>
+                <li className="flex gap-2">
+                  <span className="font-bold shrink-0">—</span> Inhaltsdaten
+                  (Freitextnachrichten, gewünschte Leistung)
+                </li>
+                <li className="flex gap-2">
+                  <span className="font-bold shrink-0">—</span> Nutzungsdaten
+                  (IP-Adressen, Zugriffszeiten, Browsertyp)
+                </li>
+                <li className="flex gap-2">
+                  <span className="font-bold shrink-0">—</span> Meta- und
+                  Kommunikationsdaten (Geräte-Informationen, IP-Adressen)
+                </li>
+              </ul>
+
+              <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
+                Empfänger und Auftragsverarbeiter
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm text-black/80 border-collapse mt-2">
+                  <thead>
+                    <tr className="border-b-2 border-black/10">
+                      <th className="text-left py-3 pr-4 font-bold uppercase tracking-wider text-xs">
+                        Dienst
+                      </th>
+                      <th className="text-left py-3 pr-4 font-bold uppercase tracking-wider text-xs">
+                        Standort
+                      </th>
+                      <th className="text-left py-3 font-bold uppercase tracking-wider text-xs">
+                        Zweck
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-black/5">
+                      <td className="py-3 pr-4 font-medium">Vercel</td>
+                      <td className="py-3 pr-4">USA (DPF)</td>
+                      <td className="py-3">Website-Hosting</td>
+                    </tr>
+                    <tr className="border-b border-black/5">
+                      <td className="py-3 pr-4 font-medium">Resend</td>
+                      <td className="py-3 pr-4">USA (DPF)</td>
+                      <td className="py-3">E-Mail-Versand</td>
+                    </tr>
+                    <tr className="border-b border-black/5">
+                      <td className="py-3 pr-4 font-medium">OpenAI</td>
+                      <td className="py-3 pr-4">USA (DPF)</td>
+                      <td className="py-3">KI-Textgenerierung</td>
+                    </tr>
+                    <tr className="border-b border-black/5">
+                      <td className="py-3 pr-4 font-medium">Hetzner</td>
+                      <td className="py-3 pr-4">Deutschland 🇩🇪</td>
+                      <td className="py-3">Serverbetrieb</td>
+                    </tr>
+                    <tr className="border-b border-black/5">
+                      <td className="py-3 pr-4 font-medium">
+                        n8n (Self-hosted)
+                      </td>
+                      <td className="py-3 pr-4">Deutschland 🇩🇪</td>
+                      <td className="py-3">Workflow-Automatisierung</td>
+                    </tr>
+                    <tr className="border-b border-black/5">
+                      <td className="py-3 pr-4 font-medium">
+                        Baserow (Self-hosted)
+                      </td>
+                      <td className="py-3 pr-4">Deutschland 🇩🇪</td>
+                      <td className="py-3">Datenbankverwaltung</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 pr-4 font-medium">
+                        Google Analytics
+                      </td>
+                      <td className="py-3 pr-4">Irland / USA (DPF)</td>
+                      <td className="py-3">Webanalyse (mit Einwilligung)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-black/80 leading-relaxed text-sm mt-2">
+                <strong>DPF</strong> = Zertifiziert nach dem EU-US Data Privacy
+                Framework. Alle Self-hosted-Dienste (n8n, Baserow) laufen auf
+                unserem eigenen Server in Deutschland — es erfolgt keine
+                Datenweitergabe an Dritte.
+              </p>
             </section>
           </div>
         </div>
