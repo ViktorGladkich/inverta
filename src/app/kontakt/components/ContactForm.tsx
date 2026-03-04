@@ -164,7 +164,8 @@ export function ContactForm() {
                   type="tel"
                   id="phone"
                   name="phone"
-                  placeholder="+49 123 456 789"
+                  placeholder="+49 123 456 789 *"
+                  required
                   disabled={status === "loading"}
                   className="w-full bg-transparent border-b border-black pb-4 pt-2 text-xl md:text-2xl font-normal placeholder:text-black/20 focus:outline-none focus:border-black transition-colors rounded-none disabled:opacity-50"
                 />
@@ -200,11 +201,12 @@ export function ContactForm() {
                   id="service"
                   name="service"
                   defaultValue=""
+                  required
                   disabled={status === "loading"}
                   className="w-full bg-transparent border-b border-black pb-4 pt-2 text-xl md:text-2xl font-normal text-black appearance-none focus:outline-none focus:border-black transition-colors rounded-none cursor-pointer disabled:opacity-50"
                 >
                   <option value="" disabled className="text-black/20">
-                    Bitte wählen...
+                    Bitte wählen... *
                   </option>
                   <option value="marketing">Marketing & SEO</option>
                   <option value="webdev">Webentwicklung</option>

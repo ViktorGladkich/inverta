@@ -8,7 +8,7 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { name, email, phone, company, service, message } = body;
 
-    if (!name || !email || !message) {
+    if (!name || !email || !message || !phone || !service) {
       return NextResponse.json(
         { error: "Fehlende Pflichtfelder" },
         { status: 400 },
