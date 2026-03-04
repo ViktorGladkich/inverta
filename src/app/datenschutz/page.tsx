@@ -453,7 +453,67 @@ export default function DatenschutzPage() {
             {/* Section 6 */}
             <section className="space-y-4">
               <h2 className="text-2xl md:text-3xl font-bold tracking-tight uppercase border-t border-black/10 pt-10">
-                6. Analyse-Tools
+                6. Online-Terminbuchung (Cal.com)
+              </h2>
+              <p className="text-black/80 leading-relaxed">
+                Auf unserer Website bieten wir Ihnen die Möglichkeit,
+                unkompliziert Online-Termine mit uns zu vereinbaren. Für die
+                Terminbuchung nutzen wir den Dienst Cal.com. Anbieter ist die
+                Cal.com, Inc., 548 Market St, Suite 50130, San Francisco, CA
+                94104, USA (nachfolgend „Cal.com“).
+              </p>
+              <p className="text-black/80 leading-relaxed">
+                Wenn Sie einen Termin über unsere Website buchen, werden die von
+                Ihnen eingegebenen Daten (wie z.&nbsp;B. Name, E-Mail-Adresse,
+                Telefonnummer, Datum und Uhrzeit des Termins sowie ggf. weitere
+                Informationen zum Anliegen) an die Server von Cal.com übertragen
+                und dort gespeichert. Diese Daten werden ausschließlich zur
+                Organisation und Durchführung des jeweiligen Termins
+                verarbeitet.
+              </p>
+              <p className="text-black/80 leading-relaxed">
+                Die Verarbeitung Ihrer Daten im Rahmen der Terminbuchung erfolgt
+                auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung
+                bzw. Vertragserfüllung) sowie aufgrund unseres berechtigten
+                Interesses an einer komfortablen und effizienten
+                Terminverwaltung nach Art. 6 Abs. 1 lit. f DSGVO. Soweit eine
+                Einwilligung abgefragt wird (z.&nbsp;B. bei der Abfrage nicht
+                zwingend erforderlicher Daten), erfolgt die Verarbeitung auf
+                Grundlage von Art. 6 Abs. 1 lit. a DSGVO; die Einwilligung ist
+                jederzeit widerrufbar.
+              </p>
+              <p className="text-black/80 leading-relaxed">
+                Wir haben mit dem Anbieter einen Auftragsverarbeitungsvertrag
+                (AVV) abgeschlossen. Dies gewährleistet, dass Cal.com die
+                personenbezogenen Daten unserer Websitebesucher nur nach unseren
+                Weisungen und unter Einhaltung der DSGVO verarbeitet. Cal.com
+                ist zudem nach dem EU-US-Datenschutzrahmen (Data Privacy
+                Framework) zertifiziert, sodass bei einer Datenübermittlung in
+                die USA ein angemessenes Datenschutzniveau gewährleistet ist.
+              </p>
+              <div className="bg-black/5 p-6 rounded-2xl text-black/90 font-medium">
+                <strong>Cal.com, Inc.</strong>
+                <br />
+                548 Market St, Suite 50130
+                <br />
+                San Francisco, CA 94104, USA
+                <br />
+                Datenschutz:{" "}
+                <a
+                  href="https://cal.com/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                >
+                  cal.com/privacy
+                </a>
+              </div>
+            </section>
+
+            {/* Section 7 */}
+            <section className="space-y-4">
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight uppercase border-t border-black/10 pt-10">
+                7. Analyse-Tools
               </h2>
 
               <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
@@ -507,10 +567,10 @@ export default function DatenschutzPage() {
               </p>
             </section>
 
-            {/* Section 7 */}
+            {/* Section 8 */}
             <section className="space-y-4">
               <h2 className="text-2xl md:text-3xl font-bold tracking-tight uppercase border-t border-black/10 pt-10">
-                7. Ihre Rechte als betroffene Person
+                8. Ihre Rechte als betroffene Person
               </h2>
               <p className="text-black/80 leading-relaxed">
                 Die DSGVO gewährt Ihnen als betroffene Person umfassende Rechte
@@ -612,10 +672,10 @@ export default function DatenschutzPage() {
               </div>
             </section>
 
-            {/* Section 8 */}
+            {/* Section 9 */}
             <section className="space-y-4">
               <h2 className="text-2xl md:text-3xl font-bold tracking-tight uppercase border-t border-black/10 pt-10">
-                8. Übersicht der Datenverarbeitungen
+                9. Übersicht der Datenverarbeitungen
               </h2>
               <p className="text-black/80 leading-relaxed">
                 Die nachfolgende Übersicht fasst die Kategorien der
@@ -682,6 +742,11 @@ export default function DatenschutzPage() {
                       <td className="py-3 pr-4 font-medium">OpenAI</td>
                       <td className="py-3 pr-4">USA (DPF)</td>
                       <td className="py-3">KI-Textgenerierung</td>
+                    </tr>
+                    <tr className="border-b border-black/5">
+                      <td className="py-3 pr-4 font-medium">Cal.com</td>
+                      <td className="py-3 pr-4">USA (DPF)</td>
+                      <td className="py-3">Online-Terminbuchung</td>
                     </tr>
                     <tr className="border-b border-black/5">
                       <td className="py-3 pr-4 font-medium">Hetzner</td>
