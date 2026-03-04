@@ -41,10 +41,11 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "INVERTA DIGITAL — Digitalagentur der nächsten Generation aus Dresden",
+        type: "image/jpeg",
       },
     ],
   },
-  
+
   twitter: {
     card: "summary_large_image",
     title: "Webentwicklung & KI-Automatisierung | INVERTA",
