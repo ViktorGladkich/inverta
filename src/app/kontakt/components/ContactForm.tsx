@@ -18,6 +18,7 @@ export function ContactForm() {
 
     const formData = new FormData(e.currentTarget);
     const data = {
+      anrede: formData.get("anrede"),
       name: `${formData.get("vorname")} ${formData.get("nachname")}`,
       email: formData.get("email"),
       telefon: formData.get("phone"),
@@ -167,14 +168,42 @@ export function ContactForm() {
             className="w-full flex flex-col gap-16 bg-white p-8 md:p-16 rounded-[40px] shadow-[0_20px_40px_-20px_rgba(0,0,0,0.05)] border border-black/5"
           >
             <div className="flex flex-col gap-10 md:gap-14">
+              {/* Anrede */}
+              <div className="flex flex-col gap-2 w-full md:w-1/2">
+                <label
+                  htmlFor="anrede"
+                  className="text-xs tracking-[0.15em] font-semibold uppercase text-black"
+                >
+                  01. Anrede
+                </label>
+                <select
+                  id="anrede"
+                  name="anrede"
+                  defaultValue=""
+                  required
+                  disabled={status === "loading"}
+                  className="w-full bg-transparent border-b border-black pb-4 pt-2 text-xl md:text-2xl font-normal text-black appearance-none focus:outline-none focus:border-black transition-colors rounded-none cursor-pointer disabled:opacity-50"
+                >
+                  <option value="" disabled className="text-black/20">
+                    Bitte wählen... *
+                  </option>
+                  <option value="Herr">Herr</option>
+                  <option value="Frau">Frau</option>
+                  <option value="Divers / Keine Angabe">
+                    Divers / Keine Angabe
+                  </option>
+                </select>
+              </div>
+
               {/* Eingabefelder: Name */}
               <div className="flex flex-col md:flex-row gap-8 md:gap-6">
-                <div className="flex flex-col gap-2 w-full">
+                {/* Vorname */}
+                <div className="flex flex-col gap-2 w-full md:w-1/2">
                   <label
                     htmlFor="vorname"
                     className="text-xs tracking-[0.15em] font-semibold uppercase text-black"
                   >
-                    01. Vorname
+                    02. Vorname
                   </label>
                   <input
                     type="text"
@@ -186,12 +215,13 @@ export function ContactForm() {
                     className="w-full bg-transparent border-b border-black pb-4 pt-2 text-xl md:text-2xl font-normal placeholder:text-black/20 focus:outline-none focus:border-black transition-colors rounded-none disabled:opacity-50"
                   />
                 </div>
-                <div className="flex flex-col gap-2 w-full">
+                {/* Nachname */}
+                <div className="flex flex-col gap-2 w-full md:w-1/2">
                   <label
                     htmlFor="nachname"
                     className="text-xs tracking-[0.15em] font-semibold uppercase text-black"
                   >
-                    02. Nachname
+                    03. Nachname
                   </label>
                   <input
                     type="text"
@@ -211,7 +241,7 @@ export function ContactForm() {
                   htmlFor="email"
                   className="text-xs tracking-[0.15em] font-semibold uppercase text-black"
                 >
-                  03. Ihre E-Mail Adresse
+                  04. Ihre E-Mail Adresse
                 </label>
                 <input
                   type="email"
@@ -230,7 +260,7 @@ export function ContactForm() {
                   htmlFor="phone"
                   className="text-xs tracking-[0.15em] font-semibold uppercase text-black"
                 >
-                  04. Ihre Telefonnummer
+                  05. Ihre Telefonnummer
                 </label>
                 <input
                   type="tel"
@@ -249,7 +279,7 @@ export function ContactForm() {
                   htmlFor="company"
                   className="text-xs tracking-[0.15em] font-semibold uppercase text-black"
                 >
-                  05. Ihr Unternehmen
+                  06. Ihr Unternehmen
                 </label>
                 <input
                   type="text"
@@ -267,7 +297,7 @@ export function ContactForm() {
                   htmlFor="service"
                   className="text-xs tracking-[0.15em] font-semibold uppercase text-black"
                 >
-                  06. Wofür interessieren Sie sich?
+                  07. Wofür interessieren Sie sich?
                 </label>
                 <select
                   id="service"
@@ -295,7 +325,7 @@ export function ContactForm() {
                   htmlFor="message"
                   className="text-xs tracking-[0.15em] font-semibold uppercase text-black"
                 >
-                  07. Ihr Projekt
+                  08. Ihr Projekt
                 </label>
                 <textarea
                   id="message"
