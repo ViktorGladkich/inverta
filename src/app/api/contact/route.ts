@@ -6,9 +6,9 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, email, phone, company, service, message } = body;
+    const { name, email, telefon, company, service, message } = body;
 
-    if (!name || !email || !message || !phone || !service) {
+    if (!name || !email || !message || !telefon || !service) {
       return NextResponse.json(
         { error: "Fehlende Pflichtfelder" },
         { status: 400 },
@@ -41,7 +41,7 @@ export async function POST(req: Request) {
               <tr style="border-top: 1px solid #eee;">
                 <td style="padding: 10px 0; font-weight: bold;">Telefon:</td>
                 <td style="padding: 10px 0;">
-                  ${phone ? `<a href="tel:${phone}" style="color: #000; text-decoration: underline;">${phone}</a>` : "-"}
+                  ${telefon ? `<a href="tel:${telefon}" style="color: #000; text-decoration: underline;">${telefon}</a>` : "-"}
                 </td>
               </tr>
               <tr style="border-top: 1px solid #eee;">
