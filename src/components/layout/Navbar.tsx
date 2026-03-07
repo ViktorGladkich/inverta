@@ -151,7 +151,7 @@ export function Navbar() {
             <svg
               viewBox="0 0 32 32"
               className={cn(
-                "h-12 w-12 transition-transform duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]",
+                "h-10 w-10 transition-transform duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]",
                 mobileMenuOpen ? "-rotate-45" : "",
               )}
             >
