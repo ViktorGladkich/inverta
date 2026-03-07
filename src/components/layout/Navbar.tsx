@@ -146,35 +146,33 @@ export function Navbar() {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
-            className="lg:hidden p-2 rounded-full bg-transparent hover:bg-white/10 transition-colors z-110 relative w-10 h-10 flex flex-col items-center justify-center gap-[5px]"
+            className="lg:hidden p-0 rounded-full bg-transparent hover:bg-white/10 transition-colors z-110 relative w-12 h-12 flex items-center justify-center cursor-pointer"
           >
-            <motion.span
-              animate={mobileMenuOpen ? "open" : "closed"}
-              variants={{
-                closed: { rotate: 0, y: 0 },
-                open: { rotate: 45, y: 7 },
-              }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="w-5 h-[2px] block origin-center rounded-full transition-colors bg-black"
-            />
-            <motion.span
-              animate={mobileMenuOpen ? "open" : "closed"}
-              variants={{
-                closed: { opacity: 1 },
-                open: { opacity: 0 },
-              }}
-              transition={{ duration: 0.2 }}
-              className="w-5 h-[2px] block rounded-full transition-colors bg-black"
-            />
-            <motion.span
-              animate={mobileMenuOpen ? "open" : "closed"}
-              variants={{
-                closed: { rotate: 0, y: 0 },
-                open: { rotate: -45, y: -7 },
-              }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="w-5 h-[2px] block origin-center rounded-full transition-colors bg-black"
-            />
+            <svg
+              viewBox="0 0 32 32"
+              className={cn(
+                "h-12 w-12 transition-transform duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]",
+                mobileMenuOpen ? "-rotate-45" : "",
+              )}
+            >
+              <path
+                className={cn(
+                  "fill-none stroke-black stroke-[3px] transition-[stroke-dasharray,stroke-dashoffset] duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]",
+                  mobileMenuOpen
+                    ? "[stroke-dasharray:20_300] [stroke-dashoffset:-32.42]"
+                    : "[stroke-dasharray:12_63]",
+                )}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+              />
+              <path
+                className="fill-none stroke-black stroke-[3px] transition-[stroke-dasharray,stroke-dashoffset] duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M7 16 27 16"
+              />
+            </svg>
           </button>
         </nav>
       </motion.header>
