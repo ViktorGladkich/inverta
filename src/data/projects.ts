@@ -137,7 +137,7 @@ export const PROJECTS: Project[] = [
       { label: "Erreichbarkeit", value: "24/7" },
       { label: "Fokus & Vertrauen", value: "100%" },
     ],
-    websiteUrl: "https://www.ass-security.de/",
+    websiteUrl: "https://ass-security.vercel.app/",
   },
   {
     id: 7,
@@ -230,5 +230,26 @@ export const PROJECTS: Project[] = [
       { label: "Antwortzeit", value: "< 30 Sek." },
       { label: "Automatisierungsgrad", value: "85%" },
     ],
+  },
+  {
+    id: 11,
+    number: "11",
+    slug: "umzugsservice",
+    label: "Umzugsservice",
+    title: "Sorgloser Umzug & Transport",
+    category: "One-Page Strategy",
+    description:
+      "Ein hochkonvertierender One-Pager für ein Umzugsunternehmen. Klarer Fokus auf stressfreie Privatumzüge, effiziente Büroumzüge ohne Ausfallzeiten und absolut sicheren Einpackservice.",
+    image: "/images/projects/umzugsservice.png",
+    services: ["Privatumzüge", "Büroumzüge", "Einpackservice"],
+    challenge:
+      "Kunden suchen bei Umzügen vor allem nach Vertrauen und Verlässlichkeit. Die Herausforderung bestand darin, die Kernleistungen kompetent und beruhigend zu präsentieren.",
+    solution:
+      "Wir haben einen strukturierten One-Pager mit modernem Design entwickelt, der den Besucher an die Hand nimmt. Transparente Leistungsversprechen für Privat- und Büroumzüge sowie der Einpackservice werden direkt kommuniziert, unterstützt durch schnelle Kontaktwege.",
+    results: [
+      { label: "Trust & Fokus", value: "100%" },
+      { label: "Umzugs-Konzepte", value: "Stressfrei" },
+    ],
+    websiteUrl: "https://umzugsservice.vercel.app/",
   },
 ];
