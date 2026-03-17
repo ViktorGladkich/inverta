@@ -31,7 +31,7 @@ export const PROJECTS: Project[] = [
     solution:
       "Entwicklung einer individuellen Multi-Page-Website mit maßgeschneidertem Design, das die verschiedenen Leistungsbereiche (Sanierung, Innenausbau, Trockenbau, Sanitär) übersichtlich und ansprechend präsentiert.",
     results: [
-      { label: "Design", value: "100% Individuell" },
+      { label: "Individuelles Design", value: "100%" },
       { label: "Leistungsbereiche", value: "6+" },
     ],
     websiteUrl: "https://vantura-handwerk.vercel.app/",
@@ -72,7 +72,7 @@ export const PROJECTS: Project[] = [
     solution:
       "Ein strukturierter Web-Auftritt, der sowohl Bauherren als auch Interessenten für erneuerbare Energien gezielt anspricht und durch ein klares Navigationskonzept überzeugt.",
     results: [
-      { label: "Sektoren", value: "2 Hauptbranchen" },
+      { label: "Hauptbranchen", value: "2" },
       { label: "Lead-Qualität", value: "+45%" },
     ],
     websiteUrl: "https://mabaugmbh.de/",
@@ -247,8 +247,8 @@ export const PROJECTS: Project[] = [
     solution:
       "Wir haben einen strukturierten One-Pager mit modernem Design entwickelt, der den Besucher an die Hand nimmt. Transparente Leistungsversprechen für Privat- und Büroumzüge sowie der Einpackservice werden direkt kommuniziert, unterstützt durch schnelle Kontaktwege.",
     results: [
-      { label: "Trust & Fokus", value: "100%" },
-      { label: "Umzugs-Konzepte", value: "Stressfrei" },
+      { label: "Verlässlichkeit", value: "100%" },
+      { label: "Ablauf", value: "Stressfrei" },
     ],
     websiteUrl: "https://umzugsservice.vercel.app/",
   },

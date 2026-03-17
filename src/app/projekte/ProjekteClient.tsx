@@ -182,7 +182,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                className="w-full h-full bg-cover bg-center transition-all duration-1000"
+                className="w-full h-full max-sm:bg-contain bg-cover bg-center bg-no-repeat transition-all duration-1000"
                 style={{ backgroundImage: `url(${project.image})` }}
               />
             </motion.div>

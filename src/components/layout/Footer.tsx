@@ -39,6 +39,14 @@ export function Footer() {
             </li>
             <li>
               <Link
+                href="/ki-automatisierung"
+                className="hover:text-black/60 transition-colors"
+              >
+                KI AUTOMATISIERUNG
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/projekte"
                 className="hover:text-black/60 transition-colors"
               >

@@ -216,7 +216,7 @@ export function Projects() {
                     <div className="w-full h-full relative">
                       {/* Placeholder for now to avoid broken images if paths wrong */}
                       <div
-                        className="w-full h-full bg-cover bg-center"
+                        className="w-full h-full max-sm:bg-contain bg-cover bg-center bg-no-repeat"
                         style={{
                           backgroundImage: `url(${projects[activeTab].image})`,
                         }}

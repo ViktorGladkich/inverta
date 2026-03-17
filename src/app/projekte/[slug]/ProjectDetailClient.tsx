@@ -49,7 +49,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
         >
           <div className="absolute inset-0 bg-black/15 z-10" />
           <div
-            className="w-full h-full bg-cover bg-center"
+            className="w-full h-full max-sm:bg-contain bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${project.image})` }}
           />
         </motion.div>
