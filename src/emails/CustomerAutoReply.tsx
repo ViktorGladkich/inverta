@@ -418,7 +418,7 @@ export const AutoReplyEmail = ({
                             color: "#ffffff",
                           }}
                         >
-                          Rubensweg 1, 01159 Dresden, Deutschland
+                          Rubensweg 1, 01217 Dresden, Deutschland
                         </Text>
                         <div style={{ marginTop: "20px" }}>
                           <Link
