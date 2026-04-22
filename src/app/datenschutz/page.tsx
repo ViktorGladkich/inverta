@@ -203,6 +203,50 @@ export default function DatenschutzPage() {
                   hetzner.com/de/rechtliches/datenschutz
                 </a>
               </div>
+
+              <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
+                Server-Logfiles
+              </h3>
+              <p className="text-black/80 leading-relaxed">
+                Der Hosting-Anbieter dieser Website (Vercel) erhebt und
+                speichert automatisch Informationen in sogenannten
+                Server-Logfiles, die Ihr Browser automatisch übermittelt. Dies
+                sind:
+              </p>
+              <ul className="space-y-1 text-black/80 mt-2">
+                <li className="flex gap-2">
+                  <span className="font-bold shrink-0">—</span> IP-Adresse des
+                  anfragenden Geräts
+                </li>
+                <li className="flex gap-2">
+                  <span className="font-bold shrink-0">—</span> Browsertyp und
+                  Browserversion
+                </li>
+                <li className="flex gap-2">
+                  <span className="font-bold shrink-0">—</span> Verwendetes
+                  Betriebssystem
+                </li>
+                <li className="flex gap-2">
+                  <span className="font-bold shrink-0">—</span> Referrer-URL
+                  (zuvor besuchte Seite)
+                </li>
+                <li className="flex gap-2">
+                  <span className="font-bold shrink-0">—</span> Datum und
+                  Uhrzeit des Seitenabrufs
+                </li>
+                <li className="flex gap-2">
+                  <span className="font-bold shrink-0">—</span> Aufgerufene
+                  Seiten und Dateien
+                </li>
+              </ul>
+              <p className="text-black/80 leading-relaxed mt-3">
+                Diese Daten werden nicht mit anderen Datenquellen
+                zusammengeführt und nicht zur Identifizierung einzelner Personen
+                genutzt. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs.
+                1 lit. f DSGVO (berechtigtes Interesse am technisch fehlerfreien
+                Betrieb der Website). Die Logfiles werden nach spätestens 30
+                Tagen automatisch gelöscht.
+              </p>
             </section>
 
             {/* Section 3 */}
@@ -241,7 +285,12 @@ export default function DatenschutzPage() {
                 Website ist:
               </p>
               <div className="bg-black/5 p-6 rounded-2xl text-black/90 font-medium">
-                INVERTA DIGITAL
+                INVERTA DIGITAL GbR
+                <br />
+                vertreten durch die Gesellschafter:
+                <br />
+                Viktor Gladkich, Mansur Alisultanow, Alireza Yaghoubi
+                <br />
                 <br />
                 Rubensweg 1<br />
                 01217 Dresden
@@ -312,6 +361,46 @@ export default function DatenschutzPage() {
               </h2>
 
               <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
+                Cookies
+              </h3>
+              <p className="text-black/80 leading-relaxed">
+                Unsere Website verwendet Cookies. Cookies sind kleine
+                Textdateien, die Ihr Browser auf Ihrem Endgerät speichert und
+                die bestimmte Einstellungen und Daten zum Austausch mit unserem
+                System enthalten. Es gibt zwei Kategorien von Cookies, die wir
+                einsetzen:
+              </p>
+              <ul className="space-y-3 text-black/80 mt-3">
+                <li className="bg-black/5 p-4 rounded-xl">
+                  <strong>Technisch notwendige Cookies:</strong> Diese Cookies
+                  sind für den Betrieb der Website zwingend erforderlich (z.&nbsp;B.
+                  für die Speicherung Ihrer Cookie-Einstellungen). Sie werden
+                  ohne Ihre Einwilligung gesetzt, da sie ohne diese Cookies
+                  nicht funktionieren würden. Rechtsgrundlage: Art. 6 Abs. 1
+                  lit. f DSGVO i.&nbsp;V.&nbsp;m. § 25 Abs. 2 TDDDG.
+                </li>
+                <li className="bg-black/5 p-4 rounded-xl">
+                  <strong>Analyse-Cookies (Google Analytics):</strong> Diese
+                  Cookies werden nur gesetzt, wenn Sie über unseren
+                  Cookie-Banner ausdrücklich eingewilligt haben. Sie ermöglichen
+                  die Analyse des Nutzungsverhaltens auf unserer Website. Ohne
+                  Ihre Einwilligung werden keinerlei Analyse-Cookies gesetzt und
+                  keine Daten an Google übermittelt. Rechtsgrundlage: Art. 6
+                  Abs. 1 lit. a DSGVO i.&nbsp;V.&nbsp;m. § 25 Abs. 1 TDDDG.
+                </li>
+              </ul>
+              <p className="text-black/80 leading-relaxed mt-3">
+                Sie können Ihre Einwilligung für Analyse-Cookies jederzeit
+                widerrufen, indem Sie die Cookie-Einstellungen über den
+                Cookie-Banner erneut aufrufen. Darüber hinaus können Sie die
+                Speicherung von Cookies durch eine entsprechende Einstellung in
+                Ihrem Browser verhindern oder bereits gespeicherte Cookies
+                jederzeit löschen. Bitte beachten Sie, dass das Deaktivieren
+                bestimmter Cookies die Funktionalität der Website einschränken
+                kann.
+              </p>
+
+              <h3 className="text-xl font-semibold uppercase tracking-wider text-black/80 mt-6 mb-2">
                 Kontaktformular
               </h3>
               <p className="text-black/80 leading-relaxed">
@@ -369,8 +458,12 @@ export default function DatenschutzPage() {
                   OpenAI, L.L.C., 3180 18th St, San Francisco, CA 94110, USA.
                   Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit.
                   f DSGVO (berechtigtes Interesse an effizienter
-                  Kundenbetreuung). OpenAI ist vertraglich verpflichtet,
-                  API-Daten nicht für eigene Trainingszwecke zu verwenden.
+                  Kundenbetreuung). Wir haben mit OpenAI einen
+                  Auftragsverarbeitungsvertrag (Data Processing Agreement) gemäß
+                  Art. 28 DSGVO abgeschlossen. OpenAI ist nach dem
+                  EU-US-Datenschutzrahmen (Data Privacy Framework) zertifiziert
+                  und vertraglich verpflichtet, API-Daten nicht für eigene
+                  Trainingszwecke zu verwenden.
                 </li>
               </ul>
 
