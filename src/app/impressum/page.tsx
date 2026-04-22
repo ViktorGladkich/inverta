@@ -31,8 +31,13 @@ export default function Impressum() {
             </p>
             <h2 className="text-2xl font-bold mt-8 mb-4">Kontakt</h2>
             <p className="mb-4">E-Mail: info@invertadigital.de</p>
-            <h2 className="text-2xl font-bold mt-8 mb-4">Steuernummer</h2>
-            <p className="mb-4">203/154/00601</p>
+            <h2 className="text-2xl font-bold mt-8 mb-4">Umsatzsteuer-ID</h2>
+            <p className="mb-4">
+              Umsatzsteuer-Identifikationsnummer gemäß § 27 a
+              Umsatzsteuergesetz:
+              <br />
+              DE460666394
+            </p>
             <h2 className="text-2xl font-bold mt-8 mb-4">
               Redaktionell verantwortlich
             </h2>
