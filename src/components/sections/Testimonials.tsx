@@ -13,7 +13,7 @@ const testimonials = [
     name: "Reza Vantura",
     quote:
       "Durch die individuelle Multi-Page-Website heben wir uns endlich deutlich von der Konkurrenz ab. Die Qualität unserer Handwerksleistungen wird digital perfekt transportiert, was zu spürbar mehr qualifizierten Anfragen geführt hat.",
-    image: "/images/projects/vanturahandwerk.jpeg",
+    image: "/images/projects/vanturahandwerk.webp",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const testimonials = [
     name: "Sarah Lin",
     quote:
       "Inverta hat unsere IT-Expertise in ein modernes Web-Erlebnis verwandelt. Das neue Branding und die maßgeschneiderten Funnels funktionieren hervorragend – wir messen eine deutliche Steigerung der Conversion-Rate.",
-    image: "/images/projects/nexora.jpeg",
+    image: "/images/projects/nexora.webp",
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const testimonials = [
     name: "Semion Raskin",
     quote:
       "Ein fokussierter One-Pager, der genau unseren Bedarf trifft. Das Design schafft sofortiges Vertrauen bei unseren Kunden im Objekt- und Personenschutz. Professionell, schnell und auf den Punkt.",
-    image: "/images/projects/ass-security.jpeg",
+    image: "/images/projects/ass-security.webp",
   },
 ];
 
@@ -135,7 +135,7 @@ export function Testimonials() {
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
                 style={{
-                  backgroundImage: "url(/images/projects/vanturahandwerk.jpeg)",
+                  backgroundImage: "url(/images/projects/vanturahandwerk.webp)",
                 }}
               />
             </div>

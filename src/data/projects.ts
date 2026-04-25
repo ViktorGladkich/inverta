@@ -16,15 +16,36 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
-    id: 1,
+    id: 12,
     number: "01",
+    slug: "prosecure",
+    label: "PROSECURE",
+    title: "Digitale Exzellenz für die Sicherheitsbranche",
+    category: "High-End Webdesign & Branding",
+    description:
+      "Eine Plattform, die über das Standard-Webdesign hinausgeht. High-End-Ästhetik trifft auf Funktionalität – denn Sicherheit braucht keine Erklärungen, sie muss sich richtig anfühlen.",
+    image: "/images/projects/prosecure.png",
+    services: ["GSAP Animationen", "Interactive Storytelling", "Mobile-First Architektur"],
+    challenge:
+      "In der Sicherheitsbranche ist Vertrauen die wichtigste Währung. Die Herausforderung bestand darin, dieses Vertrauen digital durch ein Design zu vermitteln, das Sicherheit nicht nur erklärt, sondern fühlbar macht.",
+    solution:
+      "Entwicklung einer minimalistischen Plattform mit Interactive Storytelling durch gezielte GSAP-Animationen und einer Mobile-First Architektur, die den hohen Qualitätsanspruch von ProSecure widerspiegelt.",
+    results: [
+      { label: "Visuelle Wirkung", value: "Maximal" },
+      { label: "Performance", value: "High-End" },
+    ],
+    websiteUrl: "https://prosecure-website.vercel.app/",
+  },
+  {
+    id: 1,
+    number: "02",
     slug: "vanturahandwerk",
     label: "VANTURA-HANDWERK",
     title: "Premium Handwerkskunst",
     category: "Webentwicklung & Branding",
     description:
       "Individuelle Multi-Page-Website für Komplettsanierung. Ein einzigartiges Design, das die Qualität der Handwerksleistungen digital erlebbar macht.",
-    image: "/images/projects/vanturahandwerk.jpeg",
+    image: "/images/projects/vanturahandwerk.webp",
     services: ["Webdesign", "UI/UX Design", "SEO"],
     challenge:
       "Eine nicht-schablonenhafte digitale Präsenz für ein traditionelles Handwerksunternehmen schaffen, die Premium-Qualität ausstrahlt.",
@@ -38,14 +59,14 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 2,
-    number: "02",
+    number: "03",
     slug: "n8n-lead-automation",
     label: "Lead Engine",
     title: "CRM Automation mit n8n",
     category: "KI-Automatisierung & Lead-Gen",
     description:
       "Ein hochkomplexes Automatisierungs-System, das den gesamten Lead-Management-Prozess digitalisiert. Von der ersten Anfrage bis zur CRM-Zuweisung und Team-Benachrichtigung erfolgt alles in unter 2 Sekunden – vollautomatisch und fehlerfrei.",
-    image: "/images/projects/n8n.png",
+    image: "/images/projects/n8n.webp",
     services: ["n8n Workflows", "Notion API", "Lead Scoping", "JavaScript"],
     challenge:
       "Manuelle Datenübertragung aus Kontaktformularen in CRM-Systeme ist zeitfressend und fehleranfällig. Ohne sofortige Benachrichtigung sinkt die Conversion-Rate (Speed-to-Lead), da potenzielle Kunden zu lange auf eine Rückmeldung warten.",
@@ -58,14 +79,14 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 3,
-    number: "02",
+    number: "04",
     slug: "ma-bau-gmbh",
     label: "MA Bau GmbH",
     title: "Bau & Solarenergie",
     category: "Full-Service Digital Presence",
     description:
       "Umfassender Relaunch inklusive Solar-Sparte. Maßgeschneiderte Lösung für Sanierung, Innenausbau und energetische Systeme der Zukunft.",
-    image: "/images/projects/ma-bau-gmbh.jpeg",
+    image: "/images/projects/ma-bau-gmbh.webp",
     services: ["Webentwicklung", "Corporate Design", "Content Creation"],
     challenge:
       "Zusammenführung klassischer Baudienstleistungen mit zukunftsorientierter Solartechnik in einer kohärenten digitalen Identität.",
@@ -79,14 +100,14 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 4,
-    number: "04",
+    number: "05",
     slug: "seo-master-automation",
     label: "SEO Master",
     title: "SEO Alerts & Reporting",
     category: "KI-Automatisierung & SEO",
     description:
       "Ein intelligentes Monitoring-System zur Automatisierung von SEO-Workflows. Das System überwacht täglich Keyword-Rankings, prüft die Indexierung von Webseiten und sendet automatisierte Reports direkt an Telegram und Google Sheets.",
-    image: "/images/projects/seo-n8n.png",
+    image: "/images/projects/seo-n8n.webp",
     services: ["n8n Workflows", "GSC API", "Telegram Automation", "SEO Tools"],
     challenge:
       "Die manuelle Überwachung von Keyword-Rankings und die regelmäßige Überprüfung des Index-Status hunderter URLs ist extrem zeitaufwendig. Ranking-Verluste werden oft erst bemerkt, wenn der Traffic bereits massiv eingebrochen ist.",
@@ -99,14 +120,14 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 5,
-    number: "05",
+    number: "06",
     slug: "nexora-digital",
     label: "NEXORA Digital",
     title: "High-Performance IT & Web",
     category: "Growth & Automation",
     description:
       "Umfassender Relaunch für eine IT-Agentur. Eine maßgeschneiderte Plattform, die technische Expertise mit modernem Branding vereint.",
-    image: "/images/projects/nexora.jpeg",
+    image: "/images/projects/nexora.webp",
     services: ["Funnels", "Performance Marketing", "Webdesign"],
     challenge:
       "Die technische Expertise einer IT-Agentur in ein modernes, konversionsstarkes Gewand zu verpacken, das sich vom Wettbewerb abhebt.",
@@ -120,7 +141,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 6,
-    number: "06",
+    number: "07",
     slug: "ass-security",
     label: "A.S.S. Security",
     title: "Sicherheit & Vertrauen",
@@ -141,7 +162,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 7,
-    number: "07",
+    number: "08",
     slug: "brand-identity",
     label: "Brand Identity",
     title: "Strategisches Branding",
@@ -162,7 +183,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 8,
-    number: "08",
+    number: "09",
     slug: "ki-automatisierung",
     label: "KI Automatisierung",
     title: "Intelligente Workflows",
@@ -183,7 +204,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 9,
-    number: "09",
+    number: "10",
     slug: "content-marketing-automation",
     label: "Content Engine",
     title: "Automated Content Marketing",
@@ -208,7 +229,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 10,
-    number: "10",
+    number: "11",
     slug: "email-ai-assistant",
     label: "Email Engine",
     title: "AI-Powered Customer Support",
@@ -233,14 +254,14 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 11,
-    number: "11",
+    number: "12",
     slug: "umzugsservice",
     label: "Umzugsservice",
     title: "Sorgloser Umzug & Transport",
     category: "One-Page Strategy",
     description:
       "Ein hochkonvertierender One-Pager für ein Umzugsunternehmen. Klarer Fokus auf stressfreie Privatumzüge, effiziente Büroumzüge ohne Ausfallzeiten und absolut sicheren Einpackservice.",
-    image: "/images/projects/umzugsservice.png",
+    image: "/images/projects/umzugsservice.webp",
     services: ["Privatumzüge", "Büroumzüge", "Einpackservice"],
     challenge:
       "Kunden suchen bei Umzügen vor allem nach Vertrauen und Verlässlichkeit. Die Herausforderung bestand darin, die Kernleistungen kompetent und beruhigend zu präsentieren.",

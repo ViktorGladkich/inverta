@@ -12,8 +12,22 @@ const neumorphicShadow =
 const projects = [
   {
     available: true,
-    id: 1,
+    id: 12,
     number: "01",
+    label: "prosecure",
+    title: "Digitale Exzellenz für die Sicherheitsbranche",
+    description:
+      "Eine Plattform, die über das Standard-Webdesign hinausgeht. High-End-Ästhetik trifft auf Funktionalität – denn Sicherheit braucht keine Erklärungen, sie muss sich richtig anfühlen.",
+    stats: [
+      { value: "Maximal", label: "Visuelle Wirkung" },
+      { value: "High-End", label: "Performance" },
+    ],
+    image: "/images/projects/prosecure.png",
+  },
+  {
+    available: true,
+    id: 1,
+    number: "02",
     label: "vanturahandwerk",
     title: "Premium Handwerkskunst",
     description:
@@ -22,12 +36,12 @@ const projects = [
       { value: "100%", label: "Individuelles Design" },
       { value: "6+", label: "Leistungsbereiche" },
     ],
-    image: "/images/projects/vanturahandwerk.jpeg",
+    image: "/images/projects/vanturahandwerk.webp",
   },
   {
     available: true,
     id: 2,
-    number: "02",
+    number: "03",
     label: "NEXORA Digital",
     title: "High-Performance IT & Web",
     description:
@@ -41,7 +55,7 @@ const projects = [
   {
     available: true,
     id: 3,
-    number: "03",
+    number: "04",
     label: "A.S.S. Security",
     title: "Sicherheit & Vertrauen",
     description:
@@ -169,7 +183,7 @@ export function Projects() {
           style={{ boxShadow: neumorphicShadow }}
         >
           {/* Top Steps Loader Wrapper (Navigation) */}
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-4 gap-4">
             {projects.map((project, index) => (
               <button
                 key={project.id}
