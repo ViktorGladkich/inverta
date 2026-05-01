@@ -50,7 +50,7 @@ const projects = [
       { value: "5+", label: "Service-Module" },
       { value: "300%", label: "Performance-Boost" },
     ],
-    image: "/images/projects/nexora.jpeg",
+    image: "/images/projects/nexora.webp",
   },
   {
     available: true,
@@ -214,7 +214,7 @@ export function Projects() {
           {/* Project Content (Row) */}
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
             {/* Image Side */}
-            <div className="w-full md:w-1/2 aspect-4/3 relative rounded-2xl overflow-hidden bg-white shadow-sm ring-1 ring-black/5">
+            <div className="w-full md:w-1/2 aspect-[4/3] relative rounded-2xl overflow-hidden bg-neutral-100 shadow-sm ring-1 ring-black/5">
               {/* Image Placeholder */}
               <AnimatePresence>
                 <motion.div
@@ -230,7 +230,7 @@ export function Projects() {
                     <div className="w-full h-full relative">
                       {/* Placeholder for now to avoid broken images if paths wrong */}
                       <div
-                        className="w-full h-full max-sm:bg-contain bg-cover bg-center bg-no-repeat"
+                        className="w-full h-full bg-contain sm:bg-cover bg-center bg-no-repeat"
                         style={{
                           backgroundImage: `url(${projects[activeTab].image})`,
                         }}

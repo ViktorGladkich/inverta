@@ -166,7 +166,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         className="w-full lg:w-[48%] bg-white rounded-[20px] p-3 md:p-5"
       >
         <div
-          className="aspect-16/10 relative group overflow-hidden rounded-[16px] bg-neutral-200 cursor-pointer"
+          className="aspect-4/3 md:aspect-16/10 relative group overflow-hidden rounded-[16px] bg-neutral-100 cursor-pointer"
           style={{ boxShadow: "rgba(0,0,0,0.05) 0px 10px 20px -5px" }}
         >
           <Link
@@ -182,7 +182,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                className="w-full h-full max-sm:bg-contain bg-cover bg-center bg-no-repeat transition-all duration-1000"
+                className="w-full h-full bg-contain sm:bg-cover bg-center bg-no-repeat transition-all duration-1000"
                 style={{ backgroundImage: `url(${project.image})` }}
               />
             </motion.div>
