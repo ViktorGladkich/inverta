@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
-import { useMotionValue, animate } from "motion/react";
+import { useMotionValue, animate } from "framer-motion";
 
 /**
  * A wrapper card component with complex neumorphic shadow styling.
@@ -60,7 +60,7 @@ export const AnimatedPill = ({
   }, [motionValue, duration, values, times]);
 
   useEffect(() => {
-    const unsubscribe = motionValue.on("change", (latest) => {
+    const unsubscribe = motionValue.on("change", (latest: number) => {
       if (ref.current) {
         ref.current.textContent = `${Math.round(latest)}% ${label}`;
       }

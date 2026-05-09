@@ -146,7 +146,7 @@ export function Navbar() {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
-            className="lg:hidden p-0 rounded-full bg-transparent hover:bg-white/10 transition-colors z-110 relative w-12 h-12 flex items-center justify-center cursor-pointer"
+            className="lg:hidden p-0 rounded-full bg-transparent hover:bg-white/10 transition-colors z-[110] relative w-12 h-12 flex items-center justify-center cursor-pointer"
           >
             <svg
               viewBox="0 0 32 32"

@@ -25,6 +25,7 @@ export function ContactForm() {
       company: formData.get("company"),
       service: formData.get("service"),
       message: formData.get("message"),
+      website: formData.get("website"),
     };
 
     try {
@@ -167,6 +168,15 @@ export function ContactForm() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
             className="w-full flex flex-col gap-16 bg-white p-8 md:p-16 rounded-[40px] shadow-[0_20px_40px_-20px_rgba(0,0,0,0.05)] border border-black/5"
           >
+            {/* Honeypot — hidden from real users, bots fill it */}
+            <input
+              type="text"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              className="absolute -left-[9999px] w-px h-px opacity-0"
+            />
             <div className="flex flex-col gap-10 md:gap-14">
               {/* Anrede */}
               <div className="flex flex-col gap-2 w-full md:w-1/2">

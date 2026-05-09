@@ -27,7 +27,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
         {children}
       </motion.div>
 
-      <div className="fixed inset-0 z-9990 flex w-full h-screen pointer-events-none">
+      <div className="fixed inset-0 z-[9990] flex w-full h-screen pointer-events-none">
         {[...Array(5)].map((_, i) => (
           <motion.div
             key={`black-${i}`}
@@ -43,7 +43,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
         ))}
       </div>
 
-      <div className="fixed inset-0 z-9989 flex w-full h-screen pointer-events-none">
+      <div className="fixed inset-0 z-[9989] flex w-full h-screen pointer-events-none">
         {[...Array(5)].map((_, i) => (
           <motion.div
             key={`neon-${i}`}

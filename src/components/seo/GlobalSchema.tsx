@@ -9,7 +9,7 @@ export const GlobalSchema = () => {
         url: "https://invertadigital.de",
         logo: {
           "@type": "ImageObject",
-          url: "https://invertadigital.de/logo.png",
+          url: "https://invertadigital.de/logo-inverta.png",
           width: 512,
           height: 512,
         },
@@ -40,7 +40,7 @@ export const GlobalSchema = () => {
         "@type": ["LocalBusiness", "ProfessionalService"],
         "@id": "https://invertadigital.de/#localbusiness",
         name: "INVERTA DIGITAL",
-        image: "https://invertadigital.de/logo.png",
+        image: "https://invertadigital.de/logo-inverta.png",
         url: "https://invertadigital.de",
         email: "info@invertadigital.de",
         telephone: "+49-176-70428834",

@@ -95,7 +95,7 @@ function DesktopBenefits({ benefits }: { benefits: string[] }) {
       {/* Magnetic cursor */}
       <motion.div
         style={{ x: cursorX, y: cursorY, opacity: cursorVisible ? 1 : 0 }}
-        className="fixed top-0 left-0 z-9999 w-20 h-20 rounded-full bg-[#daff02] mix-blend-exclusion pointer-events-none flex items-center justify-center"
+        className="fixed top-0 left-0 z-[9999] w-20 h-20 rounded-full bg-[#daff02] mix-blend-exclusion pointer-events-none flex items-center justify-center"
       >
         <span className="text-black text-[9px] font-mono font-bold tracking-widest uppercase">Scroll↓</span>
       </motion.div>

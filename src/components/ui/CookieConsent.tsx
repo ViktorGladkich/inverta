@@ -92,7 +92,7 @@ export function CookieConsent() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-9998 bg-black/10 backdrop-blur-[2px]"
+            className="fixed inset-0 z-[9998] bg-black/10 backdrop-blur-[2px]"
           />
 
           <motion.div
@@ -100,7 +100,7 @@ export function CookieConsent() {
             animate={{ y: 0, opacity: 1, scale: 1, filter: "blur(0px)" }}
             exit={{ y: 60, opacity: 0, scale: 0.96, filter: "blur(8px)" }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-9999 flex items-center justify-center px-4 pointer-events-none"
+            className="fixed inset-0 z-[9999] flex items-center justify-center px-4 pointer-events-none"
           >
             <div
               className="relative rounded-[20px] bg-white border border-black/5 overflow-hidden max-h-[calc(100dvh-100px)] overflow-y-auto w-full max-w-[440px] pointer-events-auto"
