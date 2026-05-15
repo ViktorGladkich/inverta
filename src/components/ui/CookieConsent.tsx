@@ -40,18 +40,25 @@ export function CookieConsent() {
     };
   }, [isVisible]);
 
+  const broadcastConsent = () => {
+    window.dispatchEvent(new CustomEvent("inverta:consent-changed"));
+  };
+
   const handleAcceptAll = () => {
     localStorage.setItem("cookie-consent", "all");
+    broadcastConsent();
     setIsVisible(false);
   };
 
   const handleSavePreferences = () => {
     localStorage.setItem("cookie-consent", JSON.stringify(preferences));
+    broadcastConsent();
     setIsVisible(false);
   };
 
   const handleDecline = () => {
     localStorage.setItem("cookie-consent", "essential");
+    broadcastConsent();
     setIsVisible(false);
   };
 

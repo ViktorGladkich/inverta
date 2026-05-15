@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      - name: Build
+        run: npm run build
+        env:
+          # Provide dummy values so server-only code that reads env at build time
+          # doesn't break. Real values live in Vercel env.
+          RESEND_API_KEY: dummy
+          N8N_LEAD_WEBHOOK_URL: https://example.com/webhook
+          CONTACT_ALLOWED_ORIGINS: https://invertadigital.de
+
+      - name: Audit (production deps only, fail on high)
+        run: npm audit --omit=dev --audit-level=high

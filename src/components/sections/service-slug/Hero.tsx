@@ -1,11 +1,12 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 import { Sparkles } from "lucide-react";
 import { ServiceContent } from "@/data/services";
 import { VideoSchema } from "@/components/seo/VideoSchema";
 import { cn } from "@/lib/utils";
+import { useIsMobile } from "@/lib/hooks/useMediaQuery";
 
 interface HeroProps {
   service: ServiceContent;
@@ -95,7 +96,9 @@ const videoBackground = (serviceTitle: string) => (
       muted
       loop
       playsInline
+      preload="metadata"
       poster="/slug-poster.jpg"
+      aria-hidden="true"
       className="w-full h-full object-cover"
     >
       <source src="/slug-loop.mp4" type="video/mp4" />
@@ -156,20 +159,11 @@ function DesktopHero({ service, categoryLabel }: HeroProps) {
 
 /* ── Main export ── */
 export const Hero = ({ service, categoryLabel }: HeroProps) => {
-  const [isMobile, setIsMobile] = useState(() => {
-    if (typeof window === "undefined") return true;
-    return window.innerWidth < 768;
-  });
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return isMobile ? (
-    <MobileHero service={service} categoryLabel={categoryLabel} />
-  ) : (
-    <DesktopHero service={service} categoryLabel={categoryLabel} />
-  );
+  const isMobile = useIsMobile();
+  // While media-query is unknown (SSR + first paint), render Mobile —
+  // it is closer to the no-JS layout and avoids desktop scroll-handlers spinning up.
+  if (isMobile === null || isMobile) {
+    return <MobileHero service={service} categoryLabel={categoryLabel} />;
+  }
+  return <DesktopHero service={service} categoryLabel={categoryLabel} />;
 };

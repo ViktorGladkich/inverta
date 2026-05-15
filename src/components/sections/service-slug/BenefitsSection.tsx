@@ -2,17 +2,14 @@
 
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
 import { useRef, useEffect, useState, useCallback } from "react";
+import { useIsMobile } from "@/lib/hooks/useMediaQuery";
 
 export const BenefitsSection = ({ benefits }: { benefits: string[] }) => {
-  const [isMobile, setIsMobile] = useState(() =>
-    typeof window === "undefined" ? true : window.innerWidth < 768
-  );
-  useEffect(() => {
-    const fn = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener("resize", fn);
-    return () => window.removeEventListener("resize", fn);
-  }, []);
-  return isMobile ? <MobileBenefits benefits={benefits} /> : <DesktopBenefits benefits={benefits} />;
+  const isMobile = useIsMobile();
+  if (isMobile === null || isMobile) {
+    return <MobileBenefits benefits={benefits} />;
+  }
+  return <DesktopBenefits benefits={benefits} />;
 };
 
 /* ── MOBILE ── */

@@ -1,14 +1,27 @@
+import dynamic from "next/dynamic";
 import { Footer } from "@/components/layout/Footer";
-import { ServicesOverview } from "@/components/sections/ServicesOverview";
-import { Process } from "@/components/sections/Process";
-import { Projects } from "@/components/sections/Projects";
 import { Hero } from "@/components/sections/Hero";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { Technology } from "@/components/sections/Technology";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { FAQ } from "@/components/sections/FAQ";
-import { CTASection } from "@/components/sections/CTASection";
+import { ServicesOverview } from "@/components/sections/ServicesOverview";
 import { Metadata } from "next";
+
+// Below-the-fold sections — defer their JS off the initial bundle.
+const Process = dynamic(() =>
+  import("@/components/sections/Process").then((m) => m.Process),
+);
+const Projects = dynamic(() =>
+  import("@/components/sections/Projects").then((m) => m.Projects),
+);
+const Testimonials = dynamic(() =>
+  import("@/components/sections/Testimonials").then((m) => m.Testimonials),
+);
+const FAQ = dynamic(() =>
+  import("@/components/sections/FAQ").then((m) => m.FAQ),
+);
+const CTASection = dynamic(() =>
+  import("@/components/sections/CTASection").then((m) => m.CTASection),
+);
 
 export const metadata: Metadata = {
   title: "Premium Agentur für Webdesign, Webentwicklung & KI | INVERTA",

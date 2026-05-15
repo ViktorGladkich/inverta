@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -118,15 +120,21 @@ export function Footer() {
       </div>
 
       {/* Large brand text */}
-      <div className="relative w-full flex justify-center items-end mt-10 md:mt-16 overflow-hidden">
-        <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-linear-to-t from-black/5 to-transparent blur-[80px] z-0 pointer-events-none" />
+      <div className="relative w-full h-[18vw] md:h-[22vw] min-h-[120px] flex justify-center items-center overflow-hidden">
+        <div className="absolute bottom-0 left-0 right-0 h-full bg-linear-to-t from-black/5 to-transparent blur-[80px] z-0 pointer-events-none" />
 
-        <div
-          aria-hidden="true"
-          className="relative z-10 font-bold tracking-[-0.03em] text-black text-center w-full uppercase m-0 leading-[0.75] select-none text-[clamp(6rem,24vw,30rem)] pl-2"
-        >
-          INVERTA
-        </div>
+        <Image
+          src="/logo-footer.png"
+          alt="INVERTA Logo"
+          width={2000}
+          height={2000}
+          className="relative z-10 w-full h-auto select-none scale-[1] md:scale-[1] translate-y-[5%]"
+          priority
+        />
+
+
+
+
 
         <div className="absolute bottom-0 left-0 right-0 h-4 bg-black/10 blur-xl z-20 pointer-events-none" />
       </div>

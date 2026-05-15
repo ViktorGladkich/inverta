@@ -95,6 +95,8 @@ export function GalaxyHero() {
             loop
             muted
             playsInline
+            preload="metadata"
+            aria-hidden="true"
             className="w-full h-full object-cover invert grayscale brightness-[0.69] "
           />
           {/* Optional Overlay to ensure text readability */}

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { MessageSquare, Star } from "lucide-react";
+import Image from "next/image";
 import { BlurTextEffect } from "@/components/ui/BlurTextEffect";
 
 const testimonials = [
@@ -132,11 +133,12 @@ export function Testimonials() {
             }}
           >
             <div className="relative w-full h-full rounded-[16px] overflow-hidden">
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
-                style={{
-                  backgroundImage: "url(/images/projects/vanturahandwerk.webp)",
-                }}
+              <Image
+                src="/images/projects/vanturahandwerk.webp"
+                alt="VanturaHandwerk Referenzprojekt"
+                fill
+                sizes="(max-width: 768px) 100vw, 40vw"
+                className="object-cover object-center transition-transform duration-700 hover:scale-105"
               />
             </div>
           </motion.div>

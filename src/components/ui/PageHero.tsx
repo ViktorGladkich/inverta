@@ -62,6 +62,8 @@ export function PageHero({
             loop
             muted
             playsInline
+            preload="metadata"
+            aria-hidden="true"
             className="w-full h-full object-cover invert grayscale brightness-[0.69]"
           />
           <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px]" />

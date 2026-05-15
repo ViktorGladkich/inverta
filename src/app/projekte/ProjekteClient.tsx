@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, FolderKanban, Sparkles } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { PROJECTS, type Project } from "@/data/projects";
@@ -182,9 +183,16 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                className="w-full h-full bg-contain sm:bg-cover bg-center bg-no-repeat transition-all duration-1000"
-                style={{ backgroundImage: `url(${project.image})` }}
-              />
+                className="relative w-full h-full transition-all duration-1000"
+              >
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-contain sm:object-cover object-center"
+                />
+              </motion.div>
             </motion.div>
 
             <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">

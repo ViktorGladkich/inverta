@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, ArrowUpRight, Sparkles } from "lucide-react";
 import { type Project } from "@/data/projects";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -48,9 +49,13 @@ export function ProjectDetailClient({ project }: { project: Project }) {
           className="absolute inset-0 w-full h-full"
         >
           <div className="absolute inset-0 bg-black/15 z-10" />
-          <div
-            className="w-full h-full max-sm:bg-contain bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${project.image})` }}
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            sizes="100vw"
+            priority
+            className="max-sm:object-contain object-cover object-center"
           />
         </motion.div>
 

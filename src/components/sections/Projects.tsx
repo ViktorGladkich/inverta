@@ -3,7 +3,7 @@
 import { motion, AnimatePresence, animate } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { FolderKanban } from "lucide-react";
-import React from "react"; // Added React import for useRef
+import Image from "next/image";
 
 // Shared Neumorphic Shadow (matches site standard)
 const neumorphicShadow =
@@ -22,7 +22,7 @@ const projects = [
       { value: "Maximal", label: "Visuelle Wirkung" },
       { value: "High-End", label: "Performance" },
     ],
-    image: "/images/projects/prosecure.png",
+    image: "/images/projects/prosecure.webp",
   },
   {
     available: true,
@@ -226,16 +226,14 @@ export function Projects() {
                   className="absolute inset-0 flex items-center justify-center"
                 >
                   {projects[activeTab].image ? (
-                    // Use Image component (Need to import it back)
-                    <div className="w-full h-full relative">
-                      {/* Placeholder for now to avoid broken images if paths wrong */}
-                      <div
-                        className="w-full h-full bg-contain sm:bg-cover bg-center bg-no-repeat"
-                        style={{
-                          backgroundImage: `url(${projects[activeTab].image})`,
-                        }}
-                      />
-                    </div>
+                    <Image
+                      src={projects[activeTab].image}
+                      alt={projects[activeTab].title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-contain sm:object-cover object-center"
+                      priority={activeTab === 0}
+                    />
                   ) : (
                     <span className="text-neutral-400 font-bold text-lg">
                       {projects[activeTab].title} Visual

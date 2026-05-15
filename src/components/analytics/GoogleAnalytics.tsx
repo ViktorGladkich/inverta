@@ -1,11 +1,11 @@
 "use client";
 
 import Script from "next/script";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
 const GA_ID = "G-NT29FD0TKE";
 
-function checkConsent(): boolean {
+function readConsent(): boolean {
   if (typeof window === "undefined") return false;
   const consent = localStorage.getItem("cookie-consent");
   if (!consent) return false;
@@ -17,22 +17,21 @@ function checkConsent(): boolean {
   }
 }
 
+function subscribe(onChange: () => void) {
+  window.addEventListener("inverta:consent-changed", onChange);
+  window.addEventListener("storage", onChange);
+  return () => {
+    window.removeEventListener("inverta:consent-changed", onChange);
+    window.removeEventListener("storage", onChange);
+  };
+}
+
 export function GoogleAnalytics() {
-  const [consentGiven, setConsentGiven] = useState(() => checkConsent());
-
-  useEffect(() => {
-    if (consentGiven) return;
-
-    // Poll for consent changes (same-tab, set by CookieConsent)
-    const interval = setInterval(() => {
-      if (checkConsent()) {
-        setConsentGiven(true);
-        clearInterval(interval);
-      }
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [consentGiven]);
+  const consentGiven = useSyncExternalStore(
+    subscribe,
+    readConsent,
+    () => false, // SSR / first render: no consent yet
+  );
 
   if (!consentGiven) return null;
 

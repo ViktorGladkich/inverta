@@ -24,7 +24,7 @@ export const PROJECTS: Project[] = [
     category: "High-End Webdesign & Branding",
     description:
       "Eine Plattform, die über das Standard-Webdesign hinausgeht. High-End-Ästhetik trifft auf Funktionalität – denn Sicherheit braucht keine Erklärungen, sie muss sich richtig anfühlen.",
-    image: "/images/projects/prosecure.png",
+    image: "/images/projects/prosecure.webp",
     services: ["GSAP Animationen", "Interactive Storytelling", "Mobile-First Architektur"],
     challenge:
       "In der Sicherheitsbranche ist Vertrauen die wichtigste Währung. Die Herausforderung bestand darin, dieses Vertrauen digital durch ein Design zu vermitteln, das Sicherheit nicht nur erklärt, sondern fühlbar macht.",
@@ -211,7 +211,7 @@ export const PROJECTS: Project[] = [
     category: "KI-Automatisierung & Marketing",
     description:
       "Ein vollautomatisiertes System für das Content-Marketing und Social-Media-Management. Von der Trend-Analyse via RSS bis hin zur KI-gestützten Content-Erstellung und automatisierten Veröffentlichung auf Twitter, LinkedIn und Instagram.",
-    image: "/images/projects/automated-content-marketing.png",
+    image: "/images/projects/automated-content-marketing.webp",
     services: [
       "n8n Workflows",
       "OpenAI GPT-4",
@@ -236,7 +236,7 @@ export const PROJECTS: Project[] = [
     category: "KI-Automatisierung & Service",
     description:
       "Ein intelligenter E-Mail-Assistent für einen Smartphone-Reparaturservice. Das System analysiert eingehende Anfragen via IMAP, extrahiert Hersteller und Modell und generiert mittels AI-Agenten automatisierte, personalisierte Preisangebote auf Basis von Echtzeit-Daten.",
-    image: "/images/projects/alle-emails-abrufen.png",
+    image: "/images/projects/alle-emails-abrufen.webp",
     services: [
       "AI Agents (LangChain)",
       "n8n Automation",

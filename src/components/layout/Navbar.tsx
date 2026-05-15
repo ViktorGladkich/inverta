@@ -78,7 +78,7 @@ export function Navbar() {
             className="relative z-50 flex items-center gap-2"
           >
             <Image
-              src="/logo-inverta.png"
+              src="/logo-black.png"
               alt="INVERTA DIGITAL Logo - Marketing & Webentwicklung Agentur aus Dresden"
               width={140}
               height={40}
