@@ -106,7 +106,7 @@ export function GalaxyHero() {
         {/* Hauptinhalts-Container */}
         <motion.div
           variants={containerVariants}
-          initial="hidden"
+          initial="visible"
           animate="visible"
           className="relative z-10 flex flex-col items-center gap-4 px-4 text-center max-w-5xl mx-auto"
         >
@@ -173,7 +173,7 @@ export function GalaxyHero() {
           </div>
           <motion.p
             variants={itemVariants}
-            className="text-base md:text-xl text-neutral-700 max-w-2xl leading-relaxed font-medium"
+            className="text-base md:text-xl text-neutral-700 max-w-2xl leading-relaxed font-medium animate-fade-in"
           >
             Wir transformieren Marken durch präzise Entwicklung und ästhetische
             Exzellenz. Marketing, Webentwicklung und Wachstumsstrategien, die

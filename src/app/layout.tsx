@@ -77,6 +77,7 @@ export default function RootLayout({
   return (
     <html lang="de" className="scroll-smooth">
       <body className={`${satoshi.variable} ${clashDisplay.variable} ${jetbrainsMono.variable} antialiased bg-white text-neutral-900 selection:bg-black selection:text-white`}>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
         <GlobalSchema />
 
         <ViewportFix />
