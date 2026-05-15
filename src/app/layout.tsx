@@ -6,6 +6,7 @@ import { ProgressiveBlur } from "@/components/ui/ProgressiveBlur";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 
 import { GlobalSchema } from "@/components/seo/GlobalSchema";
+import { satoshi, clashDisplay, jetbrainsMono } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -75,7 +76,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de" className="scroll-smooth">
-      <body className="antialiased bg-white text-neutral-900 selection:bg-black selection:text-white">
+      <body className={`${satoshi.variable} ${clashDisplay.variable} ${jetbrainsMono.variable} antialiased bg-white text-neutral-900 selection:bg-black selection:text-white`}>
         <GlobalSchema />
 
         <ViewportFix />

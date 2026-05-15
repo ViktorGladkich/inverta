@@ -214,7 +214,7 @@ export function Projects() {
           {/* Project Content (Row) */}
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
             {/* Image Side */}
-            <div className="w-full md:w-1/2 aspect-[4/3] relative rounded-2xl overflow-hidden bg-neutral-100 shadow-sm ring-1 ring-black/5">
+            <div className="w-full md:w-1/2 aspect-4/3 relative rounded-2xl overflow-hidden bg-neutral-100 shadow-sm ring-1 ring-black/5">
               {/* Image Placeholder */}
               <AnimatePresence>
                 <motion.div

@@ -146,18 +146,18 @@ export function Navbar() {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
-            className="lg:hidden p-0 rounded-full bg-transparent hover:bg-white/10 transition-colors z-[110] relative w-12 h-12 flex items-center justify-center cursor-pointer"
+            className="lg:hidden p-0 rounded-full bg-transparent hover:bg-white/10 transition-colors z-110 relative w-12 h-12 flex items-center justify-center cursor-pointer"
           >
             <svg
               viewBox="0 0 32 32"
               className={cn(
-                "h-10 w-10 transition-transform duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]",
+                "h-10 w-10 transition-transform duration-600 ease-in-out",
                 mobileMenuOpen ? "-rotate-45" : "",
               )}
             >
               <path
                 className={cn(
-                  "fill-none stroke-black stroke-[2px] transition-[stroke-dasharray,stroke-dashoffset] duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]",
+                  "fill-none stroke-black stroke-[2px] transition-[stroke-dasharray,stroke-dashoffset] duration-600 ease-in-out",
                   mobileMenuOpen
                     ? "[stroke-dasharray:20_300] [stroke-dashoffset:-32.42]"
                     : "[stroke-dasharray:12_63]",
@@ -167,7 +167,7 @@ export function Navbar() {
                 d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
               />
               <path
-                className="fill-none stroke-black stroke-[2px] transition-[stroke-dasharray,stroke-dashoffset] duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
+                className="fill-none stroke-black stroke-[2px] transition-[stroke-dasharray,stroke-dashoffset] duration-600 ease-in-out"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 d="M7 16 27 16"
