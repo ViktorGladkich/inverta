@@ -96,18 +96,16 @@ export function GalaxyHero() {
             sizes="100vw"
             className="object-cover invert grayscale brightness-[0.69] pointer-events-none"
           />
-          {!isMobile && (
-            <video
-              src="/hero-loop.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              aria-hidden="true"
-              className="hidden md:block absolute inset-0 w-full h-full object-cover invert grayscale brightness-[0.69]"
-            />
-          )}
+          <video
+            src="/hero-loop.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            aria-hidden="true"
+            className="hidden md:block absolute inset-0 w-full h-full object-cover invert grayscale brightness-[0.69]"
+          />
           {/* Optional Overlay to ensure text readability */}
           <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px]" />
         </div>
