@@ -225,7 +225,7 @@ export function MobileMenu({
                   Instagram
                 </a>
                 <a
-                  href="https://www.facebook.com/invertadigitall"
+                  href="https://www.facebook.com/profile.php?id=61588210421433"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-[#daff02] transition-colors"
@@ -233,7 +233,9 @@ export function MobileMenu({
                   Facebook
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/inverta-digital-de/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-white hover:text-[#daff02] transition-colors"
                 >
                   LinkedIn

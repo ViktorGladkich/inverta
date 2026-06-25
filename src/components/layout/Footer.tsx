@@ -75,13 +75,28 @@ export function Footer() {
 
           <ul className="flex flex-wrap gap-6 md:gap-10 text-xs tracking-[0.15em] font-medium uppercase">
             <li>
-              <a href="#" className="hover:text-black/60 transition-colors underline underline-offset-4 decoration-black">
+              <a
+                href="https://www.linkedin.com/company/inverta-digital-de/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-black/60 transition-colors underline underline-offset-4 decoration-black"
+              >
                 LINKEDIN
               </a>
             </li>
+            {/* <li>
+              <a
+                href="https://x.com/invertadigital"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-black/60 transition-colors underline underline-offset-4 decoration-black"
+              >
+                X (TWITTER)
+              </a>
+            </li> */}
             <li>
               <a
-                href="https://www.facebook.com/invertadigitall"
+                href="https://www.facebook.com/profile.php?id=61588210421433"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-black/60 transition-colors underline underline-offset-4 decoration-black"
@@ -128,6 +143,7 @@ export function Footer() {
           alt="INVERTA Logo"
           width={2000}
           height={2000}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1320px"
           className="relative z-10 w-full h-auto select-none scale-[1] md:scale-[1] translate-y-[5%]"
           priority
         />

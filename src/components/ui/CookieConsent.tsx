@@ -23,22 +23,10 @@ export function CookieConsent() {
   useEffect(() => {
     const consent = localStorage.getItem("cookie-consent");
     if (!consent) {
-      const timer = setTimeout(() => setIsVisible(true), 1500);
+      const timer = setTimeout(() => setIsVisible(true), 0);
       return () => clearTimeout(timer);
     }
   }, []);
-
-  // Lock body scroll while cookie banner is visible
-  useEffect(() => {
-    if (isVisible) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isVisible]);
 
   const broadcastConsent = () => {
     window.dispatchEvent(new CustomEvent("inverta:consent-changed"));
@@ -93,21 +81,12 @@ export function CookieConsent() {
     <AnimatePresence>
       {isVisible && (
         <>
-          {/* Backdrop */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-[9998] bg-black/10 backdrop-blur-[2px]"
-          />
-
-          <motion.div
-            initial={{ y: 80, opacity: 0, scale: 0.95, filter: "blur(10px)" }}
-            animate={{ y: 0, opacity: 1, scale: 1, filter: "blur(0px)" }}
-            exit={{ y: 60, opacity: 0, scale: 0.96, filter: "blur(8px)" }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-[9999] flex items-center justify-center px-4 pointer-events-none"
+            initial={{ y: 60, opacity: 0, scale: 0.96 }}
+            animate={{ y: 0, opacity: 1, scale: 1 }}
+            exit={{ y: 40, opacity: 0, scale: 0.97 }}
+            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed bottom-4 right-4 left-4 md:left-auto md:bottom-8 md:right-8 z-9999 pointer-events-none flex justify-center md:justify-end"
           >
             <div
               className="relative rounded-[20px] bg-white border border-black/5 overflow-hidden max-h-[calc(100dvh-100px)] overflow-y-auto w-full max-w-[440px] pointer-events-auto"

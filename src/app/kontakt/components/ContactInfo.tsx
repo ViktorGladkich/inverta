@@ -65,7 +65,7 @@ export function ContactInfo() {
                 </li>
                 <li>
                   <a
-                    href="https://www.facebook.com/invertadigitall"
+                    href="https://www.facebook.com/profile.php?id=61588210421433"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-black transition-colors"
@@ -74,7 +74,12 @@ export function ContactInfo() {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-black transition-colors">
+                  <a
+                    href="https://www.linkedin.com/company/inverta-digital-de/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-black transition-colors"
+                  >
                     LinkedIn
                   </a>
                 </li>

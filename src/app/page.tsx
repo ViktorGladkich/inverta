@@ -26,7 +26,7 @@ const CTASection = dynamic(() =>
 export const metadata: Metadata = {
   title: "Premium Agentur für Webdesign, Webentwicklung & KI | INVERTA",
   description:
-    "INVERTA ist Ihre digitale Growth-Agentur. Wir verbinden High-End Webdesign, skalierbare Webentwicklung, Performance Marketing und intelligente KI-Automatisierung für messbares Wachstum.",
+    "INVERTA DIGITAL: Growth-Agentur aus Dresden für Webdesign, Webentwicklung, Performance Marketing & KI-Automatisierung. Messbares Wachstum.",
   keywords: [
     "Webdesign Agentur",
     "Webentwicklung",
