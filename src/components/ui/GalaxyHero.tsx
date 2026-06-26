@@ -86,17 +86,8 @@ export function GalaxyHero() {
           Premium Agentur für Webdesign, Webentwicklung, Performance Marketing &
           KI-Automatisierung | INVERTA
         </h1>
-        {/* Hintergrund-Video für immersives Design mit Next.js Image als LCP-Target */}
+        {/* Hintergrund-Video für immersives Design */}
         <div className="absolute inset-0 z-0 select-none">
-          <Image
-            src="/hero-poster.jpg"
-            alt="INVERTA Digital Background"
-            fill
-            priority
-            fetchPriority="high"
-            sizes="100vw"
-            className="object-cover invert grayscale brightness-[0.69] pointer-events-none"
-          />
           <video
             src="/hero-loop.mp4"
             poster="/hero-poster.jpg"
@@ -106,7 +97,7 @@ export function GalaxyHero() {
             playsInline
             preload="metadata"
             aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover invert grayscale brightness-[0.69] opacity-[0.99]"
+            className="w-full h-full object-cover invert grayscale brightness-[0.69] "
           />
           {/* Optional Overlay to ensure text readability */}
           <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px]" />
