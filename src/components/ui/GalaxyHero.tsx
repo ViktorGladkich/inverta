@@ -9,7 +9,6 @@ import { VideoSchema } from "@/components/seo/VideoSchema";
 
 export function GalaxyHero() {
   const [isMobile, setIsMobile] = useState(false);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -88,31 +87,25 @@ export function GalaxyHero() {
           KI-Automatisierung | INVERTA
         </h1>
         {/* Hintergrund-Video für immersives Design mit Next.js Image als LCP-Target */}
-        <div className="absolute inset-0 z-0 select-none">
+        <div className="absolute inset-0 z-0 select-none bg-white">
+          <Image
+            src="/hero-poster.jpg"
+            alt="INVERTA Digital Background"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover invert grayscale brightness-[0.69] opacity-70 pointer-events-none"
+          />
           <video
             src="/hero-loop.mp4"
-            poster="/hero-poster.jpg"
             autoPlay
             loop
             muted
             playsInline
             preload="metadata"
             aria-hidden="true"
-            onCanPlay={() => setIsVideoPlaying(true)}
-            onPlaying={() => setIsVideoPlaying(true)}
-            className="absolute inset-0 w-full h-full object-cover invert grayscale brightness-[0.69]"
+            className="hidden md:block absolute inset-0 w-full h-full object-cover invert grayscale brightness-[0.69] opacity-70"
           />
-          <Image
-            src="/hero-poster.jpg"
-            alt="INVERTA Digital Background"
-            fill
-            priority
-            fetchPriority="high"
-            sizes="100vw"
-            className={`object-cover invert grayscale brightness-[0.69] pointer-events-none transition-opacity duration-1000 ${isVideoPlaying ? "opacity-0" : "opacity-100"}`}
-          />
-          {/* Optional Overlay to ensure text readability */}
-          <div className="absolute inset-0 bg-white/30" />
         </div>
 
         {/* Hauptinhalts-Container */}
