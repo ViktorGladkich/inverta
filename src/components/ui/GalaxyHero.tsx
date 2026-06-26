@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { BlurTextEffect } from "@/components/ui/BlurTextEffect";
@@ -19,56 +18,7 @@ export function GalaxyHero() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1,
-      },
-    },
-  };
 
-  const badgeVariants: Variants = {
-    hidden: { opacity: 0, scale: 0.8, y: 20 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
-  const titleVariants: Variants = {
-    hidden: { opacity: 0, scale: 0.9, y: 30 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: { duration: 1.0, ease: "easeOut" },
-    },
-  };
-
-  const buttonVariants: Variants = {
-    hidden: { opacity: 0, scale: 0.9, y: 20 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: "circOut" },
-    },
-  };
-
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, scale: 0.9, y: 20 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: "easeOut" }, // Fallback
-    },
-  };
 
   return (
     <>
@@ -102,32 +52,28 @@ export function GalaxyHero() {
             loop
             muted
             playsInline
-            preload="metadata"
+            preload="none"
             aria-hidden="true"
-            className="hidden md:block absolute inset-0 w-full h-full object-cover invert grayscale brightness-[0.69] opacity-70"
+            className="absolute inset-0 w-full h-full object-cover invert grayscale brightness-[0.69] opacity-70"
           />
         </div>
 
         {/* Hauptinhalts-Container */}
-        <motion.div
-          variants={containerVariants}
-          initial="visible"
-          animate="visible"
+        <div
           className="relative z-10 flex flex-col items-center gap-4 px-4 text-center max-w-5xl mx-auto"
         >
           {/* Visuelles Tag-Badge (Premium Agentur) */}
-          <motion.div variants={badgeVariants}>
+          <div>
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#F5F5F5] border border-white shadow-[0_30px_30px_-3.25px_rgba(0,0,0,0.05),0_13px_13px_-2.7px_rgba(0,0,0,0.08),0_6px_6px_-2.1px_rgba(0,0,0,0.09)] backdrop-blur-sm">
               <span className="text-xs font-semibold tracking-wide text-black uppercase">
                 Digitalagentur der nächsten Generation
               </span>
             </div>
-          </motion.div>
+          </div>
 
           {/* Logo-Container und Hauptüberschrift */}
-          <motion.div
+          <div
             className="flex flex-col items-center gap-6"
-            variants={titleVariants}
           >
             <div className="flex items-center gap-4 md:gap-10">
               {/* Logo Box (Neumorphism-Stil) */}
@@ -170,24 +116,22 @@ export function GalaxyHero() {
                 </h2>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Untertitel & Leistungsübersicht */}
           <div className="sr-only">
             Marketing & Webentwicklung in Perfektion
           </div>
-          <motion.p
-            variants={itemVariants}
+          <p
             className="text-base md:text-xl text-neutral-700 max-w-2xl leading-relaxed font-medium animate-fade-in"
           >
             Wir transformieren Marken durch präzise Entwicklung und ästhetische
             Exzellenz. Marketing, Webentwicklung und Wachstumsstrategien, die
             die Zukunft definieren.
-          </motion.p>
+          </p>
 
           {/* Handlungsaufrufe (Call-to-Action) */}
-          <motion.div
-            variants={buttonVariants}
+          <div
             className="flex flex-col sm:flex-row items-center gap-4 mt-4"
           >
             {/* Primärer Button (Kontakt) */}
@@ -207,14 +151,14 @@ export function GalaxyHero() {
                 </g>
               </svg>
             </Link>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </section>
 
       {/* Sektion: Kurzes Statement des Gründers */}
       <section
         id="founder-note"
-        className="relative z-10 flex flex-col items-center justify-center gap-11 py-[100px] px-10 bg-[#ffffff4d] shadow-[inset_0_3px_1px_rgba(255,255,255,0.4),inset_0_-3px_1px_rgba(255,255,255,0.4)] backdrop-blur-sm"
+        className="relative z-10 flex flex-col items-center justify-center gap-11 py-[100px] px-10 bg-[#ffffff4d] shadow-[inset_0_3px_1px_rgba(255,255,255,0.4),inset_0_-3px_1px_rgba(255,255,255,0.4)] md:backdrop-blur-sm"
       >
         <div className="max-w-4xl text-center">
           <h3 className="text-2xl md:text-3xl font-medium leading-snug text-neutral-800">
