@@ -20,6 +20,7 @@ export function PageHero({
 }: PageHeroProps) {
   const heroRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -56,15 +57,6 @@ export function PageHero({
           contentUrl="https://invertadigital.de/hero-loop.mp4"
         />
         <div className="absolute inset-0 z-0 select-none border-b border-black/5">
-          <Image
-            src="/hero-poster.jpg"
-            alt="Hero Background"
-            fill
-            priority
-            fetchPriority="high"
-            sizes="100vw"
-            className="object-cover invert grayscale brightness-[0.69] pointer-events-none"
-          />
           <video
             src="/hero-loop.mp4"
             poster="/hero-poster.jpg"
@@ -74,9 +66,22 @@ export function PageHero({
             playsInline
             preload="metadata"
             aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover invert grayscale brightness-[0.69] opacity-[0.99]"
+            onCanPlay={() => setIsVideoPlaying(true)}
+            onPlaying={() => setIsVideoPlaying(true)}
+            className="absolute inset-0 w-full h-full object-cover invert grayscale brightness-[0.69]"
           />
-          <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px]" />
+          <Image
+            src="/hero-poster.jpg"
+            alt="Hero Background"
+            fill
+            priority
+            fetchPriority="high"
+            sizes="100vw"
+            className={`object-cover invert grayscale brightness-[0.69] pointer-events-none transition-opacity duration-1000 ${
+              isVideoPlaying ? "opacity-0" : "opacity-100"
+            }`}
+          />
+          <div className="absolute inset-0 bg-white/30" />
         </div>
 
         {/* Scroll-driven content */}
