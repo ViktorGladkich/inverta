@@ -93,18 +93,20 @@ export function GalaxyHero() {
             alt="INVERTA Digital Background"
             fill
             priority
+            fetchPriority="high"
             sizes="100vw"
             className="object-cover invert grayscale brightness-[0.69] pointer-events-none"
           />
           <video
             src="/hero-loop.mp4"
+            poster="/hero-poster.jpg"
             autoPlay
             loop
             muted
             playsInline
             preload="metadata"
             aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover invert grayscale brightness-[0.69]"
+            className="absolute inset-0 w-full h-full object-cover invert grayscale brightness-[0.69] opacity-[0.99]"
           />
           {/* Optional Overlay to ensure text readability */}
           <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px]" />

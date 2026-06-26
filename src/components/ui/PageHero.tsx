@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { VideoSchema } from "@/components/seo/VideoSchema";
+import Image from "next/image";
 
 interface PageHeroProps {
   titleTop: string;
@@ -55,6 +56,15 @@ export function PageHero({
           contentUrl="https://invertadigital.de/hero-loop.mp4"
         />
         <div className="absolute inset-0 z-0 select-none border-b border-black/5">
+          <Image
+            src="/hero-poster.jpg"
+            alt="Hero Background"
+            fill
+            priority
+            fetchPriority="high"
+            sizes="100vw"
+            className="object-cover invert grayscale brightness-[0.69] pointer-events-none"
+          />
           <video
             src="/hero-loop.mp4"
             poster="/hero-poster.jpg"
@@ -64,7 +74,7 @@ export function PageHero({
             playsInline
             preload="metadata"
             aria-hidden="true"
-            className="w-full h-full object-cover invert grayscale brightness-[0.69]"
+            className="absolute inset-0 w-full h-full object-cover invert grayscale brightness-[0.69] opacity-[0.99]"
           />
           <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px]" />
         </div>
