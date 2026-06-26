@@ -96,7 +96,7 @@ export function MobileMenu({
           initial="initial"
           animate="animate"
           exit="exit"
-          className="fixed left-3 right-3 top-[55px] pb-[12px] h-[calc(100dvh-88px)] origin-top bg-[#050505] text-white z-90 flex flex-col justify-between overflow-y-auto overflow-x-hidden rounded-2xl shadow-[0px_20px_40px_rgba(0,0,0,0.4)] border border-white/10"
+          className="fixed left-3 right-3 top-[55px] pb-[12px] h-[calc(100dvh-88px)] origin-top bg-[#050505] text-white z-[90] flex flex-col justify-between overflow-y-auto overflow-x-hidden rounded-2xl shadow-[0px_20px_40px_rgba(0,0,0,0.4)] border border-white/10"
         >
           {/* Hauptnavigation Mobile (SEO-optimiert) */}
           <nav>
