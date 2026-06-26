@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import {
   Cookie,
@@ -12,7 +13,6 @@ import {
 
 export function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
-  const [isExiting, setIsExiting] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
   const [preferences, setPreferences] = useState({
     essential: true,
@@ -23,16 +23,7 @@ export function CookieConsent() {
   useEffect(() => {
     const consent = localStorage.getItem("cookie-consent");
     if (!consent) {
-      // Delay 7s + requestIdleCallback to ensure cookie renders AFTER LCP is finalized
-      const timer = setTimeout(() => {
-        if ("requestIdleCallback" in window) {
-          (window as Window).requestIdleCallback(() => setIsVisible(true), {
-            timeout: 2000,
-          });
-        } else {
-          setIsVisible(true);
-        }
-      }, 7000);
+      const timer = setTimeout(() => setIsVisible(true), 3000);
       return () => clearTimeout(timer);
     }
   }, []);
@@ -41,16 +32,23 @@ export function CookieConsent() {
     window.dispatchEvent(new CustomEvent("inverta:consent-changed"));
   };
 
-  const dismiss = useCallback((consentValue: string) => {
-    localStorage.setItem("cookie-consent", consentValue);
+  const handleAcceptAll = () => {
+    localStorage.setItem("cookie-consent", "all");
     broadcastConsent();
-    setIsExiting(true);
-    setTimeout(() => setIsVisible(false), 350);
-  }, []);
+    setIsVisible(false);
+  };
 
-  const handleAcceptAll = () => dismiss("all");
-  const handleSavePreferences = () => dismiss(JSON.stringify(preferences));
-  const handleDecline = () => dismiss("essential");
+  const handleSavePreferences = () => {
+    localStorage.setItem("cookie-consent", JSON.stringify(preferences));
+    broadcastConsent();
+    setIsVisible(false);
+  };
+
+  const handleDecline = () => {
+    localStorage.setItem("cookie-consent", "essential");
+    broadcastConsent();
+    setIsVisible(false);
+  };
 
   const cookieCategories = [
     {
@@ -79,42 +77,53 @@ export function CookieConsent() {
     },
   ];
 
-  if (!isVisible) return null;
-
   return (
-    <div
-      className={`fixed bottom-4 right-4 left-4 md:left-auto md:bottom-8 md:right-8 z-9999 flex justify-center md:justify-end transition-all duration-[450ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
-        isExiting
-          ? "opacity-0 translate-y-10 scale-[0.97]"
-          : "opacity-100 translate-y-0 scale-100 animate-[cookieSlideIn_0.45s_cubic-bezier(0.16,1,0.3,1)_forwards]"
-      }`}
-    >
-      <div
-        className="relative rounded-[20px] bg-white border border-black/5 overflow-hidden max-h-[calc(100dvh-100px)] overflow-y-auto w-full max-w-[440px]"
-        style={{
-          boxShadow:
-            "0 40px 80px -20px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.02), 0 2px 4px rgba(0,0,0,0.04)",
-        }}
-      >
+    <AnimatePresence>
+      {isVisible && (
+        <>
+          <motion.div
+            initial={{ y: 60, opacity: 0, scale: 0.96 }}
+            animate={{ y: 0, opacity: 1, scale: 1 }}
+            exit={{ y: 40, opacity: 0, scale: 0.97 }}
+            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed bottom-4 right-4 left-4 md:left-auto md:bottom-8 md:right-8 z-9999 pointer-events-none flex justify-center md:justify-end"
+          >
+            <div
+              className="relative rounded-[20px] bg-white border border-black/5 overflow-hidden max-h-[calc(100dvh-100px)] overflow-y-auto w-full max-w-[440px] pointer-events-auto"
+              style={{
+                boxShadow:
+                  "0 40px 80px -20px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.02), 0 2px 4px rgba(0,0,0,0.04)",
+              }}
+            >
               {/* Header */}
               <div className="p-6 pb-0 sm:p-7 sm:pb-0">
                 <div className="flex items-start gap-4 mb-5">
-                  <div className="w-12 h-12 rounded-2xl bg-black flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(0,0,0,0.2)]">
+                  <motion.div
+                    initial={{ rotate: -30, scale: 0.8 }}
+                    animate={{ rotate: 0, scale: 1 }}
+                    transition={{
+                      delay: 0.3,
+                      duration: 0.6,
+                      type: "spring",
+                      stiffness: 200,
+                    }}
+                    className="w-12 h-12 rounded-2xl bg-black flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(0,0,0,0.2)]"
+                  >
                     <Cookie className="w-5.5 h-5.5 text-white" />
-                  </div>
+                  </motion.div>
                   <div className="flex-1 min-w-0">
                     <h3 className="text-base font-bold text-black tracking-tight leading-tight mb-1">
                       Ihre Privatsphäre ist uns wichtig
                     </h3>
-                    <span className="text-[12px] text-black font-medium leading-relaxed">
+                    <p className="text-[12px] text-black font-medium leading-relaxed">
                       Wir verwenden Cookies und ähnliche Technologien, um Ihnen
                       ein optimales Online-Erlebnis zu bieten.
-                    </span>
+                    </p>
                   </div>
                 </div>
 
                 {/* Description */}
-                <span className="text-[13px] leading-[1.7] text-black font-medium inline">
+                <p className="text-[13px] leading-[1.7] text-black font-medium">
                   Wir nutzen Cookies, um unsere Website zu verbessern, den
                   Traffic zu analysieren und personalisierte Inhalte anzubieten.
                   Sie können Ihre Einstellungen jederzeit anpassen. Weitere
@@ -126,7 +135,7 @@ export function CookieConsent() {
                     Datenschutzerklärung
                   </Link>
                   .
-                </span>
+                </p>
               </div>
 
               {/* Toggle Details */}
@@ -143,69 +152,83 @@ export function CookieConsent() {
               </div>
 
               {/* Expandable Cookie Categories */}
-              {showDetails && (
-                <div className="overflow-hidden">
-                  <div className="px-6 sm:px-7 pt-4 pb-2 flex flex-col gap-3">
-                    {cookieCategories.map((cat) => (
-                      <div
-                        key={cat.id}
-                        className="flex items-start gap-4 p-4 rounded-[16px] bg-[#f5f5f5]"
-                        style={{
-                          boxShadow:
-                            "rgba(0, 0, 0, 0.08) 0px 0.7px 0.7px -0.67px, rgba(0, 0, 0, 0.08) 0px 1.8px 1.8px -1.33px, rgba(0, 0, 0, 0.07) 0px 3.6px 3.6px -2px, rgb(255, 255, 255) 0px 3px 1px 0px inset",
-                        }}
-                      >
+              <AnimatePresence>
+                {showDetails && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-6 sm:px-7 pt-4 pb-2 flex flex-col gap-3">
+                      {cookieCategories.map((cat) => (
                         <div
-                          className="w-10 h-10 rounded-[12px] bg-[#f5f5f5] flex items-center justify-center shrink-0 mt-0.5 text-black/60"
+                          key={cat.id}
+                          className="flex items-start gap-4 p-4 rounded-[16px] bg-[#f5f5f5]"
                           style={{
                             boxShadow:
                               "rgba(0, 0, 0, 0.08) 0px 0.7px 0.7px -0.67px, rgba(0, 0, 0, 0.08) 0px 1.8px 1.8px -1.33px, rgba(0, 0, 0, 0.07) 0px 3.6px 3.6px -2px, rgb(255, 255, 255) 0px 3px 1px 0px inset",
                           }}
                         >
-                          {cat.icon}
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center justify-between mb-1.5">
-                            <span className="text-[13px] font-bold text-black tracking-tight">
-                              {cat.title}
-                            </span>
-                            {cat.required ? (
-                              <span className="text-[10px] font-semibold text-black/30 uppercase tracking-wider">
-                                Immer aktiv
-                              </span>
-                            ) : (
-                              <button
-                                onClick={() =>
-                                  setPreferences((prev) => ({
-                                    ...prev,
-                                    [cat.id]: !prev[cat.id],
-                                  }))
-                                }
-                                className={`relative w-11 h-[24px] rounded-full transition-colors duration-300 cursor-pointer ${
-                                  preferences[cat.id]
-                                    ? "bg-black"
-                                    : "bg-black/10"
-                                }`}
-                              >
-                                <div
-                                  className={`absolute top-[3px] w-[18px] h-[18px] rounded-full bg-white shadow-sm transition-[left] duration-300 ${
-                                    preferences[cat.id]
-                                      ? "left-[23px]"
-                                      : "left-[3px]"
-                                  }`}
-                                />
-                              </button>
-                            )}
+                          <div
+                            className="w-10 h-10 rounded-[12px] bg-[#f5f5f5] flex items-center justify-center shrink-0 mt-0.5 text-black/60"
+                            style={{
+                              boxShadow:
+                                "rgba(0, 0, 0, 0.08) 0px 0.7px 0.7px -0.67px, rgba(0, 0, 0, 0.08) 0px 1.8px 1.8px -1.33px, rgba(0, 0, 0, 0.07) 0px 3.6px 3.6px -2px, rgb(255, 255, 255) 0px 3px 1px 0px inset",
+                            }}
+                          >
+                            {cat.icon}
                           </div>
-                          <span className="text-[11px] text-black/40 leading-relaxed font-medium">
-                            {cat.description}
-                          </span>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center justify-between mb-1.5">
+                              <span className="text-[13px] font-bold text-black tracking-tight">
+                                {cat.title}
+                              </span>
+                              {cat.required ? (
+                                <span className="text-[10px] font-semibold text-black/30 uppercase tracking-wider">
+                                  Immer aktiv
+                                </span>
+                              ) : (
+                                <button
+                                  onClick={() =>
+                                    setPreferences((prev) => ({
+                                      ...prev,
+                                      [cat.id]: !prev[cat.id],
+                                    }))
+                                  }
+                                  className={`relative w-11 h-[24px] rounded-full transition-colors duration-300 cursor-pointer ${
+                                    preferences[cat.id]
+                                      ? "bg-black"
+                                      : "bg-black/10"
+                                  }`}
+                                >
+                                  <motion.div
+                                    layout
+                                    transition={{
+                                      type: "spring",
+                                      stiffness: 500,
+                                      damping: 30,
+                                    }}
+                                    className={`absolute top-[3px] w-[18px] h-[18px] rounded-full bg-white shadow-sm ${
+                                      preferences[cat.id]
+                                        ? "left-[23px]"
+                                        : "left-[3px]"
+                                    }`}
+                                  />
+                                </button>
+                              )}
+                            </div>
+                            <p className="text-[11px] text-black/40 leading-relaxed font-medium">
+                              {cat.description}
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               {/* Action Buttons */}
               <div className="p-6 sm:p-7 pt-5 flex flex-col gap-2.5">
@@ -217,12 +240,14 @@ export function CookieConsent() {
                 </button>
                 <div className="flex items-center gap-2.5">
                   {showDetails && (
-                    <button
+                    <motion.button
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
                       onClick={handleSavePreferences}
                       className="flex-1 py-3 rounded-xl text-[12px] font-semibold text-black/70 bg-black/4 hover:bg-black/8 transition-all duration-200 tracking-tight cursor-pointer"
                     >
                       Auswahl speichern
-                    </button>
+                    </motion.button>
                   )}
                   <button
                     onClick={handleDecline}
@@ -232,7 +257,10 @@ export function CookieConsent() {
                   </button>
                 </div>
               </div>
-      </div>
-    </div>
+            </div>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
   );
 }

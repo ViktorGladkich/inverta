@@ -84,7 +84,7 @@ export default function RootLayout({
         {children}
 
         <ProgressiveBlur
-          className="hidden md:block fixed bottom-0 left-0 z-40 pointer-events-none"
+          className="fixed bottom-0 left-0 z-40 pointer-events-none"
           position="bottom"
           backgroundColor="rgba(255, 255, 255, 0.4)"
           blurAmount="4px"

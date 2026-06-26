@@ -1,20 +1,12 @@
 import dynamic from "next/dynamic";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
+import { WhyUs } from "@/components/sections/WhyUs";
+import { Technology } from "@/components/sections/Technology";
+import { ServicesOverview } from "@/components/sections/ServicesOverview";
 import { Metadata } from "next";
 
 // Below-the-fold sections — defer their JS off the initial bundle.
-const WhyUs = dynamic(() =>
-  import("@/components/sections/WhyUs").then((m) => m.WhyUs),
-);
-const Technology = dynamic(() =>
-  import("@/components/sections/Technology").then((m) => m.Technology),
-);
-const ServicesOverview = dynamic(() =>
-  import("@/components/sections/ServicesOverview").then(
-    (m) => m.ServicesOverview,
-  ),
-);
 const Process = dynamic(() =>
   import("@/components/sections/Process").then((m) => m.Process),
 );
