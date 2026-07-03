@@ -10,6 +10,7 @@ import { satoshi, clashDisplay, jetbrainsMono } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  manifest: "/manifest.json",
   metadataBase: new URL("https://invertadigital.de"),
   title: "Premium Webentwicklung & KI-Automatisierung | INVERTA",
   description:
@@ -67,6 +68,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({
