@@ -14,7 +14,7 @@ const projects = [
     available: true,
     id: 12,
     number: "01",
-    label: "prosecure",
+    label: "PROSECURE",
     title: "Digitale Exzellenz für die Sicherheitsbranche",
     description:
       "Eine Plattform, die über das Standard-Webdesign hinausgeht. High-End-Ästhetik trifft auf Funktionalität – denn Sicherheit braucht keine Erklärungen, sie muss sich richtig anfühlen.",
@@ -22,49 +22,49 @@ const projects = [
       { value: "Maximal", label: "Visuelle Wirkung" },
       { value: "High-End", label: "Performance" },
     ],
-    image: "/images/projects/prosecure.webp",
+    image: "/images/projects/prosecure.png",
   },
   {
     available: true,
     id: 1,
     number: "02",
-    label: "vanturahandwerk",
-    title: "Premium Handwerkskunst",
+    label: "MILLY",
+    title: "Modest Fashion E-Commerce",
     description:
-      "Individuelle Multi-Page-Website für Komplettsanierung, Innenausbau und Sanitär. Ein einzigartiges, nicht-schablonenhaftes Design, das die Qualität und Vielfalt der Handwerksleistungen digital erlebbar macht.",
+      "Ein exklusiver Online-Shop für Modest Fashion. Modernes Design trifft auf ein reibungsloses Einkaufserlebnis und stilvolle Präsentation.",
     stats: [
-      { value: "100%", label: "Individuelles Design" },
-      { value: "6+", label: "Leistungsbereiche" },
+      { value: "Premium", label: "User Experience" },
+      { value: "High-End", label: "Shop Performance" },
     ],
-    image: "/images/projects/vanturahandwerk.webp",
+    image: "/images/projects/milly.png",
   },
   {
     available: true,
     id: 2,
     number: "03",
-    label: "NEXORA Digital",
-    title: "High-Performance IT & Web",
+    label: "T&S Servicegroup",
+    title: "Sicherheit, Reinigung & Umzug",
     description:
-      "Umfassender Relaunch für eine IT-Agentur (Webdesign, Funnels, Marketing). Eine maßgeschneiderte Multi-Page-Plattform, die technische Expertise mit modernem Branding verbindet und sich klar vom Markt abhebt.",
+      "Eine professionelle Unternehmenswebsite für vielseitige Dienstleistungen in den Bereichen Objekt- und Personenschutz, Reinigungsdienste und Umzüge.",
     stats: [
-      { value: "5+", label: "Service-Module" },
-      { value: "300%", label: "Performance-Boost" },
+      { value: "Maximal", label: "Benutzerfreundlichkeit" },
+      { value: "3", label: "Dienstleistungsbereiche" },
     ],
-    image: "/images/projects/nexora.webp",
+    image: "/images/projects/ts-servicegroup.png",
   },
   {
     available: true,
     id: 3,
     number: "04",
-    label: "A.S.S. Security",
-    title: "Sicherheit & Vertrauen",
+    label: "Novasun",
+    title: "Moderne Solartechnik",
     description:
-      "Fokussierter One-Pager für Sicherheitsdienstleistungen (Objekt- & Personenschutz). Klares, vertrauensbildendes Design mit individueller Ansprache für maximale Konversion.",
+      "Eine zukunftsweisende Website für ein Solarunternehmen. Fokus auf erneuerbare Energien, Nachhaltigkeit und die effiziente Generierung von Kundenanfragen.",
     stats: [
-      { value: "24/7", label: "Erreichbarkeit" },
-      { value: "100%", label: "Fokus & Vertrauen" },
+      { value: "Hoch", label: "Lead-Qualität" },
+      { value: "Zukunft", label: "Design" },
     ],
-    image: "/images/projects/ass-security.jpeg",
+    image: "/images/projects/novasun.png",
   },
 ];
 
@@ -94,7 +94,7 @@ const Counter = ({
             suffix={suffix || value.replace(/[0-9.]/g, "")}
           />
         ) : (
-          <span className="text-3xl font-bold text-black leading-none">
+          <span className="text-3xl font-medium text-black leading-none">
             {value}
           </span>
         )}

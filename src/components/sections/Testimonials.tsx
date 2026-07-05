@@ -9,30 +9,30 @@ import { BlurTextEffect } from "@/components/ui/BlurTextEffect";
 const testimonials = [
   {
     id: 1,
-    company: "VanturaHandwerk",
-    role: "Geschäftsführung",
-    name: "Reza Vantura",
+    company: "MILLY",
+    role: "Gründerin",
+    name: "Melli Swart",
     quote:
-      "Durch die individuelle Multi-Page-Website heben wir uns endlich deutlich von der Konkurrenz ab. Die Qualität unserer Handwerksleistungen wird digital perfekt transportiert, was zu spürbar mehr qualifizierten Anfragen geführt hat.",
-    image: "/images/projects/vanturahandwerk.webp",
+      "Die Entwicklung unseres Online-Shops verlief reibungslos. Das neue Design setzt unsere Modest Fashion perfekt in Szene und bietet ein großartiges Einkaufserlebnis. Wir konnten unsere Conversion-Rate deutlich steigern.",
+    image: "/images/projects/milly.png",
   },
   {
     id: 2,
-    company: "NEXORA Digital",
-    role: "Head of Marketing",
-    name: "Sarah Lin",
+    company: "T&S Servicegroup",
+    role: "Geschäftsführung",
+    name: "Tuncay",
     quote:
-      "Inverta hat unsere IT-Expertise in ein modernes Web-Erlebnis verwandelt. Das neue Branding und die maßgeschneiderten Funnels funktionieren hervorragend – wir messen eine deutliche Steigerung der Conversion-Rate.",
-    image: "/images/projects/nexora.webp",
+      "Inverta hat es geschafft, unsere vielseitigen Dienstleistungen – von Sicherheit über Reinigung bis zum Umzug – auf einer übersichtlichen, professionellen Website zu vereinen. Das Design schafft sofortiges Vertrauen bei unseren Kunden.",
+    image: "/images/projects/ts-servicegroup.png",
   },
   {
     id: 3,
-    company: "A.S.S. Security",
+    company: "Novasun",
     role: "Inhaber",
-    name: "Semion Raskin",
+    name: "Christian",
     quote:
-      "Ein fokussierter One-Pager, der genau unseren Bedarf trifft. Das Design schafft sofortiges Vertrauen bei unseren Kunden im Objekt- und Personenschutz. Professionell, schnell und auf den Punkt.",
-    image: "/images/projects/ass-security.webp",
+      "Das komplexe Thema Solarenergie wurde attraktiv und verständlich aufbereitet. Dank der neuen Website und den smarten Lead-Funnels generieren wir jetzt kontinuierlich hochwertige Anfragen für Beratungsgespräche.",
+    image: "/images/projects/novasun.png",
   },
 ];
 
@@ -134,8 +134,8 @@ export function Testimonials() {
           >
             <div className="relative w-full h-full rounded-[16px] overflow-hidden">
               <Image
-                src="/images/projects/vanturahandwerk.webp"
-                alt="VanturaHandwerk Referenzprojekt"
+                src="/images/projects/milly.png"
+                alt="MILLY Modest Fashion Referenzprojekt"
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"
                 className="object-cover object-center transition-transform duration-700 hover:scale-105"
