@@ -65,20 +65,19 @@ export function CTASection() {
                 Sie uns von Ihrer Vision – wir machen den Rest.
               </p>
 
-              {/* Buttons */}
               <div className="flex flex-col sm:flex-row items-center gap-4 mt-2">
                 {/* Primary CTA */}
                 <Link
                   href="/kontakt"
-                  className="group relative inline-flex items-center justify-between gap-3 sm:gap-6 md:gap-8 bg-black text-white p-2 pr-5 sm:pr-6 rounded-full overflow-hidden transition-all duration-500 hover:pr-8 active:scale-95 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] w-fit"
+                  className="group relative inline-flex items-center justify-between gap-2 sm:gap-4 md:gap-8 bg-black text-white p-1.5 pr-4 sm:p-2 sm:pr-6 rounded-full overflow-hidden transition-all duration-500 hover:pr-8 active:scale-95 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] w-fit"
                 >
                   <div className="absolute inset-0 bg-[#daff02] -translate-x-full rounded-full transition-transform duration-500 ease-out group-hover:translate-x-0" />
 
-                  <div className="relative z-10 w-9 h-9 md:w-12 md:h-12 rounded-full bg-[#daff02] flex items-center justify-center text-black transition-transform duration-500 group-hover:bg-black group-hover:text-[#daff02] shrink-0">
-                    <ArrowRight className="w-4 h-4 md:w-5 md:h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
+                  <div className="relative z-10 w-8 h-8 sm:w-9 sm:h-9 md:w-12 md:h-12 rounded-full bg-[#daff02] flex items-center justify-center text-black transition-transform duration-500 group-hover:bg-black group-hover:text-[#daff02] shrink-0">
+                    <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
                   </div>
 
-                  <span className="relative z-10 font-bold text-[10px] sm:text-sm md:text-base tracking-widest sm:tracking-widest uppercase transition-colors duration-500 group-hover:text-black whitespace-nowrap">
+                  <span className="relative z-10 font-bold text-[9px] sm:text-[10px] md:text-base tracking-widest sm:tracking-widest uppercase transition-colors duration-500 group-hover:text-black whitespace-nowrap">
                     Kostenloses Erstgespräch
                   </span>
                 </Link>

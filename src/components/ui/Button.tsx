@@ -47,9 +47,9 @@ export const Button = React.forwardRef<
     };
 
     const sizes = {
-      sm: "h-9 px-4 text-sm",
-      md: "h-11 px-8 text-base",
-      lg: "h-14 px-10 text-lg",
+      sm: "h-8 md:h-9 px-3 md:px-4 text-xs md:text-sm",
+      md: "h-10 md:h-11 px-5 md:px-8 text-sm md:text-base",
+      lg: "h-12 md:h-14 px-6 md:px-10 text-base md:text-lg",
     };
 
     const classes = cn(

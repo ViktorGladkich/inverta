@@ -200,14 +200,14 @@ export function GalaxyHero() {
             {/* Primärer Button (Kontakt) */}
             <Link
               href="/kontakt"
-              className="group relative inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-[10px] shadow-[0_30px_30px_-3.5px_rgba(0,0,0,0.15),0_13px_13px_-2.9px_rgba(0,0,0,0.26),0_6px_6px_-2.3px_rgba(0,0,0,0.3)] hover:shadow-[0_40px_40px_-5px_rgba(0,0,0,0.4)] hover:scale-[1.02] transition-all duration-300"
+              className="group relative inline-flex items-center gap-2 bg-black text-white px-5 py-2.5 md:px-8 md:py-4 rounded-[10px] shadow-[0_30px_30px_-3.5px_rgba(0,0,0,0.15),0_13px_13px_-2.9px_rgba(0,0,0,0.26),0_6px_6px_-2.3px_rgba(0,0,0,0.3)] hover:shadow-[0_40px_40px_-5px_rgba(0,0,0,0.4)] hover:scale-[1.02] transition-all duration-300"
             >
-              <span className="font-semibold text-lg">Projekt starten</span>
+              <span className="font-semibold text-sm md:text-lg">Projekt starten</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 256 256"
                 focusable="false"
-                className="w-5 h-5 fill-current"
+                className="w-4 h-4 md:w-5 md:h-5 fill-current"
               >
                 <g>
                   <path d="M200,64V168a8,8,0,0,1-13.66,5.66L140,127.31,69.66,197.66a8,8,0,0,1-11.32-11.32L128.69,116,82.34,69.66A8,8,0,0,1,88,56H192A8,8,0,0,1,200,64Z"></path>
