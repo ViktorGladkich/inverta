@@ -24,7 +24,7 @@ export const PROJECTS: Project[] = [
     category: "High-End Webdesign & Branding",
     description:
       "Eine Plattform, die über das Standard-Webdesign hinausgeht. High-End-Ästhetik trifft auf Funktionalität – denn Sicherheit braucht keine Erklärungen, sie muss sich richtig anfühlen.",
-    image: "/images/projects/prosecure.webp",
+    image: "/images/projects/prosecure.png",
     services: ["GSAP Animationen", "Interactive Storytelling", "Mobile-First Architektur"],
     challenge:
       "In der Sicherheitsbranche ist Vertrauen die wichtigste Währung. Die Herausforderung bestand darin, dieses Vertrauen digital durch ein Design zu vermitteln, das Sicherheit nicht nur erklärt, sondern fühlbar macht.",
@@ -39,27 +39,153 @@ export const PROJECTS: Project[] = [
   {
     id: 1,
     number: "02",
-    slug: "vanturahandwerk",
-    label: "VANTURA-HANDWERK",
-    title: "Premium Handwerkskunst",
-    category: "Webentwicklung & Branding",
+    slug: "milly-modest-fashion",
+    label: "MILLY",
+    title: "Modest Fashion E-Commerce",
+    category: "E-Commerce & Webdesign",
     description:
-      "Individuelle Multi-Page-Website für Komplettsanierung. Ein einzigartiges Design, das die Qualität der Handwerksleistungen digital erlebbar macht.",
-    image: "/images/projects/vanturahandwerk.webp",
-    services: ["Webdesign", "UI/UX Design", "SEO"],
+      "Ein exklusiver Online-Shop für Modest Fashion. Modernes Design trifft auf ein reibungsloses Einkaufserlebnis und stilvolle Präsentation.",
+    image: "/images/projects/milly.png",
+    services: ["Webentwicklung", "UI/UX Design", "E-Commerce"],
     challenge:
-      "Eine nicht-schablonenhafte digitale Präsenz für ein traditionelles Handwerksunternehmen schaffen, die Premium-Qualität ausstrahlt.",
+      "Die Entwicklung eines Online-Shops, der die Eleganz und den Stil von Modest Fashion digital perfekt in Szene setzt und eine hohe Conversion-Rate erzielt.",
     solution:
-      "Entwicklung einer individuellen Multi-Page-Website mit maßgeschneidertem Design, das die verschiedenen Leistungsbereiche (Sanierung, Innenausbau, Trockenbau, Sanitär) übersichtlich und ansprechend präsentiert.",
+      "Ein performanter und ästhetisch ansprechender E-Commerce Store mit intuitiver Navigation, ansprechendem Produktdesign und optimiertem Checkout-Prozess.",
     results: [
-      { label: "Individuelles Design", value: "100%" },
-      { label: "Leistungsbereiche", value: "6+" },
+      { label: "User Experience", value: "Premium" },
+      { label: "Shop Performance", value: "High-End" },
     ],
-    websiteUrl: "https://vantura-handwerk.vercel.app/",
+    websiteUrl: "https://melli-swart.vercel.app/",
+  },
+  {
+    id: 3,
+    number: "03",
+    slug: "ma-bau-gmbh",
+    label: "MA Bau GmbH",
+    title: "Bau & Solarenergie",
+    category: "Full-Service Digital Presence",
+    description:
+      "Umfassender Relaunch inklusive Solar-Sparte. Maßgeschneiderte Lösung für Sanierung, Innenausbau und energetische Systeme der Zukunft.",
+    image: "/images/projects/ma-bau-gmbh.png",
+    services: ["Webentwicklung", "Corporate Design", "Content Creation"],
+    challenge:
+      "Zusammenführung klassischer Baudienstleistungen mit zukunftsorientierter Solartechnik in einer kohärenten digitalen Identität.",
+    solution:
+      "Ein strukturierter Web-Auftritt, der sowohl Bauherren als auch Interessenten für erneuerbare Energien gezielt anspricht und durch ein klares Navigationskonzept überzeugt.",
+    results: [
+      { label: "Hauptbranchen", value: "2" },
+      { label: "Lead-Qualität", value: "+45%" },
+    ],
+    websiteUrl: "https://mabaugmbh.de/",
+  },
+  {
+    id: 5,
+    number: "04",
+    slug: "ts-servicegroup",
+    label: "T&S Servicegroup",
+    title: "Sicherheit, Reinigung & Umzug",
+    category: "Corporate Webdesign",
+    description:
+      "Eine professionelle Unternehmenswebsite für vielseitige Dienstleistungen in den Bereichen Objekt- und Personenschutz, Reinigungsdienste und Umzüge.",
+    image: "/images/projects/ts-servicegroup.png",
+    services: ["Webentwicklung", "Strukturierung", "UI Design"],
+    challenge:
+      "Verschiedene, unabhängige Dienstleistungsbereiche übersichtlich und vertrauenserweckend auf einer einzigen, kohärenten Plattform zu vereinen.",
+    solution:
+      "Entwicklung einer klar strukturierten Website mit zielgruppenorientierter Navigation, die jede Dienstleistung separat, professionell und leicht zugänglich präsentiert.",
+    results: [
+      { label: "Benutzerfreundlichkeit", value: "Maximal" },
+      { label: "Dienstleistungsbereiche", value: "3" },
+    ],
+    websiteUrl: "https://ts-servicegroup.de/",
+  },
+  {
+    id: 6,
+    number: "05",
+    slug: "ass-security",
+    label: "A.S.S. Security",
+    title: "Sicherheit & Vertrauen",
+    category: "One-Page Strategy",
+    description:
+      "Fokussierter One-Pager für Sicherheitsdienstleistungen. Klares, vertrauensbildendes Design für maximale Konversion und Kundenvertrauen.",
+    image: "/images/projects/ass-security.jpeg",
+    services: ["One-Page Design", "Copywriting", "Cro (Conversion Rate Opt.)"],
+    challenge:
+      "Ein vertrauensvolles und seriöses Design für Objekt- & Personenschutz zu entwickeln, das sofort überzeugt und unkomplizierte Kontaktmöglichkeiten bietet.",
+    solution:
+      "Ein fokussierter One-Pager mit prägnanten Aussagen, klarem Strukturaufbau und sofortiger Sichtbarkeit der wichtigsten Sicherheitszertifikate.",
+    results: [
+      { label: "Erreichbarkeit", value: "24/7" },
+      { label: "Fokus & Vertrauen", value: "100%" },
+    ],
+    websiteUrl: "https://ass-security-ug.de/",
+  },
+  {
+    id: 7,
+    number: "06",
+    slug: "alinafitka",
+    label: "Alinafitka",
+    title: "Premium Personal Brand",
+    category: "Personal Branding & Webdesign",
+    description:
+      "Eine Premium-Website für eine hochklassige Fitnesstrainerin, Rehabilitationsspezialistin und WOGA-Trainerin. Expertise und Vertrauen in jedem Detail.",
+    image: "/images/projects/alinafitka.png",
+    services: ["Modernes UI", "Sanfte Animationen", "Responsive Design"],
+    challenge:
+      "Eine digitale Präsenz zu schaffen, die die Personal Brand professionell unterstützt und die Expertise in den Bereichen Fitness und Rehabilitation auf Premium-Niveau widerspiegelt.",
+    solution:
+      "Gestaltung eines ästhetischen Designs mit sanften Animationen und einer durchdachten Struktur, um das Vertrauen potenzieller Klienten zu gewinnen und die Brand rund um die Uhr zu unterstützen.",
+    results: [
+      { label: "Premium Qualität", value: "100%" },
+      { label: "Personal Brand", value: "Gestärkt" },
+    ],
+    websiteUrl: "https://alinafitka.vercel.app/",
+  },
+  {
+    id: 11,
+    number: "07",
+    slug: "novasun",
+    label: "Novasun",
+    title: "Moderne Solartechnik",
+    category: "Webdesign & Lead-Gen",
+    description:
+      "Eine zukunftsweisende Website für ein Solarunternehmen. Fokus auf erneuerbare Energien, Nachhaltigkeit und die effiziente Generierung von Kundenanfragen.",
+    image: "/images/projects/novasun.png",
+    services: ["Webentwicklung", "Lead Funnels", "UI/UX Design"],
+    challenge:
+      "Das komplexe Thema Solarenergie für Hausbesitzer zugänglich, attraktiv und verständlich zu gestalten, um qualifizierte Leads für Beratungsgespräche zu gewinnen.",
+    solution:
+      "Eine performante und vertrauensbildende Website mit klaren Call-to-Actions, modernen Animationen und einem unkomplizierten Kontakt-Prozess für Interessenten.",
+    results: [
+      { label: "Lead-Qualität", value: "Hoch" },
+      { label: "Design", value: "Zukunftsorientiert" },
+    ],
+    websiteUrl: "https://solarsun-eight.vercel.app/",
+  },
+  {
+    id: 13,
+    number: "08",
+    slug: "victoria-green",
+    label: "Victoria Green",
+    title: "Fotografie Portfolio",
+    category: "Portfolio & Ästhetik",
+    description:
+      "Ein elegantes und minimalistisches Portfolio für eine professionelle Fotografin. Das Design tritt in den Hintergrund und lässt die Bilder für sich sprechen.",
+    image: "/images/projects/victoria-green.png",
+    services: ["Portfolio Design", "Bildergalerien", "Mobile Optimierung"],
+    challenge:
+      "Die visuelle Kunst der Fotografie digital so zu präsentieren, dass die Website nicht von den Werken ablenkt, sondern sie perfekt rahmt und in Szene setzt.",
+    solution:
+      "Entwicklung eines minimalistischen und extrem performanten Portfolios mit optimierten Bildergalerien, flüssigen Übergängen und reibungslosen Ladezeiten.",
+    results: [
+      { label: "Ästhetik", value: "Minimalistisch" },
+      { label: "Performance", value: "Sehr schnell" },
+    ],
+    websiteUrl: "https://victoria-green.vercel.app/",
   },
   {
     id: 2,
-    number: "03",
+    number: "09",
     slug: "n8n-lead-automation",
     label: "Lead Engine",
     title: "CRM Automation mit n8n",
@@ -78,29 +204,8 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    id: 3,
-    number: "04",
-    slug: "ma-bau-gmbh",
-    label: "MA Bau GmbH",
-    title: "Bau & Solarenergie",
-    category: "Full-Service Digital Presence",
-    description:
-      "Umfassender Relaunch inklusive Solar-Sparte. Maßgeschneiderte Lösung für Sanierung, Innenausbau und energetische Systeme der Zukunft.",
-    image: "/images/projects/ma-bau-gmbh.webp",
-    services: ["Webentwicklung", "Corporate Design", "Content Creation"],
-    challenge:
-      "Zusammenführung klassischer Baudienstleistungen mit zukunftsorientierter Solartechnik in einer kohärenten digitalen Identität.",
-    solution:
-      "Ein strukturierter Web-Auftritt, der sowohl Bauherren als auch Interessenten für erneuerbare Energien gezielt anspricht und durch ein klares Navigationskonzept überzeugt.",
-    results: [
-      { label: "Hauptbranchen", value: "2" },
-      { label: "Lead-Qualität", value: "+45%" },
-    ],
-    websiteUrl: "https://mabaugmbh.de/",
-  },
-  {
     id: 4,
-    number: "05",
+    number: "10",
     slug: "seo-master-automation",
     label: "SEO Master",
     title: "SEO Alerts & Reporting",
@@ -119,71 +224,8 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    id: 5,
-    number: "06",
-    slug: "nexora-digital",
-    label: "NEXORA Digital",
-    title: "High-Performance IT & Web",
-    category: "Growth & Automation",
-    description:
-      "Umfassender Relaunch für eine IT-Agentur. Eine maßgeschneiderte Plattform, die technische Expertise mit modernem Branding vereint.",
-    image: "/images/projects/nexora.webp",
-    services: ["Funnels", "Performance Marketing", "Webdesign"],
-    challenge:
-      "Die technische Expertise einer IT-Agentur in ein modernes, konversionsstarkes Gewand zu verpacken, das sich vom Wettbewerb abhebt.",
-    solution:
-      "Kreierung einer High-Performance-Website mit State-of-the-Art Animationen, klaren Call-to-Actions und optimierten Funnels zur Neukundengewinnung.",
-    results: [
-      { label: "Service-Module", value: "5+" },
-      { label: "Performance-Boost", value: "300%" },
-    ],
-    websiteUrl: "https://nexora-smoky-omega.vercel.app/",
-  },
-  {
-    id: 6,
-    number: "07",
-    slug: "ass-security",
-    label: "A.S.S. Security",
-    title: "Sicherheit & Vertrauen",
-    category: "One-Page Strategy",
-    description:
-      "Fokussierter One-Pager für Sicherheitsdienstleistungen. Klares, vertrauensbildendes Design für maximale Konversion und Kundenvertrauen.",
-    image: "/images/projects/ass-security.jpeg",
-    services: ["One-Page Design", "Copywriting", "Cro (Conversion Rate Opt.)"],
-    challenge:
-      "Ein vertrauensvolles und seriöses Design für Objekt- & Personenschutz zu entwickeln, das sofort überzeugt und unkomplizierte Kontaktmöglichkeiten bietet.",
-    solution:
-      "Ein fokussierter One-Pager mit prägnanten Aussagen, klarem Strukturaufbau und sofortiger Sichtbarkeit der wichtigsten Sicherheitszertifikate.",
-    results: [
-      { label: "Erreichbarkeit", value: "24/7" },
-      { label: "Fokus & Vertrauen", value: "100%" },
-    ],
-    websiteUrl: "https://ass-security.vercel.app/",
-  },
-  {
-    id: 7,
-    number: "08",
-    slug: "brand-identity",
-    label: "Brand Identity",
-    title: "Strategisches Branding",
-    category: "Corporate Design & Strategie",
-    description:
-      "Entwicklung einer unverwechselbaren Markenidentität. Von Logo-Design bis hin zu umfassenden Styleguides, die im Gedächtnis bleiben.",
-    image:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=2000",
-    services: ["Logo Design", "Brand Guidelines", "Visual Identity"],
-    challenge:
-      "Eine ausdrucksstarke und kohärente visuelle Identität zu schaffen, die die Markenwerte über alle Touchpoints hinweg konsistent kommuniziert.",
-    solution:
-      "Tiefgreifende Markenworkshops gefolgt von der iterativen Entwicklung eines umfassenden Corporate Designs inkl. detailliertem Brand Book.",
-    results: [
-      { label: "Brand Recall", value: "+80%" },
-      { label: "Design Assets", value: "120+" },
-    ],
-  },
-  {
     id: 8,
-    number: "09",
+    number: "11",
     slug: "ki-automatisierung",
     label: "KI Automatisierung",
     title: "Intelligente Workflows",
@@ -204,7 +246,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 9,
-    number: "10",
+    number: "12",
     slug: "content-marketing-automation",
     label: "Content Engine",
     title: "Automated Content Marketing",
@@ -229,7 +271,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 10,
-    number: "11",
+    number: "13",
     slug: "email-ai-assistant",
     label: "Email Engine",
     title: "AI-Powered Customer Support",
@@ -251,26 +293,5 @@ export const PROJECTS: Project[] = [
       { label: "Antwortzeit", value: "< 30 Sek." },
       { label: "Automatisierungsgrad", value: "85%" },
     ],
-  },
-  {
-    id: 11,
-    number: "12",
-    slug: "umzugsservice",
-    label: "Umzugsservice",
-    title: "Sorgloser Umzug & Transport",
-    category: "One-Page Strategy",
-    description:
-      "Ein hochkonvertierender One-Pager für ein Umzugsunternehmen. Klarer Fokus auf stressfreie Privatumzüge, effiziente Büroumzüge ohne Ausfallzeiten und absolut sicheren Einpackservice.",
-    image: "/images/projects/umzugsservice.webp",
-    services: ["Privatumzüge", "Büroumzüge", "Einpackservice"],
-    challenge:
-      "Kunden suchen bei Umzügen vor allem nach Vertrauen und Verlässlichkeit. Die Herausforderung bestand darin, die Kernleistungen kompetent und beruhigend zu präsentieren.",
-    solution:
-      "Wir haben einen strukturierten One-Pager mit modernem Design entwickelt, der den Besucher an die Hand nimmt. Transparente Leistungsversprechen für Privat- und Büroumzüge sowie der Einpackservice werden direkt kommuniziert, unterstützt durch schnelle Kontaktwege.",
-    results: [
-      { label: "Verlässlichkeit", value: "100%" },
-      { label: "Ablauf", value: "Stressfrei" },
-    ],
-    websiteUrl: "https://umzugsservice.vercel.app/",
   },
 ];

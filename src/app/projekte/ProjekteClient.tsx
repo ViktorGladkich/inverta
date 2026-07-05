@@ -149,7 +149,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
     <article
       ref={cardRef}
-      className={`flex flex-col ${
+      className={`relative flex flex-col ${
         isEven ? "lg:flex-row" : "lg:flex-row-reverse"
       } gap-12 lg:gap-20 items-center justify-between w-full`}
     >

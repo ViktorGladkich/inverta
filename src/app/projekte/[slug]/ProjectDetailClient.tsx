@@ -1,92 +1,33 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, ArrowUpRight, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { type Project } from "@/data/projects";
 import { FadeIn } from "@/components/ui/FadeIn";
 
 export function ProjectDetailClient({ project }: { project: Project }) {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"],
-  });
-
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  // Parallax effects disabled on mobile
-  const headerY = useTransform(
-    scrollYProgress,
-    [0, 1],
-    ["0%", isMobile ? "0%" : "50%"],
-  );
-  const imageY = useTransform(
-    scrollYProgress,
-    [0, 1],
-    ["0%", isMobile ? "0%" : "20%"],
-  );
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-
   return (
     <main className="relative bg-[#f5f5f5] min-h-screen selection:bg-[#daff02] selection:text-black">
-      {/* Header-Bereich mit animiertem Projektbild */}
+      {/* Header-Bereich mit Projektbild */}
       <div
-        ref={heroRef}
-        className="relative w-full overflow-hidden flex items-center justify-center bg-black"
-        style={{ minHeight: "calc(var(--vh, 1vh) * 100)" }}
+        className="relative w-full flex items-center justify-center pt-28 md:pt-36 pb-12 px-4 md:px-8 bg-[#f5f5f5]"
       >
         <motion.div
-          style={{ y: imageY, opacity }}
-          className="absolute inset-0 w-full h-full"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="relative w-full max-w-[1200px] aspect-video rounded-[24px] md:rounded-[40px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
         >
-          <div className="absolute inset-0 bg-black/15 z-10" />
           <Image
             src={project.image}
             alt={project.title}
             fill
-            sizes="100vw"
+            sizes="(max-width: 1200px) 100vw, 1200px"
             priority
-            className="max-sm:object-contain object-cover object-center"
+            className="object-cover object-center"
           />
-        </motion.div>
-
-        <motion.div
-          style={{ y: headerY, opacity }}
-          className="relative z-20 px-6 max-w-5xl mx-auto flex flex-col items-center text-center"
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-center justify-center px-[12px] py-[6px] gap-2 rounded-[60px] bg-white shadow-[0px_0.706592px_0.706592px_-0.541667px_rgba(0,0,0,0.1),0px_1.80656px_1.80656px_-1.08333px_rgba(0,0,0,0.09),0px_3.62176px_3.62176px_-1.625px_rgba(0,0,0,0.09),0px_6.8656px_6.8656px_-2.16667px_rgba(0,0,0,0.09),0px_13.6468px_13.6468px_-2.70833px_rgba(0,0,0,0.08),0px_30px_30px_-3.25px_rgba(0,0,0,0.05),inset_0px_3px_1px_0px_white] mb-8"
-          >
-            <div className="w-[14px] h-[14px] text-black/40">
-              <Sparkles className="w-full h-full" />
-            </div>
-            <span className="text-[12px] font-medium text-black tracking-widest uppercase mt-px">
-              {project.category}
-            </span>
-          </motion.div>
-
-          <h1 className="text-5xl md:text-8xl lg:text-9xl font-medium tracking-tighter text-white leading-[0.9] mb-8">
-            <motion.span
-              initial={{ y: "100%", opacity: 0 }}
-              animate={{ y: "0%", opacity: 1 }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-              className="block"
-            >
-              {project.label}
-            </motion.span>
-          </h1>
         </motion.div>
       </div>
 
@@ -204,13 +145,13 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                   <span className="text-[#daff02] text-sm font-bold tracking-[0.3em] uppercase mb-12">
                     Unser Impact & Resultate
                   </span>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-4xl mx-auto">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-5xl lg:max-w-6xl mx-auto px-4">
                     {project.results.map((res, i) => (
-                      <div key={i} className="flex flex-col items-center gap-4">
-                        <span className="text-6xl md:text-8xl font-medium tracking-tighter text-white">
+                      <div key={i} className="flex flex-col items-center gap-4 justify-start">
+                        <span className="text-[clamp(2.5rem,5vw,6rem)] whitespace-nowrap font-medium tracking-tighter text-white">
                           {res.value}
                         </span>
-                        <span className="text-sm font-bold tracking-widest uppercase text-white/50">
+                        <span className="text-sm font-bold tracking-widest uppercase text-white/50 text-center">
                           {res.label}
                         </span>
                       </div>
