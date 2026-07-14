@@ -2,7 +2,6 @@ import { Footer } from "@/components/layout/Footer";
 import { AgenturClient } from "./AgenturClient";
 import { Metadata } from "next";
 import { ServicesOverview } from "@/components/sections/ServicesOverview";
-import { TeamSection } from "./TeamSection";
 import { MissionSection } from "./MissionSection";
 
 import { CTASection } from "@/components/sections/CTASection";
@@ -56,7 +55,6 @@ export default function AgenturPage() {
         <WhyUs />
         <PrinzipienSection />
         <ServicesOverview />
-        <TeamSection />
         <Testimonials />
         <CTASection />
       </main>
