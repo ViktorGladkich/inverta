@@ -34,7 +34,7 @@ export const PROJECTS: Project[] = [
       { label: "Visuelle Wirkung", value: "Maximal" },
       { label: "Performance", value: "High-End" },
     ],
-    websiteUrl: "https://prosecure-website.vercel.app/",
+    websiteUrl: "https://www.prosecuresecurity.de/",
   },
   {
     id: 1,
