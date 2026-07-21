@@ -15,7 +15,7 @@ export function CTASection() {
   return (
     <section
       ref={sectionRef}
-      className="relative z-10 bg-[#f5f5f5] overflow-hidden py-24 px-4 md:px-8"
+      className="relative z-10 bg-[#f5f5f5] overflow-hidden py-12 md:py-16 px-4 md:px-8"
     >
       <div className="container mx-auto px-6 md:px-10 max-w-[1400px] relative z-10">
         {/* Centered Badge */}

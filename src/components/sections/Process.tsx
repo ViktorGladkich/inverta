@@ -51,7 +51,7 @@ const processSteps = [
 
 export function Process() {
   return (
-    <section id="process" className="py-24 bg-[#f5f5f5]">
+    <section id="process" className="py-12 md:py-16 bg-[#f5f5f5]">
       <div className="w-full px-[40px]">
         {/* Sektions-Header - Zentriert */}
         <motion.div

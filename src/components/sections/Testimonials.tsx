@@ -49,7 +49,7 @@ export function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative z-10 py-16 md:py-24 bg-[#f5f5f5]"
+      className="relative z-10 py-12 md:py-16 bg-[#f5f5f5]"
     >
       <div className="w-full  px-6 md:px-[40px] max-w-[1400px] mx-auto">
         <motion.div

@@ -362,41 +362,57 @@ export function ContactForm() {
               </AnimatePresence>
             </div>
 
-            {/* Absende-Bereich und Datenschutz-Hinweis */}
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-4">
-              <button
-                type="submit"
-                disabled={status === "loading"}
-                className="group relative flex items-center justify-center gap-4 bg-black text-white px-8 md:px-12 py-5 md:py-6 rounded-[10px] text-sm font-semibold tracking-widest uppercase overflow-hidden hover:scale-[1.02] active:scale-95 transition-all duration-300 w-full sm:w-auto shrink-0 cursor-pointer disabled:opacity-70 disabled:hover:scale-100 disabled:cursor-not-allowed"
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  {status === "loading" ? (
-                    <>
-                      <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      Wird gesendet...
-                    </>
-                  ) : (
-                    "Anfrage senden"
-                  )}
-                </span>
-                {status !== "loading" && (
-                  <>
-                    <ButtonArrow className="relative z-10 w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                    <div className="absolute inset-0 bg-neutral-800 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-0" />
-                  </>
-                )}
-              </button>
-
-              <p className="text-[10px] md:text-xs text-black/40 font-medium uppercase tracking-wider text-center sm:text-right leading-relaxed max-w-[200px]">
-                Mit dem Absenden stimmen Sie unserer <br />
-                <a
-                  href="/datenschutz"
-                  className="underline hover:text-black text-black/60 transition-colors"
+            {/* Datenschutz-Checkbox und Absende-Bereich */}
+            <div className="flex flex-col gap-8 pt-4">
+              <div className="flex items-start gap-4">
+                <input
+                  type="checkbox"
+                  id="privacy"
+                  name="privacy"
+                  required
+                  disabled={status === "loading"}
+                  className="mt-0.5 shrink-0 cursor-pointer accent-black w-5 h-5 rounded border-black/20 focus:ring-black"
+                />
+                <label
+                  htmlFor="privacy"
+                  className="text-xs md:text-sm text-black/60 font-medium leading-relaxed cursor-pointer select-none"
                 >
-                  Datenschutzerklärung
-                </a>{" "}
-                zu.
-              </p>
+                  Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Weitere Details finden Sie in der{" "}
+                  <a
+                    href="/datenschutz"
+                    target="_blank"
+                    className="underline hover:text-black transition-colors text-black"
+                  >
+                    Datenschutzerklärung
+                  </a>
+                  . *
+                </label>
+              </div>
+
+              <div className="flex items-center justify-start">
+                <button
+                  type="submit"
+                  disabled={status === "loading"}
+                  className="group relative flex items-center justify-center gap-4 bg-black text-white px-8 md:px-12 py-5 md:py-6 rounded-[10px] text-sm font-semibold tracking-widest uppercase overflow-hidden hover:scale-[1.02] active:scale-95 transition-all duration-300 w-full sm:w-auto shrink-0 cursor-pointer disabled:opacity-70 disabled:hover:scale-100 disabled:cursor-not-allowed"
+                >
+                  <span className="relative z-10 flex items-center gap-2">
+                    {status === "loading" ? (
+                      <>
+                        <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                        Wird gesendet...
+                      </>
+                    ) : (
+                      "Anfrage senden"
+                    )}
+                  </span>
+                  {status !== "loading" && (
+                    <>
+                      <ButtonArrow className="relative z-10 w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                      <div className="absolute inset-0 bg-neutral-800 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-0" />
+                    </>
+                  )}
+                </button>
+              </div>
             </div>
           </motion.form>
         )}

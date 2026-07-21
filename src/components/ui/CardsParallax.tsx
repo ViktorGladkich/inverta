@@ -141,7 +141,7 @@ const Card = ({
           className="relative w-full md:w-[55%] h-[200px] md:h-auto rounded-[16px] overflow-hidden bg-neutral-200"
           style={{ boxShadow: "rgba(0,0,0,0.05) 0px 10px 20px -5px" }}
         >
-          <motion.div className="w-full h-full" style={{ scale: imageScale }}>
+          <motion.div className="relative w-full h-full" style={{ scale: imageScale }}>
             {item.src ? (
               <Image
                 fill

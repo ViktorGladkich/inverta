@@ -12,7 +12,7 @@ export function WhyUs() {
   return (
     <section
       id="benefits"
-      className="relative z-10 flex w-full flex-col items-center justify-center gap-10 bg-[#f5f5f5] px-5 py-[100px] md:px-10"
+      className="relative z-10 flex w-full flex-col items-center justify-center gap-10 bg-[#f5f5f5] px-5 py-12 md:py-16 md:px-10"
     >
       {/* Titel-Bereich und Einleitung */}
       <motion.div

@@ -141,7 +141,7 @@ export function Projects() {
   }, []);
 
   return (
-    <section id="projects" className="py-24 bg-[#f5f5f5]">
+    <section id="projects" className="py-12 md:py-16 bg-[#f5f5f5]">
       <div className="w-full px-[40px]">
         {/* Header - Standardized Style */}
         <motion.div

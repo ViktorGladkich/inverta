@@ -51,7 +51,7 @@ export function ServicesOverview() {
   return (
     <section
       id="services"
-      className="relative z-10 bg-[#f5f5f5] py-24 px-4 md:px-8 overflow-hidden"
+      className="relative z-10 bg-[#f5f5f5] py-12 md:py-16 px-4 md:px-8 overflow-hidden"
     >
       {/* Header der Leistungsübersicht */}
       <motion.div

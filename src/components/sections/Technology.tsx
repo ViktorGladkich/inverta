@@ -55,7 +55,7 @@ export function Technology() {
   return (
     <section
       id="features"
-      className="relative z-20 flex flex-col items-center justify-center w-full py-[100px] px-5 md:px-10 gap-10 bg-[#f5f5f5] overflow-hidden"
+      className="relative z-20 flex flex-col items-center justify-center w-full py-12 md:py-16 px-5 md:px-10 gap-10 bg-[#f5f5f5] overflow-hidden"
     >
       {/* Heading Block */}
       <motion.div
