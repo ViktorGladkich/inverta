@@ -36,6 +36,7 @@ jobs:
           RESEND_API_KEY: dummy
           N8N_LEAD_WEBHOOK_URL: https://example.com/webhook
           CONTACT_ALLOWED_ORIGINS: https://invertadigital.de
+          N8N_WEBHOOK_SECRET: dummy
 
       - name: Audit (production deps only, fail on high)
         run: npm audit --omit=dev --audit-level=high

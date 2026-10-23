@@ -4,6 +4,10 @@ import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { ButtonArrow } from "@/components/layout/navbar/icons";
+import { Turnstile, type TurnstileHandle } from "@/components/ui/Turnstile";
+
+const DEFAULT_ERROR =
+  "Etwas ist schief gelaufen. Bitte versuchen Sie es später noch einmal.";
 
 export function ContactForm() {
   const [status, setStatus] = useState<
@@ -11,6 +15,7 @@ export function ContactForm() {
   >("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const formRef = useRef<HTMLDivElement>(null);
+  const turnstileRef = useRef<TurnstileHandle>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -25,7 +30,21 @@ export function ContactForm() {
       company: formData.get("company"),
       service: formData.get("service"),
       message: formData.get("message"),
+      privacy: formData.get("privacy") === "on",
+      turnstileToken: formData.get("cf-turnstile-response") || undefined,
       website: formData.get("website"),
+    };
+
+    const showError = (message: string) => {
+      setErrorMessage(message);
+      setStatus("error");
+      // Turnstile tokens are single-use
+      turnstileRef.current?.reset();
+
+      // Reset back to idle after a few seconds
+      setTimeout(() => {
+        setStatus("idle");
+      }, 5000);
     };
 
     try {
@@ -36,7 +55,11 @@ export function ContactForm() {
       });
 
       if (!response.ok) {
-        throw new Error("Fehler beim Senden der Nachricht.");
+        const body = (await response.json().catch(() => null)) as {
+          error?: string;
+        } | null;
+        showError(body?.error || DEFAULT_ERROR);
+        return;
       }
 
       setStatus("success");
@@ -48,15 +71,7 @@ export function ContactForm() {
         });
       }, 100);
     } catch {
-      setErrorMessage(
-        "Etwas ist schief gelaufen. Bitte versuchen Sie es später noch einmal.",
-      );
-      setStatus("error");
-
-      // Reset back to idle after a few seconds
-      setTimeout(() => {
-        setStatus("idle");
-      }, 5000);
+      showError(DEFAULT_ERROR);
     }
   };
 
@@ -221,6 +236,8 @@ export function ContactForm() {
                     name="vorname"
                     placeholder="Erika *"
                     required
+                    maxLength={59}
+                    autoComplete="given-name"
                     disabled={status === "loading"}
                     className="w-full bg-transparent border-b border-black pb-4 pt-2 text-xl md:text-2xl font-normal placeholder:text-black/20 focus:outline-none focus:border-black transition-colors rounded-none disabled:opacity-50"
                   />
@@ -239,6 +256,8 @@ export function ContactForm() {
                     name="nachname"
                     placeholder="Mustermann *"
                     required
+                    maxLength={59}
+                    autoComplete="family-name"
                     disabled={status === "loading"}
                     className="w-full bg-transparent border-b border-black pb-4 pt-2 text-xl md:text-2xl font-normal placeholder:text-black/20 focus:outline-none focus:border-black transition-colors rounded-none disabled:opacity-50"
                   />
@@ -259,6 +278,8 @@ export function ContactForm() {
                   name="email"
                   placeholder="info@firma.de *"
                   required
+                  maxLength={254}
+                  autoComplete="email"
                   disabled={status === "loading"}
                   className="w-full bg-transparent border-b border-black pb-4 pt-2 text-xl md:text-2xl font-normal placeholder:text-black/20 focus:outline-none focus:border-black transition-colors rounded-none disabled:opacity-50"
                 />
@@ -278,6 +299,11 @@ export function ContactForm() {
                   name="phone"
                   placeholder="+49 123 456 789 *"
                   required
+                  minLength={5}
+                  maxLength={40}
+                  pattern="[0-9+\(\)\/.\-\s]+"
+                  title="Nur Ziffern, Leerzeichen und + ( ) / . -"
+                  autoComplete="tel"
                   disabled={status === "loading"}
                   className="w-full bg-transparent border-b border-black pb-4 pt-2 text-xl md:text-2xl font-normal placeholder:text-black/20 focus:outline-none focus:border-black transition-colors rounded-none disabled:opacity-50"
                 />
@@ -296,6 +322,8 @@ export function ContactForm() {
                   id="company"
                   name="company"
                   placeholder="Muster GmbH"
+                  maxLength={120}
+                  autoComplete="organization"
                   disabled={status === "loading"}
                   className="w-full bg-transparent border-b border-black pb-4 pt-2 text-xl md:text-2xl font-normal placeholder:text-black/20 focus:outline-none focus:border-black transition-colors rounded-none disabled:opacity-50"
                 />
@@ -343,6 +371,8 @@ export function ContactForm() {
                   rows={3}
                   placeholder="Erzählen Sie uns von Ihrer Vision... *"
                   required
+                  minLength={10}
+                  maxLength={4000}
                   disabled={status === "loading"}
                   className="w-full bg-transparent border-b border-black pb-4 pt-2 text-xl md:text-2xl font-normal placeholder:text-black/20 focus:outline-none focus:border-black transition-colors rounded-none resize-none disabled:opacity-50"
                 />
@@ -381,6 +411,7 @@ export function ContactForm() {
                   <a
                     href="/datenschutz"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="underline hover:text-black transition-colors text-black"
                   >
                     Datenschutzerklärung
@@ -388,6 +419,8 @@ export function ContactForm() {
                   . *
                 </label>
               </div>
+
+              <Turnstile ref={turnstileRef} />
 
               <div className="flex items-center justify-start">
                 <button
