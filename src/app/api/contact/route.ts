@@ -279,6 +279,7 @@ export async function POST(req: Request) {
 
     // 6. Honeypot fast-fail (returns success to bots, but does nothing)
     if (data.website && data.website.length > 0) {
+      console.warn("[contact] honeypot triggered — request dropped");
       return NextResponse.json({ success: true }, { status: 200 });
     }
 
@@ -314,6 +315,7 @@ export async function POST(req: Request) {
         { status: 502 },
       );
     }
+    console.info("[contact] lead email sent:", sendResult.data?.id);
 
     // 10. Forward to n8n with timeout (auto-reply handled there)
     const webhookUrl = process.env.N8N_LEAD_WEBHOOK_URL;
@@ -344,6 +346,8 @@ export async function POST(req: Request) {
         });
         if (!res.ok) {
           console.error("[contact] n8n webhook responded:", res.status);
+        } else {
+          console.info("[contact] n8n webhook ok");
         }
       } catch (e) {
         const msg = e instanceof Error ? e.message : "unknown";

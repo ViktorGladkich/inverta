@@ -32,7 +32,7 @@ export function ContactForm() {
       message: formData.get("message"),
       privacy: formData.get("privacy") === "on",
       turnstileToken: formData.get("cf-turnstile-response") || undefined,
-      website: formData.get("website"),
+      website: formData.get("hp_x7q"),
     };
 
     const showError = (message: string) => {
@@ -183,12 +183,18 @@ export function ContactForm() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
             className="w-full flex flex-col gap-16 bg-white p-8 md:p-16 rounded-[40px] shadow-[0_20px_40px_-20px_rgba(0,0,0,0.05)] border border-black/5"
           >
-            {/* Honeypot — hidden from real users, bots fill it */}
+            {/* Honeypot — hidden from real users, bots fill it. The name must not
+                look like a real field, or browser/password-manager autofill
+                fills it and real leads get silently dropped. */}
             <input
               type="text"
-              name="website"
+              name="hp_x7q"
               tabIndex={-1}
               autoComplete="off"
+              data-1p-ignore
+              data-lpignore="true"
+              data-bwignore
+              data-form-type="other"
               aria-hidden="true"
               className="absolute -left-[9999px] w-px h-px opacity-0"
             />
