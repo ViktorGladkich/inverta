@@ -29,6 +29,7 @@ const ALLOWED_ORIGINS = new Set(
 );
 
 const MAX_BODY_BYTES = 16 * 1024;
+const MIN_FILL_MS = 2500;
 
 const ContactSchema = z.object({
   anrede: z.enum(["Herr", "Frau", "Divers / Keine Angabe"]),
@@ -53,8 +54,8 @@ const ContactSchema = z.object({
   message: z.string().min(10).max(4000),
   privacy: z.literal(true),
   turnstileToken: z.string().max(2048).optional(),
-  // Honeypot — checked after validation so bots get a fake success
-  website: z.string().max(500).optional(),
+  // Time from form mount to submit; humans need far longer than bots
+  elapsedMs: z.number().int().nonnegative().optional(),
 });
 
 type ContactInput = z.infer<typeof ContactSchema>;
@@ -277,14 +278,14 @@ export async function POST(req: Request) {
     }
     const data = parsed.data;
 
-    // 6. Honeypot — never drop silently: browser extensions and password
-    // managers can fill hidden fields for real visitors. Flag the lead
-    // instead and skip the n8n auto-reply for it.
-    const suspectedSpam = Boolean(data.website && data.website.length > 0);
+    // 6. Bot signal — never drop silently. A suspiciously fast submit is
+    // flagged and skips the n8n auto-reply, but still reaches the inbox.
+    const suspectedSpam =
+      data.elapsedMs !== undefined && data.elapsedMs < MIN_FILL_MS;
     if (suspectedSpam) {
       console.warn(
-        "[contact] honeypot filled — flagged as spam, length:",
-        data.website?.length,
+        "[contact] submitted too fast — flagged as spam, ms:",
+        data.elapsedMs,
       );
     }
 

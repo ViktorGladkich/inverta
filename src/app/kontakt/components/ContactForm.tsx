@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { ButtonArrow } from "@/components/layout/navbar/icons";
@@ -16,6 +16,13 @@ export function ContactForm() {
   const [errorMessage, setErrorMessage] = useState("");
   const formRef = useRef<HTMLDivElement>(null);
   const turnstileRef = useRef<TurnstileHandle>(null);
+  // Time-to-submit bot signal. Replaces a hidden honeypot input, which
+  // browser autofill (e.g. Safari contact card) filled for real visitors.
+  const mountedAt = useRef(0);
+
+  useEffect(() => {
+    mountedAt.current = Date.now();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -32,7 +39,7 @@ export function ContactForm() {
       message: formData.get("message"),
       privacy: formData.get("privacy") === "on",
       turnstileToken: formData.get("cf-turnstile-response") || undefined,
-      website: formData.get("hp_x7q"),
+      elapsedMs: Date.now() - mountedAt.current,
     };
 
     const showError = (message: string) => {
@@ -183,21 +190,6 @@ export function ContactForm() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
             className="w-full flex flex-col gap-16 bg-white p-8 md:p-16 rounded-[40px] shadow-[0_20px_40px_-20px_rgba(0,0,0,0.05)] border border-black/5"
           >
-            {/* Honeypot — hidden from real users, bots fill it. The name must not
-                look like a real field, or browser/password-manager autofill
-                fills it and real leads get silently dropped. */}
-            <input
-              type="text"
-              name="hp_x7q"
-              tabIndex={-1}
-              autoComplete="off"
-              data-1p-ignore
-              data-lpignore="true"
-              data-bwignore
-              data-form-type="other"
-              aria-hidden="true"
-              className="absolute -left-[9999px] w-px h-px opacity-0"
-            />
             <div className="flex flex-col gap-10 md:gap-14">
               {/* Anrede */}
               <div className="flex flex-col gap-2 w-full md:w-1/2">
