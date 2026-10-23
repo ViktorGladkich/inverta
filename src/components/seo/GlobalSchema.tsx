@@ -44,16 +44,16 @@ export const GlobalSchema = () => {
         ],
         address: {
           "@type": "PostalAddress",
-          streetAddress: "Rubensweg 1",
+          streetAddress: "St. Petersburger Straße 26",
           addressLocality: "Dresden",
           addressRegion: "Sachsen",
-          postalCode: "01217",
+          postalCode: "01069",
           addressCountry: "DE",
         },
         geo: {
           "@type": "GeoCoordinates",
-          latitude: "51.0204",
-          longitude: "13.7676",
+          latitude: "51.0443",
+          longitude: "13.7365",
         },
         areaServed: [
           {

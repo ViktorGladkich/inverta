@@ -25,9 +25,9 @@ export default function Impressum() {
             <p className="mb-4">
               INVERTA DIGITAL GbR
               <br />
-              Rubensweg 1
+              St. Petersburger Straße 26
               <br />
-              01217 Dresden
+              01069 Dresden
             </p>
             <h2 className="text-2xl font-bold mt-8 mb-4">
               Vertreten durch die Gesellschafter

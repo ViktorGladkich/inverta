@@ -292,8 +292,8 @@ export default function DatenschutzPage() {
                 Viktor Gladkich, Mansur Alisultanow, Alireza Yaghoubi
                 <br />
                 <br />
-                Rubensweg 1<br />
-                01217 Dresden
+                St. Petersburger Straße 26<br />
+                01069 Dresden
                 <br />
                 Deutschland
                 <br />

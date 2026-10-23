@@ -41,9 +41,9 @@ export function ContactInfo() {
                 Office
               </span>
               <p className="mt-2 text-black/80 font-normal leading-relaxed">
-                Rubensweg 1
+                St. Petersburger Straße 26
                 <br />
-                01217 Dresden
+                01069 Dresden
                 <br />
                 Deutschland
               </p>

@@ -250,7 +250,7 @@ export function MobileMenu({
                   info@invertadigital.de
                 </a>
                 <p className="text-white/50 leading-relaxed font-medium">
-                  Rubensweg 1<br /> 01217 Dresden
+                  St. Petersburger Straße 26<br /> 01069 Dresden
                   <br /> Deutschland
                 </p>
               </div>
