@@ -277,10 +277,15 @@ export async function POST(req: Request) {
     }
     const data = parsed.data;
 
-    // 6. Honeypot fast-fail (returns success to bots, but does nothing)
-    if (data.website && data.website.length > 0) {
-      console.warn("[contact] honeypot triggered — request dropped");
-      return NextResponse.json({ success: true }, { status: 200 });
+    // 6. Honeypot — never drop silently: browser extensions and password
+    // managers can fill hidden fields for real visitors. Flag the lead
+    // instead and skip the n8n auto-reply for it.
+    const suspectedSpam = Boolean(data.website && data.website.length > 0);
+    if (suspectedSpam) {
+      console.warn(
+        "[contact] honeypot filled — flagged as spam, length:",
+        data.website?.length,
+      );
     }
 
     // 7. Bot check
@@ -304,7 +309,7 @@ export async function POST(req: Request) {
       from: "INVERTA DIGITAL <hello@invertadigital.de>",
       to: ["info@invertadigital.de"],
       replyTo: data.email,
-      subject: `Neue Projektanfrage von ${subjectName} - ${subjectCompany}`,
+      subject: `${suspectedSpam ? "[Spamverdacht] " : ""}Neue Projektanfrage von ${subjectName} - ${subjectCompany}`,
       html: renderEmailHtml(data, consentAt),
     });
 
@@ -319,7 +324,7 @@ export async function POST(req: Request) {
 
     // 10. Forward to n8n with timeout (auto-reply handled there)
     const webhookUrl = process.env.N8N_LEAD_WEBHOOK_URL;
-    if (webhookUrl) {
+    if (webhookUrl && !suspectedSpam) {
       const headers: Record<string, string> = {
         "Content-Type": "application/json",
       };
