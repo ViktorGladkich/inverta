@@ -76,63 +76,126 @@ const escapeHtml = (s: unknown): string =>
 const stripCRLF = (s: unknown): string =>
   String(s ?? "").replace(/[\r\n]+/g, " ").trim();
 
-function renderEmailHtml(input: ContactInput, consentAt: string): string {
+const EMAIL_FONT =
+  "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif";
+
+// Same compact light/dark layout as the n8n client emails.
+function renderEmailHtml(
+  input: ContactInput,
+  consentAt: string,
+  suspectedSpam: boolean,
+): string {
   const e = {
     anrede: escapeHtml(input.anrede),
     name: escapeHtml(input.name),
     email: escapeHtml(input.email),
     telefon: escapeHtml(input.telefon),
-    company: escapeHtml(input.company || "-"),
+    telHref: escapeHtml(input.telefon.replace(/[^\d+]/g, "")),
+    company: escapeHtml(input.company || "–"),
     service: escapeHtml(input.service),
     message: escapeHtml(input.message),
-    consentAt: escapeHtml(consentAt),
+    consentAt: escapeHtml(
+      new Date(consentAt).toLocaleString("de-DE", {
+        timeZone: "Europe/Berlin",
+        dateStyle: "medium",
+        timeStyle: "short",
+      }),
+    ),
   };
-  return `
-    <div style="font-family: Arial, sans-serif; padding: 20px; color: #000;">
-      <h2 style="font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px;">
-        Neue Lead-Anfrage
-      </h2>
-      <table style="width: 100%; max-width: 600px; border-collapse: collapse;">
-        <tbody>
-          <tr>
-            <td style="padding: 10px 0; font-weight: bold; width: 30%;">Name:</td>
-            <td style="padding: 10px 0;">${e.anrede} ${e.name}</td>
-          </tr>
-          <tr style="border-top: 1px solid #eee;">
-            <td style="padding: 10px 0; font-weight: bold;">E-Mail:</td>
-            <td style="padding: 10px 0;">
-              <a href="mailto:${e.email}" style="color: #000; text-decoration: underline;">${e.email}</a>
-            </td>
-          </tr>
-          <tr style="border-top: 1px solid #eee;">
-            <td style="padding: 10px 0; font-weight: bold;">Telefon:</td>
-            <td style="padding: 10px 0;">
-              <a href="tel:${e.telefon}" style="color: #000; text-decoration: underline;">${e.telefon}</a>
-            </td>
-          </tr>
-          <tr style="border-top: 1px solid #eee;">
-            <td style="padding: 10px 0; font-weight: bold;">Unternehmen:</td>
-            <td style="padding: 10px 0;">${e.company}</td>
-          </tr>
-          <tr style="border-top: 1px solid #eee;">
-            <td style="padding: 10px 0; font-weight: bold;">Bereich:</td>
-            <td style="padding: 10px 0;">${e.service}</td>
-          </tr>
-          <tr style="border-top: 1px solid #eee;">
-            <td style="padding: 10px 0; font-weight: bold; vertical-align: top;">Nachricht:</td>
-            <td style="padding: 10px 0; white-space: pre-wrap;">${e.message}</td>
-          </tr>
-          <tr style="border-top: 1px solid #eee;">
-            <td style="padding: 10px 0; font-weight: bold;">Datenschutz:</td>
-            <td style="padding: 10px 0;">Einwilligung erteilt am ${e.consentAt}</td>
-          </tr>
-        </tbody>
+
+  const row = (label: string, value: string) => `
+        <tr>
+          <td class="muted line" style="padding:10px 0;width:120px;vertical-align:top;font-family:${EMAIL_FONT};font-size:12px;color:#71717a;border-top:1px solid #ececef;">${label}</td>
+          <td class="text line" style="padding:10px 0;vertical-align:top;font-family:${EMAIL_FONT};font-size:14px;color:#1f1f23;border-top:1px solid #ececef;">${value}</td>
+        </tr>`;
+
+  const spamBanner = suspectedSpam
+    ? `
+    <tr><td class="pad" style="padding:16px 32px 0;">
+      <div class="warn" style="padding:10px 14px;border-radius:8px;background-color:#fff4e5;border:1px solid #f5c58a;font-family:${EMAIL_FONT};font-size:13px;color:#8a4b00;">
+        Spamverdacht: sehr schnell abgeschickt. Kein Auto-Reply versendet.
+      </div>
+    </td></tr>`
+    : "";
+
+  return `<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>Neue Anfrage</title>
+<style>
+  :root { color-scheme: light dark; supported-color-schemes: light dark; }
+  a { text-decoration: none; }
+  @media only screen and (max-width: 600px) {
+    .outer { padding: 12px 8px !important; }
+    .pad { padding-left: 20px !important; padding-right: 20px !important; }
+  }
+  @media (prefers-color-scheme: dark) {
+    .bg { background-color: #0b0b0c !important; }
+    .card { background-color: #161618 !important; border-color: #2a2a2e !important; border-top-color: #daff02 !important; }
+    .line { border-color: #2a2a2e !important; }
+    .box { background-color: #1f1f22 !important; }
+    .text { color: #e8e8ea !important; }
+    .muted { color: #9b9ba3 !important; }
+    .mark { color: #daff02 !important; }
+    .ghost { color: #e8e8ea !important; border-color: #3a3a3f !important; }
+    .warn { background-color: #2a1f0f !important; border-color: #6b4a1a !important; color: #f5c58a !important; }
+  }
+  [data-ogsb] .bg { background-color: #0b0b0c !important; }
+  [data-ogsb] .card { background-color: #161618 !important; }
+  [data-ogsc] .text { color: #e8e8ea !important; }
+  [data-ogsc] .muted { color: #9b9ba3 !important; }
+</style>
+</head>
+<body class="bg" style="margin:0;padding:0;background-color:#f4f4f5;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="bg" bgcolor="#f4f4f5" style="background-color:#f4f4f5;">
+<tr><td align="center" class="outer" style="padding:32px 16px;">
+  <table role="presentation" width="560" cellpadding="0" cellspacing="0" border="0" class="card" bgcolor="#ffffff" style="width:100%;max-width:560px;background-color:#ffffff;border:1px solid #e4e4e7;border-top:3px solid #daff02;border-radius:12px;">
+    <tr><td class="pad line" style="padding:18px 32px;border-bottom:1px solid #ececef;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td style="font-family:${EMAIL_FONT};font-size:13px;font-weight:800;letter-spacing:2px;">
+          <span class="text" style="color:#111113;">INVERTA</span><span class="mark" style="color:#8a9a00;"> DIGITAL</span>
+        </td>
+        <td align="right" class="muted" style="font-family:${EMAIL_FONT};font-size:12px;color:#71717a;">Neue Anfrage</td>
+      </tr></table>
+    </td></tr>
+    ${spamBanner}
+    <tr><td class="pad" style="padding:24px 32px 4px;">
+      <p class="text" style="margin:0;font-family:${EMAIL_FONT};font-size:20px;font-weight:700;color:#111113;">${e.anrede} ${e.name}</p>
+      <p class="muted" style="margin:4px 0 0;font-family:${EMAIL_FONT};font-size:13px;color:#71717a;">${e.service} &middot; ${e.company}</p>
+    </td></tr>
+    <tr><td class="pad" style="padding:16px 32px 8px;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td bgcolor="#daff02" style="border-radius:8px;background-color:#daff02;">
+          <a href="mailto:${e.email}" style="display:inline-block;padding:10px 18px;font-family:${EMAIL_FONT};font-size:13px;font-weight:700;color:#0b0b0c;border-radius:8px;">Antworten</a>
+        </td>
+        <td style="width:8px;"></td>
+        <td style="border-radius:8px;">
+          <a href="tel:${e.telHref}" class="ghost" style="display:inline-block;padding:9px 17px;font-family:${EMAIL_FONT};font-size:13px;font-weight:700;color:#1f1f23;border:1px solid #d4d4d8;border-radius:8px;">Anrufen</a>
+        </td>
+      </tr></table>
+    </td></tr>
+    <tr><td class="pad" style="padding:16px 32px 0;">
+      <div class="box text" style="padding:14px 16px;border-radius:8px;background-color:#f6f6f7;font-family:${EMAIL_FONT};font-size:14px;line-height:1.6;color:#1f1f23;white-space:pre-wrap;">${e.message}</div>
+    </td></tr>
+    <tr><td class="pad" style="padding:16px 32px 24px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        ${row("E-Mail", `<a href="mailto:${e.email}" class="text" style="color:#1f1f23;text-decoration:underline;">${e.email}</a>`)}
+        ${row("Telefon", `<a href="tel:${e.telHref}" class="text" style="color:#1f1f23;text-decoration:underline;">${e.telefon}</a>`)}
+        ${row("Unternehmen", e.company)}
+        ${row("Bereich", e.service)}
+        ${row("Datenschutz", `Einwilligung erteilt am ${e.consentAt}`)}
       </table>
-      <p style="margin-top: 40px; font-size: 12px; color: #888;">
-        Diese E-Mail wurde automatisiert von der INVERTA DIGITAL Website generiert.
-      </p>
-    </div>
-  `;
+    </td></tr>
+  </table>
+  <p class="muted" style="margin:16px 0 0;font-family:${EMAIL_FONT};font-size:12px;color:#71717a;text-align:center;">Automatisch erzeugt über invertadigital.de/kontakt</p>
+</td></tr>
+</table>
+</body>
+</html>`;
 }
 
 // Rate limiting: Upstash Redis (shared across serverless instances) when
@@ -311,7 +374,7 @@ export async function POST(req: Request) {
       to: ["info@invertadigital.de"],
       replyTo: data.email,
       subject: `${suspectedSpam ? "[Spamverdacht] " : ""}Neue Projektanfrage von ${subjectName} - ${subjectCompany}`,
-      html: renderEmailHtml(data, consentAt),
+      html: renderEmailHtml(data, consentAt, suspectedSpam),
     });
 
     if (sendResult.error) {
